@@ -349,7 +349,7 @@ The equivalent of alpha for items that are dichotomous is the Kuder–Richardson
 &lt;p&gt;Use PCF when you have a set of items that you believe all measure one concept. In this situation, you would be interested in the first principal factor. You would want to see if it explained a substantial part of the total variance for the entire set of items, and you would want most of the items to have a &lt;strong&gt;loading of 0.4 or above&lt;/strong&gt; on this factor. Because PCF analysis is trying to explain all the variance in the items, the &lt;strong&gt;uniqueness&lt;/strong&gt; for each item should approach zero. Generally, we should consider any factor that has an eigenvalue of more than 1.A visual way to examine the eigenvalues is with a scree plot.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;factor rnatspac rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
-    rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
+	rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
 screeplot
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -369,10 +369,10 @@ screeplot
 &lt;p&gt;However, this distinction rarely makes a lot of practical difference. The factor score may make a difference if there are some items with very large loadings, say, 0.9, and others with very small loadings, say, 0.2. But we would probably drop the weakest items. When the loadings do not vary a great deal, computing a factor score or a mean/total score will produce comparable results.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;factor rnatenvir rnatheal rnatcity rnatcrime rnatdrug rnateduc rnatrace ///
-    rnatfare rnatsoc rnatchld, pcf
+	rnatfare rnatsoc rnatchld, pcf
 predict libfscore, norotate
 egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
-    rnateduc rnatrace rnatfare rnatsoc rnatchld)
+	rnateduc rnatrace rnatfare rnatsoc rnatchld)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;correlation higher than 0.9...&lt;/p&gt;
