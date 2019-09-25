@@ -33,17 +33,52 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-09-25T15:20:28+08:00</lastmod>
+    <loc>/categories/books/</loc>
+    <lastmod>2019-09-25T17:07:58+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/panel-data-in-r-vs-in-stata/</loc>
-    <lastmod>2019-09-25T15:20:28+08:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2019-09-25T17:07:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/meta/</loc>
+    <lastmod>2019-09-25T17:07:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/meta-analysis-note-1/</loc>
+    <lastmod>2019-09-25T17:07:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
+    <lastmod>2019-09-25T17:07:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/sem-and-gsem/</loc>
+    <lastmod>2019-09-25T17:02:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/stata/</loc>
+    <lastmod>2019-09-25T17:03:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/stata/</loc>
+    <lastmod>2019-09-25T17:03:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2019-09-25T17:07:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/panel-data-in-r-vs-in-stata/</loc>
     <lastmod>2019-09-25T15:20:28+08:00</lastmod>
   </url>
   
@@ -54,32 +89,82 @@
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2019-09-25T15:20:28+08:00</lastmod>
+    <lastmod>2019-09-25T16:25:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/stata/</loc>
-    <lastmod>2019-09-25T15:20:28+08:00</lastmod>
+    <loc>/post/difference-in-difference/</loc>
+    <lastmod>2019-09-25T15:55:22+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/stata/</loc>
-    <lastmod>2019-09-25T15:20:28+08:00</lastmod>
+    <loc>/tags/econometrics-with-r/</loc>
+    <lastmod>2019-09-25T16:25:23+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-09-25T15:20:28+08:00</lastmod>
+    <loc>/post/panel-data/</loc>
+    <lastmod>2019-09-25T16:01:36+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <loc>/post/linear-regression/</loc>
+    <lastmod>2019-09-25T16:25:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/iv/</loc>
+    <lastmod>2019-09-25T16:19:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/ghost-blog-workflow/</loc>
+    <lastmod>2019-09-25T16:40:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/logistic-regression/</loc>
+    <lastmod>2019-09-25T17:03:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/measurement-reliability-and-validity/</loc>
+    <lastmod>2019-09-25T16:51:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/missing-values/</loc>
+    <lastmod>2019-09-25T16:48:42+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/multilevel-analysis/</loc>
+    <lastmod>2019-09-25T16:44:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/multiple-regressions/</loc>
+    <lastmod>2019-09-25T16:54:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/we-have-no-idea/</loc>
+    <lastmod>2019-09-25T16:59:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/workflow/</loc>
+    <lastmod>2019-09-25T16:40:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/workflow/</loc>
+    <lastmod>2019-09-25T16:40:38+08:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -94,7 +179,7 @@
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -110,11 +195,6 @@
   <url>
     <loc>/tags/source-themes/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -163,26 +243,6 @@
   </url>
   
   <url>
-    <loc>/authors/wyih/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/demo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication_types/2/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
   </url>
@@ -225,6 +285,10 @@
   <url>
     <loc>/publication/conference-paper/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/wyih/</loc>
   </url>
   
   <url>

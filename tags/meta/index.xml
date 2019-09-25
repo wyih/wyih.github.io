@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta | Little World</title>
+    <link>/tags/meta/</link>
+      <atom:link href="/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <description>Meta</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Meta</title>
+      <link>/tags/meta/</link>
+    </image>
+    
+    <item>
+      <title>Meta-Analysis Note 1</title>
+      <link>/post/meta-analysis-note-1/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/meta-analysis-note-1/</guid>
+      <description>
+
+&lt;p&gt;本书第一章主要对一些术语进行了界定，把元分析同其它种文献综述的方式进行了区分。元分析同其它定性的总结以及定量的（Informal vote counting-一般采用多数原则来总结结论与formal vote counting-在前者基础之上采用了一些统计分析以期得到统计上显著的结论）一些分析的不同之处在于：元分析的关注点除了关注效果是否存在之外，主要关注效果的大小(effect size)。&lt;/p&gt;
+
+&lt;p&gt;元分析的工作步骤分为五个阶段：&lt;/p&gt;
+
+&lt;h2 id=&#34;确定问题-formulate-a-problem&#34;&gt;确定问题(formulate a problem)&lt;/h2&gt;
+
+&lt;p&gt;在确定问题开始综述工作时，要把关注的重点厘清。比如希望是一个更概括的结论或样本，还是一个适用范围有限定的结论和样本，这将决定第二三阶段对文献的取舍。&lt;/p&gt;
+
+&lt;h2 id=&#34;取得相关文献&#34;&gt;取得相关文献&lt;/h2&gt;
+
+&lt;p&gt;要从尽可能多的样本里采样，确保文献是有代表性的(representive)和无偏的(unbiased)。后者因为学术刊物对于结果显著的论文的发表偏好而很难实现，因此别忘了未发表的工作论文或毕业论文等。&lt;/p&gt;
+
+&lt;h2 id=&#34;对文献进行评估精选&#34;&gt;对文献进行评估精选&lt;/h2&gt;
+
+&lt;p&gt;本阶段对上一阶段取得的文献进行相关性评估。在此阶段会对第一阶段确定下来的研究问题进行进一步的提炼。&lt;/p&gt;
+
+&lt;h2 id=&#34;对文献进行分析和解释&#34;&gt;对文献进行分析和解释&lt;/h2&gt;
+
+&lt;p&gt;最花时间和最难的阶段，在此阶段中需要将文献的数据整理和输入。&lt;/p&gt;
+
+&lt;h2 id=&#34;文献综述的写作&#34;&gt;文献综述的写作&lt;/h2&gt;
+
+&lt;p&gt;有几点需要注意的：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;对于整个文献综述的工作过程要完整描述，记录在此过程中所做的各项取舍&lt;/li&gt;
+&lt;li&gt;关键在与要回答感兴趣的问题，假如不能回答，也要解释为什么以及未来需要做什么来回答这个问题&lt;/li&gt;
+&lt;li&gt;要避免文献列表的堆砌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;作者的几点建议&#34;&gt;作者的几点建议&lt;/h2&gt;
+
+&lt;p&gt;因为文献的收集、评估、整理直到分析很花时间和精力，所以一定要做到有规划。一些具体的建议如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在文献收集过程中做记录&lt;/li&gt;
+&lt;li&gt;系统的存放文献，假如同别人合作，确保你们用同一套系统来存放，处理文献&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;我对于工具的建议&#34;&gt;我对于工具的建议&lt;/h2&gt;
+
+&lt;p&gt;&lt;del&gt;文献收集可以用&lt;a href=&#34;https://www.mendeley.com/&#34; target=&#34;_blank&#34;&gt;Mendeley&lt;/a&gt;的private group功能，这样加入同一组的成员可以直接在客户端上打开PDF和加标注。虽然mendeley对免费用户private group数有限制，但可以通过在group底下再加子目录的方式来绕过限制。&lt;/del&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;最新的建议&#34;&gt;最新的建议&lt;/h2&gt;
+
+&lt;p&gt;转向&lt;a href=&#34;https://www.zotero.org/&#34; target=&#34;_blank&#34;&gt;Zotero&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

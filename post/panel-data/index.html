@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Yihong WANG">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="效應評估模型 \[ mrall=mrall_{-BeerTax}&#43;\beta^*BeerTax \] 提高啤酒稅（BeerTax）是否有助減低車禍死亡率（mrall）？ 固定效應模型 令 $W$代表「州愛喝酒程度」。 $W$與 $mr">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/panel-data/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.e4d1b8788cc7b9cc36ba28478f8b4c69.css">
+
+  
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/panel-data/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Little World">
+  <meta property="og:url" content="/post/panel-data/">
+  <meta property="og:title" content="Panel Data | Little World">
+  <meta property="og:description" content="效應評估模型 \[ mrall=mrall_{-BeerTax}&#43;\beta^*BeerTax \] 提高啤酒稅（BeerTax）是否有助減低車禍死亡率（mrall）？ 固定效應模型 令 $W$代表「州愛喝酒程度」。 $W$與 $mr"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-07-10T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-09-25T16:01:36&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/panel-data/"
+  },
+  "headline": "Panel Data",
+  
+  "datePublished": "2019-07-10T00:00:00Z",
+  "dateModified": "2019-09-25T16:01:36+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Yihong WANG"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Little World",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "效應評估模型 \\[ mrall=mrall_{-BeerTax}+\\beta^*BeerTax \\] 提高啤酒稅（BeerTax）是否有助減低車禍死亡率（mrall）？ 固定效應模型 令 $W$代表「州愛喝酒程度」。 $W$與 $mr"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Panel Data | Little World</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Little World</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Panel Data</h1>
+
+  
+
+  
+    
+
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Sep 25, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/r/">R</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/panel-data/&amp;text=Panel%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/panel-data/&amp;t=Panel%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Panel%20Data&amp;body=/post/panel-data/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/panel-data/&amp;title=Panel%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Panel%20Data%20/post/panel-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/panel-data/&amp;title=Panel%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="效應評估模型">效應評估模型</h2>
+
+<p><span  class="math">\[
+mrall=mrall_{-BeerTax}+\beta^*BeerTax
+\]</span></p>
+
+<p>提高啤酒稅（BeerTax）是否有助減低車禍死亡率（mrall）？</p>
+
+<h2 id="固定效應模型">固定效應模型</h2>
+
+<p>令 $W$代表「州愛喝酒程度」。</p>
+
+<ul>
+<li>$W$與 $mrall_{-BeerTax}+$有關</li>
+<li>$W$與 $BeerTax$有關</li>
+</ul>
+
+<p><span  class="math">\[
+mrall=(mrall_{-BT}-\mathbb{E}(mrall_{-BT}|W))+\mathbb{E}(mrall_{-BT}|W) + \beta^*BeerTax
+\]</span></p>
+
+<p><span  class="math">\[
+mrall_{-BT,-W}\equiv mrall_{-BT}-\mathbb{E}(mrall_{-BT}|W)
+\]</span></p>
+
+<p><span  class="math">\[
+mrall=mrall_{-BT,-W}+\mathbb{E}(mrall_{-BT}|W)+\beta^*BeerTax
+\]</span></p>
+
+<p>$mrall_{-BT,-W}$為「去除」 $W$影響的「非啤酒稅造成的車禍死亡因素」：</p>
+
+<ul>
+<li>它與 $W$無關。</li>
+<li>若兩筆obs有相同飲酒文化，即$W$相同，他們的 $\mathbb{E}(mrall_{-BT}|W)$
+會相同。</li>
+</ul>
+
+<blockquote>
+<p>「假設」一個地方的飲酒文化「不隨時間改變」，即同一州在不同時點的$W$相同。</p>
+</blockquote>
+
+<p>令<span  class="math">\(\mathbb{E}(mrall_{-BT,it}|W_i)=\alpha_i\)</span>， 故我們的效應模型可以寫成：
+<span  class="math">\(
+mrall_{it}=mrall_{-BT,-W,it}+\alpha_i+\beta^*BeerTax_{it}
+\)</span>
+其中$\alpha_i$為第 $i$ 個州的固定效果：</p>
+
+<ul>
+<li>$BearTax$與$mrall_{-BT,-W}$無關</li>
+<li>$BearTax$與$\alpha$有關</li>
+</ul>
+
+<h2 id="組內差異最小平方法">組內差異最小平方法</h2>
+
+<p>差分OLS解决$\alpha_i$不可得的阻碍</p>
+
+<p><span  class="math">\[
+mrall_{i1}-mrall_{i0}=\beta^* (BeerTax_{i1}-BearTax_{i0})+(mrall_{-BT,-W,i1}-mrall_{-BT,-W,i0})
+\]</span></p>
+
+<p>如果$t$超過兩期，考慮用組內平均為差分比較的點。</p>
+
+<p>即<span  class="math">\(x_1-\bar{x},x_2-\bar{x},...,x_n-\bar{x}, \bar{x}=\sum_{i=1}^n x_i/n\)</span>
+<span  class="math">\(
+\bar{mrall}_i=\sum_{t=1}^T mrall_{it}/T \\
+\bar{BeerTax}_i=\sum_{t=1}^T BeerTax_{it}/T\\
+\bar{mrall}_{-BT,-W,i}=\sum_{t=1}^T mrall_{-BT,-W,it}/T
+\)</span></p>
+
+<p><span  class="math">\[
+mrall_{it}-\bar{mrall}_i=\beta^*\left( BeerTax_{it}-\bar{BeerTax}_i\right)+(mrall_{-BT,-W,it}-\bar{mrall}_{-BT,-W,i})
+\]</span></p>
+
+<p>固定效果模型下，我們可以以最小平方法估計下面的迴歸式：
+<span  class="math">\(
+mrall_{it}-\bar{mrall}_i=\beta_0+\beta_1\left( BeerTax_{it}-\bar{BeerTax}_i\right)+\epsilon_{it}
+\)</span>
+其中$\hat{\beta}_1$即為$\beta^*$的一致性估計</p>
+
+<h2 id="常見的固定效果模型">常見的固定效果模型</h2>
+
+<ul>
+<li>Identity fixed effect:$\alpha_i$</li>
+<li>Time fixed effect:  $\delta_i$</li>
+</ul>
+
+<p><span  class="math">\[
+mrall_{-BT,it}=mrall_{-BT,-W_i,-Z_t}+\alpha_i+\delta_t
+\]</span></p>
+
+<ul>
+<li>$W_i$為造成效應係數估計偏誤的變數，它在$i$面向固定不變。</li>
+<li>$Z_t$為造成效應係數估計偏誤的變數，它在$t$面向固定不變。</li>
+</ul>
+
+<blockquote>
+<p>如$Z_t$為全美國的景氣狀況。</p>
+</blockquote>
+
+<p>對應的迴歸模型：
+<span  class="math">\(
+mrall_{it}=\alpha_i+\delta_t+\beta_1 BeerTax_{it}+\epsilon_{it}
+\)</span></p>
+
+<h2 id="廣義的固定效果模型">廣義的固定效果模型</h2>
+
+<p><span  class="math">\[
+mrall=mrall_{-BeerTax}+\beta^*BeerTax
+\]</span></p>
+
+<p>但
+<span  class="math">\(
+\begin{equation}
+  mrall_{-BT,it}\not\perp BeerTax_{it}
+  \tag{5.1}
+\end{equation}
+\)</span></p>
+
+<h3 id="複迴歸控制">複迴歸控制</h3>
+
+<p>先思考造成(5.1)的變數有哪些——統計上稱這些變數為混淆變數(confounder)。Confounder中有資料的（令為$Z$）可進一步用來擴充模型成為：
+<span  class="math">\(
+mrall_{it}=mrall_{-BT,-Z,it}+\beta^*BeerTax_{it}+\gamma'Z_{it}
+\)</span>
+其中：
+<span  class="math">\(
+mrall_{-BT,-Z}=mrall_{-BT}-\mathbb{E}(mrall_{-BT}|Z)
+\)</span></p>
+
+<h3 id="固定效果模型">固定效果模型</h3>
+
+<p>Confounder中沒有資料但在某些面向固定的，假設分成以下兩類：</p>
+
+<ul>
+<li>$W_i$：在同個identity下固定。</li>
+<li>$V_t$：在同個time下固定。</li>
+</ul>
+
+<p><span  class="math">\[
+\begin{eqnarray}
+mrall_{it}=mrall_{-BT,-(Z,W,V),it}+\beta^*BeerTax_{it}+\\
+\alpha_i+\delta_t+\gamma'Z_{it}
+\tag{5.2}
+\end{eqnarray}
+\]</span></p>
+
+<p>(5.2)是相當廣義的固定效果效應模型——有兩個面向的固定效果及控制變數。</p>
+
+<h2 id="隨機效果模型">隨機效果模型</h2>
+
+<p><span  class="math">\[
+mrall_{it}=mrall_{-BT,-Z,it}+\beta^*BeerTax_{it}+\gamma'Z_{it}
+\]</span></p>
+
+<p>隨機效果模型(Random Effect model)的設定：</p>
+
+<ul>
+<li>使用迴歸模型：</li>
+</ul>
+
+<p><span  class="math">\[
+\begin{eqnarray}
+  mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma'Z_{it}+\nu_{it}
+  \tag{5.3}
+\end{eqnarray}
+\]</span></p>
+
+<ul>
+<li>假設$\nu_{it}$ 具有某種結構。</li>
+</ul>
+
+<p>其中假设：</p>
+
+<ul>
+<li>$\nu_{it}\perp BeerTax_{it}$</li>
+<li><span  class="math">\(var(\alpha_i|X)=\sigma_{\alpha}^2\)</span></li>
+<li>$var(\epsilon_{it}|X)=\sigma^2$</li>
+<li>$cov(\epsilon_{it},\epsilon_{is}|X)=0$</li>
+</ul>
+
+<blockquote>
+<p>隨機效果模型帶有高度誤差項假設，故不建議使用。</p>
+</blockquote>
+
+<h2 id="hausman檢定">Hausman檢定</h2>
+
+<h3 id="固定效果模型fe">固定效果模型(FE)</h3>
+
+<p>表示使用組內差異最小平法方去估算以下迴歸模型中的<span  class="math">\(\beta_1\)</span>:
+<span  class="math">\(
+mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma'Z_{it}+\alpha_i+\epsilon_{it}
+\)</span></p>
+
+<h3 id="隨機效果模型re">隨機效果模型(RE)</h3>
+
+<p>表示使用GLS去估算以下迴歸模型中的<span  class="math">\(\beta_1\)</span>:
+<span  class="math">\(
+mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma'Z_{it}+\nu_{it}
+\)</span></p>
+
+<ul>
+<li><span  class="math">\(\nu_{it}=\alpha_i+\epsilon_{it}\)</span></li>
+</ul>
+
+<p>假設</p>
+
+<ul>
+<li>RE下「關於variance、covariance的假設」都成立。</li>
+<li><span  class="math">\(\epsilon_{it} \perp BeerTax_{it} | \alpha_i,Z_{it}\)</span></li>
+</ul>
+
+<p><strong>H0:</strong> <span  class="math">\(\alpha_i \perp BeerTax_{it} |Z_{it}\)</span></p>
+
+<p>H0为RE，拒绝则为FE</p>
+
+    </div>
+
+    
+
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/econometrics-with-r/">econometrics-with-r</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Yihong WANG</a></h5>
+      
+      <p class="card-text">Nothing</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/wyih" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/post/difference-in-difference/">Difference in Difference</a></li>
+          
+          <li><a href="/post/linear-regression/">Linear Regression</a></li>
+          
+          <li><a href="/post/iv/">工具变量</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js" integrity="sha256-0w92bcB21IY5+rGI84MGj52jNfHNbXVeQLrZ0CGdjNY=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+   
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

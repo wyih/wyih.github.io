@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workflow | Little World</title>
+    <link>/categories/workflow/</link>
+      <atom:link href="/categories/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <description>Workflow</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 26 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Workflow</title>
+      <link>/categories/workflow/</link>
+    </image>
+    
+    <item>
+      <title>Ghost Blog Workflow</title>
+      <link>/post/ghost-blog-workflow/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/ghost-blog-workflow/</guid>
+      <description>
+
+&lt;p&gt;Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;总算把Ghost配得七七八八，以后要好好记下笔记了。像以前看过的东西时间久了就全忘了，太郁闷了。&lt;/del&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;目前的workflow如下&#34;&gt;目前的Workflow如下&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在Synology Drive下Draft目录存放草稿&lt;/li&gt;
+&lt;li&gt;Typora里写markdown并保存&lt;/li&gt;
+&lt;li&gt;存Leanote和evernote各一份，这个应该可以通过&lt;a href=&#34;https://ifttt.com/&#34; target=&#34;_blank&#34;&gt;IFTTT&lt;/a&gt;来实现，日后研究&lt;/li&gt;
+&lt;li&gt;另外一个解决方案是直接Git init Draft目录，再往&lt;a href=&#34;github.com&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;上push备份。&lt;/li&gt;
+&lt;li&gt;存Ghost发布&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;需要的代码注入&#34;&gt;需要的代码注入&lt;/h2&gt;
+
+&lt;h3 id=&#34;公式&#34;&gt;公式&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  
+&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;  
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\\\(&#39;,&#39;\\\\)&#39;]],
+            processEscapes: true
+        }
+    });
+&amp;lt;/script&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;语法高亮&#34;&gt;语法高亮&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在&lt;code&gt;Post Footer&lt;/code&gt;粘贴以下脚本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://prismjs.com/&#34; target=&#34;_blank&#34;&gt;prism.js&lt;/a&gt;不支持Stata就凑合着用用吧。需要载入的&lt;a href=&#34;https://cdnjs.com/libraries/prism&#34; target=&#34;_blank&#34;&gt;components&lt;/a&gt;取决于博文需要。&lt;/p&gt;
+
+&lt;h2 id=&#34;需要注意的地方&#34;&gt;需要注意的地方&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ghost对于H1不能生成Toc，从H2开始&lt;/li&gt;
+&lt;li&gt;对于Markdown中的公式有些需要&lt;a href=&#34;https://blog.yhong.wang/gong-shi/&#34; target=&#34;_blank&#34;&gt;转义&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

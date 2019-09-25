@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Yihong WANG">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) /// (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss &lt; 3 One drawback to using the rowmean() function is that it">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/measurement-reliability-and-validity/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#4caf50">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.e4d1b8788cc7b9cc36ba28478f8b4c69.css">
+
+  
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/measurement-reliability-and-validity/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Little World">
+  <meta property="og:url" content="/post/measurement-reliability-and-validity/">
+  <meta property="og:title" content="Measurement, reliability, and validity | Little World">
+  <meta property="og:description" content="Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) /// (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss &lt; 3 One drawback to using the rowmean() function is that it"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-06-26T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2019-09-25T16:51:24&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/measurement-reliability-and-validity/"
+  },
+  "headline": "Measurement, reliability, and validity",
+  
+  "datePublished": "2019-06-26T00:00:00Z",
+  "dateModified": "2019-09-25T16:51:24+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Yihong WANG"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Little World",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 \u0026quot;Does not describe very well\u0026quot;) /// (2=4) (3=3) (4=2) (5=1 \u0026quot;Describes very well\u0026quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss \u0026lt; 3 One drawback to using the rowmean() function is that it"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Measurement, reliability, and validity | Little World</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Little World</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Measurement, reliability, and validity</h1>
+
+  
+
+  
+    
+
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Sep 25, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/stata/">Stata</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/measurement-reliability-and-validity/&amp;text=Measurement,%20reliability,%20and%20validity" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/measurement-reliability-and-validity/&amp;t=Measurement,%20reliability,%20and%20validity" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Measurement,%20reliability,%20and%20validity&amp;body=/post/measurement-reliability-and-validity/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/measurement-reliability-and-validity/&amp;title=Measurement,%20reliability,%20and%20validity" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Measurement,%20reliability,%20and%20validity%20/post/measurement-reliability-and-validity/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/measurement-reliability-and-validity/&amp;title=Measurement,%20reliability,%20and%20validity" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="constructing-a-scale">Constructing a Scale</h2>
+
+<pre><code>recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) ///
+  (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy)
+egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
+  revempathy5 empathy6 empathy7)
+egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 ///
+   revempathy5 empathy6 empathy7) 
+egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
+   revempathy5 empathy6 empathy7) if miss &lt; 3
+</code></pre>
+
+<p>One drawback to using the rowmean() function is that it simply adds the score on the items a person answers and divides by the number of items answered.</p>
+
+<h2 id="reliability">Reliability</h2>
+
+<ul>
+<li><strong>Stability</strong> means that if you measure a variable today using a particular scale and then measure it again tomorrow using the same scale, your results will be consistent.(correlation r,<code>pwcorr</code>, intraclass correlation $\rho_I$)</li>
+<li><strong>Equivalence</strong> means that you have two measures of the same variable and they produce consistent results. (correlation $r_{xx}$)* (A low correlation means either that the measure is not reliable or that the measures are not truly equivalent.)</li>
+<li>A reliable test would be <strong>internally consistent</strong> if the score for the first half of the items was highly correlated with the score for the second half of the items.(correlation <span  class="math">\(r_{x_Ax_B}\)</span>), alpha,<span  class="math">\(\alpha\)</span>) In general, an $\alpha&gt;0.8$ is considered good reliability, and many researchers feel an $\alpha&gt;0.7$ is adequate reliability. (<span  class="math">\(\alpha=\sigma^2_{True}/(\sigma^2_{True}+\sigma^2_{error})\)</span>)However, for this interpretation to be used, we need to assume that the scale is valid.</li>
+<li>
+<code>alpha empathy1 revempathy2 empathy3 revempathy4 revempathy5 /// 
+empathy6 empathy7, asis item min(5)</code>
+The asis (as is) option means that we do not want Stata to change the signs of any of our variables.
+The bottom row of the output table, <em>Test scale</em>, reports the $\alpha$ for the scale (0.7462). Above this value is the $\alpha$ we would obtain if we dropped each item, one at a time. The <em>item-test correlation</em> column reports the correlation of each item with the total score of the seven items. <em>item-rest correlation</em>. This is the correlation of each item with the total of the other items.
+The equivalent of alpha for items that are dichotomous is the Kuder–Richardson measure of reliability.<code>alpha</code></li>
+
+<li><p><strong>Rater consistency</strong> is important when you have observers rating a video, observed behavior, essay, or something else where two or more people are rating the same information. Here reliability means that a pair of raters gives consistent results.(kappa,$\kappa$ <code>kap coder1 coder2</code>)$\kappa$ only gives us credit for the extent the agreement exceeds what we would have expected to get by chance alone. kappa tends to be lower than alpha.</p>
+
+<h2 id="validity">Validity</h2>
+
+<p>A valid measure is one that measures what it is supposed to be measuring.</p></li>
+
+<li><p><strong>表面效度(face validity)</strong>：把設計的問卷，拿給親朋好友填，並問他們問卷好不好。指測量工具在外顯形式上的有效程度</p></li>
+
+<li><p><strong>內容效度(content validity)</strong>：找一群有相關經驗的人來看題目，問他們設計的好不好，有沒有哪裡要修改。Content validity ratio (CVR): Judges rate each item as <em>essential, useful, or not necessary.</em>  $CVR=(Ne - N/2)/(N/2)$ , in which the $Ne$ is the number of panelists indicating &quot;essential&quot; and $N$ is the total number of panelists. You can keep the items that have a relatively high CVR and drop those that do not.</p></li>
+
+<li><p><strong>效標效度(criterion validity)</strong>：把測量工具和其他可測量的工具，算他們之間的相關n以測驗分數和特定效標（criterion）之間的相關係數，表示測量工具有效性之高低。</p>
+
+<ul>
+<li>（1）同時效度(current validity)：把設計好的題目，和標準工具（同樣的觀念，相同的變項），去算之間的相關。如：測疼痛忍受度，有四題一分鐘可測完的題目，和另一份標準工具的題目，45題1小時可做完的題目去測，如果R＝0.92（高相關），表示原題目有同時效度。</li>
+<li>（2）預測效度(predictive validity)：一個調查，可以預測未來的事件、行為、態度、結果。如：手術後，病人對止痛藥的需求，看24個病人的分數，分數越高，手術忍受度越高。把24的分數算出，和拿止痛藥量求相關，R＝－0.82，表示高忍痛程度，低止痛藥量。SAT（可以預測大學第一學期的平均成績）成績，和大學第一學期的平均成績求相關，R＝0.42，表示沒有預測效度。但是R如果逐年增加，則表示有預測效度。</li>
+</ul></li>
+
+<li><p>構念（建構）效度(construct validity)：</p>
+
+<ul>
+<li><p>We can assess the <strong>convergent</strong> and <strong>divergent</strong> validity of our measure, hope, by seeing whether it is positively correlated with variables with which we believe it converges and negatively correlated with variables with which we believe it diverges.<code>ttest, esize, pwcorr</code></p>
+
+<h2 id="factor-analysis">Factor analysis</h2></li>
+</ul></li>
+
+<li><p>exploratory factor analysis, which Stata calls <strong>principal factor analysis</strong>: the variance is partitioned into the shared variance and unique or error variance. The shared variance is how much of the variance in any one item can be explained by the rest of the items. PF</p></li>
+
+<li><p><strong>principal-component factor analysis</strong> PCF</p></li>
+</ul>
+
+<p><code>putdocx</code> stata 15可以create word documents!</p>
+
+<h3 id="terminology">Terminology</h3>
+
+<ul>
+<li>Extraction(萃取)</li>
+<li>Eigenvalues: In the case of PCF analysis, If there are 10 items, the sum of the eigenvalues will be 10.The factors will be ordered from the most important, which has the largest eigenvalue, to the least important, which has the smallest eigenvalue.In PF analysis, the sum of the eigenvalues will be less than the number of items, and the eigenvalues’ interpretation is complex.</li>
+<li>Communality and uniqueness: PF analysis tries to explain the shared variance. PCF analysis tries to explain all the variance, which is why it is ideal for the uniqueness to approach zero.</li>
+<li>Loadings: how clusters of items are most related to one or another of the factors. If an item has a loading over 0.4 on a factor, it is considered a good indicator of that factor.</li>
+<li>Simple structure: This is a pattern of loadings where each item loads strongly on just one factor and a subset of items load strongly on each factor. When an item loads strongly on more than one factor, it is factorially confounded.</li>
+<li>Scree plot: This is a graph showing the eigenvalue for each factor. When doing a PCF analysis, we usually drop factors that have eigenvalues in the neighborhood of 1.0 or smaller.</li>
+<li>Rotation: 轉軸的方式有很多種，但基本就是兩大類：正交 (orthogonal) 與斜交 (oblique rotation)。轉軸的目的是讓因素更有意義，並同時看看因素之間的關係。更詳細一點來說，如果是正交轉軸的話，那就是假設因素之間沒有關連；相對地，斜交假設因素之間有一定的關連。</li>
+<li>Factor score: weights each item based on how related it is to the factor. Also the factor score is scaled to have a mean of 0.0 and a variance of 1.0.</li>
+</ul>
+
+<p>Use PCF when you have a set of items that you believe all measure one concept. In this situation, you would be interested in the first principal factor. You would want to see if it explained a substantial part of the total variance for the entire set of items, and you would want most of the items to have a <strong>loading of 0.4 or above</strong> on this factor. Because PCF analysis is trying to explain all the variance in the items, the <strong>uniqueness</strong> for each item should approach zero. Generally, we should consider any factor that has an eigenvalue of more than 1.A visual way to examine the eigenvalues is with a scree plot.</p>
+
+<pre><code>factor rnatspac rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
+    rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
+screeplot
+</code></pre>
+
+<p>If, on the other hand, you want to identify two or more latent variables that represent interpretable dimensions of some concept, then PF analysis is probably best.</p>
+
+<h3 id="rotation">Rotation</h3>
+
+<ul>
+<li>Orthogonal:<code>rotate</code>With a varimax rotation, we can think of the loadings as being the estimated correlation between each item and each factor.</li>
+<li>oblique:<code>rotate, promax</code></li>
+</ul>
+
+<p><code>estat common</code> to get correlation matrix of promax rotated common factors</p>
+
+<h2 id="get-one-factor-score">Get one factor score</h2>
+
+<p>However, this distinction rarely makes a lot of practical difference. The factor score may make a difference if there are some items with very large loadings, say, 0.9, and others with very small loadings, say, 0.2. But we would probably drop the weakest items. When the loadings do not vary a great deal, computing a factor score or a mean/total score will produce comparable results.</p>
+
+<pre><code>factor rnatenvir rnatheal rnatcity rnatcrime rnatdrug rnateduc rnatrace ///
+    rnatfare rnatsoc rnatchld, pcf
+predict libfscore, norotate
+egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
+    rnateduc rnatrace rnatfare rnatsoc rnatchld)
+</code></pre>
+
+<p>correlation higher than 0.9...</p>
+
+    </div>
+
+    
+
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/stata/">Stata</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Yihong WANG</a></h5>
+      
+      <p class="card-text">Nothing</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/wyih" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Related</h3>
+        <ul>
+          
+          <li><a href="/post/logistic-regression/">Logistic Regression</a></li>
+          
+          <li><a href="/post/missing-values/">Missing values</a></li>
+          
+          <li><a href="/post/multilevel-analysis/">Multilevel analysis</a></li>
+          
+          <li><a href="/post/multiple-regressions/">Multiple Regressions</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js" integrity="sha256-0w92bcB21IY5+rGI84MGj52jNfHNbXVeQLrZ0CGdjNY=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+   
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -64,6 +64,748 @@ stargazer(fpm_r,robusts_growth_layer,type = &amp;quot;text&amp;quot;, column.lab
     </item>
     
     <item>
+      <title>Difference in Difference</title>
+      <link>/post/difference-in-difference/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/difference-in-difference/</guid>
+      <description>&lt;h2 id=&#34;效應評估模型&#34;&gt;效應評估模型&lt;/h2&gt;
+
+&lt;p&gt;“提高最低工資是否會減少就業？”&lt;/p&gt;
+
+&lt;p&gt;“最低工資提高是否餐廳的全職員工數會減少？”&lt;/p&gt;
+
+&lt;p&gt;假設 $MinWage$為「最低工資有提高」的虛擬變數， $FEmp$為餐廳全職員工數。&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_i=FEmp_{0,i}+\beta^*MinWage_i
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_i=\beta_0+\beta_1 MinWage_i+\epsilon_i
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;「沒有受到最低工資提高影響下的員工數」$FEmp_{0,i}$與「有無受到最低工資提高影響」无關时OLS是一致估计。&lt;/p&gt;
+
+&lt;p&gt;令 $s$表示餐廳所屬的州，則原本的效應模型可以寫成：
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{eqnarray}
+FEmp_{is}=FEmp_{0,is}+\beta^*MinWage_{s}
+\tag{7.1}
+\end{eqnarray}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Pre&lt;/th&gt;
+&lt;th&gt;Post&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Control&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$MinWage=1$:PA&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Treatment&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$MinWage=1$:NJ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;複迴歸模型&#34;&gt;複迴歸模型&lt;/h2&gt;
+
+&lt;p&gt;餐廳的型態（大型連鎖、咖啡店、小吃店等等）會影響員工僱用量。
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{eqnarray}
+FEmp_{is} =FEmp_{0,-type,is}+\beta^*MinWage_s+\gamma&#39;type_{is}
+\tag{7.2}
+\end{eqnarray}
+\)&lt;/span&gt;
+其中
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{0,-type,is}=FEmp_{0,is}-\mathbb{E}(FEmp_{0,is}|type_{is})
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;在思考怱略變數偏誤(omitted variable bias)時，可能的confounder都必需放在（依實驗組/控制組分的）加總層級來思考。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;固定效果&#34;&gt;固定效果&lt;/h2&gt;
+
+&lt;h3 id=&#34;組固定效果&#34;&gt;組固定效果&lt;/h3&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_{is}=FEmp_{0,is}+\beta^*MinWage_{s}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;多數時候實驗組/控制組在政策還沒施行前，他們就存在組間的特質差異，也就是
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{0,is}=FEmp_{0,-\alpha_s,is}+\alpha_s
+\)&lt;/span&gt;
+其中$\alpha_s$ 代表因組而異的confounder效果。&lt;/p&gt;
+
+&lt;p&gt;若沒有其他confounder，我們可以估計以下迴歸模型：
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{ist}=\alpha_s+\beta^* MinWage_{st}+\epsilon_{ist}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;時間固定效果&#34;&gt;時間固定效果&lt;/h3&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_{ist}=FEmp_{0,-(\alpha_s,\delta_t),ist}+\alpha_s+\delta_t+\beta^*MinWage_{st}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;所對應的迴歸模型為：
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{ist}=\alpha_s+\delta_t+\beta^* MinWage_{st}+\epsilon_{ist}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;資料追踪不追踪&#34;&gt;資料追踪/不追踪&lt;/h3&gt;
+
+&lt;p&gt;雖然$FEmp_{ist}$ 有到個別餐廳（即有下標 $i$），然而固定效果只到組層級（即下標 $s$)，因此在估計上我們並不需要追踪同一家餐廳——各期抽樣的餐廳可以不同。&lt;/p&gt;
+
+&lt;h2 id=&#34;did-估计法&#34;&gt;DiD 估计法&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{eqnarray}
+FEmp_{ist}=\alpha_s+\delta_t+\beta^*MinWage_{st}+\epsilon_{ist}
+\tag{7.3}
+\end{eqnarray}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_{ist}=\beta_0+\alpha_1D1_s+\delta_1B1_t+\beta_1MinWage_{st}+\epsilon_{ist}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;令$D1=1$代表來自第1個州（NJ）的虛擬變數。&lt;/li&gt;
+&lt;li&gt;令$B1 = 1$代表政策施行「後」的虛擬變數。&lt;/li&gt;
+&lt;li&gt;$MinWage_{st}=D1_s\times B1_t$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;State&lt;/th&gt;
+&lt;th&gt;t=0&lt;/th&gt;
+&lt;th&gt;T=1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NJ&lt;/td&gt;
+&lt;td&gt;D1=1,B1=0&lt;/td&gt;
+&lt;td&gt;D1=1,B1=1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PA&lt;/td&gt;
+&lt;td&gt;D1=0,B1=0&lt;/td&gt;
+&lt;td&gt;D1=0,B1=1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;cluster-standard-error&#34;&gt;cluster standard error&lt;/h2&gt;
+
+&lt;p&gt;我們有G1-G4共四群誤差項的變異數及跨群間的共變異數需要去留意，當誤差項有聚類（clustering）可能時，必需要適當的調整估計式標準誤。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Panel Data</title>
+      <link>/post/panel-data/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/panel-data/</guid>
+      <description>&lt;h2 id=&#34;效應評估模型&#34;&gt;效應評估模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=mrall_{-BeerTax}+\beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;提高啤酒稅（BeerTax）是否有助減低車禍死亡率（mrall）？&lt;/p&gt;
+
+&lt;h2 id=&#34;固定效應模型&#34;&gt;固定效應模型&lt;/h2&gt;
+
+&lt;p&gt;令 $W$代表「州愛喝酒程度」。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$W$與 $mrall_{-BeerTax}+$有關&lt;/li&gt;
+&lt;li&gt;$W$與 $BeerTax$有關&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=(mrall_{-BT}-\mathbb{E}(mrall_{-BT}|W))+\mathbb{E}(mrall_{-BT}|W) + \beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{-BT,-W}\equiv mrall_{-BT}-\mathbb{E}(mrall_{-BT}|W)
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=mrall_{-BT,-W}+\mathbb{E}(mrall_{-BT}|W)+\beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;$mrall_{-BT,-W}$為「去除」 $W$影響的「非啤酒稅造成的車禍死亡因素」：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;它與 $W$無關。&lt;/li&gt;
+&lt;li&gt;若兩筆obs有相同飲酒文化，即$W$相同，他們的 $\mathbb{E}(mrall_{-BT}|W)$
+會相同。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;「假設」一個地方的飲酒文化「不隨時間改變」，即同一州在不同時點的$W$相同。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;令&lt;span  class=&#34;math&#34;&gt;\(\mathbb{E}(mrall_{-BT,it}|W_i)=\alpha_i\)&lt;/span&gt;， 故我們的效應模型可以寫成：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=mrall_{-BT,-W,it}+\alpha_i+\beta^*BeerTax_{it}
+\)&lt;/span&gt;
+其中$\alpha_i$為第 $i$ 個州的固定效果：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$BearTax$與$mrall_{-BT,-W}$無關&lt;/li&gt;
+&lt;li&gt;$BearTax$與$\alpha$有關&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;組內差異最小平方法&#34;&gt;組內差異最小平方法&lt;/h2&gt;
+
+&lt;p&gt;差分OLS解决$\alpha_i$不可得的阻碍&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{i1}-mrall_{i0}=\beta^* (BeerTax_{i1}-BearTax_{i0})+(mrall_{-BT,-W,i1}-mrall_{-BT,-W,i0})
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;如果$t$超過兩期，考慮用組內平均為差分比較的點。&lt;/p&gt;
+
+&lt;p&gt;即&lt;span  class=&#34;math&#34;&gt;\(x_1-\bar{x},x_2-\bar{x},...,x_n-\bar{x}, \bar{x}=\sum_{i=1}^n x_i/n\)&lt;/span&gt;
+&lt;span  class=&#34;math&#34;&gt;\(
+\bar{mrall}_i=\sum_{t=1}^T mrall_{it}/T \\
+\bar{BeerTax}_i=\sum_{t=1}^T BeerTax_{it}/T\\
+\bar{mrall}_{-BT,-W,i}=\sum_{t=1}^T mrall_{-BT,-W,it}/T
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{it}-\bar{mrall}_i=\beta^*\left( BeerTax_{it}-\bar{BeerTax}_i\right)+(mrall_{-BT,-W,it}-\bar{mrall}_{-BT,-W,i})
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;固定效果模型下，我們可以以最小平方法估計下面的迴歸式：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}-\bar{mrall}_i=\beta_0+\beta_1\left( BeerTax_{it}-\bar{BeerTax}_i\right)+\epsilon_{it}
+\)&lt;/span&gt;
+其中$\hat{\beta}_1$即為$\beta^*$的一致性估計&lt;/p&gt;
+
+&lt;h2 id=&#34;常見的固定效果模型&#34;&gt;常見的固定效果模型&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Identity fixed effect:$\alpha_i$&lt;/li&gt;
+&lt;li&gt;Time fixed effect:  $\delta_i$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{-BT,it}=mrall_{-BT,-W_i,-Z_t}+\alpha_i+\delta_t
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$W_i$為造成效應係數估計偏誤的變數，它在$i$面向固定不變。&lt;/li&gt;
+&lt;li&gt;$Z_t$為造成效應係數估計偏誤的變數，它在$t$面向固定不變。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;如$Z_t$為全美國的景氣狀況。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;對應的迴歸模型：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=\alpha_i+\delta_t+\beta_1 BeerTax_{it}+\epsilon_{it}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;廣義的固定效果模型&#34;&gt;廣義的固定效果模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=mrall_{-BeerTax}+\beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;但
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+  mrall_{-BT,it}\not\perp BeerTax_{it}
+  \tag{5.1}
+\end{equation}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;複迴歸控制&#34;&gt;複迴歸控制&lt;/h3&gt;
+
+&lt;p&gt;先思考造成(5.1)的變數有哪些——統計上稱這些變數為混淆變數(confounder)。Confounder中有資料的（令為$Z$）可進一步用來擴充模型成為：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=mrall_{-BT,-Z,it}+\beta^*BeerTax_{it}+\gamma&#39;Z_{it}
+\)&lt;/span&gt;
+其中：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{-BT,-Z}=mrall_{-BT}-\mathbb{E}(mrall_{-BT}|Z)
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;固定效果模型&#34;&gt;固定效果模型&lt;/h3&gt;
+
+&lt;p&gt;Confounder中沒有資料但在某些面向固定的，假設分成以下兩類：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$W_i$：在同個identity下固定。&lt;/li&gt;
+&lt;li&gt;$V_t$：在同個time下固定。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{eqnarray}
+mrall_{it}=mrall_{-BT,-(Z,W,V),it}+\beta^*BeerTax_{it}+\\
+\alpha_i+\delta_t+\gamma&#39;Z_{it}
+\tag{5.2}
+\end{eqnarray}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;(5.2)是相當廣義的固定效果效應模型——有兩個面向的固定效果及控制變數。&lt;/p&gt;
+
+&lt;h2 id=&#34;隨機效果模型&#34;&gt;隨機效果模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{it}=mrall_{-BT,-Z,it}+\beta^*BeerTax_{it}+\gamma&#39;Z_{it}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;隨機效果模型(Random Effect model)的設定：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用迴歸模型：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{eqnarray}
+  mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma&#39;Z_{it}+\nu_{it}
+  \tag{5.3}
+\end{eqnarray}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;假設$\nu_{it}$ 具有某種結構。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其中假设：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$\nu_{it}\perp BeerTax_{it}$&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(var(\alpha_i|X)=\sigma_{\alpha}^2\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;$var(\epsilon_{it}|X)=\sigma^2$&lt;/li&gt;
+&lt;li&gt;$cov(\epsilon_{it},\epsilon_{is}|X)=0$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;隨機效果模型帶有高度誤差項假設，故不建議使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;hausman檢定&#34;&gt;Hausman檢定&lt;/h2&gt;
+
+&lt;h3 id=&#34;固定效果模型fe&#34;&gt;固定效果模型(FE)&lt;/h3&gt;
+
+&lt;p&gt;表示使用組內差異最小平法方去估算以下迴歸模型中的&lt;span  class=&#34;math&#34;&gt;\(\beta_1\)&lt;/span&gt;:
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma&#39;Z_{it}+\alpha_i+\epsilon_{it}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;隨機效果模型re&#34;&gt;隨機效果模型(RE)&lt;/h3&gt;
+
+&lt;p&gt;表示使用GLS去估算以下迴歸模型中的&lt;span  class=&#34;math&#34;&gt;\(\beta_1\)&lt;/span&gt;:
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma&#39;Z_{it}+\nu_{it}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(\nu_{it}=\alpha_i+\epsilon_{it}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;假設&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RE下「關於variance、covariance的假設」都成立。&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(\epsilon_{it} \perp BeerTax_{it} | \alpha_i,Z_{it}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;H0:&lt;/strong&gt; &lt;span  class=&#34;math&#34;&gt;\(\alpha_i \perp BeerTax_{it} |Z_{it}\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;H0为RE，拒绝则为FE&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>/post/linear-regression/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/linear-regression/</guid>
+      <description>&lt;h2 id=&#34;ols-estimator&#34;&gt;OLS estimator&lt;/h2&gt;
+
+&lt;p&gt;The method to compute (or &lt;em&gt;estimate&lt;/em&gt;) $b_0$ and $b_1$ we illustrated above is called &lt;em&gt;Ordinary Least Squares&lt;/em&gt;, or OLS. $b_0$ and $b_1$ are therefore also often called the &lt;em&gt;OLS coefficients&lt;/em&gt;. By solving problem&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+e_i &amp; = y_i - \hat{y}_i = y_i - \underbrace{\left(b_0 + b_1 x_i\right)}_\text{prediction}\\
+e_1^2 + \dots + e_N^2 &amp;= \sum_{i=1}^N e_i^2 \equiv \text{SSR}(b_0,b_1) \\
+(b_0,b_1) &amp;= \arg \min_{\text{int},\text{slope}} \sum_{i=1}^N \left[y_i - \left(\text{int} + \text{slope } x_i\right)\right]^2 
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;one can derive an explicit formula for them:&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+b_1 = \frac{cov(x,y)}{var(x)}
+\end{equation}
+\)&lt;/span&gt;
+i.e. the estimate of the slope coefficient is the covariance between $x$ and $y$ divided by the variance of $x$, both computed from our sample of data. With $b_1$ in hand, we can get the estimate for the intercept as&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[\begin{equation}
+b_0 = \bar{y} - b_1 \bar{x}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;where $\bar{z}$ denotes the sample mean of variable $z$. The interpretation of the OLS slope coefficient $b_1$ is as follows. Given a line as in $y = b_0 + b_1 x$,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$b_1 = \frac{d y}{d x}$ measures the change in $y$ resulting from a one unit change in $x$&lt;/li&gt;
+&lt;li&gt;For example, if $y$ is wage and $x$ is years of education, $b_1$ would measure the effect of an additional year of education on wages.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is an alternative representation for the OLS slope coefficient which relates to the &lt;em&gt;correlation coefficient&lt;/em&gt; $r$. Remember that $r = \frac{cov(x,y)}{s_x s_y}$, where $s_z$ is the standard deviation of variable $z$. With this in hand, we can derive the OLS slope coefficient as&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+b_1 &amp;amp;= \frac{cov(x,y)}{var(x)}\&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{cov(x,y)}{s_x s_x} \\
+&amp;amp;= r\frac{s_y}{s_x} \end{align}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$&lt;/p&gt;
+
+&lt;p&gt;In other words, the slope coefficient is equal to the correlation coefficient $r$ times the ratio of standard deviations of $y$ and $x$.&lt;/p&gt;
+
+&lt;h3 id=&#34;linear-regression-without-regressor&#34;&gt;Linear Regression without Regressor&lt;/h3&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+y = b_0
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;This means that our minimization problem becomes very simple: We only have to choose $b_0$! We have&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(
+b_0 = \arg\min_{\text{int}} \sum_{i=1}^N \left[y_i - \text{int}\right]^2,
+\)&lt;/span&gt;
+which is a quadratic equation with a unique optimum such that
+&lt;span  class=&#34;math&#34;&gt;\(
+b_0 = \frac{1}{N} \sum_{i=1}^N y_i = \overline{y}.
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Least Squares &lt;strong&gt;without regressor&lt;/strong&gt; $x$ estimates the sample mean of the outcome variable $y$, i.e. it produces $\overline{y}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;regression-without-an-intercept&#34;&gt;Regression without an Intercept&lt;/h3&gt;
+
+&lt;p&gt;We follow the same logic here, just that we miss another bit from our initial equation and the minimisation problem now becomes:
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{align}
+b_1 &amp;= \arg\min_{\text{slope}} \sum_{i=1}^N \left[y_i - \text{slope } x_i \right]^2\\
+\mapsto b_1 &amp;= \frac{\frac{1}{N}\sum_{i=1}^N x_i y_i}{\frac{1}{N}\sum_{i=1}^N x_i^2} = \frac{\bar{x} \bar{y}}{\overline{x^2}} 
+\end{align}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Least Squares &lt;strong&gt;without intercept&lt;/strong&gt; (i.e. with $b_0=0$) is a line that passes through the origin.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In this case we only get to choose the slope $b_1$ of this anchored line.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn1&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:fn1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;centering-a-regression&#34;&gt;Centering A Regression&lt;/h3&gt;
+
+&lt;p&gt;By &lt;em&gt;centering&lt;/em&gt; or &lt;em&gt;demeaning&lt;/em&gt; a regression, we mean to substract from both $y$ and $x$ their respective averages to obtain $\tilde{y}_i = y_i - \bar{y}$ and $\tilde{x}_i = x_i - \bar{x}$. We then run a regression &lt;em&gt;without intercept&lt;/em&gt; as above. That is, we use $\tilde{x}_i,\tilde{y}_i$ instead of $x_i,y_i$ in&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+b_1 &amp;= \arg\min_{\text{slope}} \sum_{i=1}^N \left[y_i - \text{slope } x_i \right]^2\\
+\mapsto b_1 &amp;= \frac{\frac{1}{N}\sum_{i=1}^N x_i y_i}{\frac{1}{N}\sum_{i=1}^N x_i^2} = \frac{\bar{x} \bar{y}}{\overline{x^2}} 
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;to obtain our slope estimate &lt;span  class=&#34;math&#34;&gt;\(b_1\)&lt;/span&gt;:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i \tilde{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i^2}\&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
+&amp;amp;= \frac{cov(x,y)}{var(x)}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;This last expression is &lt;em&gt;identical&lt;/em&gt; to the one in OLS estimate! It&#39;s the standard OLS estimate for the slope coefficient. We note the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Adding a constant to a regression produces the same result as centering all variables and estimating without intercept. So, unless all variables are centered, &lt;strong&gt;always&lt;/strong&gt; include an intercept in the regression.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;reg-standard&#34;&gt;Standardizing A Regression&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Standardizing&lt;/em&gt; a variable $z$ means to demean as above, but in addition to divide the demeaned value by its own standard deviation. Similarly to what we did above for &lt;em&gt;centering&lt;/em&gt;, we define transformed variables $\breve{y}_i = \frac{y_i-\bar{y}}{\sigma_y}$ and $\breve{x}_i = \frac{x_i-\bar{x}}{\sigma_x}$ where $\sigma_z$ is the standard deviation of variable $z$. From here on, you should by now be used to what comes next! As above, we use $\breve{x}_i,\breve{y}_i$ instead of $x_i,y_i$:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i \breve{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i^2}\&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
+&amp;amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
+&amp;amp;= Corr(x,y)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;\end{align}
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;After we standardize both $y$ and $x$, the slope coefficient $b_1$ in the regression without intercept is equal to the &lt;strong&gt;correlation coefficient&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;pred-resids&#34;&gt;Predictions and Residuals&lt;/h2&gt;
+
+&lt;p&gt;Now we want to ask how our residuals $e_i$ relate to the prediction $\hat{y_i}$. Let us first think about the average of all predictions &lt;span  class=&#34;math&#34;&gt;\(\hat{y_i}\)&lt;/span&gt;, i.e. the number &lt;span  class=&#34;math&#34;&gt;\(\frac{1}{N} \sum_{i=1}^N \hat{y_i}\)&lt;/span&gt;. Let&#39;s just take&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+\hat{y}_i = b_0 + b_1 x_i 
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;and plug this into this average, so that we get&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+\frac{1}{N} \sum_{i=1}^N \hat{y_i} &amp;= \frac{1}{N} \sum_{i=1}^N b_0 + b_1 x_i \\
+&amp;= b_0 + b_1  \frac{1}{N} \sum_{i=1}^N x_i \\
+&amp;= b_0 + b_1  \bar{x} \\
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;But that last line is just equal to the formula for the OLS intercept  $b_0 = \bar{y} - b_1 \bar{x}$! That means of course that&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(
+\frac{1}{N} \sum_{i=1}^N \hat{y_i}  = b_0 + b_1  \bar{x} = \bar{y}
+\)&lt;/span&gt;
+in other words:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The average of our predictions $\hat{y_i}$ is identically equal to the mean of the outcome $y$. This implies that the average of the residuals is equal to zero.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Related to this result, we can show that the prediction $\hat{y}$ and the residuals are &lt;em&gt;uncorrelated&lt;/em&gt;, something that is often called &lt;strong&gt;orthogonality&lt;/strong&gt; between $\hat{y}_i$ and $e_i$. We would write this as&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+Cov(\hat{y},e) &amp;=\frac{1}{N} \sum_{i=1}^N (\hat{y}_i-\bar{y})(e_i-\bar{e}) =   \frac{1}{N} \sum_{i=1}^N (\hat{y}_i-\bar{y})e_i \\
+&amp;=  \frac{1}{N} \sum_{i=1}^N \hat{y}_i e_i-\bar{y} \frac{1}{N} \sum_{i=1}^N e_i = 0
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;correlation-covariance-and-linearity&#34;&gt;Correlation, Covariance and Linearity&lt;/h2&gt;
+
+&lt;p&gt;It is important to keep in mind that Correlation and Covariance relate to a &lt;em&gt;linear&lt;/em&gt; relationship between &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;. Given how the regression line is estimated by OLS (see just above), you can see that the regression line inherits this property from the Covariance.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Always &lt;strong&gt;visually inspect&lt;/strong&gt; your data, and don&#39;t rely exclusively on summary statistics like &lt;em&gt;mean, variance, correlation and regression line&lt;/em&gt;. All of those assume a &lt;strong&gt;linear&lt;/strong&gt; relationship between the variables in your data.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;analysing-vary&#34;&gt;Analysing $Var(y)$&lt;/h2&gt;
+
+&lt;p&gt;Analysis of Variance (ANOVA) refers to a method to decompose variation in one variable as a function of several others. We can use this idea on our outcome $y$. Suppose we wanted to know the variance of $y$, keeping in mind that, by definition, $y_i = \hat{y}_i + e_i$. We would write&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}Var(y) &amp;= Var(\hat{y} + e)\\ &amp;= Var(\hat{y}) + Var(e) + 2 Cov(\hat{y},e)\\ &amp;= Var(\hat{y}) + Var(e) \end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;We have seen that the covariance between prediction $\hat{y}$ and error $e$ is zero, that&#39;s why we have $Cov(\hat{y},e)=0$. What this tells us in words is that we can decompose the variance in the observed outcome $y$ into a part that relates to variance as &lt;em&gt;explained by the model&lt;/em&gt; and a part that comes from unexplained variation. Finally, we know the definition of &lt;em&gt;variance&lt;/em&gt;, and can thus write down the respective formulae for each part:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[Var(y) = \frac{1}{N}\sum_{i=1}^N (y_i - \bar{y})^2\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(Var(\hat{y}) = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - \bar{y})^2\)&lt;/span&gt;, because the mean of $\hat{y}$ is $\bar{y}$ as we know.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finally, &lt;span  class=&#34;math&#34;&gt;\(Var(e) = \frac{1}{N}\sum_{i=1}^N e_i^2\)&lt;/span&gt;, because the mean of $e$ is zero.
+We can thus formulate how the total variation in outcome $y$ is apportioned between model and unexplained variation:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The total variation in outcome $y$ (often called SST, or &lt;em&gt;total sum of squares&lt;/em&gt;) is equal to the sum of explained squares (SSE) plus the sum of residuals (SSR). We have thus &lt;strong&gt;SST = SSE + SSR&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;assessing-the-goodness-of-fit&#34;&gt;Assessing the &lt;em&gt;Goodness of Fit&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;In our setup, there exists a convenient measure for how good a particular statistical model fits the data. It is called $R^2$ (&lt;em&gt;R squared&lt;/em&gt;), also called the &lt;em&gt;coefficient of determination&lt;/em&gt;. We make use of the just introduced decomposition of variance, and write the formula as&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}R^2 = \frac{\text{variance explained}}{\text{total variance}} = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}\in[0,1]  \end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;It is easy to see that a &lt;em&gt;good fit&lt;/em&gt; is one where the sum of &lt;em&gt;explained&lt;/em&gt; squares (SSE) is large relative to the total variation (SST). In such a case, we observe an $R^2$ close to one. In the opposite case, we will see an $R^2$ close to zero. Notice that a small $R^2$ does not imply that the model is useless, just that it explains a small fraction of the observed variation.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn1&#34;&gt;This slope is related to the angle between vectors $\mathbf{a} =(\overline{x},\overline{y})$, and $\mathbf{b} = (\overline{x},0)$. Hence, it&#39;s related to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Scalar_projection&#34;&gt;scalar projection&lt;/a&gt; of $\mathbf{a}$ on $\mathbf{b}$]
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>工具变量</title>
+      <link>/post/iv/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/iv/</guid>
+      <description>&lt;h2 id=&#34;效應評估模型&#34;&gt;效應評估模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[Y_{i}={Y}_{-p,i}+\beta_i P_{i}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+Y_i=Y_{-P,i}+\beta^* P_i
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+Y_i=\beta_0+\beta_1P_i+w_i&#39;\gamma+\varepsilon
+\tag{3.2}
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;在$w_{i}$條件下，「香煙售價」$P_{i}$必需要與「非價格效應的香煙銷售量」$Y_{-P}$獨立，即：&lt;span  class=&#34;math&#34;&gt;\(P_i\perp Y_{-p,i} | w_i\)&lt;/span&gt; 另一個同義說法是：「香煙售價」$P_{i}$必需要與「控制$w_{i}$條件後的非價格效應香煙銷售量」獨立。&lt;/p&gt;
+
+&lt;p&gt;对$Y_{-P}$进行$rincome$下分解
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+Y_{i}=Y_{-P,i}-\mathbb{E}(Y_{-P,i}|rincome_{i})+\beta^{*}P_{i}+\mathbb{E}(Y_{-P,i}|rincome_{i})
+\tag{3.3}
+\end{equation}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;把資料依$w_{i}$條件變數不同, 分群觀察「香煙售價」$P_{i}$與「香煙銷售量」$Y_{i}$之間的斜率。如果$w_{i}$變數選得好，同一群資料$P_{i}$與$Y_{i}$間的關連會反映應有的效應斜率——雖然有時$Y_{i}$會因為$Y_{-P,i}$的干擾影響我們對斜率高低的觀察，但因為$Y_{-P,i}$不會與$P_{i}$有關了，這些觀察干擾在大樣本下會互相抵消掉而還原應有的效應斜率值。&lt;/p&gt;
+
+&lt;p&gt;如果不管我們怎麼選擇$w_{i}$還是無法控制住$Y_{-P,i}$對與關連$Y_{i}$的干擾，那我們就要進行【資料轉換】直接從原始資料中【去除這些干擾】，其中最常見的兩種去除法為：工具變數法、追蹤資料固定效果模型。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;工具變數法：透過工具變數&lt;strong&gt;留下&lt;/strong&gt;$P_{i}$&lt;strong&gt;不與&lt;/strong&gt;$Y_{-P,i}$相關的部份。&lt;/li&gt;
+&lt;li&gt;追蹤資料：透過變數轉換&lt;strong&gt;去除&lt;/strong&gt;$P_{i}$中&lt;strong&gt;與&lt;/strong&gt;$Y_{-P,i}$相關的部份。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+Y_i=Y_{-p,i}+\beta\mathbb{E}(P_i|z_i)+\beta (P_i-\mathbb{E}(P_i|z_i))
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;relevance-condition&#34;&gt;Relevance condition&lt;/h3&gt;
+
+&lt;p&gt;$\mathbb{E}(P|z)\neq 常数$即$z$对$P$具有解释力&lt;/p&gt;
+
+&lt;h3 id=&#34;exclusion-condition&#34;&gt;Exclusion condition&lt;/h3&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(Y_{-p,i}+\beta(P_i-\mathbb{E}(P_i|z_i))\)&lt;/span&gt;与&lt;span  class=&#34;math&#34;&gt;\(z_{i}\)&lt;/span&gt;无关&lt;/p&gt;
+
+&lt;h2 id=&#34;三个假设&#34;&gt;三个假设&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+Y_i=\beta_0+\beta_1 P_i + \gamma_1 rincome_i + \epsilon_i
+\tag{3.5}
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Q1: 我的工具變數有滿足排除條件（或外生條件）嗎?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;香煙稅是否與控制條件下的「非售價因素銷售」無關？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+Y =\underset{(\times k)}{X}\beta+\underset{(\times p)}{W}\gamma +\epsilon
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;其中$X$為要進行效應評估的變數群，$W$為控制變數群，故$ϵ$為「$W$控制條件下排除$X$效果的Y值」。另外，我們額外找了工具變數: $\underset{\times m)}{Z}$, 要驗證：&lt;/p&gt;
+
+&lt;p&gt;$H_{0}$: 工具變數$Z$與迴歸模型誤差項$ϵ$無關&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;進行TSLS，取得 &lt;span  class=&#34;math&#34;&gt;\( \hat{\epsilon}_{_{TSLS}}=Y-\hat{Y}_{TSLS} \)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;將 &lt;span  class=&#34;math&#34;&gt;\( \hat{\epsilon}_{_{TSLS}} \)&lt;/span&gt; 迴歸在總工具變數群（即$Z$與$W$）並進行所有係數為0的聯立檢定，計算檢定量 $J=mF\sim\chi^{2}(m-k)$，其中F係數聯立檢定的F檢定值。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;此檢定的自由度為$m−k$，所以$m$要&lt;strong&gt;大於&lt;/strong&gt;$k$。“等於”時是無法進行檢定的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Q2: 我的工具變數關聯性夠強嗎？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;香煙稅真的與「售價」很有關連嗎？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;工具變數$Z$必需要與效應解釋變數$X$有「足夠強」的關聯，否則&lt;span  class=&#34;math&#34;&gt;\(\hat{\beta}_{_{TSLS}}\)&lt;/span&gt;的大樣本漸近分配不會是常態分配。&lt;/p&gt;
+
+&lt;p&gt;考慮TSLS中的第一階段迴歸模型：$X=Z\alpha_z+W\alpha_w+u$我們希望$\alpha_z$聯立夠顯著。&lt;/p&gt;
+
+&lt;p&gt;檢定原則&lt;/p&gt;
+
+&lt;p&gt;$H_0$:$Z$ 工具變數只有微弱關聯性。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;$X$迴歸在「總」工具變數群($Z$,$W$)，進行$\alpha_z=0$的聯立F檢定。&lt;/li&gt;
+&lt;li&gt;$F&amp;gt;10$拒絕$H_0$。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Q3: 我對遺漏變數偏誤(OVB)的擔心是否多餘？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;或許根本沒有必要用工具變數，在&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-test&#34;&gt;(3.5)&lt;/a&gt;迴歸模型下，PP早已和ϵϵ（即「控制條件下的非售價因素銷售」）無關——直接對&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-test&#34;&gt;(3.5)&lt;/a&gt;進行最小平方法估計即可。
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+Y   =X\beta+W\gamma +\epsilon
+\tag{3.6}
+\end{equation}
+\)&lt;/span&gt;
+$H_0 $: 迴歸模型&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-model71&#34;&gt;(3.6)&lt;/a&gt;中的$\beta$係數估計「沒有」面臨OVB: 用OLS或TSLS都可以: 在大樣本下，&lt;span  class=&#34;math&#34;&gt;\(\\hat{\beta}_{OLS}\approx\hat{\beta}_{TSLS}\)&lt;/span&gt;。&lt;/p&gt;
+
+&lt;p&gt;$H_1 $: 迴歸模型&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-model71&#34;&gt;(3.6)&lt;/a&gt;中的$\beta$係數估計「有」面臨OVB: 只能用TSLS :在大樣本下，&lt;span  class=&#34;math&#34;&gt;\(\\hat{\beta}_{OLS}\neq \hat{\beta}_{TSLS}\)&lt;/span&gt;。&lt;/p&gt;
+
+&lt;p&gt;Hausman檢定統計量:
+&lt;span  class=&#34;math&#34;&gt;\(
+H\equiv\left(\hat{\beta}_{IV}-\hat{\beta}_{OLS}\right)^{&#39;}\left[V(\hat{\beta}_{IV}-\hat{\beta}_{OLS})\right]^{-1}\left(\hat{\beta}_{IV}-\hat{\beta}_{OLS}\right)\sim\chi_{(df)}^{2}.
+\)&lt;/span&gt;
+– df： $\beta$係數個數.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;當$H&amp;gt;\chi_{(df)}^{2}(\alpha)$才拒絕$H_0$。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hello R Markdown</title>
       <link>/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>

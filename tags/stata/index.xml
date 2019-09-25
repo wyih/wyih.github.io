@@ -5,12 +5,71 @@
     <link>/tags/stata/</link>
       <atom:link href="/tags/stata/index.xml" rel="self" type="application/rss+xml" />
     <description>Stata</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 27 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Stata</title>
       <link>/tags/stata/</link>
     </image>
+    
+    <item>
+      <title>SEM and GSEM</title>
+      <link>/post/sem-and-gsem/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/sem-and-gsem/</guid>
+      <description>
+
+&lt;h2 id=&#34;sem&#34;&gt;SEM&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sem bmi &amp;lt;- age children incomeln educ quickfood
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This would give us the unstandardized solution. This command uses &lt;strong&gt;maximum likelihood estimation&lt;/strong&gt; ather than the ordinary least-squares (OLS) estimation used by the &lt;code&gt;regress&lt;/code&gt; command. Add &lt;code&gt;,standardized&lt;/code&gt; just like add &lt;code&gt;,beta&lt;/code&gt; to &lt;code&gt;regress&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;option &lt;code&gt;method(mlmv)&lt;/code&gt; (maximum likelihood with missing values):
+Estimation is less robust to the assumption of multivariate normality when using the method(mlmv) option than when using maximum likelihood estimation with listwise deletion of observations with missing values. Because some of the five variables in our model are not normally distributed, the method(mlmv) option needs to be used with caution. The estimation performed when we use the method(mlmv) option also assumes that the missing values are MAR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:f1&#34;&gt;&lt;a href=&#34;#fn:f1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; . By contrast, when listwise deletion is used we are assuming that missing values are MCAR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:f1&#34;&gt;&lt;a href=&#34;#fn:f1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and this is a much more restrictive assumption.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sem bmi &amp;lt;- age children incomeln educ quickfood, method(mlmv) standardized
+
+estat eqgof
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The OLS regression solution and the SEM solution without MLMV, which uses listwise deletion, are producing the same standardized parameter estimates and $R^2$s. As noted, the z values are slightly larger than the t-values, and the p-values are slightly smaller. The z tests for the SEM solution are directly testing the standardized solution. The regress solution’s  t tests are testing the significance of the unstandardized B coefficients and do not directly test the significance of the Betas. The regress command does not provide such a direct test for the significance of Betas.&lt;/p&gt;
+
+&lt;p&gt;Notice that the $R^2$ using sem with method(mlmv) is actually slightly smaller. Using all the available information in the SEM solution with MLMV is not cheating if the assumptions are met. The &lt;strong&gt;MAR&lt;/strong&gt; assumption for the SEM solution is more realistic than the &lt;strong&gt;MCAR&lt;/strong&gt; assumption required for listwise deletion to be unbiased.&lt;/p&gt;
+
+&lt;p&gt;There are three rules to follow when using the maximum likelihood with missing values estimation.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate an indicator variable for each variable in your model to reflect whether an observation has a missing value.&lt;/li&gt;
+&lt;li&gt;Correlate potential auxiliary variables to see whether they predict missing value indicator variables.&lt;/li&gt;
+&lt;li&gt;Include additional auxiliary variables that are substantially correlated with a person’s score on a variable that has missing values.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Getting auxiliary variables into your SEM command？？？没懂&lt;/p&gt;
+
+&lt;h2 id=&#34;gsem&#34;&gt;GSEM&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;logit obese age children incomeln educ quickfood
+listcoef
+glm obese age children incomeln educ quickfood, family(binomial) link(logit)
+glm, eform
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The logit command is a special application of the generalized linear model. We can obtain the same results by using the glm command. The glm command requires us to specify the family of our model, family(binomial), and the link function, link(logit). To obtain the odds ratio, we can replay these results by using glm, eform.&lt;/p&gt;
+
+&lt;p&gt;后面没看懂，以后再说吧。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:f1&#34;&gt;Missing Completely at Random is pretty straightforward.  What it means is what is says:  the propensity for a data point to be missing is completely random.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:f1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Panel data in R vs in Stata</title>
@@ -60,6 +119,594 @@ stargazer(fpm_r,robusts_growth_layer,type = &amp;quot;text&amp;quot;, column.lab
 
 &lt;p&gt;Panel Data不行！One way, two way fixed effect都不行！
 建议直接加interaction&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Logistic Regression</title>
+      <link>/post/logistic-regression/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/logistic-regression/</guid>
+      <description>&lt;h2 id=&#34;odds-ratios&#34;&gt;Odds ratios&lt;/h2&gt;
+
+&lt;p&gt;An &lt;a href=&#34;https://en.wikipedia.org/wiki/Odds_ratio&#34;&gt;odds ratio&lt;/a&gt; of 1.0 is equivalent to a beta weight of 0.0.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Group&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Diseased&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Healthy&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Exposed&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$D_E$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$H_E$&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Not exposed&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$D_N$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$H_N$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;$OR={\frac {D_{E}/H_{E}}{D_{N}/H_{N}}}$&lt;/p&gt;
+
+&lt;p&gt;The distribution of the odds ratio is far from normal. Take the natural logarithm of the odds ratio to get normal.&lt;/p&gt;
+
+&lt;p&gt;$logit = ln(OR)$&lt;/p&gt;
+
+&lt;p&gt;When the mean is around 0.50, the OLS regression and logistic regression produce consistent results, but when the probability is close to 0 or 1, the logistic regression is especially important.&lt;/p&gt;
+
+&lt;h2 id=&#34;logistic-regression&#34;&gt;Logistic regression&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;logit&lt;/code&gt; command gives the regression coefficients to estimate the logit score. The &lt;code&gt;logistic&lt;/code&gt; command gives us the odds ratios we need to interpret the effect size of the predictors.&lt;/p&gt;
+
+&lt;p&gt;Both commands give the same results, except that &lt;code&gt;logit&lt;/code&gt; gives the coefficients for estimating the &lt;strong&gt;logit score&lt;/strong&gt; and &lt;code&gt;logistic&lt;/code&gt; gives the &lt;strong&gt;odds ratios&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The McFadden pseudo-$R^2$ represents how much larger log likelihood is for the final solution.
+, meaning the log likelihood for the fitted model is 2% larger than for the log likelihood for the intercept-only model.
+This is not explained variance. The pseudo-$R^2$  is often a small value, and many researchers do not report it. The biggest mistake is to report it and interpret it as explained variance.&lt;/p&gt;
+
+&lt;p&gt;If you are interested in specific effects of individual variables, it is better to rely on odds ratios for interpreting results of logistic regression. &lt;del&gt;This shows that mothers who smoke have 2.02 times greater odds of having a low-birthweight child.&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Odds ratios&lt;/strong&gt; tell us what happens to the odds of an outcome, whereas &lt;strong&gt;risk ratios&lt;/strong&gt; tell us what happens to their probability.&lt;/p&gt;
+
+&lt;p&gt;For binary predictor variables, you can interpret the odds ratios and percentages directly. For variables that are not binary, you need to have some other standard. One solution is to compare specific examples, such as having no dinners with the family versus having seven dinners with them each week. Another solution is to evaluate the effect of a 1-standard-deviation change for variables that are not binary.&lt;code&gt;listcoef&lt;/code&gt;,get from package &lt;code&gt;spost13&lt;/code&gt;. After logit/logitstic regression, run &lt;code&gt;listcoef, help&lt;/code&gt;or  &lt;code&gt;listcoef, help percent&lt;/code&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Group&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Experimental (E)&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Control (C)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Events (E)&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;EE&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CE&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Non-events (N)&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;EN&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;$ RR={\frac {EE/(EE+EN)}{CE/(CE+CN)}}={\frac {EE(CE+CN)}{CE(EE+EN)}}. $
+相对风险是指在暴露在某条件下，一个事件的发生风险
+&lt;code&gt;oddsrisk&lt;/code&gt;
+$OR={\frac {EE/CE}{EN/CN}}={\frac {EE\cdot CN}{EN\cdot CE}}$
+一个事件发生比是该事件发生和不发生的比率
+Risk ratio is different from the odds ratio, although it asymptotically approaches it for small probabilities of outcomes. If EE is substantially smaller than EN, then EE/(EE + EN) $ \scriptstyle \approx $ EE/EN. Similarly, if CE is much smaller than CN, then CE/(CN + CE) $ \scriptstyle \approx $ CE/CN.
+$ RR={\frac {EE(CE+CN)}{CE(EE+EN)}}\approx {\frac {EE\cdot CN}{EN\cdot CE}}=OR. $&lt;/p&gt;
+
+&lt;p&gt;The difference is small with a rare outcome.The relative risk is appealing, but it should not be used in a study that controls the number of people in each category.&lt;/p&gt;
+
+&lt;h2 id=&#34;hypothesis-testing&#34;&gt;Hypothesis testing&lt;/h2&gt;
+
+&lt;p&gt;chi-squared test that has  k degrees of freedom, tells us only that the overall model has at least one significant predictor.&lt;/p&gt;
+
+&lt;h3 id=&#34;testing-individual-coefficients&#34;&gt;Testing individual coefficients&lt;/h3&gt;
+
+&lt;p&gt;The z test in the Stata output is actually the square root of the Wald chi-squared test.&lt;/p&gt;
+
+&lt;p&gt;The likelihood-ratio chi-squared test for each parameter estimate is based on comparing two logistic models, one with the individual variable we want to test included and one without it. The likelihood-ratio test is the difference in the likelihood-ratio chi-squared values for these two models (this appears as LR chi2(1) near the upper right corner of the output). The difference between the two likelihood-ratio chi-squared values is 1 degree of freedom.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;use nlsy97_chapter11, clear
+logistic drank30 male dinner97 pdrink97
+estimates store a
+logistic drank30 age97 male dinner97 pdrink97
+#subtracts the chi-squared values and estimates the probability of the chi-squared difference;
+lrtest a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or just use &lt;code&gt;lrdrop1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;testing-sets-of-coefficients&#34;&gt;Testing sets of coefficients&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;test pdrink97 dinner97
+#it is the same as:
+logistic drank30 age97 male if !mi(dinner97) &amp;amp;!mi(pdrink97)
+estimates store a
+logistic drank30 age97 male pdrink97 dinner97 
+lrtest a
+lrdrop1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;this overall test only tells us that at least one of them is significant.&lt;/p&gt;
+
+&lt;h2 id=&#34;margins&#34;&gt;Margins&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;logit drank30 age97 i.black pdrink97 dinner97
+margins, dydx(black) atmeans
+margins black, atmeans
+margins, at(pdrink97=(1 2 3 4 5)) atmeans
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can run the logistic regression using the i. label for this categorical variable, i.black. This produces the same results for the logistic regression as if we had simply used black, but the results will work properly if we follow this command with other postestimation commands.&lt;/p&gt;
+
+&lt;h2 id=&#34;nested-logistic-regressions&#34;&gt;Nested logistic regressions&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;nestreg&lt;/code&gt; command is extremely general, applicable across a variety of regression models, including logistic, negative binomial, Poisson, probit, ordered logistic, tobit, and others. It also works with the complex sample designs for many regression models.&lt;/p&gt;
+
+&lt;h2 id=&#34;power-analysis&#34;&gt;Power analysis&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;powerlog, p1(.70) p2(.75) alpha(.05)
+powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measurement, reliability, and validity</title>
+      <link>/post/measurement-reliability-and-validity/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/measurement-reliability-and-validity/</guid>
+      <description>&lt;h2 id=&#34;constructing-a-scale&#34;&gt;Constructing a Scale&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;recode empathy2 empathy4 empathy5 (1=5 &amp;quot;Does not describe very well&amp;quot;) ///
+  (2=4) (3=3) (4=2) (5=1 &amp;quot;Describes very well&amp;quot;), pre(rev) label(empathy)
+egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
+  revempathy5 empathy6 empathy7)
+egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 ///
+   revempathy5 empathy6 empathy7) 
+egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
+   revempathy5 empathy6 empathy7) if miss &amp;lt; 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One drawback to using the rowmean() function is that it simply adds the score on the items a person answers and divides by the number of items answered.&lt;/p&gt;
+
+&lt;h2 id=&#34;reliability&#34;&gt;Reliability&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stability&lt;/strong&gt; means that if you measure a variable today using a particular scale and then measure it again tomorrow using the same scale, your results will be consistent.(correlation r,&lt;code&gt;pwcorr&lt;/code&gt;, intraclass correlation $\rho_I$)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Equivalence&lt;/strong&gt; means that you have two measures of the same variable and they produce consistent results. (correlation $r_{xx}$)* (A low correlation means either that the measure is not reliable or that the measures are not truly equivalent.)&lt;/li&gt;
+&lt;li&gt;A reliable test would be &lt;strong&gt;internally consistent&lt;/strong&gt; if the score for the first half of the items was highly correlated with the score for the second half of the items.(correlation &lt;span  class=&#34;math&#34;&gt;\(r_{x_Ax_B}\)&lt;/span&gt;), alpha,&lt;span  class=&#34;math&#34;&gt;\(\alpha\)&lt;/span&gt;) In general, an $\alpha&amp;gt;0.8$ is considered good reliability, and many researchers feel an $\alpha&amp;gt;0.7$ is adequate reliability. (&lt;span  class=&#34;math&#34;&gt;\(\alpha=\sigma^2_{True}/(\sigma^2_{True}+\sigma^2_{error})\)&lt;/span&gt;)However, for this interpretation to be used, we need to assume that the scale is valid.&lt;/li&gt;
+&lt;li&gt;
+&lt;code&gt;alpha empathy1 revempathy2 empathy3 revempathy4 revempathy5 /// 
+empathy6 empathy7, asis item min(5)&lt;/code&gt;
+The asis (as is) option means that we do not want Stata to change the signs of any of our variables.
+The bottom row of the output table, &lt;em&gt;Test scale&lt;/em&gt;, reports the $\alpha$ for the scale (0.7462). Above this value is the $\alpha$ we would obtain if we dropped each item, one at a time. The &lt;em&gt;item-test correlation&lt;/em&gt; column reports the correlation of each item with the total score of the seven items. &lt;em&gt;item-rest correlation&lt;/em&gt;. This is the correlation of each item with the total of the other items.
+The equivalent of alpha for items that are dichotomous is the Kuder–Richardson measure of reliability.&lt;code&gt;alpha&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Rater consistency&lt;/strong&gt; is important when you have observers rating a video, observed behavior, essay, or something else where two or more people are rating the same information. Here reliability means that a pair of raters gives consistent results.(kappa,$\kappa$ &lt;code&gt;kap coder1 coder2&lt;/code&gt;)$\kappa$ only gives us credit for the extent the agreement exceeds what we would have expected to get by chance alone. kappa tends to be lower than alpha.&lt;/p&gt;
+
+&lt;h2 id=&#34;validity&#34;&gt;Validity&lt;/h2&gt;
+
+&lt;p&gt;A valid measure is one that measures what it is supposed to be measuring.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;表面效度(face validity)&lt;/strong&gt;：把設計的問卷，拿給親朋好友填，並問他們問卷好不好。指測量工具在外顯形式上的有效程度&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;內容效度(content validity)&lt;/strong&gt;：找一群有相關經驗的人來看題目，問他們設計的好不好，有沒有哪裡要修改。Content validity ratio (CVR): Judges rate each item as &lt;em&gt;essential, useful, or not necessary.&lt;/em&gt;  $CVR=(Ne - N/2)/(N/2)$ , in which the $Ne$ is the number of panelists indicating &amp;quot;essential&amp;quot; and $N$ is the total number of panelists. You can keep the items that have a relatively high CVR and drop those that do not.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;效標效度(criterion validity)&lt;/strong&gt;：把測量工具和其他可測量的工具，算他們之間的相關n以測驗分數和特定效標（criterion）之間的相關係數，表示測量工具有效性之高低。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;（1）同時效度(current validity)：把設計好的題目，和標準工具（同樣的觀念，相同的變項），去算之間的相關。如：測疼痛忍受度，有四題一分鐘可測完的題目，和另一份標準工具的題目，45題1小時可做完的題目去測，如果R＝0.92（高相關），表示原題目有同時效度。&lt;/li&gt;
+&lt;li&gt;（2）預測效度(predictive validity)：一個調查，可以預測未來的事件、行為、態度、結果。如：手術後，病人對止痛藥的需求，看24個病人的分數，分數越高，手術忍受度越高。把24的分數算出，和拿止痛藥量求相關，R＝－0.82，表示高忍痛程度，低止痛藥量。SAT（可以預測大學第一學期的平均成績）成績，和大學第一學期的平均成績求相關，R＝0.42，表示沒有預測效度。但是R如果逐年增加，則表示有預測效度。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;構念（建構）效度(construct validity)：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;We can assess the &lt;strong&gt;convergent&lt;/strong&gt; and &lt;strong&gt;divergent&lt;/strong&gt; validity of our measure, hope, by seeing whether it is positively correlated with variables with which we believe it converges and negatively correlated with variables with which we believe it diverges.&lt;code&gt;ttest, esize, pwcorr&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;factor-analysis&#34;&gt;Factor analysis&lt;/h2&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;exploratory factor analysis, which Stata calls &lt;strong&gt;principal factor analysis&lt;/strong&gt;: the variance is partitioned into the shared variance and unique or error variance. The shared variance is how much of the variance in any one item can be explained by the rest of the items. PF&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;principal-component factor analysis&lt;/strong&gt; PCF&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;putdocx&lt;/code&gt; stata 15可以create word documents!&lt;/p&gt;
+
+&lt;h3 id=&#34;terminology&#34;&gt;Terminology&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Extraction(萃取)&lt;/li&gt;
+&lt;li&gt;Eigenvalues: In the case of PCF analysis, If there are 10 items, the sum of the eigenvalues will be 10.The factors will be ordered from the most important, which has the largest eigenvalue, to the least important, which has the smallest eigenvalue.In PF analysis, the sum of the eigenvalues will be less than the number of items, and the eigenvalues’ interpretation is complex.&lt;/li&gt;
+&lt;li&gt;Communality and uniqueness: PF analysis tries to explain the shared variance. PCF analysis tries to explain all the variance, which is why it is ideal for the uniqueness to approach zero.&lt;/li&gt;
+&lt;li&gt;Loadings: how clusters of items are most related to one or another of the factors. If an item has a loading over 0.4 on a factor, it is considered a good indicator of that factor.&lt;/li&gt;
+&lt;li&gt;Simple structure: This is a pattern of loadings where each item loads strongly on just one factor and a subset of items load strongly on each factor. When an item loads strongly on more than one factor, it is factorially confounded.&lt;/li&gt;
+&lt;li&gt;Scree plot: This is a graph showing the eigenvalue for each factor. When doing a PCF analysis, we usually drop factors that have eigenvalues in the neighborhood of 1.0 or smaller.&lt;/li&gt;
+&lt;li&gt;Rotation: 轉軸的方式有很多種，但基本就是兩大類：正交 (orthogonal) 與斜交 (oblique rotation)。轉軸的目的是讓因素更有意義，並同時看看因素之間的關係。更詳細一點來說，如果是正交轉軸的話，那就是假設因素之間沒有關連；相對地，斜交假設因素之間有一定的關連。&lt;/li&gt;
+&lt;li&gt;Factor score: weights each item based on how related it is to the factor. Also the factor score is scaled to have a mean of 0.0 and a variance of 1.0.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Use PCF when you have a set of items that you believe all measure one concept. In this situation, you would be interested in the first principal factor. You would want to see if it explained a substantial part of the total variance for the entire set of items, and you would want most of the items to have a &lt;strong&gt;loading of 0.4 or above&lt;/strong&gt; on this factor. Because PCF analysis is trying to explain all the variance in the items, the &lt;strong&gt;uniqueness&lt;/strong&gt; for each item should approach zero. Generally, we should consider any factor that has an eigenvalue of more than 1.A visual way to examine the eigenvalues is with a scree plot.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;factor rnatspac rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
+    rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
+screeplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If, on the other hand, you want to identify two or more latent variables that represent interpretable dimensions of some concept, then PF analysis is probably best.&lt;/p&gt;
+
+&lt;h3 id=&#34;rotation&#34;&gt;Rotation&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Orthogonal:&lt;code&gt;rotate&lt;/code&gt;With a varimax rotation, we can think of the loadings as being the estimated correlation between each item and each factor.&lt;/li&gt;
+&lt;li&gt;oblique:&lt;code&gt;rotate, promax&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;estat common&lt;/code&gt; to get correlation matrix of promax rotated common factors&lt;/p&gt;
+
+&lt;h2 id=&#34;get-one-factor-score&#34;&gt;Get one factor score&lt;/h2&gt;
+
+&lt;p&gt;However, this distinction rarely makes a lot of practical difference. The factor score may make a difference if there are some items with very large loadings, say, 0.9, and others with very small loadings, say, 0.2. But we would probably drop the weakest items. When the loadings do not vary a great deal, computing a factor score or a mean/total score will produce comparable results.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;factor rnatenvir rnatheal rnatcity rnatcrime rnatdrug rnateduc rnatrace ///
+    rnatfare rnatsoc rnatchld, pcf
+predict libfscore, norotate
+egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
+    rnateduc rnatrace rnatfare rnatsoc rnatchld)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;correlation higher than 0.9...&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Missing values</title>
+      <link>/post/missing-values/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/missing-values/</guid>
+      <description>
+
+&lt;p&gt;Many advanced Stata estimation models can use multiple imputation for handling missing values.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.iriseekhout.com/missing-data/auxiliary-variables/&#34; target=&#34;_blank&#34;&gt;Auxiliary variables&lt;/a&gt; are variables that can help to make estimates on incomplete data, while they are not part of the main analysis (Collins et al., 2001).&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Include all variables in the analysis model, including the dependent variable,&lt;/li&gt;
+&lt;li&gt;Include auxiliary variables that predict patterns of missingness,&lt;/li&gt;
+&lt;li&gt;and Include additional variables that predict a person’s score on a variable that has missing values.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The imputation model is then used to generate a complete dataset.&lt;/p&gt;
+
+&lt;p&gt;Once you have included a reasonably large number of variables, adding additional variables may not be helpful because of multicollinearity.&lt;/p&gt;
+
+&lt;p&gt;Drop any participant who does not have complete information on every item used in the analysis. This approach goes by several names, including &lt;strong&gt;full case analysis&lt;/strong&gt;, &lt;strong&gt;casewise deletion&lt;/strong&gt;, or &lt;strong&gt;&lt;em&gt;listwise deletion.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;There will be a substantial loss of power because of the reduced sample size.&lt;/li&gt;
+&lt;li&gt;Listwise deletion can introduce substantial bias. (survival bias)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One alternative to listwise deletion involves substituting the mean on a variable for anybody who does not have a response. This has two serious limitations. People who are average on a variable are often more likely to give an answer than are people who have an extreme value.The second problem with mean substitution is that when you give several people the same score on a variable, these people have zero variance on the variable. This artificially reduced variance will seriously bias our parameter estimates.&lt;/p&gt;
+
+&lt;p&gt;The key to understanding multiple imputation is that the imputed missing values will not contain any unique information once the variables in the model and the auxiliary variables are allowed to explain the patterns of missing values and predict the score of the missing values. The imputed values for variables with missing values are simply consistent with the observed data. This allows us to use all available information in our analysis.&lt;/p&gt;
+
+&lt;h2 id=&#34;multiple-imputation&#34;&gt;Multiple imputation&lt;/h2&gt;
+
+&lt;p&gt;A powerful way of working with missing values involves multiple imputation. The command &lt;em&gt;mi&lt;/em&gt; involves three straightforward steps:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create &lt;em&gt;m&lt;/em&gt; complete datasets by imputing the missing values. Each dataset will have no missing values, but the values imputed for missing values will vary across the  datasets.&lt;/li&gt;
+&lt;li&gt;Do your analysis in each of the &lt;em&gt;m&lt;/em&gt;  complete datasets.&lt;/li&gt;
+&lt;li&gt;Pool your &lt;em&gt;m&lt;/em&gt;  solutions to get one solution.
+
+&lt;ul&gt;
+&lt;li&gt;The parameter estimates—for example, regression coefficients—will be the mean of their corresponding values in the  datasets.&lt;/li&gt;
+&lt;li&gt;The standard errors used for testing significance will combine the standard errors from the solutions plus the variance of the parameter estimates across the  solutions. If each solution is yielding a very different estimate, this uncertainty is added to the standard errors. Also the degrees of freedom is adjusted based on the number of imputations and proportion of data that have missing values.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The most widely used approach is using multivariate normal regression (MVN). &lt;code&gt;mi impute mvn&lt;/code&gt; is designed for continuous variables. &lt;code&gt;mi impute chained&lt;/code&gt; is another useful alternative.&lt;/p&gt;
+
+&lt;p&gt;A missing value will have a code of ., .a, .b, etc. Remember that a missing value is recorded in a Stata dataset as an extremely high value. Within mi, a missing-value code, . (dot), has a special meaning. It denotes the missing values eligible for imputation. If you have a set of missing values that should not be imputed, you should record them as extended missing values, that is, as .a, .b, etc.&lt;code&gt;recode agem (.a = .)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
+misstable patterns ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
+quietly misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, gen(miss_)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;then&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;logit miss_ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm if ln_wagem &amp;lt;= .
+logit miss_gradem ln_wagem agem ttl_expm tenurem not_smsa south blackm if gradem &amp;lt;= .
+logit miss_agem ln_wagem gradem ttl_expm tenurem not_smsa south blackm if agem &amp;lt;= .
+logit miss_ttl_expm ln_wagem gradem agem tenurem not_smsa south blackm if ttl_expm &amp;lt;= .
+logit miss_tenurem ln_wagem gradem agem ttl_expm not_smsa south blackm if tenurem &amp;lt;= .
+logit miss_blackm ln_wagem gradem agem ttl_expm tenurem not_smsa south if blackm &amp;lt;= .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or use &lt;code&gt;pwcorr , obs sig&lt;/code&gt; to find potential auxiliary variables.&lt;/p&gt;
+
+&lt;p&gt;Any variable that is statistically significant in these logistic regressions should be included in the imputation step.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mi set flong
+mi register imputed ln_wagem gradem agem ttl_expm tenurem blackm
+mi register regular not_smsa south 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;mi set flong&lt;/code&gt; command tells Stata how to arrange our multiple datasets(flong (full and long), or mlong (marginal and long)). The &lt;code&gt;mi register imputed&lt;/code&gt; command registers all the variables that have missing values and need to be imputed. The &lt;code&gt;mi register regular&lt;/code&gt; command registers all the variables that have no missing values or for which we do not want to impute values.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;生成m=20个数据集，&lt;code&gt;_mi_m&lt;/code&gt; variable identifies datasets and ranges from 0 to 20.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To get pooled $R^2$ and standardized $\beta$s use &lt;code&gt;mibeta&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mibeta ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, fisherz miopts(vartable)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When &lt;strong&gt;impossible&lt;/strong&gt; values are imputed(建议不调整): Binary variables, squares, and interactions（在原数据集先相乘，再impute）&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multilevel analysis</title>
+      <link>/post/multilevel-analysis/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/multilevel-analysis/</guid>
+      <description>&lt;p&gt;Multilevel analysis can address the lack of independence of the observations when you are analyzing grouped data. See &lt;em&gt;Stata Multilevel Mixed-Effects Reference Manual&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;groups of individuals&lt;/li&gt;
+&lt;li&gt;panel data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;fixedeffects-regression-models&#34;&gt;Fixed-effects regression models&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[y_it = \beta_0 +\beta x_{it}+\mu_i+\eta_{it}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;if &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; correlates with &lt;span  class=&#34;math&#34;&gt;\(x_{it}\)&lt;/span&gt; -&amp;gt; Fixed-effects
+if &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; independent of &lt;span  class=&#34;math&#34;&gt;\(x_{it}\)&lt;/span&gt; -&amp;gt; Random-effects models give consistent estimates&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;xtreg&lt;/code&gt;  see &lt;em&gt;Stata Longitudinal-Data/Panel-Data Reference Manual.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;randomeffects-regression-models&#34;&gt;Random-effects regression models&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[y_it = \beta_0 +\beta x_{it}+\gamma z_i +\mu_i+\eta_{it}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;assume &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; is independent of &lt;span  class=&#34;math&#34;&gt;\(x_{it}\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;fixed component, &lt;span  class=&#34;math&#34;&gt;\( \beta_0 +\beta x_{it}+\gamma z_i\)&lt;/span&gt; , describes the overall relationship between our dependent variable and our independent variable. The random component, &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; i represents the effects of the unobserved time-invariant variables.&lt;/p&gt;
+
+&lt;p&gt;score = fixed part + random effects + error&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Going back and forth between wide and long formats&lt;/strong&gt; : &lt;code&gt;reshape wide&lt;/code&gt; and &lt;code&gt;reshape long&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;reshape long drink, i(id) j(wave)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;randomintercept-model&#34;&gt;Random-intercept model&lt;/h2&gt;
+
+&lt;h3 id=&#34;linear-model&#34;&gt;linear model&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink c.wave || id:
+estimates store linear
+margins, at(wave=(0(2)10))
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;quadratic-term&#34;&gt;quadratic term&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink c.wave##c.wave || id:
+estimates store quadratic
+margins, at(wave=(0(2)10))
+marginsplot
+lrtest linear quadratic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A proportional reduction in error (PRE) measuring how much the residual (error) variance is reduced by adding the quadratic term may be useful. We will call the random-intercept linear model “Model 1” and the random-intercept quadratic model “Model 2”.&lt;/p&gt;
+
+&lt;p&gt;PRE = (var(Residual)Model1-var(Residual)Model2)/var(Residual)Model1&lt;/p&gt;
+
+&lt;h3 id=&#34;treating-time-as-a-categorical-variable&#34;&gt;Treating time as a categorical variable&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink i.wave || id:
+estimates store means
+margins, at(wave=(0(2)10))
+marginsplot
+lrtest linear means
+lrtest quadratic means
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;randomcoefficients-model&#34;&gt;Random-coefficients model&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink c.wave || id: wave, cov(unstructured)
+predict yhat_drink, fitted
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;including-a-timeinvariant-covariate&#34;&gt;Including a time-invariant covariate&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;* Random coefficients model with time invariant covariate
+* gender coded as male = 1, female = 0
+mixed drink c.wave i.male || id: wave
+margins male, at(wave=(0(2)8))
+marginsplot
+
+* Random coefficients, with wave interacting with the
+* time invariant covariate--gender coded
+mixed drink c.wave##i.male || id: wave
+margins male, at(wave=(0(2)8))
+marginsplot
+
+mixed drink c.wave##c.wave##i.male || id: wave
+margins male, at(wave=(0(2)8))
+marginsplot
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multiple Regressions</title>
+      <link>/post/multiple-regressions/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/multiple-regressions/</guid>
+      <description>
+
+&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
+
+&lt;p&gt;Note: toc is not compatible with &lt;code&gt;markup: mmark&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;F: There is a highly significant relationship between outcomes and the set of predictors.&lt;/li&gt;
+&lt;li&gt;R2: How much of the outcome variance is explained by the regression model&lt;/li&gt;
+&lt;li&gt;Adj-R2: remove the chance effects&lt;/li&gt;
+&lt;li&gt;Coef.: &lt;em&gt;unstandardized regression coefficients&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;t: coef/standard error&lt;/li&gt;
+&lt;li&gt;Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable.&lt;/li&gt;
+&lt;li&gt;,beta gives &lt;strong&gt;beta weights&lt;/strong&gt;: based on standardizing all variables to have a mean of 0 and a standard deviation of 1. These beta weights are interpreted similarly to how you interpret correlations in that beta&lt;0.2 is considered a weak effect,  between 0.2 and 0.5 is considered a moderate effect, and  is considered a strong effect.(range of -1 to +1, if out of range, -&gt;multicollinearity problem):a 1-standard-deviation change in the independent variable produces a - beta standard-deviation change in the dependent variable.&lt;/li&gt;
+&lt;li&gt;increment in R2:&lt;em&gt;part-correlation square&lt;/em&gt; because it measures the part that is uniquely explained by the variable. or &lt;em&gt;semipartial R2&lt;/em&gt; (Semipartial Corr.^2 in &lt;code&gt;pcorr&lt;/code&gt; )estimates only the &lt;strong&gt;unique&lt;/strong&gt; effect of each predictor. Another way to compare is partial correlation;&lt;/li&gt;
+&lt;li&gt;distribution of the dependent variable: &lt;code&gt;histogram env_con, frequency normal kdensity&lt;/code&gt; (for &lt;a href=&#34;https://lotabout.me/2018/kernel-density-estimation/&#34; target=&#34;_blank&#34;&gt;kernel density estimation&lt;/a&gt;)&lt;strong&gt;Skewness&lt;/strong&gt;(0:Normal; &lt;0: negative or left skew, &gt;0: positive or skew to the right)&lt;strong&gt;kurtosis&lt;/strong&gt;(3: normal; &lt;3: tails are too thick, flat or negative kurtosis; &gt;3: tails are too thin, peaky or positive kurtosis)&lt;code&gt;sktest&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;distribution of the residuals: for large sample, normality is not a critical issue. &lt;code&gt;rvfplot, yline(0)&lt;/code&gt;residual-versus-fitted plot:
+To solve the non-normal distribution of residual, we can use &lt;code&gt;reg y xs, vce(robust)&lt;/code&gt; or use bootstrap&lt;code&gt;reg y xs, vce(bootstrap, rep(1000))&lt;/code&gt; , it will change std err and hence t-value.  However,
+Andrew J. Leone, Miguel Minutti-Meza, and Charles E. Wasley (2019) Influential Observations and Inference in Accounting Research. The Accounting Review In-Press.
+they talk about robust regression using &lt;strong&gt;robreg, what&amp;rsquo;s the difference?&lt;/strong&gt;
+ALso, check &lt;a href=&#34;https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/se_programming.htm&#34; target=&#34;_blank&#34;&gt;Correcting for Cross-Sectional and Time-Series Dependence in Accounting Research&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3, beta
+predict envhat
+preserve
+set seed 515
+sample 100, count
+twoway (scatter env_con envhat) (lfit env_con envhat)
+restore
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;diagnostic-statistics&#34;&gt;Diagnostic statistics&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.r-tutor.com/elementary-statistics/simple-linear-regression/standardized-residual&#34; target=&#34;_blank&#34;&gt;Rstandard:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The standardized residual is the residual divided by its standard deviation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3, beta
+predict yhat
+predict residual, residual
+predict rstandard, rstandard
+list respnum env_con yhat residual rstandard if abs(rstandard) &amp;gt; 2.58 &amp;amp; rstandard &amp;lt; .
+dfbeta
+list respnum rstandard _dfbeta_1 if abs(_dfbeta_1) &amp;gt; 2/sqrt(3769) &amp;amp; _dfbeta_1 &amp;lt; .
+estat vif
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Influential observations: DFbeta: You could think of this as redoing the regression model, omitting just one observation at a time and seeing how much difference omitting each observation makes. ****A value of **DFbeta  &amp;gt;2/sqrt(N) ** indicates that an observation has a large influence**** More specific than rstandard&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;. dfbeta
+(739 missing values generated)
+                   _dfbeta_1: dfbeta(educat)
+(739 missing values generated)
+                   _dfbeta_2: dfbeta(inc)
+(739 missing values generated)
+                   _dfbeta_3: dfbeta(com3)
+(739 missing values generated)
+                   _dfbeta_4: dfbeta(hlthprob)
+(739 missing values generated)
+                   _dfbeta_5: dfbeta(epht3)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;multicollinearity: The more correlated the predictors, the more they overlap and, hence, the more difficult it is to identify their independent effects. In such situations, you can have multicollinearity in which one or more of the predictors are virtually redundant.
+variance inflation factor &lt;code&gt;estat vif&lt;/code&gt; after regression, if &amp;gt;10, for any variable, a multicollinearity problem may exist. If the average VIF is substantially greater than 1.00, there still could be a problem.(Dropping a variable, create a scale that combines them into one variable.)
+1/VIF = 1-R2(of regress X1 on other Xs) It tells how much of the variance in the independent variable is available to predict the outcome variable independently.&lt;/p&gt;
+
+&lt;h2 id=&#34;weighted-data&#34;&gt;Weighted data&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3 [pweight=finalwt], beta
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When you do a weighted regression this way, Stata automatically uses the robust regression—whether you ask for it or not—because weighted data require robust standard errors.&lt;/p&gt;
+
+&lt;h2 id=&#34;categorical-predictors-and-hierarchical-regression&#34;&gt;Categorical predictors and hierarchical regression&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;regress smday97 age97 male psmoke97 aa hispanic other if !missing(smday97, ///
+	age97, male, psmoke97, aa, hispanic, other), beta
+test aa hispanic other
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;nested regressions&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nestreg: regress smday97 (age97 male) (psmoke97) (aa hispanic other), beta
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you put i. as a stub in front of a categorical variable, Stata will make the first category the reference category and then generate a dummy variable for each of the remaining categories.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;regress smday97 age97 male psmoke97 i.race
+#change reference category or what Stata refers to as the baselevel
+regress smday97 age97 male psmoke97 ib3.race
+regress smday97 age97 male psmoke97 ib(last).race
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;interaction&#34;&gt;interaction&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;g ed_male = educ*male
+reg inc educ male ed_male,beta
+nestreg: regress inc (educ male) (ed_male), beta
+regress inc i.male##c.educ, beta
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;some researchers choose to center quantitative independent variables, such as education, before computing the interaction terms.
+Centering is important for independent variables where a value of zero may not be meaningful.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;summarize educ
+generate educ_c = educ - r(mean)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;margins help us to interpret the interaction term&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;margins male, at(educ=(8 10 12 14 16 18))
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;nonlinear&#34;&gt;nonlinear&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;regress ln_wage c.ttl_exp##c.ttl_exp, beta
+margins, at(ttl_exp = (0(2)28))
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stats.idre.ucla.edu/stata/dae/multiple-regression-power-analysis/&#34; target=&#34;_blank&#34;&gt;Power analysis&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

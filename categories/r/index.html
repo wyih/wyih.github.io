@@ -328,6 +328,43 @@
   </div>
   
   <div>
+    <h2><a href="/post/difference-in-difference/">Difference in Difference</a></h2>
+    <div class="article-style">
+      
+      效應評估模型 “提高最低工資是否會減少就業？” “最低工資提高是否餐廳的全職員工數會減少？” 假設 $MinWage$為「最低工資有提高」的虛擬變數
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/panel-data/">Panel Data</a></h2>
+    <div class="article-style">
+      
+      效應評估模型 \[ mrall=mrall_{-BeerTax}+\beta^*BeerTax \] 提高啤酒稅（BeerTax）是否有助減低車禍死亡率（mrall）？ 固定效應模型 令 $W$代表「州愛喝酒程度」。 $W$與 $mr
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/linear-regression/">Linear Regression</a></h2>
+    <div class="article-style">
+      
+      OLS estimator The method to compute (or estimate) $b_0$ and $b_1$ we illustrated above is called Ordinary Least Squares, or OLS. $b_0$ and $b_1$ are therefore also often called the OLS coefficients. By solving problem
+\[ \begin{align} e_i & = y_i - \hat{y}_i = y_i - \underbrace{\left(b_0 + b_1 x_i\right)}_\text{prediction}\\ e_1^2 + \dots + e_N^2 &= \sum_{i=1}^N e_i^2 \equiv \text{SSR}(b_0,b_1) \\ (b_0,b_1) &= \arg \min_{\text{int},\text{slope}} \sum_{i=1}^N \left[y_i - \left(\text{int} + \text{slope } x_i\right)\right]^2 \end{align} \]
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/post/iv/">工具变量</a></h2>
+    <div class="article-style">
+      
+      效應評估模型 \[Y_{i}={Y}_{-p,i}+\beta_i P_{i}\] \[ Y_i=Y_{-P,i}+\beta^* P_i \] \[ \begin{equation} Y_i=\beta_0+\beta_1P_i+w_i'\gamma+\varepsilon \tag{3.2} \end{equation} \] 在$w_{i}$條件下，「香煙售價」$P_{i}$必需要與「非價格效應的香煙銷售量」$Y_{-P}$獨立
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a></h2>
     <div class="article-style">
       
@@ -461,18 +498,7 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
   
   <div class="container">
     <footer class="site-footer">
-  
-  <p class="powered-by">
-    
-      <a href="/privacy/">Privacy Policy</a>
-    
-    
-       &middot; 
-      <a href="/terms/">Terms</a>
-    
-  </p>
-  
-
+   
   <p class="powered-by">
     
 

@@ -5,12 +5,127 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 27 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Sep 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Meta-Analysis Note 1</title>
+      <link>/post/meta-analysis-note-1/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/meta-analysis-note-1/</guid>
+      <description>
+
+&lt;p&gt;本书第一章主要对一些术语进行了界定，把元分析同其它种文献综述的方式进行了区分。元分析同其它定性的总结以及定量的（Informal vote counting-一般采用多数原则来总结结论与formal vote counting-在前者基础之上采用了一些统计分析以期得到统计上显著的结论）一些分析的不同之处在于：元分析的关注点除了关注效果是否存在之外，主要关注效果的大小(effect size)。&lt;/p&gt;
+
+&lt;p&gt;元分析的工作步骤分为五个阶段：&lt;/p&gt;
+
+&lt;h2 id=&#34;确定问题-formulate-a-problem&#34;&gt;确定问题(formulate a problem)&lt;/h2&gt;
+
+&lt;p&gt;在确定问题开始综述工作时，要把关注的重点厘清。比如希望是一个更概括的结论或样本，还是一个适用范围有限定的结论和样本，这将决定第二三阶段对文献的取舍。&lt;/p&gt;
+
+&lt;h2 id=&#34;取得相关文献&#34;&gt;取得相关文献&lt;/h2&gt;
+
+&lt;p&gt;要从尽可能多的样本里采样，确保文献是有代表性的(representive)和无偏的(unbiased)。后者因为学术刊物对于结果显著的论文的发表偏好而很难实现，因此别忘了未发表的工作论文或毕业论文等。&lt;/p&gt;
+
+&lt;h2 id=&#34;对文献进行评估精选&#34;&gt;对文献进行评估精选&lt;/h2&gt;
+
+&lt;p&gt;本阶段对上一阶段取得的文献进行相关性评估。在此阶段会对第一阶段确定下来的研究问题进行进一步的提炼。&lt;/p&gt;
+
+&lt;h2 id=&#34;对文献进行分析和解释&#34;&gt;对文献进行分析和解释&lt;/h2&gt;
+
+&lt;p&gt;最花时间和最难的阶段，在此阶段中需要将文献的数据整理和输入。&lt;/p&gt;
+
+&lt;h2 id=&#34;文献综述的写作&#34;&gt;文献综述的写作&lt;/h2&gt;
+
+&lt;p&gt;有几点需要注意的：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;对于整个文献综述的工作过程要完整描述，记录在此过程中所做的各项取舍&lt;/li&gt;
+&lt;li&gt;关键在与要回答感兴趣的问题，假如不能回答，也要解释为什么以及未来需要做什么来回答这个问题&lt;/li&gt;
+&lt;li&gt;要避免文献列表的堆砌&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;作者的几点建议&#34;&gt;作者的几点建议&lt;/h2&gt;
+
+&lt;p&gt;因为文献的收集、评估、整理直到分析很花时间和精力，所以一定要做到有规划。一些具体的建议如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在文献收集过程中做记录&lt;/li&gt;
+&lt;li&gt;系统的存放文献，假如同别人合作，确保你们用同一套系统来存放，处理文献&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;我对于工具的建议&#34;&gt;我对于工具的建议&lt;/h2&gt;
+
+&lt;p&gt;&lt;del&gt;文献收集可以用&lt;a href=&#34;https://www.mendeley.com/&#34; target=&#34;_blank&#34;&gt;Mendeley&lt;/a&gt;的private group功能，这样加入同一组的成员可以直接在客户端上打开PDF和加标注。虽然mendeley对免费用户private group数有限制，但可以通过在group底下再加子目录的方式来绕过限制。&lt;/del&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;最新的建议&#34;&gt;最新的建议&lt;/h2&gt;
+
+&lt;p&gt;转向&lt;a href=&#34;https://www.zotero.org/&#34; target=&#34;_blank&#34;&gt;Zotero&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SEM and GSEM</title>
+      <link>/post/sem-and-gsem/</link>
+      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/post/sem-and-gsem/</guid>
+      <description>
+
+&lt;h2 id=&#34;sem&#34;&gt;SEM&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sem bmi &amp;lt;- age children incomeln educ quickfood
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This would give us the unstandardized solution. This command uses &lt;strong&gt;maximum likelihood estimation&lt;/strong&gt; ather than the ordinary least-squares (OLS) estimation used by the &lt;code&gt;regress&lt;/code&gt; command. Add &lt;code&gt;,standardized&lt;/code&gt; just like add &lt;code&gt;,beta&lt;/code&gt; to &lt;code&gt;regress&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;option &lt;code&gt;method(mlmv)&lt;/code&gt; (maximum likelihood with missing values):
+Estimation is less robust to the assumption of multivariate normality when using the method(mlmv) option than when using maximum likelihood estimation with listwise deletion of observations with missing values. Because some of the five variables in our model are not normally distributed, the method(mlmv) option needs to be used with caution. The estimation performed when we use the method(mlmv) option also assumes that the missing values are MAR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:f1&#34;&gt;&lt;a href=&#34;#fn:f1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; . By contrast, when listwise deletion is used we are assuming that missing values are MCAR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:f1&#34;&gt;&lt;a href=&#34;#fn:f1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and this is a much more restrictive assumption.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sem bmi &amp;lt;- age children incomeln educ quickfood, method(mlmv) standardized
+
+estat eqgof
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The OLS regression solution and the SEM solution without MLMV, which uses listwise deletion, are producing the same standardized parameter estimates and $R^2$s. As noted, the z values are slightly larger than the t-values, and the p-values are slightly smaller. The z tests for the SEM solution are directly testing the standardized solution. The regress solution’s  t tests are testing the significance of the unstandardized B coefficients and do not directly test the significance of the Betas. The regress command does not provide such a direct test for the significance of Betas.&lt;/p&gt;
+
+&lt;p&gt;Notice that the $R^2$ using sem with method(mlmv) is actually slightly smaller. Using all the available information in the SEM solution with MLMV is not cheating if the assumptions are met. The &lt;strong&gt;MAR&lt;/strong&gt; assumption for the SEM solution is more realistic than the &lt;strong&gt;MCAR&lt;/strong&gt; assumption required for listwise deletion to be unbiased.&lt;/p&gt;
+
+&lt;p&gt;There are three rules to follow when using the maximum likelihood with missing values estimation.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate an indicator variable for each variable in your model to reflect whether an observation has a missing value.&lt;/li&gt;
+&lt;li&gt;Correlate potential auxiliary variables to see whether they predict missing value indicator variables.&lt;/li&gt;
+&lt;li&gt;Include additional auxiliary variables that are substantially correlated with a person’s score on a variable that has missing values.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Getting auxiliary variables into your SEM command？？？没懂&lt;/p&gt;
+
+&lt;h2 id=&#34;gsem&#34;&gt;GSEM&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;logit obese age children incomeln educ quickfood
+listcoef
+glm obese age children incomeln educ quickfood, family(binomial) link(logit)
+glm, eform
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The logit command is a special application of the generalized linear model. We can obtain the same results by using the glm command. The glm command requires us to specify the family of our model, family(binomial), and the link function, link(logit). To obtain the odds ratio, we can replay these results by using glm, eform.&lt;/p&gt;
+
+&lt;p&gt;后面没看懂，以后再说吧。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:f1&#34;&gt;Missing Completely at Random is pretty straightforward.  What it means is what is says:  the propensity for a data point to be missing is completely random.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:f1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Panel data in R vs in Stata</title>
@@ -64,400 +179,1418 @@ stargazer(fpm_r,robusts_growth_layer,type = &amp;quot;text&amp;quot;, column.lab
     </item>
     
     <item>
-      <title>Writing technical content in Academic</title>
-      <link>/post/writing-technical-content/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>/post/writing-technical-content/</guid>
-      <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
+      <title>Difference in Difference</title>
+      <link>/post/difference-in-difference/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/difference-in-difference/</guid>
+      <description>&lt;h2 id=&#34;效應評估模型&#34;&gt;效應評估模型&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;“提高最低工資是否會減少就業？”&lt;/p&gt;
 
-&lt;p&gt;On this page, you&#39;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
+&lt;p&gt;“最低工資提高是否餐廳的全職員工數會減少？”&lt;/p&gt;
 
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;假設 $MinWage$為「最低工資有提高」的虛擬變數， $FEmp$為餐廳全職員工數。&lt;/p&gt;
 
-&lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_i=FEmp_{0,i}+\beta^*MinWage_i
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the &lt;code&gt;highlight&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_i=\beta_0+\beta_1 MinWage_i+\epsilon_i
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;```python
-import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-```
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;「沒有受到最低工資提高影響下的員工數」$FEmp_{0,i}$與「有無受到最低工資提高影響」无關时OLS是一致估计。&lt;/p&gt;
 
-&lt;p&gt;renders as&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-data = pd.read_csv(&amp;quot;data.csv&amp;quot;)
-data.head()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;math&#34;&gt;Math&lt;/h3&gt;
-
-&lt;p&gt;Academic supports a Markdown extension for $\LaTeX$ math. You can enable this feature by toggling the &lt;code&gt;math&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file and adding &lt;code&gt;markup: mmark&lt;/code&gt; to your page front matter.&lt;/p&gt;
-
-&lt;p&gt;To render &lt;em&gt;inline&lt;/em&gt; or &lt;em&gt;block&lt;/em&gt; math, wrap your LaTeX math with &lt;code&gt;$$...$$&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Example &lt;strong&gt;math block&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$\gamma_{n} = \frac{ 
-\left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T 
-\left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}
-{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}$$
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;renders as&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2}\]&lt;/span&gt;&lt;/p&gt;
-
-&lt;p&gt;Example &lt;strong&gt;inline math&lt;/strong&gt; &lt;code&gt;$$\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2$$&lt;/code&gt; renders as &lt;span  class=&#34;math&#34;&gt;\(\left \|\nabla F(\mathbf{x}_{n}) - \nabla F(\mathbf{x}_{n-1}) \right \|^2\)&lt;/span&gt; .&lt;/p&gt;
-
-&lt;p&gt;Example &lt;strong&gt;multi-line math&lt;/strong&gt; using the &lt;code&gt;\\&lt;/code&gt; math linebreak:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$f(k;p_0^*) = \begin{cases} p_0^* &amp;amp; \text{if }k=1, \\
-1-p_0^* &amp;amp; \text {if }k=0.\end{cases}$$
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;renders as&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[f(k;p_0^*) = \begin{cases} p_0^* &amp; \text{if }k=1, \\
-1-p_0^* &amp; \text {if }k=0.\end{cases}\]&lt;/span&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;diagrams&#34;&gt;Diagrams&lt;/h3&gt;
-
-&lt;p&gt;Academic supports a Markdown extension for diagrams. You can enable this feature by toggling the &lt;code&gt;diagram&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file or by adding &lt;code&gt;diagram: true&lt;/code&gt; to your page front matter.&lt;/p&gt;
-
-&lt;p&gt;An example &lt;strong&gt;flowchart&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;```mermaid
-graph TD;
-  A--&amp;gt;B;
-  A--&amp;gt;C;
-  B--&amp;gt;D;
-  C--&amp;gt;D;
-```
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;renders as&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD;
-  A--&amp;gt;B;
-  A--&amp;gt;C;
-  B--&amp;gt;D;
-  C--&amp;gt;D;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;An example &lt;strong&gt;sequence diagram&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;```mermaid
-sequenceDiagram
-  participant Alice
-  participant Bob
-  Alice-&amp;gt;John: Hello John, how are you?
-  loop Healthcheck
-      John-&amp;gt;John: Fight against hypochondria
-  end
-  Note right of John: Rational thoughts &amp;lt;br/&amp;gt;prevail...
-  John--&amp;gt;Alice: Great!
-  John-&amp;gt;Bob: How about you?
-  Bob--&amp;gt;John: Jolly good!
-```
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;renders as&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;sequenceDiagram
-  participant Alice
-  participant Bob
-  Alice-&amp;gt;John: Hello John, how are you?
-  loop Healthcheck
-      John-&amp;gt;John: Fight against hypochondria
-  end
-  Note right of John: Rational thoughts &amp;lt;br/&amp;gt;prevail...
-  John--&amp;gt;Alice: Great!
-  John-&amp;gt;Bob: How about you?
-  Bob--&amp;gt;John: Jolly good!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;An example &lt;strong&gt;Gantt diagram&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;```mermaid
-gantt
-  dateFormat  YYYY-MM-DD
-  section Section
-  A task           :a1, 2014-01-01, 30d
-  Another task     :after a1  , 20d
-  section Another
-  Task in sec      :2014-01-12  , 12d
-  another task      : 24d
-```
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;renders as&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;gantt
-  dateFormat  YYYY-MM-DD
-  section Section
-  A task           :a1, 2014-01-01, 30d
-  Another task     :after a1  , 20d
-  section Another
-  Task in sec      :2014-01-12  , 12d
-  another task      : 24d
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;todo-lists&#34;&gt;Todo lists&lt;/h3&gt;
-
-&lt;p&gt;You can even write your todo lists in Academic too:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;- [x] Write math example
-- [x] Write diagram example
-- [ ] Do something else
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;renders as&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked=&#34;&#34; disabled=&#34;&#34;&gt; Write math example&lt;/li&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked=&#34;&#34; disabled=&#34;&#34;&gt; Write diagram example&lt;/li&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled=&#34;&#34;&gt; Do something else&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;tables&#34;&gt;Tables&lt;/h3&gt;
-
-&lt;p&gt;Represent your data in tables:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;renders as&lt;/p&gt;
+&lt;p&gt;令 $s$表示餐廳所屬的州，則原本的效應模型可以寫成：
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{eqnarray}
+FEmp_{is}=FEmp_{0,is}+\beta^*MinWage_{s}
+\tag{7.1}
+\end{eqnarray}
+\)&lt;/span&gt;&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;First Header&lt;/th&gt;
-&lt;th&gt;Second Header&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Pre&lt;/th&gt;
+&lt;th&gt;Post&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Control&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$MinWage=1$:PA&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
-&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Treatment&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;$MinWage=1$:NJ&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&#34;asides&#34;&gt;Asides&lt;/h3&gt;
+&lt;h2 id=&#34;複迴歸模型&#34;&gt;複迴歸模型&lt;/h2&gt;
 
-&lt;p&gt;Academic supports a Markdown extension for asides, also referred to as &lt;em&gt;notices&lt;/em&gt; or &lt;em&gt;hints&lt;/em&gt;. By prefixing a paragraph with &lt;code&gt;A&amp;gt;&lt;/code&gt;, it will render as an aside. You can enable this feature by adding &lt;code&gt;markup: mmark&lt;/code&gt; to your page front matter, or alternatively using the &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#alerts&#34;&gt;&lt;em&gt;Alert&lt;/em&gt; shortcode&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;餐廳的型態（大型連鎖、咖啡店、小吃店等等）會影響員工僱用量。
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{eqnarray}
+FEmp_{is} =FEmp_{0,-type,is}+\beta^*MinWage_s+\gamma&#39;type_{is}
+\tag{7.2}
+\end{eqnarray}
+\)&lt;/span&gt;
+其中
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{0,-type,is}=FEmp_{0,is}-\mathbb{E}(FEmp_{0,is}|type_{is})
+\)&lt;/span&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;A&amp;gt; A Markdown aside is useful for displaying notices, hints, or definitions to your readers.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在思考怱略變數偏誤(omitted variable bias)時，可能的confounder都必需放在（依實驗組/控制組分的）加總層級來思考。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;renders as&lt;/p&gt;
+&lt;h2 id=&#34;固定效果&#34;&gt;固定效果&lt;/h2&gt;
 
-&lt;aside&gt;
-&lt;p&gt;A Markdown aside is useful for displaying notices, hints, or definitions to your readers.&lt;/p&gt;
-&lt;/aside&gt;
+&lt;h3 id=&#34;組固定效果&#34;&gt;組固定效果&lt;/h3&gt;
 
-&lt;h3 id=&#34;did-you-find-this-page-helpful-consider-sharing-it-&#34;&gt;Did you find this page helpful? Consider sharing it 🙌&lt;/h3&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_{is}=FEmp_{0,is}+\beta^*MinWage_{s}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;多數時候實驗組/控制組在政策還沒施行前，他們就存在組間的特質差異，也就是
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{0,is}=FEmp_{0,-\alpha_s,is}+\alpha_s
+\)&lt;/span&gt;
+其中$\alpha_s$ 代表因組而異的confounder效果。&lt;/p&gt;
+
+&lt;p&gt;若沒有其他confounder，我們可以估計以下迴歸模型：
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{ist}=\alpha_s+\beta^* MinWage_{st}+\epsilon_{ist}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;時間固定效果&#34;&gt;時間固定效果&lt;/h3&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_{ist}=FEmp_{0,-(\alpha_s,\delta_t),ist}+\alpha_s+\delta_t+\beta^*MinWage_{st}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;所對應的迴歸模型為：
+&lt;span  class=&#34;math&#34;&gt;\(
+FEmp_{ist}=\alpha_s+\delta_t+\beta^* MinWage_{st}+\epsilon_{ist}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;資料追踪不追踪&#34;&gt;資料追踪/不追踪&lt;/h3&gt;
+
+&lt;p&gt;雖然$FEmp_{ist}$ 有到個別餐廳（即有下標 $i$），然而固定效果只到組層級（即下標 $s$)，因此在估計上我們並不需要追踪同一家餐廳——各期抽樣的餐廳可以不同。&lt;/p&gt;
+
+&lt;h2 id=&#34;did-估计法&#34;&gt;DiD 估计法&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{eqnarray}
+FEmp_{ist}=\alpha_s+\delta_t+\beta^*MinWage_{st}+\epsilon_{ist}
+\tag{7.3}
+\end{eqnarray}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+FEmp_{ist}=\beta_0+\alpha_1D1_s+\delta_1B1_t+\beta_1MinWage_{st}+\epsilon_{ist}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;令$D1=1$代表來自第1個州（NJ）的虛擬變數。&lt;/li&gt;
+&lt;li&gt;令$B1 = 1$代表政策施行「後」的虛擬變數。&lt;/li&gt;
+&lt;li&gt;$MinWage_{st}=D1_s\times B1_t$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;State&lt;/th&gt;
+&lt;th&gt;t=0&lt;/th&gt;
+&lt;th&gt;T=1&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;NJ&lt;/td&gt;
+&lt;td&gt;D1=1,B1=0&lt;/td&gt;
+&lt;td&gt;D1=1,B1=1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PA&lt;/td&gt;
+&lt;td&gt;D1=0,B1=0&lt;/td&gt;
+&lt;td&gt;D1=0,B1=1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;cluster-standard-error&#34;&gt;cluster standard error&lt;/h2&gt;
+
+&lt;p&gt;我們有G1-G4共四群誤差項的變異數及跨群間的共變異數需要去留意，當誤差項有聚類（clustering）可能時，必需要適當的調整估計式標準誤。&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/post/jupyter/</guid>
-      <description>
+      <title>Panel Data</title>
+      <link>/post/panel-data/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/panel-data/</guid>
+      <description>&lt;h2 id=&#34;效應評估模型&#34;&gt;效應評估模型&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
-Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=mrall_{-BeerTax}+\beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./index_1_0.png&#34; alt=&#34;png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;提高啤酒稅（BeerTax）是否有助減低車禍死亡率（mrall）？&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;固定效應模型&#34;&gt;固定效應模型&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;Welcome to Academic!
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;令 $W$代表「州愛喝酒程度」。&lt;/p&gt;
 
-&lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;$W$與 $mrall_{-BeerTax}+$有關&lt;/li&gt;
+&lt;li&gt;$W$與 $BeerTax$有關&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34; target=&#34;_blank&#34;&gt;Install Anaconda&lt;/a&gt; which includes Python 3 and JupyterLab.&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=(mrall_{-BT}-\mathbb{E}(mrall_{-BT}|W))+\mathbb{E}(mrall_{-BT}|W) + \beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Alternatively, install JupyterLab with &lt;code&gt;pip3 install jupyterlab&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{-BT,-W}\equiv mrall_{-BT}-\mathbb{E}(mrall_{-BT}|W)
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=mrall_{-BT,-W}+\mathbb{E}(mrall_{-BT}|W)+\beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY-WEBSITE-FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;SHORT-POST-TITLE&amp;gt;&lt;/code&gt; with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:&lt;/p&gt;
+&lt;p&gt;$mrall_{-BT,-W}$為「去除」 $W$影響的「非啤酒稅造成的車禍死亡因素」：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-cd &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-jupyter lab index.ipynb
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;它與 $W$無關。&lt;/li&gt;
+&lt;li&gt;若兩筆obs有相同飲酒文化，即$W$相同，他們的 $\mathbb{E}(mrall_{-BT}|W)$
+會相同。&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;The &lt;code&gt;jupyter&lt;/code&gt; command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;「假設」一個地方的飲酒文化「不隨時間改變」，即同一州在不同時點的$W$相同。&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
+&lt;p&gt;令&lt;span  class=&#34;math&#34;&gt;\(\mathbb{E}(mrall_{-BT,it}|W_i)=\alpha_i\)&lt;/span&gt;， 故我們的效應模型可以寫成：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=mrall_{-BT,-W,it}+\alpha_i+\beta^*BeerTax_{it}
+\)&lt;/span&gt;
+其中$\alpha_i$為第 $i$ 個州的固定效果：&lt;/p&gt;
 
-&lt;p&gt;The first cell of your Jupter notebook will contain your post metadata (&lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34; target=&#34;_blank&#34;&gt;front matter&lt;/a&gt;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$BearTax$與$mrall_{-BT,-W}$無關&lt;/li&gt;
+&lt;li&gt;$BearTax$與$\alpha$有關&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;In Jupter, choose &lt;em&gt;Markdown&lt;/em&gt; as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:&lt;/p&gt;
+&lt;h2 id=&#34;組內差異最小平方法&#34;&gt;組內差異最小平方法&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;---
-title: My post&#39;s title
-date: 2019-09-01
+&lt;p&gt;差分OLS解决$\alpha_i$不可得的阻碍&lt;/p&gt;
 
-# Put any other Academic metadata here...
----
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{i1}-mrall_{i0}=\beta^* (BeerTax_{i1}-BearTax_{i0})+(mrall_{-BT,-W,i1}-mrall_{-BT,-W,i0})
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Edit the metadata of your post, using the &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34; target=&#34;_blank&#34;&gt;documentation&lt;/a&gt; as a guide to the available options.&lt;/p&gt;
+&lt;p&gt;如果$t$超過兩期，考慮用組內平均為差分比較的點。&lt;/p&gt;
 
-&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34; target=&#34;_blank&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&amp;rsquo;s folder.&lt;/p&gt;
+&lt;p&gt;即&lt;span  class=&#34;math&#34;&gt;\(x_1-\bar{x},x_2-\bar{x},...,x_n-\bar{x}, \bar{x}=\sum_{i=1}^n x_i/n\)&lt;/span&gt;
+&lt;span  class=&#34;math&#34;&gt;\(
+\bar{mrall}_i=\sum_{t=1}^T mrall_{it}/T \\
+\bar{BeerTax}_i=\sum_{t=1}^T BeerTax_{it}/T\\
+\bar{mrall}_{-BT,-W,i}=\sum_{t=1}^T mrall_{-BT,-W,it}/T
+\)&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;For other tips, such as using math, see the guide on &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{it}-\bar{mrall}_i=\beta^*\left( BeerTax_{it}-\bar{BeerTax}_i\right)+(mrall_{-BT,-W,it}-\bar{mrall}_{-BT,-W,i})
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
+&lt;p&gt;固定效果模型下，我們可以以最小平方法估計下面的迴歸式：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}-\bar{mrall}_i=\beta_0+\beta_1\left( BeerTax_{it}-\bar{BeerTax}_i\right)+\epsilon_{it}
+\)&lt;/span&gt;
+其中$\hat{\beta}_1$即為$\beta^*$的一致性估計&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;常見的固定效果模型&#34;&gt;常見的固定效果模型&lt;/h2&gt;
 
-&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Identity fixed effect:$\alpha_i$&lt;/li&gt;
+&lt;li&gt;Time fixed effect:  $\delta_i$&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34; target=&#34;_blank&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{-BT,it}=mrall_{-BT,-W_i,-Z_t}+\alpha_i+\delta_t
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$W_i$為造成效應係數估計偏誤的變數，它在$i$面向固定不變。&lt;/li&gt;
+&lt;li&gt;$Z_t$為造成效應係數估計偏誤的變數，它在$t$面向固定不變。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;如$Z_t$為全美國的景氣狀況。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;對應的迴歸模型：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=\alpha_i+\delta_t+\beta_1 BeerTax_{it}+\epsilon_{it}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;廣義的固定效果模型&#34;&gt;廣義的固定效果模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall=mrall_{-BeerTax}+\beta^*BeerTax
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;但
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+  mrall_{-BT,it}\not\perp BeerTax_{it}
+  \tag{5.1}
+\end{equation}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;複迴歸控制&#34;&gt;複迴歸控制&lt;/h3&gt;
+
+&lt;p&gt;先思考造成(5.1)的變數有哪些——統計上稱這些變數為混淆變數(confounder)。Confounder中有資料的（令為$Z$）可進一步用來擴充模型成為：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=mrall_{-BT,-Z,it}+\beta^*BeerTax_{it}+\gamma&#39;Z_{it}
+\)&lt;/span&gt;
+其中：
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{-BT,-Z}=mrall_{-BT}-\mathbb{E}(mrall_{-BT}|Z)
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;固定效果模型&#34;&gt;固定效果模型&lt;/h3&gt;
+
+&lt;p&gt;Confounder中沒有資料但在某些面向固定的，假設分成以下兩類：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$W_i$：在同個identity下固定。&lt;/li&gt;
+&lt;li&gt;$V_t$：在同個time下固定。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{eqnarray}
+mrall_{it}=mrall_{-BT,-(Z,W,V),it}+\beta^*BeerTax_{it}+\\
+\alpha_i+\delta_t+\gamma&#39;Z_{it}
+\tag{5.2}
+\end{eqnarray}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;(5.2)是相當廣義的固定效果效應模型——有兩個面向的固定效果及控制變數。&lt;/p&gt;
+
+&lt;h2 id=&#34;隨機效果模型&#34;&gt;隨機效果模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+mrall_{it}=mrall_{-BT,-Z,it}+\beta^*BeerTax_{it}+\gamma&#39;Z_{it}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;隨機效果模型(Random Effect model)的設定：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用迴歸模型：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{eqnarray}
+  mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma&#39;Z_{it}+\nu_{it}
+  \tag{5.3}
+\end{eqnarray}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;假設$\nu_{it}$ 具有某種結構。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其中假设：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$\nu_{it}\perp BeerTax_{it}$&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(var(\alpha_i|X)=\sigma_{\alpha}^2\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;$var(\epsilon_{it}|X)=\sigma^2$&lt;/li&gt;
+&lt;li&gt;$cov(\epsilon_{it},\epsilon_{is}|X)=0$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;隨機效果模型帶有高度誤差項假設，故不建議使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;hausman檢定&#34;&gt;Hausman檢定&lt;/h2&gt;
+
+&lt;h3 id=&#34;固定效果模型fe&#34;&gt;固定效果模型(FE)&lt;/h3&gt;
+
+&lt;p&gt;表示使用組內差異最小平法方去估算以下迴歸模型中的&lt;span  class=&#34;math&#34;&gt;\(\beta_1\)&lt;/span&gt;:
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma&#39;Z_{it}+\alpha_i+\epsilon_{it}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;隨機效果模型re&#34;&gt;隨機效果模型(RE)&lt;/h3&gt;
+
+&lt;p&gt;表示使用GLS去估算以下迴歸模型中的&lt;span  class=&#34;math&#34;&gt;\(\beta_1\)&lt;/span&gt;:
+&lt;span  class=&#34;math&#34;&gt;\(
+mrall_{it}=\beta_0+\beta_{1}BeerTax_{it}+\gamma&#39;Z_{it}+\nu_{it}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(\nu_{it}=\alpha_i+\epsilon_{it}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;假設&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RE下「關於variance、covariance的假設」都成立。&lt;/li&gt;
+&lt;li&gt;&lt;span  class=&#34;math&#34;&gt;\(\epsilon_{it} \perp BeerTax_{it} | \alpha_i,Z_{it}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;H0:&lt;/strong&gt; &lt;span  class=&#34;math&#34;&gt;\(\alpha_i \perp BeerTax_{it} |Z_{it}\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;H0为RE，拒绝则为FE&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Academic: the website builder for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/post/getting-started/</guid>
+      <title>Linear Regression</title>
+      <link>/post/linear-regression/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/linear-regression/</guid>
+      <description>&lt;h2 id=&#34;ols-estimator&#34;&gt;OLS estimator&lt;/h2&gt;
+
+&lt;p&gt;The method to compute (or &lt;em&gt;estimate&lt;/em&gt;) $b_0$ and $b_1$ we illustrated above is called &lt;em&gt;Ordinary Least Squares&lt;/em&gt;, or OLS. $b_0$ and $b_1$ are therefore also often called the &lt;em&gt;OLS coefficients&lt;/em&gt;. By solving problem&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+e_i &amp; = y_i - \hat{y}_i = y_i - \underbrace{\left(b_0 + b_1 x_i\right)}_\text{prediction}\\
+e_1^2 + \dots + e_N^2 &amp;= \sum_{i=1}^N e_i^2 \equiv \text{SSR}(b_0,b_1) \\
+(b_0,b_1) &amp;= \arg \min_{\text{int},\text{slope}} \sum_{i=1}^N \left[y_i - \left(\text{int} + \text{slope } x_i\right)\right]^2 
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;one can derive an explicit formula for them:&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+b_1 = \frac{cov(x,y)}{var(x)}
+\end{equation}
+\)&lt;/span&gt;
+i.e. the estimate of the slope coefficient is the covariance between $x$ and $y$ divided by the variance of $x$, both computed from our sample of data. With $b_1$ in hand, we can get the estimate for the intercept as&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[\begin{equation}
+b_0 = \bar{y} - b_1 \bar{x}
+\end{equation}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;where $\bar{z}$ denotes the sample mean of variable $z$. The interpretation of the OLS slope coefficient $b_1$ is as follows. Given a line as in $y = b_0 + b_1 x$,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$b_1 = \frac{d y}{d x}$ measures the change in $y$ resulting from a one unit change in $x$&lt;/li&gt;
+&lt;li&gt;For example, if $y$ is wage and $x$ is years of education, $b_1$ would measure the effect of an additional year of education on wages.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There is an alternative representation for the OLS slope coefficient which relates to the &lt;em&gt;correlation coefficient&lt;/em&gt; $r$. Remember that $r = \frac{cov(x,y)}{s_x s_y}$, where $s_z$ is the standard deviation of variable $z$. With this in hand, we can derive the OLS slope coefficient as&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+b_1 &amp;amp;= \frac{cov(x,y)}{var(x)}\&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{cov(x,y)}{s_x s_x} \\
+&amp;amp;= r\frac{s_y}{s_x} \end{align}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;$$&lt;/p&gt;
+
+&lt;p&gt;In other words, the slope coefficient is equal to the correlation coefficient $r$ times the ratio of standard deviations of $y$ and $x$.&lt;/p&gt;
+
+&lt;h3 id=&#34;linear-regression-without-regressor&#34;&gt;Linear Regression without Regressor&lt;/h3&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+y = b_0
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;This means that our minimization problem becomes very simple: We only have to choose $b_0$! We have&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(
+b_0 = \arg\min_{\text{int}} \sum_{i=1}^N \left[y_i - \text{int}\right]^2,
+\)&lt;/span&gt;
+which is a quadratic equation with a unique optimum such that
+&lt;span  class=&#34;math&#34;&gt;\(
+b_0 = \frac{1}{N} \sum_{i=1}^N y_i = \overline{y}.
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Least Squares &lt;strong&gt;without regressor&lt;/strong&gt; $x$ estimates the sample mean of the outcome variable $y$, i.e. it produces $\overline{y}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;regression-without-an-intercept&#34;&gt;Regression without an Intercept&lt;/h3&gt;
+
+&lt;p&gt;We follow the same logic here, just that we miss another bit from our initial equation and the minimisation problem now becomes:
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{align}
+b_1 &amp;= \arg\min_{\text{slope}} \sum_{i=1}^N \left[y_i - \text{slope } x_i \right]^2\\
+\mapsto b_1 &amp;= \frac{\frac{1}{N}\sum_{i=1}^N x_i y_i}{\frac{1}{N}\sum_{i=1}^N x_i^2} = \frac{\bar{x} \bar{y}}{\overline{x^2}} 
+\end{align}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Least Squares &lt;strong&gt;without intercept&lt;/strong&gt; (i.e. with $b_0=0$) is a line that passes through the origin.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In this case we only get to choose the slope $b_1$ of this anchored line.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:fn1&#34;&gt;&lt;a class=&#34;footnote&#34; href=&#34;#fn:fn1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;centering-a-regression&#34;&gt;Centering A Regression&lt;/h3&gt;
+
+&lt;p&gt;By &lt;em&gt;centering&lt;/em&gt; or &lt;em&gt;demeaning&lt;/em&gt; a regression, we mean to substract from both $y$ and $x$ their respective averages to obtain $\tilde{y}_i = y_i - \bar{y}$ and $\tilde{x}_i = x_i - \bar{x}$. We then run a regression &lt;em&gt;without intercept&lt;/em&gt; as above. That is, we use $\tilde{x}_i,\tilde{y}_i$ instead of $x_i,y_i$ in&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+b_1 &amp;= \arg\min_{\text{slope}} \sum_{i=1}^N \left[y_i - \text{slope } x_i \right]^2\\
+\mapsto b_1 &amp;= \frac{\frac{1}{N}\sum_{i=1}^N x_i y_i}{\frac{1}{N}\sum_{i=1}^N x_i^2} = \frac{\bar{x} \bar{y}}{\overline{x^2}} 
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;to obtain our slope estimate &lt;span  class=&#34;math&#34;&gt;\(b_1\)&lt;/span&gt;:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i \tilde{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i^2}\&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
+&amp;amp;= \frac{cov(x,y)}{var(x)}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;\end{align}
+$$&lt;/p&gt;
+
+&lt;p&gt;This last expression is &lt;em&gt;identical&lt;/em&gt; to the one in OLS estimate! It&#39;s the standard OLS estimate for the slope coefficient. We note the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Adding a constant to a regression produces the same result as centering all variables and estimating without intercept. So, unless all variables are centered, &lt;strong&gt;always&lt;/strong&gt; include an intercept in the regression.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;reg-standard&#34;&gt;Standardizing A Regression&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Standardizing&lt;/em&gt; a variable $z$ means to demean as above, but in addition to divide the demeaned value by its own standard deviation. Similarly to what we did above for &lt;em&gt;centering&lt;/em&gt;, we define transformed variables $\breve{y}_i = \frac{y_i-\bar{y}}{\sigma_y}$ and $\breve{x}_i = \frac{x_i-\bar{x}}{\sigma_x}$ where $\sigma_z$ is the standard deviation of variable $z$. From here on, you should by now be used to what comes next! As above, we use $\breve{x}_i,\breve{y}_i$ instead of $x_i,y_i$:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i \breve{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i^2}\&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
+&amp;amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
+&amp;amp;= Corr(x,y)  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;\end{align}
+$$&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;After we standardize both $y$ and $x$, the slope coefficient $b_1$ in the regression without intercept is equal to the &lt;strong&gt;correlation coefficient&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;pred-resids&#34;&gt;Predictions and Residuals&lt;/h2&gt;
+
+&lt;p&gt;Now we want to ask how our residuals $e_i$ relate to the prediction $\hat{y_i}$. Let us first think about the average of all predictions &lt;span  class=&#34;math&#34;&gt;\(\hat{y_i}\)&lt;/span&gt;, i.e. the number &lt;span  class=&#34;math&#34;&gt;\(\frac{1}{N} \sum_{i=1}^N \hat{y_i}\)&lt;/span&gt;. Let&#39;s just take&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+\hat{y}_i = b_0 + b_1 x_i 
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;and plug this into this average, so that we get&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+\frac{1}{N} \sum_{i=1}^N \hat{y_i} &amp;= \frac{1}{N} \sum_{i=1}^N b_0 + b_1 x_i \\
+&amp;= b_0 + b_1  \frac{1}{N} \sum_{i=1}^N x_i \\
+&amp;= b_0 + b_1  \bar{x} \\
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;But that last line is just equal to the formula for the OLS intercept  $b_0 = \bar{y} - b_1 \bar{x}$! That means of course that&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(
+\frac{1}{N} \sum_{i=1}^N \hat{y_i}  = b_0 + b_1  \bar{x} = \bar{y}
+\)&lt;/span&gt;
+in other words:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The average of our predictions $\hat{y_i}$ is identically equal to the mean of the outcome $y$. This implies that the average of the residuals is equal to zero.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Related to this result, we can show that the prediction $\hat{y}$ and the residuals are &lt;em&gt;uncorrelated&lt;/em&gt;, something that is often called &lt;strong&gt;orthogonality&lt;/strong&gt; between $\hat{y}_i$ and $e_i$. We would write this as&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}
+Cov(\hat{y},e) &amp;=\frac{1}{N} \sum_{i=1}^N (\hat{y}_i-\bar{y})(e_i-\bar{e}) =   \frac{1}{N} \sum_{i=1}^N (\hat{y}_i-\bar{y})e_i \\
+&amp;=  \frac{1}{N} \sum_{i=1}^N \hat{y}_i e_i-\bar{y} \frac{1}{N} \sum_{i=1}^N e_i = 0
+\end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;correlation-covariance-and-linearity&#34;&gt;Correlation, Covariance and Linearity&lt;/h2&gt;
+
+&lt;p&gt;It is important to keep in mind that Correlation and Covariance relate to a &lt;em&gt;linear&lt;/em&gt; relationship between &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;. Given how the regression line is estimated by OLS (see just above), you can see that the regression line inherits this property from the Covariance.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Always &lt;strong&gt;visually inspect&lt;/strong&gt; your data, and don&#39;t rely exclusively on summary statistics like &lt;em&gt;mean, variance, correlation and regression line&lt;/em&gt;. All of those assume a &lt;strong&gt;linear&lt;/strong&gt; relationship between the variables in your data.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;analysing-vary&#34;&gt;Analysing $Var(y)$&lt;/h2&gt;
+
+&lt;p&gt;Analysis of Variance (ANOVA) refers to a method to decompose variation in one variable as a function of several others. We can use this idea on our outcome $y$. Suppose we wanted to know the variance of $y$, keeping in mind that, by definition, $y_i = \hat{y}_i + e_i$. We would write&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{align}Var(y) &amp;= Var(\hat{y} + e)\\ &amp;= Var(\hat{y}) + Var(e) + 2 Cov(\hat{y},e)\\ &amp;= Var(\hat{y}) + Var(e) \end{align}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;We have seen that the covariance between prediction $\hat{y}$ and error $e$ is zero, that&#39;s why we have $Cov(\hat{y},e)=0$. What this tells us in words is that we can decompose the variance in the observed outcome $y$ into a part that relates to variance as &lt;em&gt;explained by the model&lt;/em&gt; and a part that comes from unexplained variation. Finally, we know the definition of &lt;em&gt;variance&lt;/em&gt;, and can thus write down the respective formulae for each part:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[Var(y) = \frac{1}{N}\sum_{i=1}^N (y_i - \bar{y})^2\]&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(Var(\hat{y}) = \frac{1}{N}\sum_{i=1}^N (\hat{y_i} - \bar{y})^2\)&lt;/span&gt;, because the mean of $\hat{y}$ is $\bar{y}$ as we know.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finally, &lt;span  class=&#34;math&#34;&gt;\(Var(e) = \frac{1}{N}\sum_{i=1}^N e_i^2\)&lt;/span&gt;, because the mean of $e$ is zero.
+We can thus formulate how the total variation in outcome $y$ is apportioned between model and unexplained variation:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The total variation in outcome $y$ (often called SST, or &lt;em&gt;total sum of squares&lt;/em&gt;) is equal to the sum of explained squares (SSE) plus the sum of residuals (SSR). We have thus &lt;strong&gt;SST = SSE + SSR&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;assessing-the-goodness-of-fit&#34;&gt;Assessing the &lt;em&gt;Goodness of Fit&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;In our setup, there exists a convenient measure for how good a particular statistical model fits the data. It is called $R^2$ (&lt;em&gt;R squared&lt;/em&gt;), also called the &lt;em&gt;coefficient of determination&lt;/em&gt;. We make use of the just introduced decomposition of variance, and write the formula as&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}R^2 = \frac{\text{variance explained}}{\text{total variance}} = \frac{SSE}{SST} = 1 - \frac{SSR}{SST}\in[0,1]  \end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;It is easy to see that a &lt;em&gt;good fit&lt;/em&gt; is one where the sum of &lt;em&gt;explained&lt;/em&gt; squares (SSE) is large relative to the total variation (SST). In such a case, we observe an $R^2$ close to one. In the opposite case, we will see an $R^2$ close to zero. Notice that a small $R^2$ does not imply that the model is useless, just that it explains a small fraction of the observed variation.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:fn1&#34;&gt;This slope is related to the angle between vectors $\mathbf{a} =(\overline{x},\overline{y})$, and $\mathbf{b} = (\overline{x},0)$. Hence, it&#39;s related to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Scalar_projection&#34;&gt;scalar projection&lt;/a&gt; of $\mathbf{a}$ on $\mathbf{b}$]
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:fn1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>工具变量</title>
+      <link>/post/iv/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>/post/iv/</guid>
+      <description>&lt;h2 id=&#34;效應評估模型&#34;&gt;效應評估模型&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[Y_{i}={Y}_{-p,i}+\beta_i P_{i}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+Y_i=Y_{-P,i}+\beta^* P_i
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+Y_i=\beta_0+\beta_1P_i+w_i&#39;\gamma+\varepsilon
+\tag{3.2}
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;在$w_{i}$條件下，「香煙售價」$P_{i}$必需要與「非價格效應的香煙銷售量」$Y_{-P}$獨立，即：&lt;span  class=&#34;math&#34;&gt;\(P_i\perp Y_{-p,i} | w_i\)&lt;/span&gt; 另一個同義說法是：「香煙售價」$P_{i}$必需要與「控制$w_{i}$條件後的非價格效應香煙銷售量」獨立。&lt;/p&gt;
+
+&lt;p&gt;对$Y_{-P}$进行$rincome$下分解
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+Y_{i}=Y_{-P,i}-\mathbb{E}(Y_{-P,i}|rincome_{i})+\beta^{*}P_{i}+\mathbb{E}(Y_{-P,i}|rincome_{i})
+\tag{3.3}
+\end{equation}
+\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;把資料依$w_{i}$條件變數不同, 分群觀察「香煙售價」$P_{i}$與「香煙銷售量」$Y_{i}$之間的斜率。如果$w_{i}$變數選得好，同一群資料$P_{i}$與$Y_{i}$間的關連會反映應有的效應斜率——雖然有時$Y_{i}$會因為$Y_{-P,i}$的干擾影響我們對斜率高低的觀察，但因為$Y_{-P,i}$不會與$P_{i}$有關了，這些觀察干擾在大樣本下會互相抵消掉而還原應有的效應斜率值。&lt;/p&gt;
+
+&lt;p&gt;如果不管我們怎麼選擇$w_{i}$還是無法控制住$Y_{-P,i}$對與關連$Y_{i}$的干擾，那我們就要進行【資料轉換】直接從原始資料中【去除這些干擾】，其中最常見的兩種去除法為：工具變數法、追蹤資料固定效果模型。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;工具變數法：透過工具變數&lt;strong&gt;留下&lt;/strong&gt;$P_{i}$&lt;strong&gt;不與&lt;/strong&gt;$Y_{-P,i}$相關的部份。&lt;/li&gt;
+&lt;li&gt;追蹤資料：透過變數轉換&lt;strong&gt;去除&lt;/strong&gt;$P_{i}$中&lt;strong&gt;與&lt;/strong&gt;$Y_{-P,i}$相關的部份。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+Y_i=Y_{-p,i}+\beta\mathbb{E}(P_i|z_i)+\beta (P_i-\mathbb{E}(P_i|z_i))
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;relevance-condition&#34;&gt;Relevance condition&lt;/h3&gt;
+
+&lt;p&gt;$\mathbb{E}(P|z)\neq 常数$即$z$对$P$具有解释力&lt;/p&gt;
+
+&lt;h3 id=&#34;exclusion-condition&#34;&gt;Exclusion condition&lt;/h3&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\(Y_{-p,i}+\beta(P_i-\mathbb{E}(P_i|z_i))\)&lt;/span&gt;与&lt;span  class=&#34;math&#34;&gt;\(z_{i}\)&lt;/span&gt;无关&lt;/p&gt;
+
+&lt;h2 id=&#34;三个假设&#34;&gt;三个假设&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\begin{equation}
+Y_i=\beta_0+\beta_1 P_i + \gamma_1 rincome_i + \epsilon_i
+\tag{3.5}
+\end{equation}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Q1: 我的工具變數有滿足排除條件（或外生條件）嗎?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;香煙稅是否與控制條件下的「非售價因素銷售」無關？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+Y =\underset{(\times k)}{X}\beta+\underset{(\times p)}{W}\gamma +\epsilon
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;其中$X$為要進行效應評估的變數群，$W$為控制變數群，故$ϵ$為「$W$控制條件下排除$X$效果的Y值」。另外，我們額外找了工具變數: $\underset{\times m)}{Z}$, 要驗證：&lt;/p&gt;
+
+&lt;p&gt;$H_{0}$: 工具變數$Z$與迴歸模型誤差項$ϵ$無關&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;進行TSLS，取得 &lt;span  class=&#34;math&#34;&gt;\( \hat{\epsilon}_{_{TSLS}}=Y-\hat{Y}_{TSLS} \)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;將 &lt;span  class=&#34;math&#34;&gt;\( \hat{\epsilon}_{_{TSLS}} \)&lt;/span&gt; 迴歸在總工具變數群（即$Z$與$W$）並進行所有係數為0的聯立檢定，計算檢定量 $J=mF\sim\chi^{2}(m-k)$，其中F係數聯立檢定的F檢定值。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;此檢定的自由度為$m−k$，所以$m$要&lt;strong&gt;大於&lt;/strong&gt;$k$。“等於”時是無法進行檢定的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Q2: 我的工具變數關聯性夠強嗎？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;香煙稅真的與「售價」很有關連嗎？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;工具變數$Z$必需要與效應解釋變數$X$有「足夠強」的關聯，否則&lt;span  class=&#34;math&#34;&gt;\(\hat{\beta}_{_{TSLS}}\)&lt;/span&gt;的大樣本漸近分配不會是常態分配。&lt;/p&gt;
+
+&lt;p&gt;考慮TSLS中的第一階段迴歸模型：$X=Z\alpha_z+W\alpha_w+u$我們希望$\alpha_z$聯立夠顯著。&lt;/p&gt;
+
+&lt;p&gt;檢定原則&lt;/p&gt;
+
+&lt;p&gt;$H_0$:$Z$ 工具變數只有微弱關聯性。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;$X$迴歸在「總」工具變數群($Z$,$W$)，進行$\alpha_z=0$的聯立F檢定。&lt;/li&gt;
+&lt;li&gt;$F&amp;gt;10$拒絕$H_0$。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Q3: 我對遺漏變數偏誤(OVB)的擔心是否多餘？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;或許根本沒有必要用工具變數，在&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-test&#34;&gt;(3.5)&lt;/a&gt;迴歸模型下，PP早已和ϵϵ（即「控制條件下的非售價因素銷售」）無關——直接對&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-test&#34;&gt;(3.5)&lt;/a&gt;進行最小平方法估計即可。
+&lt;span  class=&#34;math&#34;&gt;\(
+\begin{equation}
+Y   =X\beta+W\gamma +\epsilon
+\tag{3.6}
+\end{equation}
+\)&lt;/span&gt;
+$H_0 $: 迴歸模型&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-model71&#34;&gt;(3.6)&lt;/a&gt;中的$\beta$係數估計「沒有」面臨OVB: 用OLS或TSLS都可以: 在大樣本下，&lt;span  class=&#34;math&#34;&gt;\(\\hat{\beta}_{OLS}\approx\hat{\beta}_{TSLS}\)&lt;/span&gt;。&lt;/p&gt;
+
+&lt;p&gt;$H_1 $: 迴歸模型&lt;a href=&#34;https://bookdown.org/tpemartin/econometric_analysis/iv.html#eq:ch3-model71&#34;&gt;(3.6)&lt;/a&gt;中的$\beta$係數估計「有」面臨OVB: 只能用TSLS :在大樣本下，&lt;span  class=&#34;math&#34;&gt;\(\\hat{\beta}_{OLS}\neq \hat{\beta}_{TSLS}\)&lt;/span&gt;。&lt;/p&gt;
+
+&lt;p&gt;Hausman檢定統計量:
+&lt;span  class=&#34;math&#34;&gt;\(
+H\equiv\left(\hat{\beta}_{IV}-\hat{\beta}_{OLS}\right)^{&#39;}\left[V(\hat{\beta}_{IV}-\hat{\beta}_{OLS})\right]^{-1}\left(\hat{\beta}_{IV}-\hat{\beta}_{OLS}\right)\sim\chi_{(df)}^{2}.
+\)&lt;/span&gt;
+– df： $\beta$係數個數.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;當$H&amp;gt;\chi_{(df)}^{2}(\alpha)$才拒絕$H_0$。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ghost Blog Workflow</title>
+      <link>/post/ghost-blog-workflow/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/ghost-blog-workflow/</guid>
       <description>
 
-&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://sourcethemes.com/academic/#expo&#34; target=&#34;_blank&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;总算把Ghost配得七七八八，以后要好好记下笔记了。像以前看过的东西时间久了就全忘了，太郁闷了。&lt;/del&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;👉 &lt;a href=&#34;#install&#34;&gt;&lt;strong&gt;Get Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📚 &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;View the &lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Ask a question&lt;/strong&gt; on the forum&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👥 &lt;a href=&#34;https://spectrum.chat/academic&#34; target=&#34;_blank&#34;&gt;Chat with the &lt;strong&gt;community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/source_themes&#34; target=&#34;_blank&#34;&gt;@source_themes&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%23MadeWithAcademic&amp;amp;src=typd&#34; target=&#34;_blank&#34;&gt;#MadeWithAcademic&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💡 &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating?&lt;/strong&gt; View the &lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;❤️ &lt;strong&gt;Support development&lt;/strong&gt; of Academic:
+&lt;h2 id=&#34;目前的workflow如下&#34;&gt;目前的Workflow如下&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;☕️ &lt;a href=&#34;https://paypal.me/cushen&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Donate a coffee&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💵 &lt;a href=&#34;https://www.patreon.com/cushen&#34; target=&#34;_blank&#34;&gt;Become a backer on &lt;strong&gt;Patreon&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🖼️ &lt;a href=&#34;https://www.redbubble.com/people/neutreno/works/34387919-academic&#34; target=&#34;_blank&#34;&gt;Decorate your laptop or journal with an Academic &lt;strong&gt;sticker&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👕 &lt;a href=&#34;https://academic.threadless.com/&#34; target=&#34;_blank&#34;&gt;Wear the &lt;strong&gt;T-shirt&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;👩‍💻 &lt;a href=&#34;https://sourcethemes.com/academic/docs/contribute/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Contribute&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在Synology Drive下Draft目录存放草稿&lt;/li&gt;
+&lt;li&gt;Typora里写markdown并保存&lt;/li&gt;
+&lt;li&gt;存Leanote和evernote各一份，这个应该可以通过&lt;a href=&#34;https://ifttt.com/&#34; target=&#34;_blank&#34;&gt;IFTTT&lt;/a&gt;来实现，日后研究&lt;/li&gt;
+&lt;li&gt;另外一个解决方案是直接Git init Draft目录，再往&lt;a href=&#34;github.com&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;上push备份。&lt;/li&gt;
+&lt;li&gt;存Ghost发布&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;需要的代码注入&#34;&gt;需要的代码注入&lt;/h2&gt;
+
+&lt;h3 id=&#34;公式&#34;&gt;公式&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  
+&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;  
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\\\(&#39;,&#39;\\\\)&#39;]],
+            processEscapes: true
+        }
+    });
+&amp;lt;/script&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;语法高亮&#34;&gt;语法高亮&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在&lt;code&gt;Post Footer&lt;/code&gt;粘贴以下脚本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://prismjs.com/&#34; target=&#34;_blank&#34;&gt;prism.js&lt;/a&gt;不支持Stata就凑合着用用吧。需要载入的&lt;a href=&#34;https://cdnjs.com/libraries/prism&#34; target=&#34;_blank&#34;&gt;components&lt;/a&gt;取决于博文需要。&lt;/p&gt;
+
+&lt;h2 id=&#34;需要注意的地方&#34;&gt;需要注意的地方&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ghost对于H1不能生成Toc，从H2开始&lt;/li&gt;
+&lt;li&gt;对于Markdown中的公式有些需要&lt;a href=&#34;https://blog.yhong.wang/gong-shi/&#34; target=&#34;_blank&#34;&gt;转义&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Logistic Regression</title>
+      <link>/post/logistic-regression/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/logistic-regression/</guid>
+      <description>&lt;h2 id=&#34;odds-ratios&#34;&gt;Odds ratios&lt;/h2&gt;
+
+&lt;p&gt;An &lt;a href=&#34;https://en.wikipedia.org/wiki/Odds_ratio&#34;&gt;odds ratio&lt;/a&gt; of 1.0 is equivalent to a beta weight of 0.0.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Group&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Diseased&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Healthy&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Exposed&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$D_E$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$H_E$&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Not exposed&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;$D_N$&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;$H_N$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;$OR={\frac {D_{E}/H_{E}}{D_{N}/H_{N}}}$&lt;/p&gt;
+
+&lt;p&gt;The distribution of the odds ratio is far from normal. Take the natural logarithm of the odds ratio to get normal.&lt;/p&gt;
+
+&lt;p&gt;$logit = ln(OR)$&lt;/p&gt;
+
+&lt;p&gt;When the mean is around 0.50, the OLS regression and logistic regression produce consistent results, but when the probability is close to 0 or 1, the logistic regression is especially important.&lt;/p&gt;
+
+&lt;h2 id=&#34;logistic-regression&#34;&gt;Logistic regression&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;logit&lt;/code&gt; command gives the regression coefficients to estimate the logit score. The &lt;code&gt;logistic&lt;/code&gt; command gives us the odds ratios we need to interpret the effect size of the predictors.&lt;/p&gt;
+
+&lt;p&gt;Both commands give the same results, except that &lt;code&gt;logit&lt;/code&gt; gives the coefficients for estimating the &lt;strong&gt;logit score&lt;/strong&gt; and &lt;code&gt;logistic&lt;/code&gt; gives the &lt;strong&gt;odds ratios&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The McFadden pseudo-$R^2$ represents how much larger log likelihood is for the final solution.
+, meaning the log likelihood for the fitted model is 2% larger than for the log likelihood for the intercept-only model.
+This is not explained variance. The pseudo-$R^2$  is often a small value, and many researchers do not report it. The biggest mistake is to report it and interpret it as explained variance.&lt;/p&gt;
+
+&lt;p&gt;If you are interested in specific effects of individual variables, it is better to rely on odds ratios for interpreting results of logistic regression. &lt;del&gt;This shows that mothers who smoke have 2.02 times greater odds of having a low-birthweight child.&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Odds ratios&lt;/strong&gt; tell us what happens to the odds of an outcome, whereas &lt;strong&gt;risk ratios&lt;/strong&gt; tell us what happens to their probability.&lt;/p&gt;
+
+&lt;p&gt;For binary predictor variables, you can interpret the odds ratios and percentages directly. For variables that are not binary, you need to have some other standard. One solution is to compare specific examples, such as having no dinners with the family versus having seven dinners with them each week. Another solution is to evaluate the effect of a 1-standard-deviation change for variables that are not binary.&lt;code&gt;listcoef&lt;/code&gt;,get from package &lt;code&gt;spost13&lt;/code&gt;. After logit/logitstic regression, run &lt;code&gt;listcoef, help&lt;/code&gt;or  &lt;code&gt;listcoef, help percent&lt;/code&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Group&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Experimental (E)&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Control (C)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Events (E)&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;EE&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CE&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Non-events (N)&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;EN&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CN&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;$ RR={\frac {EE/(EE+EN)}{CE/(CE+CN)}}={\frac {EE(CE+CN)}{CE(EE+EN)}}. $
+相对风险是指在暴露在某条件下，一个事件的发生风险
+&lt;code&gt;oddsrisk&lt;/code&gt;
+$OR={\frac {EE/CE}{EN/CN}}={\frac {EE\cdot CN}{EN\cdot CE}}$
+一个事件发生比是该事件发生和不发生的比率
+Risk ratio is different from the odds ratio, although it asymptotically approaches it for small probabilities of outcomes. If EE is substantially smaller than EN, then EE/(EE + EN) $ \scriptstyle \approx $ EE/EN. Similarly, if CE is much smaller than CN, then CE/(CN + CE) $ \scriptstyle \approx $ CE/CN.
+$ RR={\frac {EE(CE+CN)}{CE(EE+EN)}}\approx {\frac {EE\cdot CN}{EN\cdot CE}}=OR. $&lt;/p&gt;
+
+&lt;p&gt;The difference is small with a rare outcome.The relative risk is appealing, but it should not be used in a study that controls the number of people in each category.&lt;/p&gt;
+
+&lt;h2 id=&#34;hypothesis-testing&#34;&gt;Hypothesis testing&lt;/h2&gt;
+
+&lt;p&gt;chi-squared test that has  k degrees of freedom, tells us only that the overall model has at least one significant predictor.&lt;/p&gt;
+
+&lt;h3 id=&#34;testing-individual-coefficients&#34;&gt;Testing individual coefficients&lt;/h3&gt;
+
+&lt;p&gt;The z test in the Stata output is actually the square root of the Wald chi-squared test.&lt;/p&gt;
+
+&lt;p&gt;The likelihood-ratio chi-squared test for each parameter estimate is based on comparing two logistic models, one with the individual variable we want to test included and one without it. The likelihood-ratio test is the difference in the likelihood-ratio chi-squared values for these two models (this appears as LR chi2(1) near the upper right corner of the output). The difference between the two likelihood-ratio chi-squared values is 1 degree of freedom.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;use nlsy97_chapter11, clear
+logistic drank30 male dinner97 pdrink97
+estimates store a
+logistic drank30 age97 male dinner97 pdrink97
+#subtracts the chi-squared values and estimates the probability of the chi-squared difference;
+lrtest a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or just use &lt;code&gt;lrdrop1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;testing-sets-of-coefficients&#34;&gt;Testing sets of coefficients&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;test pdrink97 dinner97
+#it is the same as:
+logistic drank30 age97 male if !mi(dinner97) &amp;amp;!mi(pdrink97)
+estimates store a
+logistic drank30 age97 male pdrink97 dinner97 
+lrtest a
+lrdrop1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;this overall test only tells us that at least one of them is significant.&lt;/p&gt;
+
+&lt;h2 id=&#34;margins&#34;&gt;Margins&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;logit drank30 age97 i.black pdrink97 dinner97
+margins, dydx(black) atmeans
+margins black, atmeans
+margins, at(pdrink97=(1 2 3 4 5)) atmeans
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can run the logistic regression using the i. label for this categorical variable, i.black. This produces the same results for the logistic regression as if we had simply used black, but the results will work properly if we follow this command with other postestimation commands.&lt;/p&gt;
+
+&lt;h2 id=&#34;nested-logistic-regressions&#34;&gt;Nested logistic regressions&lt;/h2&gt;
+
+&lt;p&gt;The &lt;code&gt;nestreg&lt;/code&gt; command is extremely general, applicable across a variety of regression models, including logistic, negative binomial, Poisson, probit, ordered logistic, tobit, and others. It also works with the complex sample designs for many regression models.&lt;/p&gt;
+
+&lt;h2 id=&#34;power-analysis&#34;&gt;Power analysis&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;powerlog, p1(.70) p2(.75) alpha(.05)
+powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measurement, reliability, and validity</title>
+      <link>/post/measurement-reliability-and-validity/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/measurement-reliability-and-validity/</guid>
+      <description>&lt;h2 id=&#34;constructing-a-scale&#34;&gt;Constructing a Scale&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;recode empathy2 empathy4 empathy5 (1=5 &amp;quot;Does not describe very well&amp;quot;) ///
+  (2=4) (3=3) (4=2) (5=1 &amp;quot;Describes very well&amp;quot;), pre(rev) label(empathy)
+egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
+  revempathy5 empathy6 empathy7)
+egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 ///
+   revempathy5 empathy6 empathy7) 
+egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
+   revempathy5 empathy6 empathy7) if miss &amp;lt; 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One drawback to using the rowmean() function is that it simply adds the score on the items a person answers and divides by the number of items answered.&lt;/p&gt;
+
+&lt;h2 id=&#34;reliability&#34;&gt;Reliability&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stability&lt;/strong&gt; means that if you measure a variable today using a particular scale and then measure it again tomorrow using the same scale, your results will be consistent.(correlation r,&lt;code&gt;pwcorr&lt;/code&gt;, intraclass correlation $\rho_I$)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Equivalence&lt;/strong&gt; means that you have two measures of the same variable and they produce consistent results. (correlation $r_{xx}$)* (A low correlation means either that the measure is not reliable or that the measures are not truly equivalent.)&lt;/li&gt;
+&lt;li&gt;A reliable test would be &lt;strong&gt;internally consistent&lt;/strong&gt; if the score for the first half of the items was highly correlated with the score for the second half of the items.(correlation &lt;span  class=&#34;math&#34;&gt;\(r_{x_Ax_B}\)&lt;/span&gt;), alpha,&lt;span  class=&#34;math&#34;&gt;\(\alpha\)&lt;/span&gt;) In general, an $\alpha&amp;gt;0.8$ is considered good reliability, and many researchers feel an $\alpha&amp;gt;0.7$ is adequate reliability. (&lt;span  class=&#34;math&#34;&gt;\(\alpha=\sigma^2_{True}/(\sigma^2_{True}+\sigma^2_{error})\)&lt;/span&gt;)However, for this interpretation to be used, we need to assume that the scale is valid.&lt;/li&gt;
+&lt;li&gt;
+&lt;code&gt;alpha empathy1 revempathy2 empathy3 revempathy4 revempathy5 /// 
+empathy6 empathy7, asis item min(5)&lt;/code&gt;
+The asis (as is) option means that we do not want Stata to change the signs of any of our variables.
+The bottom row of the output table, &lt;em&gt;Test scale&lt;/em&gt;, reports the $\alpha$ for the scale (0.7462). Above this value is the $\alpha$ we would obtain if we dropped each item, one at a time. The &lt;em&gt;item-test correlation&lt;/em&gt; column reports the correlation of each item with the total score of the seven items. &lt;em&gt;item-rest correlation&lt;/em&gt;. This is the correlation of each item with the total of the other items.
+The equivalent of alpha for items that are dichotomous is the Kuder–Richardson measure of reliability.&lt;code&gt;alpha&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Rater consistency&lt;/strong&gt; is important when you have observers rating a video, observed behavior, essay, or something else where two or more people are rating the same information. Here reliability means that a pair of raters gives consistent results.(kappa,$\kappa$ &lt;code&gt;kap coder1 coder2&lt;/code&gt;)$\kappa$ only gives us credit for the extent the agreement exceeds what we would have expected to get by chance alone. kappa tends to be lower than alpha.&lt;/p&gt;
+
+&lt;h2 id=&#34;validity&#34;&gt;Validity&lt;/h2&gt;
+
+&lt;p&gt;A valid measure is one that measures what it is supposed to be measuring.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;表面效度(face validity)&lt;/strong&gt;：把設計的問卷，拿給親朋好友填，並問他們問卷好不好。指測量工具在外顯形式上的有效程度&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;內容效度(content validity)&lt;/strong&gt;：找一群有相關經驗的人來看題目，問他們設計的好不好，有沒有哪裡要修改。Content validity ratio (CVR): Judges rate each item as &lt;em&gt;essential, useful, or not necessary.&lt;/em&gt;  $CVR=(Ne - N/2)/(N/2)$ , in which the $Ne$ is the number of panelists indicating &amp;quot;essential&amp;quot; and $N$ is the total number of panelists. You can keep the items that have a relatively high CVR and drop those that do not.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;效標效度(criterion validity)&lt;/strong&gt;：把測量工具和其他可測量的工具，算他們之間的相關n以測驗分數和特定效標（criterion）之間的相關係數，表示測量工具有效性之高低。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;（1）同時效度(current validity)：把設計好的題目，和標準工具（同樣的觀念，相同的變項），去算之間的相關。如：測疼痛忍受度，有四題一分鐘可測完的題目，和另一份標準工具的題目，45題1小時可做完的題目去測，如果R＝0.92（高相關），表示原題目有同時效度。&lt;/li&gt;
+&lt;li&gt;（2）預測效度(predictive validity)：一個調查，可以預測未來的事件、行為、態度、結果。如：手術後，病人對止痛藥的需求，看24個病人的分數，分數越高，手術忍受度越高。把24的分數算出，和拿止痛藥量求相關，R＝－0.82，表示高忍痛程度，低止痛藥量。SAT（可以預測大學第一學期的平均成績）成績，和大學第一學期的平均成績求相關，R＝0.42，表示沒有預測效度。但是R如果逐年增加，則表示有預測效度。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;構念（建構）效度(construct validity)：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;We can assess the &lt;strong&gt;convergent&lt;/strong&gt; and &lt;strong&gt;divergent&lt;/strong&gt; validity of our measure, hope, by seeing whether it is positively correlated with variables with which we believe it converges and negatively correlated with variables with which we believe it diverges.&lt;code&gt;ttest, esize, pwcorr&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;factor-analysis&#34;&gt;Factor analysis&lt;/h2&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;exploratory factor analysis, which Stata calls &lt;strong&gt;principal factor analysis&lt;/strong&gt;: the variance is partitioned into the shared variance and unique or error variance. The shared variance is how much of the variance in any one item can be explained by the rest of the items. PF&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;principal-component factor analysis&lt;/strong&gt; PCF&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;putdocx&lt;/code&gt; stata 15可以create word documents!&lt;/p&gt;
+
+&lt;h3 id=&#34;terminology&#34;&gt;Terminology&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Extraction(萃取)&lt;/li&gt;
+&lt;li&gt;Eigenvalues: In the case of PCF analysis, If there are 10 items, the sum of the eigenvalues will be 10.The factors will be ordered from the most important, which has the largest eigenvalue, to the least important, which has the smallest eigenvalue.In PF analysis, the sum of the eigenvalues will be less than the number of items, and the eigenvalues’ interpretation is complex.&lt;/li&gt;
+&lt;li&gt;Communality and uniqueness: PF analysis tries to explain the shared variance. PCF analysis tries to explain all the variance, which is why it is ideal for the uniqueness to approach zero.&lt;/li&gt;
+&lt;li&gt;Loadings: how clusters of items are most related to one or another of the factors. If an item has a loading over 0.4 on a factor, it is considered a good indicator of that factor.&lt;/li&gt;
+&lt;li&gt;Simple structure: This is a pattern of loadings where each item loads strongly on just one factor and a subset of items load strongly on each factor. When an item loads strongly on more than one factor, it is factorially confounded.&lt;/li&gt;
+&lt;li&gt;Scree plot: This is a graph showing the eigenvalue for each factor. When doing a PCF analysis, we usually drop factors that have eigenvalues in the neighborhood of 1.0 or smaller.&lt;/li&gt;
+&lt;li&gt;Rotation: 轉軸的方式有很多種，但基本就是兩大類：正交 (orthogonal) 與斜交 (oblique rotation)。轉軸的目的是讓因素更有意義，並同時看看因素之間的關係。更詳細一點來說，如果是正交轉軸的話，那就是假設因素之間沒有關連；相對地，斜交假設因素之間有一定的關連。&lt;/li&gt;
+&lt;li&gt;Factor score: weights each item based on how related it is to the factor. Also the factor score is scaled to have a mean of 0.0 and a variance of 1.0.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Use PCF when you have a set of items that you believe all measure one concept. In this situation, you would be interested in the first principal factor. You would want to see if it explained a substantial part of the total variance for the entire set of items, and you would want most of the items to have a &lt;strong&gt;loading of 0.4 or above&lt;/strong&gt; on this factor. Because PCF analysis is trying to explain all the variance in the items, the &lt;strong&gt;uniqueness&lt;/strong&gt; for each item should approach zero. Generally, we should consider any factor that has an eigenvalue of more than 1.A visual way to examine the eigenvalues is with a scree plot.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;factor rnatspac rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
+    rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
+screeplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If, on the other hand, you want to identify two or more latent variables that represent interpretable dimensions of some concept, then PF analysis is probably best.&lt;/p&gt;
+
+&lt;h3 id=&#34;rotation&#34;&gt;Rotation&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Orthogonal:&lt;code&gt;rotate&lt;/code&gt;With a varimax rotation, we can think of the loadings as being the estimated correlation between each item and each factor.&lt;/li&gt;
+&lt;li&gt;oblique:&lt;code&gt;rotate, promax&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;estat common&lt;/code&gt; to get correlation matrix of promax rotated common factors&lt;/p&gt;
+
+&lt;h2 id=&#34;get-one-factor-score&#34;&gt;Get one factor score&lt;/h2&gt;
+
+&lt;p&gt;However, this distinction rarely makes a lot of practical difference. The factor score may make a difference if there are some items with very large loadings, say, 0.9, and others with very small loadings, say, 0.2. But we would probably drop the weakest items. When the loadings do not vary a great deal, computing a factor score or a mean/total score will produce comparable results.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;factor rnatenvir rnatheal rnatcity rnatcrime rnatdrug rnateduc rnatrace ///
+    rnatfare rnatsoc rnatchld, pcf
+predict libfscore, norotate
+egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
+    rnateduc rnatrace rnatfare rnatsoc rnatchld)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;correlation higher than 0.9...&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Missing values</title>
+      <link>/post/missing-values/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/missing-values/</guid>
+      <description>
+
+&lt;p&gt;Many advanced Stata estimation models can use multiple imputation for handling missing values.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.iriseekhout.com/missing-data/auxiliary-variables/&#34; target=&#34;_blank&#34;&gt;Auxiliary variables&lt;/a&gt; are variables that can help to make estimates on incomplete data, while they are not part of the main analysis (Collins et al., 2001).&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Include all variables in the analysis model, including the dependent variable,&lt;/li&gt;
+&lt;li&gt;Include auxiliary variables that predict patterns of missingness,&lt;/li&gt;
+&lt;li&gt;and Include additional variables that predict a person’s score on a variable that has missing values.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The imputation model is then used to generate a complete dataset.&lt;/p&gt;
+
+&lt;p&gt;Once you have included a reasonably large number of variables, adding additional variables may not be helpful because of multicollinearity.&lt;/p&gt;
+
+&lt;p&gt;Drop any participant who does not have complete information on every item used in the analysis. This approach goes by several names, including &lt;strong&gt;full case analysis&lt;/strong&gt;, &lt;strong&gt;casewise deletion&lt;/strong&gt;, or &lt;strong&gt;&lt;em&gt;listwise deletion.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;There will be a substantial loss of power because of the reduced sample size.&lt;/li&gt;
+&lt;li&gt;Listwise deletion can introduce substantial bias. (survival bias)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One alternative to listwise deletion involves substituting the mean on a variable for anybody who does not have a response. This has two serious limitations. People who are average on a variable are often more likely to give an answer than are people who have an extreme value.The second problem with mean substitution is that when you give several people the same score on a variable, these people have zero variance on the variable. This artificially reduced variance will seriously bias our parameter estimates.&lt;/p&gt;
+
+&lt;p&gt;The key to understanding multiple imputation is that the imputed missing values will not contain any unique information once the variables in the model and the auxiliary variables are allowed to explain the patterns of missing values and predict the score of the missing values. The imputed values for variables with missing values are simply consistent with the observed data. This allows us to use all available information in our analysis.&lt;/p&gt;
+
+&lt;h2 id=&#34;multiple-imputation&#34;&gt;Multiple imputation&lt;/h2&gt;
+
+&lt;p&gt;A powerful way of working with missing values involves multiple imputation. The command &lt;em&gt;mi&lt;/em&gt; involves three straightforward steps:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Create &lt;em&gt;m&lt;/em&gt; complete datasets by imputing the missing values. Each dataset will have no missing values, but the values imputed for missing values will vary across the  datasets.&lt;/li&gt;
+&lt;li&gt;Do your analysis in each of the &lt;em&gt;m&lt;/em&gt;  complete datasets.&lt;/li&gt;
+&lt;li&gt;Pool your &lt;em&gt;m&lt;/em&gt;  solutions to get one solution.
+
+&lt;ul&gt;
+&lt;li&gt;The parameter estimates—for example, regression coefficients—will be the mean of their corresponding values in the  datasets.&lt;/li&gt;
+&lt;li&gt;The standard errors used for testing significance will combine the standard errors from the solutions plus the variance of the parameter estimates across the  solutions. If each solution is yielding a very different estimate, this uncertainty is added to the standard errors. Also the degrees of freedom is adjusted based on the number of imputations and proportion of data that have missing values.&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;The most widely used approach is using multivariate normal regression (MVN). &lt;code&gt;mi impute mvn&lt;/code&gt; is designed for continuous variables. &lt;code&gt;mi impute chained&lt;/code&gt; is another useful alternative.&lt;/p&gt;
 
+&lt;p&gt;A missing value will have a code of ., .a, .b, etc. Remember that a missing value is recorded in a Stata dataset as an extremely high value. Within mi, a missing-value code, . (dot), has a special meaning. It denotes the missing values eligible for imputation. If you have a set of missing values that should not be imputed, you should record them as extended missing values, that is, as .a, .b, etc.&lt;code&gt;recode agem (.a = .)&lt;/code&gt;&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
+misstable patterns ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
+quietly misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, gen(miss_)
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;then&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;logit miss_ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm if ln_wagem &amp;lt;= .
+logit miss_gradem ln_wagem agem ttl_expm tenurem not_smsa south blackm if gradem &amp;lt;= .
+logit miss_agem ln_wagem gradem ttl_expm tenurem not_smsa south blackm if agem &amp;lt;= .
+logit miss_ttl_expm ln_wagem gradem agem tenurem not_smsa south blackm if ttl_expm &amp;lt;= .
+logit miss_tenurem ln_wagem gradem agem ttl_expm not_smsa south blackm if tenurem &amp;lt;= .
+logit miss_blackm ln_wagem gradem agem ttl_expm tenurem not_smsa south if blackm &amp;lt;= .
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;Or use &lt;code&gt;pwcorr , obs sig&lt;/code&gt; to find potential auxiliary variables.&lt;/p&gt;
 
+&lt;p&gt;Any variable that is statistically significant in these logistic regressions should be included in the imputation step.&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;mi set flong
+mi register imputed ln_wagem gradem agem ttl_expm tenurem blackm
+mi register regular not_smsa south 
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;The &lt;code&gt;mi set flong&lt;/code&gt; command tells Stata how to arrange our multiple datasets(flong (full and long), or mlong (marginal and long)). The &lt;code&gt;mi register imputed&lt;/code&gt; command registers all the variables that have missing values and need to be imputed. The &lt;code&gt;mi register regular&lt;/code&gt; command registers all the variables that have no missing values or for which we do not want to impute values.&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;生成m=20个数据集，&lt;code&gt;_mi_m&lt;/code&gt; variable identifies datasets and ranges from 0 to 20.&lt;/p&gt;
 
+&lt;pre&gt;&lt;code&gt;mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
+&lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;To get pooled $R^2$ and standardized $\beta$s use &lt;code&gt;mibeta&lt;/code&gt;&lt;/p&gt;
 
-&lt;figure&gt;
+&lt;pre&gt;&lt;code&gt;mibeta ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, fisherz miopts(vartable)
+&lt;/code&gt;&lt;/pre&gt;
 
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; data-caption=&#34;Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-
-&lt;p&gt;&lt;strong&gt;Key features:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://sourcethemes.com/academic/docs/jupyter/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 15+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-
-&lt;p&gt;Academic comes with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can  choose their preferred mode - click the sun/moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34; target=&#34;_blank&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully &lt;a href=&#34;https://sourcethemes.com/academic/docs/customization/#custom-theme&#34; target=&#34;_blank&#34;&gt;customizable&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
+&lt;p&gt;When &lt;strong&gt;impossible&lt;/strong&gt; values are imputed(建议不调整): Binary variables, squares, and interactions（在原数据集先相乘，再impute）&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multilevel analysis</title>
+      <link>/post/multilevel-analysis/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/multilevel-analysis/</guid>
+      <description>&lt;p&gt;Multilevel analysis can address the lack of independence of the observations when you are analyzing grouped data. See &lt;em&gt;Stata Multilevel Mixed-Effects Reference Manual&lt;/em&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34; target=&#34;_blank&#34;&gt;Academic Admin&lt;/a&gt;:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34; target=&#34;_blank&#34;&gt;Academic Scripts&lt;/a&gt;:&lt;/strong&gt; Scripts to help migrate content to new versions of Academic&lt;/li&gt;
+&lt;li&gt;groups of individuals&lt;/li&gt;
+&lt;li&gt;panel data&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+&lt;h2 id=&#34;fixedeffects-regression-models&#34;&gt;Fixed-effects regression models&lt;/h2&gt;
 
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[y_it = \beta_0 +\beta x_{it}+\mu_i+\eta_{it}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;if &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; correlates with &lt;span  class=&#34;math&#34;&gt;\(x_{it}\)&lt;/span&gt; -&amp;gt; Fixed-effects
+if &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; independent of &lt;span  class=&#34;math&#34;&gt;\(x_{it}\)&lt;/span&gt; -&amp;gt; Random-effects models give consistent estimates&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;xtreg&lt;/code&gt;  see &lt;em&gt;Stata Longitudinal-Data/Panel-Data Reference Manual.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;randomeffects-regression-models&#34;&gt;Random-effects regression models&lt;/h2&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[y_it = \beta_0 +\beta x_{it}+\gamma z_i +\mu_i+\eta_{it}\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;assume &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; is independent of &lt;span  class=&#34;math&#34;&gt;\(x_{it}\)&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;fixed component, &lt;span  class=&#34;math&#34;&gt;\( \beta_0 +\beta x_{it}+\gamma z_i\)&lt;/span&gt; , describes the overall relationship between our dependent variable and our independent variable. The random component, &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; i represents the effects of the unobserved time-invariant variables.&lt;/p&gt;
+
+&lt;p&gt;score = fixed part + random effects + error&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Going back and forth between wide and long formats&lt;/strong&gt; : &lt;code&gt;reshape wide&lt;/code&gt; and &lt;code&gt;reshape long&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;reshape long drink, i(id) j(wave)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;randomintercept-model&#34;&gt;Random-intercept model&lt;/h2&gt;
+
+&lt;h3 id=&#34;linear-model&#34;&gt;linear model&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink c.wave || id:
+estimates store linear
+margins, at(wave=(0(2)10))
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;quadratic-term&#34;&gt;quadratic term&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink c.wave##c.wave || id:
+estimates store quadratic
+margins, at(wave=(0(2)10))
+marginsplot
+lrtest linear quadratic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A proportional reduction in error (PRE) measuring how much the residual (error) variance is reduced by adding the quadratic term may be useful. We will call the random-intercept linear model “Model 1” and the random-intercept quadratic model “Model 2”.&lt;/p&gt;
+
+&lt;p&gt;PRE = (var(Residual)Model1-var(Residual)Model2)/var(Residual)Model1&lt;/p&gt;
+
+&lt;h3 id=&#34;treating-time-as-a-categorical-variable&#34;&gt;Treating time as a categorical variable&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink i.wave || id:
+estimates store means
+margins, at(wave=(0(2)10))
+marginsplot
+lrtest linear means
+lrtest quadratic means
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;randomcoefficients-model&#34;&gt;Random-coefficients model&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;mixed drink c.wave || id: wave, cov(unstructured)
+predict yhat_drink, fitted
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;including-a-timeinvariant-covariate&#34;&gt;Including a time-invariant covariate&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;* Random coefficients model with time invariant covariate
+* gender coded as male = 1, female = 0
+mixed drink c.wave i.male || id: wave
+margins male, at(wave=(0(2)8))
+marginsplot
+
+* Random coefficients, with wave interacting with the
+* time invariant covariate--gender coded
+mixed drink c.wave##i.male || id: wave
+margins male, at(wave=(0(2)8))
+marginsplot
+
+mixed drink c.wave##c.wave##i.male || id: wave
+margins male, at(wave=(0(2)8))
+marginsplot
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multiple Regressions</title>
+      <link>/post/multiple-regressions/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/multiple-regressions/</guid>
+      <description>
+
+&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
+HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
+
+&lt;p&gt;Note: toc is not compatible with &lt;code&gt;markup: mmark&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-web-browser&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;one-click install using your web browser (recommended)&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-git&#34; target=&#34;_blank&#34;&gt;install on your computer using &lt;strong&gt;Git&lt;/strong&gt; with the Command Prompt/Terminal app&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-zip&#34; target=&#34;_blank&#34;&gt;install on your computer by downloading the &lt;strong&gt;ZIP files&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;install on your computer with &lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;F: There is a highly significant relationship between outcomes and the set of predictors.&lt;/li&gt;
+&lt;li&gt;R2: How much of the outcome variance is explained by the regression model&lt;/li&gt;
+&lt;li&gt;Adj-R2: remove the chance effects&lt;/li&gt;
+&lt;li&gt;Coef.: &lt;em&gt;unstandardized regression coefficients&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;t: coef/standard error&lt;/li&gt;
+&lt;li&gt;Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable.&lt;/li&gt;
+&lt;li&gt;,beta gives &lt;strong&gt;beta weights&lt;/strong&gt;: based on standardizing all variables to have a mean of 0 and a standard deviation of 1. These beta weights are interpreted similarly to how you interpret correlations in that beta&lt;0.2 is considered a weak effect,  between 0.2 and 0.5 is considered a moderate effect, and  is considered a strong effect.(range of -1 to +1, if out of range, -&gt;multicollinearity problem):a 1-standard-deviation change in the independent variable produces a - beta standard-deviation change in the dependent variable.&lt;/li&gt;
+&lt;li&gt;increment in R2:&lt;em&gt;part-correlation square&lt;/em&gt; because it measures the part that is uniquely explained by the variable. or &lt;em&gt;semipartial R2&lt;/em&gt; (Semipartial Corr.^2 in &lt;code&gt;pcorr&lt;/code&gt; )estimates only the &lt;strong&gt;unique&lt;/strong&gt; effect of each predictor. Another way to compare is partial correlation;&lt;/li&gt;
+&lt;li&gt;distribution of the dependent variable: &lt;code&gt;histogram env_con, frequency normal kdensity&lt;/code&gt; (for &lt;a href=&#34;https://lotabout.me/2018/kernel-density-estimation/&#34; target=&#34;_blank&#34;&gt;kernel density estimation&lt;/a&gt;)&lt;strong&gt;Skewness&lt;/strong&gt;(0:Normal; &lt;0: negative or left skew, &gt;0: positive or skew to the right)&lt;strong&gt;kurtosis&lt;/strong&gt;(3: normal; &lt;3: tails are too thick, flat or negative kurtosis; &gt;3: tails are too thin, peaky or positive kurtosis)&lt;code&gt;sktest&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;distribution of the residuals: for large sample, normality is not a critical issue. &lt;code&gt;rvfplot, yline(0)&lt;/code&gt;residual-versus-fitted plot:
+To solve the non-normal distribution of residual, we can use &lt;code&gt;reg y xs, vce(robust)&lt;/code&gt; or use bootstrap&lt;code&gt;reg y xs, vce(bootstrap, rep(1000))&lt;/code&gt; , it will change std err and hence t-value.  However,
+Andrew J. Leone, Miguel Minutti-Meza, and Charles E. Wasley (2019) Influential Observations and Inference in Accounting Research. The Accounting Review In-Press.
+they talk about robust regression using &lt;strong&gt;robreg, what&amp;rsquo;s the difference?&lt;/strong&gt;
+ALso, check &lt;a href=&#34;https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/se_programming.htm&#34; target=&#34;_blank&#34;&gt;Correcting for Cross-Sectional and Time-Series Dependence in Accounting Research&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3, beta
+predict envhat
+preserve
+set seed 515
+sample 100, count
+twoway (scatter env_con envhat) (lfit env_con envhat)
+restore
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Then &lt;a href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34; target=&#34;_blank&#34;&gt;personalize and deploy your new site&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;diagnostic-statistics&#34;&gt;Diagnostic statistics&lt;/h2&gt;
 
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.r-tutor.com/elementary-statistics/simple-linear-regression/standardized-residual&#34; target=&#34;_blank&#34;&gt;Rstandard:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;View the Update Guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The standardized residual is the residual divided by its standard deviation.&lt;/p&gt;
 
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; to help keep track of &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34;&gt;updates&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3, beta
+predict yhat
+predict residual, residual
+predict rstandard, rstandard
+list respnum env_con yhat residual rstandard if abs(rstandard) &amp;gt; 2.58 &amp;amp; rstandard &amp;lt; .
+dfbeta
+list respnum rstandard _dfbeta_1 if abs(_dfbeta_1) &amp;gt; 2/sqrt(3769) &amp;amp; _dfbeta_1 &amp;lt; .
+estat vif
 
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Influential observations: DFbeta: You could think of this as redoing the regression model, omitting just one observation at a time and seeing how much difference omitting each observation makes. ****A value of **DFbeta  &amp;gt;2/sqrt(N) ** indicates that an observation has a large influence**** More specific than rstandard&lt;/p&gt;
 
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;. dfbeta
+(739 missing values generated)
+                   _dfbeta_1: dfbeta(educat)
+(739 missing values generated)
+                   _dfbeta_2: dfbeta(inc)
+(739 missing values generated)
+                   _dfbeta_3: dfbeta(com3)
+(739 missing values generated)
+                   _dfbeta_4: dfbeta(hlthprob)
+(739 missing values generated)
+                   _dfbeta_5: dfbeta(epht3)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;multicollinearity: The more correlated the predictors, the more they overlap and, hence, the more difficult it is to identify their independent effects. In such situations, you can have multicollinearity in which one or more of the predictors are virtually redundant.
+variance inflation factor &lt;code&gt;estat vif&lt;/code&gt; after regression, if &amp;gt;10, for any variable, a multicollinearity problem may exist. If the average VIF is substantially greater than 1.00, there still could be a problem.(Dropping a variable, create a scale that combines them into one variable.)
+1/VIF = 1-R2(of regress X1 on other Xs) It tells how much of the variance in the independent variable is available to predict the outcome variable independently.&lt;/p&gt;
+
+&lt;h2 id=&#34;weighted-data&#34;&gt;Weighted data&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3 [pweight=finalwt], beta
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When you do a weighted regression this way, Stata automatically uses the robust regression—whether you ask for it or not—because weighted data require robust standard errors.&lt;/p&gt;
+
+&lt;h2 id=&#34;categorical-predictors-and-hierarchical-regression&#34;&gt;Categorical predictors and hierarchical regression&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;regress smday97 age97 male psmoke97 aa hispanic other if !missing(smday97, ///
+	age97, male, psmoke97, aa, hispanic, other), beta
+test aa hispanic other
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;nested regressions&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nestreg: regress smday97 (age97 male) (psmoke97) (aa hispanic other), beta
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you put i. as a stub in front of a categorical variable, Stata will make the first category the reference category and then generate a dummy variable for each of the remaining categories.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;regress smday97 age97 male psmoke97 i.race
+#change reference category or what Stata refers to as the baselevel
+regress smday97 age97 male psmoke97 ib3.race
+regress smday97 age97 male psmoke97 ib(last).race
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;interaction&#34;&gt;interaction&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;g ed_male = educ*male
+reg inc educ male ed_male,beta
+nestreg: regress inc (educ male) (ed_male), beta
+regress inc i.male##c.educ, beta
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;some researchers choose to center quantitative independent variables, such as education, before computing the interaction terms.
+Centering is important for independent variables where a value of zero may not be meaningful.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;summarize educ
+generate educ_c = educ - r(mean)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;margins help us to interpret the interaction term&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;margins male, at(educ=(8 10 12 14 16 18))
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;nonlinear&#34;&gt;nonlinear&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;regress ln_wage c.ttl_exp##c.ttl_exp, beta
+margins, at(ttl_exp = (0(2)28))
+marginsplot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://stats.idre.ucla.edu/stata/dae/multiple-regression-power-analysis/&#34; target=&#34;_blank&#34;&gt;Power analysis&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>We have no idea</title>
+      <link>/post/we-have-no-idea/</link>
+      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>/post/we-have-no-idea/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/ecab79a7a6e23208d6db55bbd70e478f.png&#34; alt=&#34;&amp;quot;Fundanmental&amp;quot; Matter Particles&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/95596bf7e88ea381ae21a1c87614320c.png&#34; alt=&#34;Mass Values&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/707793eb1776621eb336bb1088f8329c.png&#34; alt=&#34;Force Carrier Particles&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/1bc4eb76cf49df9c63897ed6879d5775.png&#34; alt=&#34;Forces&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bosons make up one of the two classes of &lt;a href=&#34;https://en.wikipedia.org/wiki/Elementary_particle&#34; target=&#34;_blank&#34;&gt;particles&lt;/a&gt;, the other being &lt;a href=&#34;https://en.wikipedia.org/wiki/Fermion&#34; target=&#34;_blank&#34;&gt;fermions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So far, we have some hints and some ideas about what the smallest distance in the universe might be (the Planck length). We have a pretty good catalog of twelve matter particles that so far we haven’t been able to break further apart (the Standard Model). And we have a list of three possible ways that these particles can interact (the electroweak and strong forces and gravity).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/1d7d5449e431246f76c2f99437720885.png&#34; alt=&#34;Mass of the Proton&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
