@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>R</title>
-      <link>/categories/r/</link>
+      <title>Books</title>
+      <link>/categories/books/</link>
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/categories/r/</guid>
+      <guid>/categories/books/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Books</title>
-      <link>/categories/books/</link>
-      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/categories/books/</guid>
+      <title>R</title>
+      <link>/categories/r/</link>
+      <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/r/</guid>
       <description></description>
     </item>
     

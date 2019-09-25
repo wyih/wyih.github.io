@@ -13,10 +13,10 @@
     </image>
     
     <item>
-      <title>R</title>
-      <link>/tags/r/</link>
+      <title>socviz</title>
+      <link>/tags/socviz/</link>
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/r/</guid>
+      <guid>/tags/socviz/</guid>
       <description></description>
     </item>
     
@@ -33,6 +33,14 @@
       <link>/tags/stata/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/tags/stata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
