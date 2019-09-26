@@ -168,12 +168,12 @@
   </url>
   
   <url>
-    <loc>/categories/workflow/</loc>
+    <loc>/tags/workflow/</loc>
     <lastmod>2019-09-25T16:40:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/workflow/</loc>
+    <loc>/categories/workflow/</loc>
     <lastmod>2019-09-25T16:40:38+08:00</lastmod>
   </url>
   
@@ -270,26 +270,6 @@
   <url>
     <loc>/authors/robert-ford/</loc>
     <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/plot/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r-markdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
