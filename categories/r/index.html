@@ -121,7 +121,7 @@
   <meta property="og:description" content=""><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2019-09-26T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2019-10-09T00:00:00&#43;00:00">
   
 
   
@@ -317,6 +317,15 @@
   
 
   
+  
+  <div>
+    <h2><a href="/post/data-vis-chapter-8/">Data Vis Chapter 8</a></h2>
+    <div class="article-style">
+      
+      Use Color PaletteLayer Color and Text TogetherThemesUse Theme ElementsTwo y-axeshead(asasec)## Section Sname Beginning Revenues## 1 Aging and the Life Course (018) Aging 12752 12104## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144## 3 Altruism and Social Solidarity (047) Altruism 1139 1862## 4 Animals and Society (042) Animals 473 820## 5 Asia/Asian America (024) Asia 9056 2116## 6 Body and Embodiment (048) Body 3408 1618## Expenses Ending Journal Year Members## 1 12007 12849 No 2005 598## 2 400 12677 No 2005 301## 3 1875 1126 No 2005 NA## 4 1116 177 No 2005 209## 5 1710 9462 No 2005 365## 6 1920 3106 No 2005 NAp &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p + geom_point() + geom_smooth()p &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p + geom_point(mapping = aes(color = Journal)) + geom_smooth(method = &quot;lm&quot;)p0 &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p1 &lt;-p0 + geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;gray80&quot;) +geom_point(mapping = aes(color = Journal))library(ggrepel)p2 &lt;- p1 + geom_text_repel(data = subset(asasec, Year == 2014 &amp;Revenues &gt; 7000),size = 2)p3 &lt;- p2 + labs(x = &quot;Membership&quot;,y = &quot;Revenues&quot;,color = &quot;Section has own Journal&quot;,title = &quot;ASA Sections&quot;,subtitle = &quot;2014 Calendar year.
+      
+    </div>
+  </div>
   
   <div>
     <h2><a href="/post/data-vis-chapter-6/">Data Vis Chapter 6</a></h2>

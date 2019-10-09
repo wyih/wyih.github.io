@@ -5,12 +5,394 @@
     <link>/categories/r/</link>
       <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <description>R</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Thu, 26 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 09 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>R</title>
       <link>/categories/r/</link>
     </image>
+    
+    <item>
+      <title>Data Vis Chapter 8</title>
+      <link>/post/data-vis-chapter-8/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>/post/data-vis-chapter-8/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#use-color-palette&#34;&gt;Use Color Palette&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#layer-color-and-text-together&#34;&gt;Layer Color and Text Together&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#themes&#34;&gt;Themes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#use-theme-elements&#34;&gt;Use Theme Elements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#two-y-axes&#34;&gt;Two y-axes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(asasec)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                                Section         Sname Beginning Revenues
+## 1      Aging and the Life Course (018)         Aging     12752    12104
+## 2     Alcohol, Drugs and Tobacco (030) Alcohol/Drugs     11933     1144
+## 3 Altruism and Social Solidarity (047)      Altruism      1139     1862
+## 4            Animals and Society (042)       Animals       473      820
+## 5             Asia/Asian America (024)          Asia      9056     2116
+## 6            Body and Embodiment (048)          Body      3408     1618
+##   Expenses Ending Journal Year Members
+## 1    12007  12849      No 2005     598
+## 2      400  12677      No 2005     301
+## 3     1875   1126      No 2005      NA
+## 4     1116    177      No 2005     209
+## 5     1710   9462      No 2005     365
+## 6     1920   3106      No 2005      NA&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
+  ggplot(
+    data = subset(asasec, Year == 2014),
+    mapping = aes(x = Members,
+                  y = Revenues, label = Sname)
+  )
+
+p + geom_point() + geom_smooth()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
+  ggplot(
+    data = subset(asasec, Year == 2014),
+    mapping = aes(x = Members,
+                  y = Revenues, label = Sname)
+  )
+
+p + geom_point(mapping = aes(color = Journal)) + geom_smooth(method = &amp;quot;lm&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p0 &amp;lt;-
+  ggplot(
+    data = subset(asasec, Year == 2014),
+    mapping = aes(x = Members,
+                  y = Revenues, label = Sname)
+  )
+
+p1 &amp;lt;-
+  p0 + geom_smooth(method = &amp;quot;lm&amp;quot;, se = FALSE, color = &amp;quot;gray80&amp;quot;) +
+  geom_point(mapping = aes(color = Journal))
+library(ggrepel)
+p2 &amp;lt;- p1 + geom_text_repel(data = subset(asasec, Year == 2014 &amp;amp;
+                                           Revenues &amp;gt; 7000),
+                           size = 2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p3 &amp;lt;- p2 + labs(
+  x = &amp;quot;Membership&amp;quot;,
+  y = &amp;quot;Revenues&amp;quot;,
+  color = &amp;quot;Section has own Journal&amp;quot;,
+  title = &amp;quot;ASA Sections&amp;quot;,
+  subtitle = &amp;quot;2014 Calendar year.&amp;quot;,
+  caption = &amp;quot;Source: ASA annual report.&amp;quot;
+)
+p4 &amp;lt;- p3 + scale_y_continuous(labels = scales::dollar) +
+  theme(legend.position = &amp;quot;bottom&amp;quot;)
+p4&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;div id=&#34;use-color-palette&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Use Color Palette&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;RColorBrewer&lt;/code&gt; package. Access the colors by specifying the &lt;code&gt;scale_color_brewer()&lt;/code&gt; or &lt;code&gt;scale_ﬁll_brewer()&lt;/code&gt; functions, depending on the aesthetic you are mapping.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata,
+            mapping = aes(x = roads, y = donors,
+                          color = world))
+p + geom_point(size = 2) + scale_color_brewer(palette = &amp;quot;Set2&amp;quot;) +
+  theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_point(size = 2) + scale_color_brewer(palette = &amp;quot;Pastel2&amp;quot;) +
+  theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_point(size = 2) + scale_color_brewer(palette = &amp;quot;Dark2&amp;quot;) +
+  theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Specify colors manually, via &lt;code&gt;scale_color_manual()&lt;/code&gt; or &lt;code&gt;scale_fill_manual()&lt;/code&gt;. Try &lt;code&gt;demo(&#39;color&#39;)&lt;/code&gt; to see the color names in R.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cb_palette &amp;lt;-
+  c(
+    &amp;quot;#999999&amp;quot;,
+    &amp;quot;#E69F00&amp;quot;,
+    &amp;quot;#56B4E9&amp;quot;,
+    &amp;quot;#009E73&amp;quot;,
+    &amp;quot;#F0E442&amp;quot;,
+    &amp;quot;#0072B2&amp;quot;,
+    &amp;quot;#D55E00&amp;quot;,
+    &amp;quot;#CC79A7&amp;quot;
+  )
+
+p4 + scale_color_manual(values = cb_palette)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dichromat)
+library(RColorBrewer)
+
+Default &amp;lt;- brewer.pal(5, &amp;quot;Set2&amp;quot;)
+
+types &amp;lt;- c(&amp;quot;deutan&amp;quot;, &amp;quot;protan&amp;quot;, &amp;quot;tritan&amp;quot;)
+names(types) &amp;lt;- c(&amp;quot;Deuteronopia&amp;quot;, &amp;quot;Protanopia&amp;quot;, &amp;quot;Tritanopia&amp;quot;)
+
+color_table &amp;lt;- types %&amp;gt;% purrr::map(~ dichromat(Default, .x)) %&amp;gt;%
+  as_tibble() %&amp;gt;% add_column(Default, .before = TRUE)
+
+color_table&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 5 x 4
+##   Default Deuteronopia Protanopia Tritanopia
+##   &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt;        &amp;lt;chr&amp;gt;      &amp;lt;chr&amp;gt;     
+## 1 #66C2A5 #AEAEA7      #BABAA5    #82BDBD   
+## 2 #FC8D62 #B6B661      #9E9E63    #F29494   
+## 3 #8DA0CB #9C9CCB      #9E9ECB    #92ABAB   
+## 4 #E78AC3 #ACACC1      #9898C3    #DA9C9C   
+## 5 #A6D854 #CACA5E      #D3D355    #B6C8C8&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;layer-color-and-text-together&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Layer Color and Text Together&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Democrat Blue and Republican Red party_colors ← c(&amp;quot;#2E74C0&amp;quot;, &amp;quot;#CB454A&amp;quot;)
+p0 &amp;lt;- ggplot(
+  data = subset(county_data, flipped == &amp;quot;No&amp;quot;),
+  mapping = aes(x = pop, y = black / 100)
+)
+p1 &amp;lt;-
+  p0 + geom_point(alpha = 0.15, color = &amp;quot;gray50&amp;quot;) + scale_x_log10(labels =
+                                                                    scales::comma)
+p1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;party_colors &amp;lt;- c(&amp;quot;#2E74C0&amp;quot;, &amp;quot;#CB454A&amp;quot;)
+p2 &amp;lt;- p1 + geom_point(
+  data = subset(county_data, flipped == &amp;quot;Yes&amp;quot;),
+  mapping = aes(x = pop, y = black / 100, color = partywinner16)
+) +
+  scale_color_manual(values = party_colors) 
+p2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p3 &amp;lt;-
+  p2 + scale_y_continuous(labels = scales::percent) + labs(
+    color = &amp;quot;County flipped to ... &amp;quot;,
+    x = &amp;quot;County Population (log scale)&amp;quot;,
+    y = &amp;quot;Percent Black Population&amp;quot;,
+    title = &amp;quot;Flipped counties, 2016&amp;quot;,
+    caption = &amp;quot;Counties in gray did not flip.&amp;quot;
+  )
+p3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p4 &amp;lt;-
+  p3 + geom_text_repel(
+    data = subset(county_data, flipped == &amp;quot;Yes&amp;quot; &amp;amp; black &amp;gt; 25),
+    mapping = aes(x = pop, y = black / 100, label = state),
+    size = 2
+  )
+p4 + theme_minimal() + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;themes&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Themes&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;theme_set(theme_bw()) 
+p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;theme_set(theme_dark()) 
+p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p4 + theme_gray()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggthemes)
+theme_set(theme_economist())
+p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;theme_set(theme_wsj())
+p4 + theme(
+  plot.title = element_text(size = rel(0.6)),
+  legend.title = element_text(size = rel(0.35)),
+  plot.caption = element_text(size = rel(0.35)),
+  legend.position = &amp;quot;top&amp;quot;
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-2.png&#34; width=&#34;672&#34; /&gt;
+Claus O. Wilke’s &lt;a href=&#34;https://wilkelab.org/cowplot/articles/introduction.html&#34;&gt;&lt;code&gt;cowplot&lt;/code&gt; package&lt;/a&gt;, contains a well-developed theme suitable for figures whose final destination is a journal article. BobRudis’s &lt;a href=&#34;https://github.com/hrbrmstr/hrbrthemes&#34;&gt;&lt;code&gt;hrbrthemes&lt;/code&gt; package&lt;/a&gt;, has a distinctive and compact look and feel that takes advantage of some freely available typefaces.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(hrbrthemes)
+theme_set(theme_ipsum())
+p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p4 + theme(
+  legend.position = &amp;quot;top&amp;quot;,
+  plot.title = element_text(
+    size = rel(2),
+    lineheight = .5,
+    family = &amp;quot;Times&amp;quot;,
+    face = &amp;quot;bold.italic&amp;quot;,
+    colour = &amp;quot;orange&amp;quot;
+  ),
+  axis.text.x = element_text(
+    size = rel(1.1),
+    family = &amp;quot;Courier&amp;quot;,
+    face = &amp;quot;bold&amp;quot;,
+    color = &amp;quot;purple&amp;quot;
+  )
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;use-theme-elements&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Use Theme Elements&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;yrs &amp;lt;- c(seq(1972, 1988, 4), 1993, seq(1996, 2016, 4))
+mean_age &amp;lt;-
+  gss_lon %&amp;gt;% filter(age %nin% NA &amp;amp;&amp;amp;
+                       year %in% yrs) %&amp;gt;% group_by(year) %&amp;gt;% summarize(xbar = round(mean(age, na.rm = TRUE), 0))
+mean_age$y &amp;lt;- 0.3
+yr_labs &amp;lt;- data.frame(x = 85, y = 0.8, year = yrs)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
+  ggplot(data = subset(gss_lon, year %in% yrs),
+         mapping = aes(x = age))
+p1 &amp;lt;-
+  p + geom_density(
+    fill = &amp;quot;gray20&amp;quot;,
+    color = FALSE,
+    alpha = 0.9,
+    mapping = aes(y = ..scaled..)
+  ) +
+  geom_vline(
+    data = subset(mean_age, year %in% yrs),
+    aes(xintercept = xbar),
+    color = &amp;quot;white&amp;quot;,
+    size = 0.5
+  ) +
+  geom_text(
+    data = subset(mean_age, year %in% yrs),
+    aes(x = xbar, y = y, label = xbar),
+    nudge_x = 7.5,
+    color = &amp;quot;white&amp;quot;,
+    size = 3.5,
+    hjust = 1
+  ) +
+  geom_text(data = subset(yr_labs, year %in% yrs), aes(x = x, y = y, label = year)) +
+  facet_grid(year ~ ., switch = &amp;quot;y&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p1 + 
+  theme(
+    plot.title = element_text(size = 16),
+    axis.text.x = element_text(size = 12),
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    strip.background = element_blank(),
+    strip.text.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank()
+  ) +
+  labs(x = &amp;quot;Age&amp;quot;, y = NULL, title = &amp;quot;Age Distribution of\nGSS Respondents&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggridges)
+p &amp;lt;-
+  ggplot(data = gss_lon, mapping = aes(x = age, y = factor(
+    year, levels = rev(unique(year)), ordered = TRUE
+  )))
+p + geom_density_ridges(alpha = 0.6,
+                        fill = &amp;quot;lightblue&amp;quot;,
+                        scale = 1.5) + scale_x_continuous(breaks = c(25, 50, 75)) + scale_y_discrete(expand = c(0.01, 0)) + labs(x = &amp;quot;Age&amp;quot;, y = NULL, title = &amp;quot;Age Distribution of\nGSS Respondents&amp;quot;) +
+  theme_ridges() + theme(title = element_text(size = 16, face = &amp;quot;bold&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;two-y-axes&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Two y-axes&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(fredts)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##         date  sp500 monbase  sp500_i monbase_i
+## 1 2009-03-11 696.68 1542228 100.0000  100.0000
+## 2 2009-03-18 766.73 1693133 110.0548  109.7849
+## 3 2009-03-25 799.10 1693133 114.7012  109.7849
+## 4 2009-04-01 809.06 1733017 116.1308  112.3710
+## 5 2009-04-08 830.61 1733017 119.2240  112.3710
+## 6 2009-04-15 852.21 1789878 122.3245  116.0579&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fredts_m &amp;lt;-
+  fredts %&amp;gt;% select(date, sp500_i, monbase_i) %&amp;gt;% gather(key = series, value = score, sp500_i:monbase_i)
+head(fredts_m)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##         date  series    score
+## 1 2009-03-11 sp500_i 100.0000
+## 2 2009-03-18 sp500_i 110.0548
+## 3 2009-03-25 sp500_i 114.7012
+## 4 2009-04-01 sp500_i 116.1308
+## 5 2009-04-08 sp500_i 119.2240
+## 6 2009-04-15 sp500_i 122.3245&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
+  ggplot(data = fredts_m,
+         mapping = aes(
+           x = date,
+           y = score,
+           group = series,
+           color = series
+         ))
+p1 &amp;lt;-
+  p + geom_line() + theme(legend.position = &amp;quot;top&amp;quot;) + labs(x = &amp;quot;Date&amp;quot;, y = &amp;quot;Index&amp;quot;, color = &amp;quot;Series&amp;quot;)
+p &amp;lt;-
+  ggplot(data = fredts,
+         mapping = aes(x = date, y = sp500_i - monbase_i))
+p2 &amp;lt;- p + geom_line() + labs(x = &amp;quot;Date&amp;quot;, y = &amp;quot;Difference&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cowplot::plot_grid(p1, p2, nrow = 2, rel_heights = c(0.75, 0.25), align = &amp;quot;v&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;672&#34; /&gt;
+Using two y-axes gives you an extra degree of freedom to mess about with the data that, in most cases, you really should not take advantage of.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = yahoo, mapping = aes(x = Employees, y = Revenue))
+p + geom_path(color = &amp;quot;gray80&amp;quot;) + geom_text(aes(color = Mayer, label = Year),
+                                            size = 3,
+                                            fontface = &amp;quot;bold&amp;quot;) +
+  theme(legend.position = &amp;quot;bottom&amp;quot;) + labs(
+    color = &amp;quot;Mayer is CEO&amp;quot;,
+    x = &amp;quot;Employees&amp;quot;,
+    y = &amp;quot;Revenue (Millions)&amp;quot;,
+    title = &amp;quot;Yahoo Employees vs Revenues, 2004-2014&amp;quot;
+  ) + scale_y_continuous(labels = scales::dollar) + scale_x_continuous(labels = scales::comma)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
+  ggplot(data = yahoo,
+         mapping = aes(x = Year, y = Revenue / Employees))
+p + geom_vline(xintercept = 2012) + geom_line(color = &amp;quot;gray60&amp;quot;, size = 2) + annotate(
+  &amp;quot;text&amp;quot;,
+  x = 2013,
+  y = 0.44,
+  label = &amp;quot; Mayer becomes CEO&amp;quot;,
+  size = 2.5
+) +
+  labs(x = &amp;quot;Year\n&amp;quot;, y = &amp;quot;Revenue/Employees&amp;quot;, title = &amp;quot;Yahoo Revenue to Employee Ratio, 2004-2014&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Saying no to pie&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p_xlab &amp;lt;-
+  &amp;quot;Amount Owed, in thousands of Dollars&amp;quot; 
+p_title &amp;lt;- &amp;quot;Outstanding Student Loans&amp;quot; 
+p_subtitle &amp;lt;- &amp;quot;44 million borrowers owe a total of $1.3 trillion&amp;quot; 
+p_caption &amp;lt;- &amp;quot;Source: FRB NY&amp;quot;
+f_labs &amp;lt;-
+  c(`Borrowers` = &amp;quot;Percent of\nall Borrowers&amp;quot;, `Balances` = &amp;quot;Percent of\nall Balances&amp;quot;)
+p &amp;lt;-
+  ggplot(data = studebt,
+         mapping = aes(x = Debt, y = pct / 100, fill = type))
+p + geom_bar(stat = &amp;quot;identity&amp;quot;) + scale_fill_brewer(type = &amp;quot;qual&amp;quot;, palette = &amp;quot;Dark2&amp;quot;) + scale_y_continuous(labels = scales::percent) + guides(fill = FALSE) + theme(strip.text.x = element_text(face = &amp;quot;bold&amp;quot;)) + labs(
+  y = NULL,
+  x = p_xlab,
+  caption = p_caption,
+  title = p_title,
+  subtitle = p_subtitle
+) + facet_grid( ~ type, labeller = as_labeller(f_labs)) + coord_flip()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-27-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(viridis)
+p &amp;lt;-
+  ggplot(studebt, aes(y = pct / 100, x = type, fill = Debtrc)) 
+p + geom_bar(stat = &amp;quot;identity&amp;quot;, color = &amp;quot;gray80&amp;quot;) + scale_x_discrete(labels = as_labeller(f_labs)) + scale_y_continuous(labels = scales::percent) + scale_fill_viridis(discrete = TRUE) + guides(
+    fill = guide_legend(
+      reverse = TRUE,
+      title.position = &amp;quot;top&amp;quot;,
+      label.position = &amp;quot;bottom&amp;quot;,
+      keywidth = 3,
+      nrow = 1
+    )
+  ) +
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = &amp;quot;Amount Owed, in thousands of dollars&amp;quot;,
+    caption = p_caption,
+    title = p_title,
+    subtitle = p_subtitle
+  ) +
+  theme(
+    legend.position = &amp;quot;top&amp;quot;,
+    axis.text.y = element_text(face = &amp;quot;bold&amp;quot;, hjust = 1, size = 12),
+    axis.ticks.length = unit(0, &amp;quot;cm&amp;quot;),
+    panel.grid.major.y = element_blank()
+  ) +
+  coord_flip()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-28-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://r-graph-gallery.com/&#34; class=&#34;uri&#34;&gt;http://r-graph-gallery.com/&lt;/a&gt; for more examples&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Data Vis Chapter 6</title>
@@ -205,9 +587,12 @@ out_tidy &amp;lt;- gapminder %&amp;gt;%
          tidied = map(model, tidy)) %&amp;gt;%
   unnest(tidied, .drop = TRUE) %&amp;gt;%
   filter(term %nin% &amp;quot;(Intercept)&amp;quot; &amp;amp;
-           continent %nin% &amp;quot;Oceania&amp;quot;)
-
-p &amp;lt;- ggplot(
+           continent %nin% &amp;quot;Oceania&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: The `.drop` argument of `unnest()` is deprecated as of tidyr 1.0.0.
+## All list-columns are now preserved.
+## This warning is displayed once per session.
+## Call `lifecycle::last_warnings()` to see where this warning was generated.&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(
   data = out_tidy,
   mapping = aes(
     x = year,
@@ -341,9 +726,9 @@ p + geom_hline(yintercept = 0, color = &amp;quot;gray80&amp;quot;) +
 &lt;pre&gt;&lt;code&gt;## Loading required package: Matrix&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## Attaching package: &amp;#39;Matrix&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:tidyr&amp;#39;:
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:tidyr&amp;#39;:
 ## 
-##     expand&lt;/code&gt;&lt;/pre&gt;
+##     expand, pack, unpack&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## Attaching package: &amp;#39;survey&amp;#39;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:graphics&amp;#39;:
