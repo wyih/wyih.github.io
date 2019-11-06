@@ -31,7 +31,7 @@
   <meta name="description" content="Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) /// (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss &lt; 3 One drawback to using the rowmean() function is that it">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/measurement-reliability-and-validity/">
+  <link rel="alternate" hreflang="en-us" href="../../post/measurement-reliability-and-validity/">
 
   
 
@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.e4d1b8788cc7b9cc36ba28478f8b4c69.css">
+  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
 
   
 
@@ -97,11 +97,11 @@
 
   
 
-  <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="/post/measurement-reliability-and-validity/">
+  <link rel="canonical" href="../../post/measurement-reliability-and-validity/">
 
   
   
@@ -229,7 +229,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="/">Little World</a>
+      <a class="navbar-brand" href="../../">Little World</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -268,7 +268,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
         </li>
 
         
@@ -297,7 +297,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
         </li>
 
         
@@ -395,7 +395,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/stata/">Stata</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="../../categories/stata/">Stata</a></span>
   
 
   
@@ -587,7 +587,7 @@ The equivalent of alpha for items that are dichotomous is the Kuder–Richardson
 <p>Use PCF when you have a set of items that you believe all measure one concept. In this situation, you would be interested in the first principal factor. You would want to see if it explained a substantial part of the total variance for the entire set of items, and you would want most of the items to have a <strong>loading of 0.4 or above</strong> on this factor. Because PCF analysis is trying to explain all the variance in the items, the <strong>uniqueness</strong> for each item should approach zero. Generally, we should consider any factor that has an eigenvalue of more than 1.A visual way to examine the eigenvalues is with a scree plot.</p>
 
 <pre><code>factor rnatspac rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
-    rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
+	rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
 screeplot
 </code></pre>
 
@@ -607,10 +607,10 @@ screeplot
 <p>However, this distinction rarely makes a lot of practical difference. The factor score may make a difference if there are some items with very large loadings, say, 0.9, and others with very small loadings, say, 0.2. But we would probably drop the weakest items. When the loadings do not vary a great deal, computing a factor score or a mean/total score will produce comparable results.</p>
 
 <pre><code>factor rnatenvir rnatheal rnatcity rnatcrime rnatdrug rnateduc rnatrace ///
-    rnatfare rnatsoc rnatchld, pcf
+	rnatfare rnatsoc rnatchld, pcf
 predict libfscore, norotate
 egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
-    rnateduc rnatrace rnatfare rnatsoc rnatchld)
+	rnateduc rnatrace rnatfare rnatsoc rnatchld)
 </code></pre>
 
 <p>correlation higher than 0.9...</p>
@@ -624,7 +624,7 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/stata/">Stata</a>
+  <a class="badge badge-light" href="../../tags/stata/">Stata</a>
   
 </div>
 
@@ -656,11 +656,11 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
   <div class="media author-card">
     
       
-      <img class="portrait mr-3" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="portrait mr-3" src="../../authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="/">Yihong WANG</a></h5>
+      <h5 class="card-title"><a href="../../">Yihong WANG</a></h5>
       
       <p class="card-text">Wayfaring Stranger</p>
       <ul class="network-icon" aria-hidden="true">
@@ -677,7 +677,7 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
       
     
     <li>
-      <a href="/#contact" >
+      <a href="../../#contact" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -713,13 +713,13 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
         <h3>Related</h3>
         <ul>
           
-          <li><a href="/post/logistic-regression/">Logistic Regression</a></li>
+          <li><a href="../../post/logistic-regression/">Logistic Regression</a></li>
           
-          <li><a href="/post/missing-values/">Missing values</a></li>
+          <li><a href="../../post/missing-values/">Missing values</a></li>
           
-          <li><a href="/post/multilevel-analysis/">Multilevel analysis</a></li>
+          <li><a href="../../post/multilevel-analysis/">Multilevel analysis</a></li>
           
-          <li><a href="/post/multiple-regressions/">Multiple Regressions</a></li>
+          <li><a href="../../post/multiple-regressions/">Multiple Regressions</a></li>
           
         </ul>
       </div>
@@ -739,7 +739,7 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
     
     
     
-    <script src="/js/mathjax-config.js"></script>
+    <script src="../../js/mathjax-config.js"></script>
     
 
     
@@ -840,7 +840,7 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
     
     
     
-    <script src="/js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
+    <script src="../../js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
 
     
 

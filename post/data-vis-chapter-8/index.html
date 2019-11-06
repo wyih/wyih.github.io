@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Use Color PaletteLayer Color and Text TogetherThemesUse Theme ElementsTwo y-axeshead(asasec)## Section Sname Beginning Revenues## 1 Aging and the Life Course (018) Aging 12752 12104## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144## 3 Altruism and Social Solidarity (047) Altruism 1139 1862## 4 Animals and Society (042) Animals 473 820## 5 Asia/Asian America (024) Asia 9056 2116## 6 Body and Embodiment (048) Body 3408 1618## Expenses Ending Journal Year Members## 1 12007 12849 No 2005 598## 2 400 12677 No 2005 301## 3 1875 1126 No 2005 NA## 4 1116 177 No 2005 209## 5 1710 9462 No 2005 365## 6 1920 3106 No 2005 NAp &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p &#43; geom_point() &#43; geom_smooth()p &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p &#43; geom_point(mapping = aes(color = Journal)) &#43; geom_smooth(method = &quot;lm&quot;)p0 &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p1 &lt;-p0 &#43; geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;gray80&quot;) &#43;geom_point(mapping = aes(color = Journal))library(ggrepel)p2 &lt;- p1 &#43; geom_text_repel(data = subset(asasec, Year == 2014 &amp;Revenues &gt; 7000),size = 2)p3 &lt;- p2 &#43; labs(x = &quot;Membership&quot;,y = &quot;Revenues&quot;,color = &quot;Section has own Journal&quot;,title = &quot;ASA Sections&quot;,subtitle = &quot;2014 Calendar year.">
+  <meta name="description" content="Use Color Palette Layer Color and Text Together Themes Use Theme Elements Two y-axes   head(asasec) ## Section Sname Beginning Revenues ## 1 Aging and the Life Course (018) Aging 12752 12104 ## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144 ## 3 Altruism and Social Solidarity (047) Altruism 1139 1862 ## 4 Animals and Society (042) Animals 473 820 ## 5 Asia/Asian America (024) Asia 9056 2116 ## 6 Body and Embodiment (048) Body 3408 1618 ## Expenses Ending Journal Year Members ## 1 12007 12849 No 2005 598 ## 2 400 12677 No 2005 301 ## 3 1875 1126 No 2005 NA ## 4 1116 177 No 2005 209 ## 5 1710 9462 No 2005 365 ## 6 1920 3106 No 2005 NA p &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p &#43; geom_point() &#43; geom_smooth() p &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p &#43; geom_point(mapping = aes(color = Journal)) &#43; geom_smooth(method = &quot;lm&quot;) p0 &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p1 &lt;- p0 &#43; geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;gray80&quot;) &#43; geom_point(mapping = aes(color = Journal)) library(ggrepel) p2 &lt;- p1 &#43; geom_text_repel(data = subset(asasec, Year == 2014 &amp; Revenues &gt; 7000), size = 2) p3 &lt;- p2 &#43; labs( x = &quot;Membership&quot;, y = &quot;Revenues&quot;, color = &quot;Section has own Journal&quot;, title = &quot;ASA Sections&quot;, subtitle = &quot;2014 Calendar year.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/data-vis-chapter-8/">
+  <link rel="alternate" hreflang="en-us" href="../../post/data-vis-chapter-8/">
 
   
 
@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.e4d1b8788cc7b9cc36ba28478f8b4c69.css">
+  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
 
   
 
@@ -97,11 +97,11 @@
 
   
 
-  <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="/post/data-vis-chapter-8/">
+  <link rel="canonical" href="../../post/data-vis-chapter-8/">
 
   
   
@@ -116,7 +116,7 @@
   <meta property="og:site_name" content="Little World">
   <meta property="og:url" content="/post/data-vis-chapter-8/">
   <meta property="og:title" content="Data Vis Chapter 8 | Little World">
-  <meta property="og:description" content="Use Color PaletteLayer Color and Text TogetherThemesUse Theme ElementsTwo y-axeshead(asasec)## Section Sname Beginning Revenues## 1 Aging and the Life Course (018) Aging 12752 12104## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144## 3 Altruism and Social Solidarity (047) Altruism 1139 1862## 4 Animals and Society (042) Animals 473 820## 5 Asia/Asian America (024) Asia 9056 2116## 6 Body and Embodiment (048) Body 3408 1618## Expenses Ending Journal Year Members## 1 12007 12849 No 2005 598## 2 400 12677 No 2005 301## 3 1875 1126 No 2005 NA## 4 1116 177 No 2005 209## 5 1710 9462 No 2005 365## 6 1920 3106 No 2005 NAp &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p &#43; geom_point() &#43; geom_smooth()p &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p &#43; geom_point(mapping = aes(color = Journal)) &#43; geom_smooth(method = &quot;lm&quot;)p0 &lt;-ggplot(data = subset(asasec, Year == 2014),mapping = aes(x = Members,y = Revenues, label = Sname))p1 &lt;-p0 &#43; geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;gray80&quot;) &#43;geom_point(mapping = aes(color = Journal))library(ggrepel)p2 &lt;- p1 &#43; geom_text_repel(data = subset(asasec, Year == 2014 &amp;Revenues &gt; 7000),size = 2)p3 &lt;- p2 &#43; labs(x = &quot;Membership&quot;,y = &quot;Revenues&quot;,color = &quot;Section has own Journal&quot;,title = &quot;ASA Sections&quot;,subtitle = &quot;2014 Calendar year."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:description" content="Use Color Palette Layer Color and Text Together Themes Use Theme Elements Two y-axes   head(asasec) ## Section Sname Beginning Revenues ## 1 Aging and the Life Course (018) Aging 12752 12104 ## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144 ## 3 Altruism and Social Solidarity (047) Altruism 1139 1862 ## 4 Animals and Society (042) Animals 473 820 ## 5 Asia/Asian America (024) Asia 9056 2116 ## 6 Body and Embodiment (048) Body 3408 1618 ## Expenses Ending Journal Year Members ## 1 12007 12849 No 2005 598 ## 2 400 12677 No 2005 301 ## 3 1875 1126 No 2005 NA ## 4 1116 177 No 2005 209 ## 5 1710 9462 No 2005 365 ## 6 1920 3106 No 2005 NA p &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p &#43; geom_point() &#43; geom_smooth() p &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p &#43; geom_point(mapping = aes(color = Journal)) &#43; geom_smooth(method = &quot;lm&quot;) p0 &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p1 &lt;- p0 &#43; geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;gray80&quot;) &#43; geom_point(mapping = aes(color = Journal)) library(ggrepel) p2 &lt;- p1 &#43; geom_text_repel(data = subset(asasec, Year == 2014 &amp; Revenues &gt; 7000), size = 2) p3 &lt;- p2 &#43; labs( x = &quot;Membership&quot;, y = &quot;Revenues&quot;, color = &quot;Section has own Journal&quot;, title = &quot;ASA Sections&quot;, subtitle = &quot;2014 Calendar year."><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
@@ -168,7 +168,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "Use Color Palette\rLayer Color and Text Together\rThemes\rUse Theme Elements\rTwo y-axes\r\r\rhead(asasec)\r## Section Sname Beginning Revenues\r## 1 Aging and the Life Course (018) Aging 12752 12104\r## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144\r## 3 Altruism and Social Solidarity (047) Altruism 1139 1862\r## 4 Animals and Society (042) Animals 473 820\r## 5 Asia/Asian America (024) Asia 9056 2116\r## 6 Body and Embodiment (048) Body 3408 1618\r## Expenses Ending Journal Year Members\r## 1 12007 12849 No 2005 598\r## 2 400 12677 No 2005 301\r## 3 1875 1126 No 2005 NA\r## 4 1116 177 No 2005 209\r## 5 1710 9462 No 2005 365\r## 6 1920 3106 No 2005 NA\rp \u0026lt;-\rggplot(\rdata = subset(asasec, Year == 2014),\rmapping = aes(x = Members,\ry = Revenues, label = Sname)\r)\rp + geom_point() + geom_smooth()\rp \u0026lt;-\rggplot(\rdata = subset(asasec, Year == 2014),\rmapping = aes(x = Members,\ry = Revenues, label = Sname)\r)\rp + geom_point(mapping = aes(color = Journal)) + geom_smooth(method = \u0026quot;lm\u0026quot;)\rp0 \u0026lt;-\rggplot(\rdata = subset(asasec, Year == 2014),\rmapping = aes(x = Members,\ry = Revenues, label = Sname)\r)\rp1 \u0026lt;-\rp0 + geom_smooth(method = \u0026quot;lm\u0026quot;, se = FALSE, color = \u0026quot;gray80\u0026quot;) +\rgeom_point(mapping = aes(color = Journal))\rlibrary(ggrepel)\rp2 \u0026lt;- p1 + geom_text_repel(data = subset(asasec, Year == 2014 \u0026amp;\rRevenues \u0026gt; 7000),\rsize = 2)\rp3 \u0026lt;- p2 + labs(\rx = \u0026quot;Membership\u0026quot;,\ry = \u0026quot;Revenues\u0026quot;,\rcolor = \u0026quot;Section has own Journal\u0026quot;,\rtitle = \u0026quot;ASA Sections\u0026quot;,\rsubtitle = \u0026quot;2014 Calendar year."
+  "description": "Use Color Palette Layer Color and Text Together Themes Use Theme Elements Two y-axes   head(asasec) ## Section Sname Beginning Revenues ## 1 Aging and the Life Course (018) Aging 12752 12104 ## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144 ## 3 Altruism and Social Solidarity (047) Altruism 1139 1862 ## 4 Animals and Society (042) Animals 473 820 ## 5 Asia/Asian America (024) Asia 9056 2116 ## 6 Body and Embodiment (048) Body 3408 1618 ## Expenses Ending Journal Year Members ## 1 12007 12849 No 2005 598 ## 2 400 12677 No 2005 301 ## 3 1875 1126 No 2005 NA ## 4 1116 177 No 2005 209 ## 5 1710 9462 No 2005 365 ## 6 1920 3106 No 2005 NA p \u0026lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p + geom_point() + geom_smooth() p \u0026lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p + geom_point(mapping = aes(color = Journal)) + geom_smooth(method = \u0026quot;lm\u0026quot;) p0 \u0026lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p1 \u0026lt;- p0 + geom_smooth(method = \u0026quot;lm\u0026quot;, se = FALSE, color = \u0026quot;gray80\u0026quot;) + geom_point(mapping = aes(color = Journal)) library(ggrepel) p2 \u0026lt;- p1 + geom_text_repel(data = subset(asasec, Year == 2014 \u0026amp; Revenues \u0026gt; 7000), size = 2) p3 \u0026lt;- p2 + labs( x = \u0026quot;Membership\u0026quot;, y = \u0026quot;Revenues\u0026quot;, color = \u0026quot;Section has own Journal\u0026quot;, title = \u0026quot;ASA Sections\u0026quot;, subtitle = \u0026quot;2014 Calendar year."
 }
 </script>
 
@@ -229,7 +229,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="/">Little World</a>
+      <a class="navbar-brand" href="../../">Little World</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -268,7 +268,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
         </li>
 
         
@@ -297,7 +297,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
         </li>
 
         
@@ -395,7 +395,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/categories/r/">R</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="../../categories/r/">R</a></span>
   
 
   
@@ -547,7 +547,7 @@
   )
 
 p + geom_point() + geom_smooth()</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>p &lt;-
   ggplot(
     data = subset(asasec, Year == 2014),
@@ -556,7 +556,7 @@ p + geom_point() + geom_smooth()</code></pre>
   )
 
 p + geom_point(mapping = aes(color = Journal)) + geom_smooth(method = &quot;lm&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre class="r"><code>p0 &lt;-
   ggplot(
     data = subset(asasec, Year == 2014),
@@ -582,7 +582,7 @@ p2 &lt;- p1 + geom_text_repel(data = subset(asasec, Year == 2014 &amp;
 p4 &lt;- p3 + scale_y_continuous(labels = scales::dollar) +
   theme(legend.position = &quot;bottom&quot;)
 p4</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <div id="use-color-palette" class="section level2">
 <h2>Use Color Palette</h2>
 <p>Use the <code>RColorBrewer</code> package. Access the colors by specifying the <code>scale_color_brewer()</code> or <code>scale_ﬁll_brewer()</code> functions, depending on the aesthetic you are mapping.</p>
@@ -591,13 +591,13 @@ p4</code></pre>
                           color = world))
 p + geom_point(size = 2) + scale_color_brewer(palette = &quot;Set2&quot;) +
   theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <pre class="r"><code>p + geom_point(size = 2) + scale_color_brewer(palette = &quot;Pastel2&quot;) +
   theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
 <pre class="r"><code>p + geom_point(size = 2) + scale_color_brewer(palette = &quot;Dark2&quot;) +
   theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
 <p>Specify colors manually, via <code>scale_color_manual()</code> or <code>scale_fill_manual()</code>. Try <code>demo('color')</code> to see the color names in R.</p>
 <pre class="r"><code>cb_palette &lt;-
   c(
@@ -612,7 +612,7 @@ p + geom_point(size = 2) + scale_color_brewer(palette = &quot;Set2&quot;) +
   )
 
 p4 + scale_color_manual(values = cb_palette)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre class="r"><code>library(dichromat)
 library(RColorBrewer)
 
@@ -645,7 +645,7 @@ p1 &lt;-
   p0 + geom_point(alpha = 0.15, color = &quot;gray50&quot;) + scale_x_log10(labels =
                                                                     scales::comma)
 p1</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <pre class="r"><code>party_colors &lt;- c(&quot;#2E74C0&quot;, &quot;#CB454A&quot;)
 p2 &lt;- p1 + geom_point(
   data = subset(county_data, flipped == &quot;Yes&quot;),
@@ -653,7 +653,7 @@ p2 &lt;- p1 + geom_point(
 ) +
   scale_color_manual(values = party_colors) 
 p2</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <pre class="r"><code>p3 &lt;-
   p2 + scale_y_continuous(labels = scales::percent) + labs(
     color = &quot;County flipped to ... &quot;,
@@ -663,7 +663,7 @@ p2</code></pre>
     caption = &quot;Counties in gray did not flip.&quot;
   )
 p3</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <pre class="r"><code>p4 &lt;-
   p3 + geom_text_repel(
     data = subset(county_data, flipped == &quot;Yes&quot; &amp; black &gt; 25),
@@ -671,22 +671,22 @@ p3</code></pre>
     size = 2
   )
 p4 + theme_minimal() + theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="themes" class="section level2">
 <h2>Themes</h2>
 <pre class="r"><code>theme_set(theme_bw()) 
 p4 + theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <pre class="r"><code>theme_set(theme_dark()) 
 p4 + theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
 <pre class="r"><code>p4 + theme_gray()</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <pre class="r"><code>library(ggthemes)
 theme_set(theme_economist())
 p4 + theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <pre class="r"><code>theme_set(theme_wsj())
 p4 + theme(
   plot.title = element_text(size = rel(0.6)),
@@ -694,12 +694,12 @@ p4 + theme(
   plot.caption = element_text(size = rel(0.35)),
   legend.position = &quot;top&quot;
 )</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-2.png" width="672" />
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-2.png" width="672" />
 Claus O. Wilke’s <a href="https://wilkelab.org/cowplot/articles/introduction.html"><code>cowplot</code> package</a>, contains a well-developed theme suitable for figures whose final destination is a journal article. BobRudis’s <a href="https://github.com/hrbrmstr/hrbrthemes"><code>hrbrthemes</code> package</a>, has a distinctive and compact look and feel that takes advantage of some freely available typefaces.</p>
 <pre class="r"><code>library(hrbrthemes)
 theme_set(theme_ipsum())
 p4 + theme(legend.position = &quot;top&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <pre class="r"><code>p4 + theme(
   legend.position = &quot;top&quot;,
   plot.title = element_text(
@@ -716,7 +716,7 @@ p4 + theme(legend.position = &quot;top&quot;)</code></pre>
     color = &quot;purple&quot;
   )
 )</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-2.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-2.png" width="672" /></p>
 </div>
 <div id="use-theme-elements" class="section level2">
 <h2>Use Theme Elements</h2>
@@ -765,7 +765,7 @@ p1 &lt;-
     panel.grid.minor = element_blank()
   ) +
   labs(x = &quot;Age&quot;, y = NULL, title = &quot;Age Distribution of\nGSS Respondents&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <pre class="r"><code>library(ggridges)
 p &lt;-
   ggplot(data = gss_lon, mapping = aes(x = age, y = factor(
@@ -775,7 +775,7 @@ p + geom_density_ridges(alpha = 0.6,
                         fill = &quot;lightblue&quot;,
                         scale = 1.5) + scale_x_continuous(breaks = c(25, 50, 75)) + scale_y_discrete(expand = c(0.01, 0)) + labs(x = &quot;Age&quot;, y = NULL, title = &quot;Age Distribution of\nGSS Respondents&quot;) +
   theme_ridges() + theme(title = element_text(size = 16, face = &quot;bold&quot;))</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 </div>
 <div id="two-y-axes" class="section level2">
 <h2>Two y-axes</h2>
@@ -812,7 +812,7 @@ p &lt;-
          mapping = aes(x = date, y = sp500_i - monbase_i))
 p2 &lt;- p + geom_line() + labs(x = &quot;Date&quot;, y = &quot;Difference&quot;)</code></pre>
 <pre class="r"><code>cowplot::plot_grid(p1, p2, nrow = 2, rel_heights = c(0.75, 0.25), align = &quot;v&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-24-1.png" width="672" />
 Using two y-axes gives you an extra degree of freedom to mess about with the data that, in most cases, you really should not take advantage of.</p>
 <pre class="r"><code>p &lt;- ggplot(data = yahoo, mapping = aes(x = Employees, y = Revenue))
 p + geom_path(color = &quot;gray80&quot;) + geom_text(aes(color = Mayer, label = Year),
@@ -824,7 +824,7 @@ p + geom_path(color = &quot;gray80&quot;) + geom_text(aes(color = Mayer, label =
     y = &quot;Revenue (Millions)&quot;,
     title = &quot;Yahoo Employees vs Revenues, 2004-2014&quot;
   ) + scale_y_continuous(labels = scales::dollar) + scale_x_continuous(labels = scales::comma)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 <pre class="r"><code>p &lt;-
   ggplot(data = yahoo,
          mapping = aes(x = Year, y = Revenue / Employees))
@@ -836,7 +836,7 @@ p + geom_vline(xintercept = 2012) + geom_line(color = &quot;gray60&quot;, size =
   size = 2.5
 ) +
   labs(x = &quot;Year\n&quot;, y = &quot;Revenue/Employees&quot;, title = &quot;Yahoo Revenue to Employee Ratio, 2004-2014&quot;)</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <p><strong>Saying no to pie</strong></p>
 <pre class="r"><code>p_xlab &lt;-
   &quot;Amount Owed, in thousands of Dollars&quot; 
@@ -855,7 +855,7 @@ p + geom_bar(stat = &quot;identity&quot;) + scale_fill_brewer(type = &quot;qual&
   title = p_title,
   subtitle = p_subtitle
 ) + facet_grid( ~ type, labeller = as_labeller(f_labs)) + coord_flip()</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <pre class="r"><code>library(viridis)
 p &lt;-
   ggplot(studebt, aes(y = pct / 100, x = type, fill = Debtrc)) 
@@ -883,7 +883,7 @@ p + geom_bar(stat = &quot;identity&quot;, color = &quot;gray80&quot;) + scale_x_
     panel.grid.major.y = element_blank()
   ) +
   coord_flip()</code></pre>
-<p><img src="/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="../../post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <p><a href="http://r-graph-gallery.com/" class="uri">http://r-graph-gallery.com/</a> for more examples</p>
 </div>
 
@@ -896,7 +896,7 @@ p + geom_bar(stat = &quot;identity&quot;, color = &quot;gray80&quot;) + scale_x_
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/socviz/">socviz</a>
+  <a class="badge badge-light" href="../../tags/socviz/">socviz</a>
   
 </div>
 
@@ -928,11 +928,11 @@ p + geom_bar(stat = &quot;identity&quot;, color = &quot;gray80&quot;) + scale_x_
   <div class="media author-card">
     
       
-      <img class="portrait mr-3" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="portrait mr-3" src="../../authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="/">Yihong WANG</a></h5>
+      <h5 class="card-title"><a href="../../">Yihong WANG</a></h5>
       
       <p class="card-text">Wayfaring Stranger</p>
       <ul class="network-icon" aria-hidden="true">
@@ -949,7 +949,7 @@ p + geom_bar(stat = &quot;identity&quot;, color = &quot;gray80&quot;) + scale_x_
       
     
     <li>
-      <a href="/#contact" >
+      <a href="../../#contact" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -985,11 +985,11 @@ p + geom_bar(stat = &quot;identity&quot;, color = &quot;gray80&quot;) + scale_x_
         <h3>Related</h3>
         <ul>
           
-          <li><a href="/post/data-vis-chapter-6/">Data Vis Chapter 6</a></li>
+          <li><a href="../../post/data-vis-chapter-6/">Data Vis Chapter 6</a></li>
           
-          <li><a href="/post/test/">Data Visualization Chapter 2-4</a></li>
+          <li><a href="../../post/test/">Data Visualization Chapter 2-4</a></li>
           
-          <li><a href="/post/data-visualization-chapter-5/">Data Visualization Chapter 5</a></li>
+          <li><a href="../../post/data-visualization-chapter-5/">Data Visualization Chapter 5</a></li>
           
         </ul>
       </div>
@@ -1009,7 +1009,7 @@ p + geom_bar(stat = &quot;identity&quot;, color = &quot;gray80&quot;) + scale_x_
     
     
     
-    <script src="/js/mathjax-config.js"></script>
+    <script src="../../js/mathjax-config.js"></script>
     
 
     
@@ -1110,7 +1110,7 @@ p + geom_bar(stat = &quot;identity&quot;, color = &quot;gray80&quot;) + scale_x_
     
     
     
-    <script src="/js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
+    <script src="../../js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
 
     
 

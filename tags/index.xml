@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 09 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -15,7 +15,7 @@
     <item>
       <title>socviz</title>
       <link>/tags/socviz/</link>
-      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       <guid>/tags/socviz/</guid>
       <description></description>
     </item>
