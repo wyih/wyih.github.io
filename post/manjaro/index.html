@@ -31,7 +31,7 @@
   <meta name="description" content="缘起 折腾备忘录 安好之后换中国源 N卡驱动 中文输入法 Deepin桌面 安装miniconda 搭建服务并打开端口 Chrome Remote Desktop 系统备份和恢复 缘起 一切的开始应">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../post/manjaro/">
+  <link rel="alternate" hreflang="en-us" href="/post/manjaro/">
 
   
 
@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="/css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
 
   
 
@@ -97,11 +97,11 @@
 
   
 
-  <link rel="manifest" href="../../index.webmanifest">
-  <link rel="icon" type="image/png" href="../../img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="../../post/manjaro/">
+  <link rel="canonical" href="/post/manjaro/">
 
   
   
@@ -229,7 +229,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="../../">Little World</a>
+      <a class="navbar-brand" href="/">Little World</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -268,7 +268,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
         </li>
 
         
@@ -297,7 +297,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
         
@@ -395,7 +395,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="../../categories/linux/">Linux</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="/categories/linux/">Linux</a></span>
   
 
   
@@ -616,6 +616,7 @@ systemctl stop rstudio-server
 
 #auto start
 sudo systemctl enable rstudio-server</code></pre>
+<p>太爽了！这篇post就是在Rstudio Server写就。</p>
 </div>
 <div id="jupyter-lab" class="section level4">
 <h4>Jupyter lab</h4>
@@ -645,7 +646,9 @@ systemctl restart jupyter.service</code></pre>
 c.NotebookApp.password = u&#39;sha1:xxx:xxx&#39; # 之前生成的密码 hash 字串
 c.NotebookApp.open_browser = False # 运行时不打开本机浏览器
 c.NotebookApp.port = 8889 # 使用的端口
-c.NotebookApp.enable_mathjax = True # 启用 MathJax</code></pre>
+c.NotebookApp.allow_remote_access = True
+## 是否允许notebook在root用户下运行.
+c.NotebookApp.allow_root = True</code></pre>
 </div>
 </div>
 <div id="chrome-remote-desktop" class="section level3">
@@ -674,7 +677,7 @@ c.NotebookApp.enable_mathjax = True # 启用 MathJax</code></pre>
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="../../tags/socviz/">socviz</a>
+  <a class="badge badge-light" href="/tags/linux/">Linux</a>
   
 </div>
 
@@ -706,11 +709,11 @@ c.NotebookApp.enable_mathjax = True # 启用 MathJax</code></pre>
   <div class="media author-card">
     
       
-      <img class="portrait mr-3" src="../../authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="../../">Yihong WANG</a></h5>
+      <h5 class="card-title"><a href="/">Yihong WANG</a></h5>
       
       <p class="card-text">Wayfaring Stranger</p>
       <ul class="network-icon" aria-hidden="true">
@@ -727,7 +730,7 @@ c.NotebookApp.enable_mathjax = True # 启用 MathJax</code></pre>
       
     
     <li>
-      <a href="../../#contact" >
+      <a href="/#contact" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -758,22 +761,6 @@ c.NotebookApp.enable_mathjax = True # 启用 MathJax</code></pre>
 
       
       
-      <div class="article-widget">
-        <div class="hr-light"></div>
-        <h3>Related</h3>
-        <ul>
-          
-          <li><a href="../../post/data-vis-chapter-8/">Data Vis Chapter 8</a></li>
-          
-          <li><a href="../../post/data-vis-chapter-6/">Data Vis Chapter 6</a></li>
-          
-          <li><a href="../../post/test/">Data Visualization Chapter 2-4</a></li>
-          
-          <li><a href="../../post/data-visualization-chapter-5/">Data Visualization Chapter 5</a></li>
-          
-        </ul>
-      </div>
-      
     
 
     
@@ -789,7 +776,7 @@ c.NotebookApp.enable_mathjax = True # 启用 MathJax</code></pre>
     
     
     
-    <script src="../../js/mathjax-config.js"></script>
+    <script src="/js/mathjax-config.js"></script>
     
 
     
@@ -890,7 +877,7 @@ c.NotebookApp.enable_mathjax = True # 启用 MathJax</code></pre>
     
     
     
-    <script src="../../js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
+    <script src="/js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
 
     
 

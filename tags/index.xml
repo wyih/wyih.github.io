@@ -13,9 +13,17 @@
     </image>
     
     <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>socviz</title>
       <link>/tags/socviz/</link>
-      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
       <guid>/tags/socviz/</guid>
       <description></description>
     </item>

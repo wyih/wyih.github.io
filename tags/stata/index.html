@@ -31,7 +31,7 @@
   <meta name="description" content="">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../tags/stata/">
+  <link rel="alternate" hreflang="en-us" href="/tags/stata/">
 
   
 
@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="/css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
 
   
 
@@ -96,14 +96,14 @@
 
 
   
-  <link rel="alternate" href="../../tags/stata/index.xml" type="application/rss+xml" title="Little World">
+  <link rel="alternate" href="/tags/stata/index.xml" type="application/rss+xml" title="Little World">
   
 
-  <link rel="manifest" href="../../index.webmanifest">
-  <link rel="icon" type="image/png" href="../../img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="../../tags/stata/">
+  <link rel="canonical" href="/tags/stata/">
 
   
   
@@ -181,7 +181,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="../../">Little World</a>
+      <a class="navbar-brand" href="/">Little World</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -220,7 +220,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
         </li>
 
         
@@ -249,7 +249,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
         </li>
 
         
@@ -319,7 +319,7 @@
   
   
   <div>
-    <h2><a href="../../post/sem-and-gsem/">SEM and GSEM</a></h2>
+    <h2><a href="/post/sem-and-gsem/">SEM and GSEM</a></h2>
     <div class="article-style">
       
       SEM sem bmi &lt;- age children incomeln educ quickfood This would give us the unstandardized solution. This command uses maximum likelihood estimation ather than the ordinary least-squares (OLS) estimation used by the regress command. Add ,standardized just like add ,beta to regress option method(mlmv) (maximum likelihood with missing values): Estimation is less robust to the assumption of multivariate normality when using the method(mlmv) option than when using maximum likelihood estimation
@@ -328,7 +328,7 @@
   </div>
   
   <div>
-    <h2><a href="../../post/panel-data-in-r-vs-in-stata/">Panel data in R vs in Stata</a></h2>
+    <h2><a href="/post/panel-data-in-r-vs-in-stata/">Panel data in R vs in Stata</a></h2>
     <div class="article-style">
       
       Panel data with one way fixed effect mm1 &lt;- invforward ~ TOBINQ + inv + top3 + size + lev + cash + loss + lnage + cfo + sd + ic + factor(year) zzz &lt;- plm(mm1,data=sample,model=&quot;within&quot;,index=c(&quot;stkcd&quot;)) same as xtreg i.year fe , without robust vcetype 用这种方法算出来$R^2$和Stata报告$R^
@@ -337,7 +337,7 @@
   </div>
   
   <div>
-    <h2><a href="../../post/logistic-regression/">Logistic Regression</a></h2>
+    <h2><a href="/post/logistic-regression/">Logistic Regression</a></h2>
     <div class="article-style">
       
       Odds ratios An odds ratio of 1.0 is equivalent to a beta weight of 0.0. Group Diseased Healthy Exposed $D_E$ $H_E$ Not exposed $D_N$ $H_N$ $OR={\frac {D_{E}/H_{E}}{D_{N}/H_{N}}}$ The distribution of the odds ratio is far from normal. Take the natural logarithm of the odds ratio to get normal. $logit = ln(OR)$ When the mean is around 0.50, the OLS regression and logistic regression produce consistent results, but when the probability
@@ -346,7 +346,7 @@
   </div>
   
   <div>
-    <h2><a href="../../post/measurement-reliability-and-validity/">Measurement, reliability, and validity</a></h2>
+    <h2><a href="/post/measurement-reliability-and-validity/">Measurement, reliability, and validity</a></h2>
     <div class="article-style">
       
       Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) /// (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss &lt; 3 One drawback to using the rowmean() function is that it
@@ -355,7 +355,7 @@
   </div>
   
   <div>
-    <h2><a href="../../post/missing-values/">Missing values</a></h2>
+    <h2><a href="/post/missing-values/">Missing values</a></h2>
     <div class="article-style">
       
       Many advanced Stata estimation models can use multiple imputation for handling missing values. Auxiliary variables are variables that can help to make estimates on incomplete data, while they are not part of the main analysis (Collins et al., 2001). Include all variables in the analysis model, including the dependent variable, Include auxiliary variables that predict patterns of missingness, and Include additional variables that predict a perso
@@ -364,7 +364,7 @@
   </div>
   
   <div>
-    <h2><a href="../../post/multilevel-analysis/">Multilevel analysis</a></h2>
+    <h2><a href="/post/multilevel-analysis/">Multilevel analysis</a></h2>
     <div class="article-style">
       
       Multilevel analysis can address the lack of independence of the observations when you are analyzing grouped data. See Stata Multilevel Mixed-Effects Reference Manual.
@@ -377,7 +377,7 @@ Random-effects regression models \[y_it = \beta_0 +\beta x_{it}+\gamma z_i +\mu_
   </div>
   
   <div>
-    <h2><a href="../../post/multiple-regressions/">Multiple Regressions</a></h2>
+    <h2><a href="/post/multiple-regressions/">Multiple Regressions</a></h2>
     <div class="article-style">
       
       Table of Contents    Basic Diagnostic statistics Weighted data Categorical predictors and hierarchical regression interaction nonlinear   
@@ -397,7 +397,7 @@ Basic  F: There is a highly significant relationship between outcomes and the se
     
     
     
-    <script src="../../js/mathjax-config.js"></script>
+    <script src="/js/mathjax-config.js"></script>
     
 
     
@@ -498,7 +498,7 @@ Basic  F: There is a highly significant relationship between outcomes and the se
     
     
     
-    <script src="../../js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
+    <script src="/js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
 
     
 

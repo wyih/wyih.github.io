@@ -214,6 +214,7 @@ systemctl stop rstudio-server
 
 #auto start
 sudo systemctl enable rstudio-server&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;太爽了！这篇post就是在Rstudio Server写就。&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;jupyter-lab&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Jupyter lab&lt;/h4&gt;
@@ -243,7 +244,9 @@ systemctl restart jupyter.service&lt;/code&gt;&lt;/pre&gt;
 c.NotebookApp.password = u&amp;#39;sha1:xxx:xxx&amp;#39; # 之前生成的密码 hash 字串
 c.NotebookApp.open_browser = False # 运行时不打开本机浏览器
 c.NotebookApp.port = 8889 # 使用的端口
-c.NotebookApp.enable_mathjax = True # 启用 MathJax&lt;/code&gt;&lt;/pre&gt;
+c.NotebookApp.allow_remote_access = True
+## 是否允许notebook在root用户下运行.
+c.NotebookApp.allow_root = True&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;chrome-remote-desktop&#34; class=&#34;section level3&#34;&gt;
@@ -305,7 +308,7 @@ c.NotebookApp.enable_mathjax = True # 启用 MathJax&lt;/code&gt;&lt;/pre&gt;
   )
 
 p + geom_point() + geom_smooth()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
   ggplot(
     data = subset(asasec, Year == 2014),
@@ -314,7 +317,7 @@ p + geom_point() + geom_smooth()&lt;/code&gt;&lt;/pre&gt;
   )
 
 p + geom_point(mapping = aes(color = Journal)) + geom_smooth(method = &amp;quot;lm&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p0 &amp;lt;-
   ggplot(
     data = subset(asasec, Year == 2014),
@@ -340,7 +343,7 @@ p2 &amp;lt;- p1 + geom_text_repel(data = subset(asasec, Year == 2014 &amp;amp;
 p4 &amp;lt;- p3 + scale_y_continuous(labels = scales::dollar) +
   theme(legend.position = &amp;quot;bottom&amp;quot;)
 p4&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;use-color-palette&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Use Color Palette&lt;/h2&gt;
 &lt;p&gt;Use the &lt;code&gt;RColorBrewer&lt;/code&gt; package. Access the colors by specifying the &lt;code&gt;scale_color_brewer()&lt;/code&gt; or &lt;code&gt;scale_ﬁll_brewer()&lt;/code&gt; functions, depending on the aesthetic you are mapping.&lt;/p&gt;
@@ -349,13 +352,13 @@ p4&lt;/code&gt;&lt;/pre&gt;
                           color = world))
 p + geom_point(size = 2) + scale_color_brewer(palette = &amp;quot;Set2&amp;quot;) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_point(size = 2) + scale_color_brewer(palette = &amp;quot;Pastel2&amp;quot;) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_point(size = 2) + scale_color_brewer(palette = &amp;quot;Dark2&amp;quot;) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-6-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Specify colors manually, via &lt;code&gt;scale_color_manual()&lt;/code&gt; or &lt;code&gt;scale_fill_manual()&lt;/code&gt;. Try &lt;code&gt;demo(&#39;color&#39;)&lt;/code&gt; to see the color names in R.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cb_palette &amp;lt;-
   c(
@@ -370,7 +373,7 @@ p + geom_point(size = 2) + scale_color_brewer(palette = &amp;quot;Set2&amp;quot;
   )
 
 p4 + scale_color_manual(values = cb_palette)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dichromat)
 library(RColorBrewer)
 
@@ -403,7 +406,7 @@ p1 &amp;lt;-
   p0 + geom_point(alpha = 0.15, color = &amp;quot;gray50&amp;quot;) + scale_x_log10(labels =
                                                                     scales::comma)
 p1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;party_colors &amp;lt;- c(&amp;quot;#2E74C0&amp;quot;, &amp;quot;#CB454A&amp;quot;)
 p2 &amp;lt;- p1 + geom_point(
   data = subset(county_data, flipped == &amp;quot;Yes&amp;quot;),
@@ -411,7 +414,7 @@ p2 &amp;lt;- p1 + geom_point(
 ) +
   scale_color_manual(values = party_colors) 
 p2&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p3 &amp;lt;-
   p2 + scale_y_continuous(labels = scales::percent) + labs(
     color = &amp;quot;County flipped to ... &amp;quot;,
@@ -421,7 +424,7 @@ p2&lt;/code&gt;&lt;/pre&gt;
     caption = &amp;quot;Counties in gray did not flip.&amp;quot;
   )
 p3&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p4 &amp;lt;-
   p3 + geom_text_repel(
     data = subset(county_data, flipped == &amp;quot;Yes&amp;quot; &amp;amp; black &amp;gt; 25),
@@ -429,22 +432,22 @@ p3&lt;/code&gt;&lt;/pre&gt;
     size = 2
   )
 p4 + theme_minimal() + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;themes&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Themes&lt;/h2&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;theme_set(theme_bw()) 
 p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;theme_set(theme_dark()) 
 p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-13-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p4 + theme_gray()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggthemes)
 theme_set(theme_economist())
 p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;theme_set(theme_wsj())
 p4 + theme(
   plot.title = element_text(size = rel(0.6)),
@@ -452,12 +455,12 @@ p4 + theme(
   plot.caption = element_text(size = rel(0.35)),
   legend.position = &amp;quot;top&amp;quot;
 )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-2.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-15-2.png&#34; width=&#34;672&#34; /&gt;
 Claus O. Wilke’s &lt;a href=&#34;https://wilkelab.org/cowplot/articles/introduction.html&#34;&gt;&lt;code&gt;cowplot&lt;/code&gt; package&lt;/a&gt;, contains a well-developed theme suitable for figures whose final destination is a journal article. BobRudis’s &lt;a href=&#34;https://github.com/hrbrmstr/hrbrthemes&#34;&gt;&lt;code&gt;hrbrthemes&lt;/code&gt; package&lt;/a&gt;, has a distinctive and compact look and feel that takes advantage of some freely available typefaces.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(hrbrthemes)
 theme_set(theme_ipsum())
 p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p4 + theme(
   legend.position = &amp;quot;top&amp;quot;,
   plot.title = element_text(
@@ -474,7 +477,7 @@ p4 + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
     color = &amp;quot;purple&amp;quot;
   )
 )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-16-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;use-theme-elements&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Use Theme Elements&lt;/h2&gt;
@@ -523,7 +526,7 @@ p1 &amp;lt;-
     panel.grid.minor = element_blank()
   ) +
   labs(x = &amp;quot;Age&amp;quot;, y = NULL, title = &amp;quot;Age Distribution of\nGSS Respondents&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggridges)
 p &amp;lt;-
   ggplot(data = gss_lon, mapping = aes(x = age, y = factor(
@@ -533,7 +536,7 @@ p + geom_density_ridges(alpha = 0.6,
                         fill = &amp;quot;lightblue&amp;quot;,
                         scale = 1.5) + scale_x_continuous(breaks = c(25, 50, 75)) + scale_y_discrete(expand = c(0.01, 0)) + labs(x = &amp;quot;Age&amp;quot;, y = NULL, title = &amp;quot;Age Distribution of\nGSS Respondents&amp;quot;) +
   theme_ridges() + theme(title = element_text(size = 16, face = &amp;quot;bold&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;two-y-axes&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Two y-axes&lt;/h2&gt;
@@ -570,7 +573,7 @@ p &amp;lt;-
          mapping = aes(x = date, y = sp500_i - monbase_i))
 p2 &amp;lt;- p + geom_line() + labs(x = &amp;quot;Date&amp;quot;, y = &amp;quot;Difference&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cowplot::plot_grid(p1, p2, nrow = 2, rel_heights = c(0.75, 0.25), align = &amp;quot;v&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;672&#34; /&gt;
 Using two y-axes gives you an extra degree of freedom to mess about with the data that, in most cases, you really should not take advantage of.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = yahoo, mapping = aes(x = Employees, y = Revenue))
 p + geom_path(color = &amp;quot;gray80&amp;quot;) + geom_text(aes(color = Mayer, label = Year),
@@ -582,7 +585,7 @@ p + geom_path(color = &amp;quot;gray80&amp;quot;) + geom_text(aes(color = Mayer,
     y = &amp;quot;Revenue (Millions)&amp;quot;,
     title = &amp;quot;Yahoo Employees vs Revenues, 2004-2014&amp;quot;
   ) + scale_y_continuous(labels = scales::dollar) + scale_x_continuous(labels = scales::comma)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
   ggplot(data = yahoo,
          mapping = aes(x = Year, y = Revenue / Employees))
@@ -594,7 +597,7 @@ p + geom_vline(xintercept = 2012) + geom_line(color = &amp;quot;gray60&amp;quot;
   size = 2.5
 ) +
   labs(x = &amp;quot;Year\n&amp;quot;, y = &amp;quot;Revenue/Employees&amp;quot;, title = &amp;quot;Yahoo Revenue to Employee Ratio, 2004-2014&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Saying no to pie&lt;/strong&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p_xlab &amp;lt;-
   &amp;quot;Amount Owed, in thousands of Dollars&amp;quot; 
@@ -613,7 +616,7 @@ p + geom_bar(stat = &amp;quot;identity&amp;quot;) + scale_fill_brewer(type = &am
   title = p_title,
   subtitle = p_subtitle
 ) + facet_grid( ~ type, labeller = as_labeller(f_labs)) + coord_flip()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-27-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-27-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(viridis)
 p &amp;lt;-
   ggplot(studebt, aes(y = pct / 100, x = type, fill = Debtrc)) 
@@ -641,7 +644,7 @@ p + geom_bar(stat = &amp;quot;identity&amp;quot;, color = &amp;quot;gray80&amp;q
     panel.grid.major.y = element_blank()
   ) +
   coord_flip()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-28-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-10-09-data-vis-chapter-8_files/figure-html/unnamed-chunk-28-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://r-graph-gallery.com/&#34; class=&#34;uri&#34;&gt;http://r-graph-gallery.com/&lt;/a&gt; for more examples&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -677,7 +680,7 @@ p + geom_point(alpha = 0.1) +
   geom_smooth(color = &amp;quot;steelblue&amp;quot;,
               fill = &amp;quot;steelblue&amp;quot;,
               method = &amp;quot;lm&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_point(alpha = 0.1) +
   geom_smooth(
     color = &amp;quot;tomato&amp;quot;,
@@ -686,7 +689,7 @@ p + geom_point(alpha = 0.1) +
     formula = y ~ splines::bs(x, 3),
     se = FALSE
   )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-1-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_point(alpha = 0.1) +
   geom_quantile( # specialized version of geom)smooth that can fit quantile regression
     color = &amp;quot;tomato&amp;quot;,
@@ -696,7 +699,7 @@ p + geom_point(alpha = 0.1) +
     quantiles = c(0.20, 0.5, 0.85)
   )&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Smoothing formula not specified. Using: y ~ qss(x, lambda = 1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-1-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;show-several-fits-at-once-with-a-legend&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Show Several Fits at Once, with a Legend&lt;/h2&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model_colors &amp;lt;- RColorBrewer::brewer.pal(3, &amp;quot;Set1&amp;quot;)
@@ -718,7 +721,7 @@ p1 &amp;lt;- p0 + geom_point(alpha = 0.2) +
 p1 + scale_color_manual(name = &amp;quot;Models&amp;quot;, values = model_colors) +
   scale_fill_manual(name = &amp;quot;Models&amp;quot;, values = model_colors) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;model-based-graphics&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Model-based Graphics&lt;/h2&gt;
@@ -761,7 +764,7 @@ p + geom_point(
   geom_line() +
   geom_ribbon(alpha = 0.2, color = FALSE) +
   scale_x_log10(labels = scales::dollar)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;tidy-model-objects-with-broom&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Tidy Model Objects with Broom&lt;/h2&gt;
@@ -794,14 +797,14 @@ out_conf$nicelabs &amp;lt;- prefix_strip(out_conf$term, &amp;quot;continent&amp;
               ymax = conf.high
             ))
 p + geom_pointrange() + coord_flip() + labs(x = &amp;quot;&amp;quot;, y = &amp;quot;OLS Estimate&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;get-observation-level-statistics-with-augment&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Get observation-level statistics with augment()&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;out_aug &amp;lt;- augment(out)
 p &amp;lt;- ggplot(data = out_aug, mapping = aes(x = .fitted, y = .resid))
 p + geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;
 ### Get model-level statistics with glance()
 Broom is able to &lt;code&gt;tidy&lt;/code&gt; (and &lt;code&gt;augment&lt;/code&gt;, and &lt;code&gt;glance&lt;/code&gt; at) a wide range of model types.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(survival)
@@ -813,7 +816,7 @@ p &amp;lt;- ggplot(data = out_tidy, mapping = aes(time, estimate))
 p + geom_line() + geom_ribbon(mapping = aes(ymin = conf.low,
                                             ymax = conf.high),
                               alpha = 0.2)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;grouped-analysis&#34; class=&#34;section level2&#34;&gt;
@@ -861,7 +864,7 @@ p + geom_pointrange(position = position_dodge(width = 1)) +
   scale_x_continuous(breaks = unique(gapminder$year)) +
   theme(legend.position = &amp;quot;top&amp;quot;) +
   labs(x = &amp;quot;Year&amp;quot;, y = &amp;quot;Estimate&amp;quot;, color = &amp;quot;Continent&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
 ## Plot Marginal Effects&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(margins)
 gss_sm$polviews_m &amp;lt;- relevel(gss_sm$polviews, ref = &amp;quot;Moderate&amp;quot;)
@@ -955,7 +958,7 @@ bo_gg %&amp;gt;% select(factor, AME, lower, upper)&lt;/code&gt;&lt;/pre&gt;
 p + geom_hline(yintercept = 0, color = &amp;quot;gray80&amp;quot;) +
   geom_pointrange() + coord_flip() +
   labs(x = NULL, y = &amp;quot;Average Marginal Effect&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pv_cp &amp;lt;- cplot(out_bo, x = &amp;quot;sex&amp;quot;, draw = FALSE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##    xvals     yvals     upper     lower
 ## 1   Male 0.5735849 0.6378653 0.5093045
@@ -970,7 +973,7 @@ p + geom_hline(yintercept = 0, color = &amp;quot;gray80&amp;quot;) +
 p + geom_hline(yintercept = 0, color = &amp;quot;gray80&amp;quot;) +
   geom_pointrange() + coord_flip() +
   labs(x = NULL, y = &amp;quot;Conditional Effect&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;plots-for-surveys&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Plots for Surveys&lt;/h2&gt;
@@ -1058,7 +1061,7 @@ p + geom_col(position = dodge, alpha = 0.2) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 13 rows containing missing values (geom_col).&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 13 rows containing missing values (geom_errorbar).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(
   data = subset(out_grp, race %nin% &amp;quot;Other&amp;quot;),
   mapping = aes(
@@ -1088,7 +1091,7 @@ p + geom_ribbon(alpha = 0.3, aes(color = NULL)) + #Use ribbon to show the error 
   ) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 13 rows containing missing values (geom_path).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-vis-chapter-6_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Other useful packages: &lt;code&gt;infer&lt;/code&gt;, &lt;code&gt;ggally&lt;/code&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -1125,43 +1128,43 @@ p + geom_ribbon(alpha = 0.3, aes(color = NULL)) + #Use ribbon to show the error 
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder,
             mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/cars-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/cars-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;chapter-3&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Chapter 3&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;geom_smooth&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &amp;#39;gam&amp;#39; and formula &amp;#39;y ~ s(x, bs = &amp;quot;cs&amp;quot;)&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/pressure-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/pressure-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point() + geom_smooth()&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &amp;#39;gam&amp;#39; and formula &amp;#39;y ~ s(x, bs = &amp;quot;cs&amp;quot;)&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;scale_x_log10&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point() + geom_smooth(method = &amp;quot;gam&amp;quot;) + scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;scales::dollar&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point() +
 geom_smooth(method = &amp;quot;gam&amp;quot;) +
 scale_x_log10(labels = scales::dollar)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;wrong-way-to-set-color&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Wrong way to set color&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp,
 color = &amp;quot;purple&amp;quot;))
 p + geom_point() + geom_smooth(method = &amp;quot;loess&amp;quot;) + scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;aes()&lt;/code&gt; function is for mappings only. Do not use it to change properties to a particular value. If we want to set a property, we do it in the geom_ we are using, and outside the &lt;code&gt;mapping =aes(...)&lt;/code&gt;step.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point(color = &amp;quot;purple&amp;quot;) + geom_smooth(method = &amp;quot;loess&amp;quot;) + scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;768&#34; /&gt;
 The various &lt;code&gt;geom_&lt;/code&gt; functions can take many other arguments that will affect how the plot looks but do not involve mapping variables to aesthetic elements.
 “alpha” is an aesthetic property that points (and some other plot elements) have, and to which variables can be mapped. It controls how transparent the object will appear when drawn. It’s measured on a scale of zero to one.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point(alpha = 0.3) + geom_smooth(color = &amp;quot;orange&amp;quot;, se = FALSE,
                                           size = 8, method = &amp;quot;lm&amp;quot;) + scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y=lifeExp))
 p + geom_point(alpha = 0.3) +
   geom_smooth(method = &amp;quot;gam&amp;quot;) +
@@ -1170,16 +1173,16 @@ p + geom_point(alpha = 0.3) +
        title = &amp;quot;Economic Growth and Life Expectancy&amp;quot;,
        subtitle = &amp;quot;Data points are country-years&amp;quot;,
        caption = &amp;quot;Source: Gapminder.&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp,
                                             color = continent))
 p + geom_point() + geom_smooth(method = &amp;quot;loess&amp;quot;) + scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;768&#34; /&gt;
 The color of the standard error ribbon is controlled by the fill aesthetic.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp,
                                             color = continent, fill = continent))
 p + geom_point() + geom_smooth(method = &amp;quot;loess&amp;quot;) + scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;aesthetics-can-be-mapped-per-geom&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Aesthetics Can Be Mapped per Geom&lt;/h3&gt;
@@ -1187,17 +1190,17 @@ p + geom_point() + geom_smooth(method = &amp;quot;loess&amp;quot;) + scale_x_log
 p + geom_point(mapping = aes(color = factor(year))) + 
   geom_smooth(method = &amp;quot;loess&amp;quot;) +
   scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Order doesn’t matter!!!
 Besides &lt;code&gt;scale_x_log10()&lt;/code&gt;, you can try &lt;code&gt;scale_x_sqrt()&lt;/code&gt; and &lt;code&gt;scale_x_reverse()&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = pop, y = lifeExp))
 p + geom_smooth(method = &amp;quot;loess&amp;quot;) + 
   geom_point(mapping = aes(color = continent)) + 
   scale_x_reverse(labels = scales::number)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
 p + geom_point(mapping = aes(color = log(pop))) + scale_x_log10()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;save-plots&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Save plots&lt;/h3&gt;
@@ -1211,18 +1214,18 @@ ggsave(&amp;quot;my_figure.pdf&amp;quot;, plot = p_out)&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;Group data and the “Group” Aesthetic&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = year, y = gdpPercap))
 p + geom_line()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;768&#34; /&gt;
 use the &lt;code&gt;group&lt;/code&gt; aesthetic to tell ggplot explicitly about this country-level structure&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = year, y = gdpPercap))
 p + geom_line(aes(group = country))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;facet-to-make-small-multiples&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Facet to make small multiples&lt;/h3&gt;
 &lt;p&gt;use &lt;code&gt;facet_wrap()&lt;/code&gt; to split our plot by &lt;code&gt;continent&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = year, y = gdpPercap))
 p + geom_line(aes(group = country)) + facet_wrap(~continent)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;768&#34; /&gt;
 Add another enhancements&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gapminder, mapping = aes(x = year, y = gdpPercap))
 p + geom_line(color=&amp;quot;gray70&amp;quot;, aes(group = country)) + 
@@ -1231,7 +1234,7 @@ p + geom_line(color=&amp;quot;gray70&amp;quot;, aes(group = country)) +
   facet_wrap(~continent , ncol = 5) +
   labs(x = &amp;quot;Year&amp;quot;,
        y = &amp;quot;GDP per capita on Five Continents&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Use &lt;code&gt;facet_grid&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = age, y = childs))
 p + geom_point(alpha = 0.2) +
@@ -1240,7 +1243,7 @@ p + geom_point(alpha = 0.2) +
 &lt;pre&gt;&lt;code&gt;## `geom_smooth()` using method = &amp;#39;gam&amp;#39; and formula &amp;#39;y ~ s(x, bs = &amp;quot;cs&amp;quot;)&amp;#39;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 18 rows containing non-finite values (stat_smooth).&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 18 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = age, y = childs))
 p + geom_point(alpha = 0.2) +
   geom_smooth() + 
@@ -1278,78 +1281,78 @@ p + geom_point(alpha = 0.2) +
 ## as.matrix(model.frame(delete.response(terms(object)), : There are other
 ## near singularities as well. 582.26&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 18 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;geoms-can-transform-data&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Geoms can transform data&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = bigregion))
 p + geom_bar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;geom_bar&lt;/code&gt; called the default &lt;code&gt;stat_&lt;/code&gt; function associated with it,&lt;code&gt;stat_count()&lt;/code&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = bigregion))
 p + geom_bar(mapping = aes(y = ..prop..))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = bigregion))
 p + geom_bar(mapping = aes(y = ..prop.., group = 1))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-22-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-22-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;table(gss_sm$religion)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## Protestant   Catholic     Jewish       None      Other 
 ##       1371        649         51        619        159&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = religion, color = religion))
 p + geom_bar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = religion, fill = religion))
 p + geom_bar() + guides(fill = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-24-2.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-24-2.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p + geom_bar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-24-3.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-24-3.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = bigregion, fill = religion))
 p + geom_bar()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = bigregion, fill = religion))
 p + geom_bar(position = &amp;quot;fill&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;if you want separate bars&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = bigregion, fill = religion))
 p + geom_bar(position = &amp;quot;dodge&amp;quot;, mapping = aes(y = ..prop..,
                                                group = religion))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-27-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-27-1.png&#34; width=&#34;768&#34; /&gt;
 However, they don’t sum to one within each region. They sum to one across regions.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = gss_sm, mapping = aes(x = religion))
 p + geom_bar(position = &amp;quot;dodge&amp;quot;, mapping = aes(y = ..prop..,
                                                group = bigregion)) +
   facet_wrap(~bigregion, ncol=1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-28-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-28-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;histgrams-and-density-plots&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Histgrams and Density Plots&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = midwest, mapping = aes( x = area))
 p + geom_histogram()&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-29-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-29-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = midwest, mapping = aes( x = area))
 p + geom_histogram(bins = 10)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-30-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-30-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;oh_wi &amp;lt;- c(&amp;quot;OH&amp;quot;, &amp;quot;WI&amp;quot;)
 p &amp;lt;- ggplot(data = subset(midwest, subset = state %in% oh_wi),
             mapping = aes(x = percollege, fill = state))
 p + geom_histogram(alpha = 0.4, bins = 20)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-31-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-31-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = midwest, mapping = aes( x = area))
 p + geom_density()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-32-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-32-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = midwest, mapping = aes( x = area, fill = state,
                                            color = state))
 p + geom_density(alpha = 0.3)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-33-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-33-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;avoid-transformations-when-necessary&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Avoid Transformations When Necessary&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = titanic, mapping = aes(x = fate, y = percent,
                                           fill = sex))
 p + geom_bar(position = &amp;quot;dodge&amp;quot;, stat = &amp;quot;identity&amp;quot;) + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-34-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-34-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = oecd_sum,
             mapping = aes(x = year, y = diff, fill = hi_lo))
 p + geom_col() + guides(fill = FALSE) + 
@@ -1360,7 +1363,7 @@ p + geom_col() + guides(fill = FALSE) +
        caption = &amp;quot;Data: OECD. After a chart by Christopher Ingraham,
        Washington Post, December 27th 2017.&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 1 rows containing missing values (position_stack).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-35-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-Data-Visualization-Chapter-2-4_files/figure-html/unnamed-chunk-35-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>
@@ -1424,7 +1427,7 @@ p + geom_col() + guides(fill = FALSE) +
 p + geom_col(position = &amp;quot;dodge2&amp;quot;) +
   labs(x = &amp;quot;Region&amp;quot;,y = &amp;quot;Percent&amp;quot;, fill = &amp;quot;Religion&amp;quot;) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; /&gt;
 Use &lt;code&gt;coord_flip()&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(rel_by_region, aes(x = bigregion, y = pct, fill = religion))
 p + geom_col(position = &amp;quot;dodge2&amp;quot;) +
@@ -1432,14 +1435,14 @@ p + geom_col(position = &amp;quot;dodge2&amp;quot;) +
   guides(fill = FALSE) + 
   coord_flip() + 
   facet_grid(~ bigregion)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(rel_by_region, aes(x = religion, y = pct, fill = religion))
 p + geom_col(position = &amp;quot;dodge2&amp;quot;) +
   labs(x = NULL,y = &amp;quot;Percent&amp;quot;, fill = &amp;quot;Religion&amp;quot;) +
   guides(fill = FALSE) + 
   coord_flip() + 
   facet_grid(~ bigregion)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;continuous-variables-by-group-or-category&#34; class=&#34;section level2&#34;&gt;
@@ -1447,28 +1450,28 @@ p + geom_col(position = &amp;quot;dodge2&amp;quot;) +
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata, mapping = aes(x = year, y = donors))
 p + geom_line(aes(group = country)) + facet_wrap(~country)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_path).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata, mapping = aes(x = country, y = donors))
 p + geom_boxplot() + coord_flip()&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing non-finite values (stat_boxplot).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata, mapping = aes(x = reorder(country,
                                                         donors, na.rm = TRUE), y = donors))
 p + geom_boxplot() + labs(x = NULL) + coord_flip()&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing non-finite values (stat_boxplot).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata, mapping = aes(x = reorder(country, donors, na.rm = TRUE), 
                                             y = donors, fill = world))
 p + geom_boxplot() + labs(x = NULL) + 
   coord_flip() + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing non-finite values (stat_boxplot).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata, mapping = aes(x = reorder(country, donors, na.rm = TRUE), 
                                             y = donors, color = world))
 p + geom_point() + labs(x = NULL) + 
   coord_flip() + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
   ggplot(data = organdata,
          mapping = aes(
@@ -1479,7 +1482,7 @@ p + geom_point() + labs(x = NULL) +
 p + geom_jitter() + labs(x = NULL) +
   coord_flip() + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;-
   ggplot(data = organdata,
          mapping = aes(
@@ -1490,7 +1493,7 @@ p + geom_jitter() + labs(x = NULL) +
 p + geom_jitter(position = position_jitter(width = 0.15)) + labs(x = NULL) +
   coord_flip() + theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;by_country &amp;lt;-
   organdata %&amp;gt;% group_by(consent_law, country) %&amp;gt;% summarize(
     donors_mean = mean(donors, na.rm = TRUE),
@@ -1564,7 +1567,7 @@ p + geom_point(size = 3) +
   labs(x = &amp;quot;Donor Procurement Rate&amp;quot;,
        y = &amp;quot;&amp;quot;, color = &amp;quot;Consent Law&amp;quot;) +
   theme(legend.position = &amp;quot;top&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = by_country,
             mapping = aes(x = donors_mean,
                           y = reorder(country, donors_mean)))
@@ -1573,7 +1576,7 @@ p + geom_point(size = 3) +
   facet_wrap( ~ consent_law, scales = &amp;quot;free_y&amp;quot;, ncol = 1) +
   labs(x = &amp;quot;Donor Procurement Rate&amp;quot;,
        y = &amp;quot;&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = by_country,
             mapping = aes(x = reorder(country,
                                       donors_mean), y = donors_mean))
@@ -1581,18 +1584,18 @@ p + geom_point(size = 3) +
 p + geom_pointrange(mapping = aes(ymin = donors_mean - donors_sd,
                                   ymax = donors_mean + donors_sd)) +
   labs(x = &amp;quot;&amp;quot;, y = &amp;quot;Donor Procurement Rate&amp;quot;) + coord_flip()&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;768&#34; /&gt;
 ### Plot Text Directly&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = by_country,
             mapping = aes(x = roads_mean,
                           y = donors_mean))
 p + geom_point() + geom_text(mapping = aes(label = country))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = by_country,
             mapping = aes(x = roads_mean,
                           y = donors_mean))
 p + geom_point() + geom_text(mapping = aes(label = country), hjust = 0)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-20-1.png&#34; width=&#34;768&#34; /&gt;
 ggrepel is better than &lt;code&gt;geom_text()&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggrepel)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p_title &amp;lt;-
@@ -1623,7 +1626,7 @@ p + geom_hline(yintercept = 0.5,
     subtitle = p_subtitle,
     caption = p_caption
   )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-22-1.png&#34; width=&#34;768&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-22-1.png&#34; width=&#34;768&#34; /&gt;
 ### Label Outliers&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = by_country,
             mapping = aes(x = gdp_mean, y = health_mean))
@@ -1631,7 +1634,7 @@ p + geom_hline(yintercept = 0.5,
 p + geom_point() +
   geom_text_repel(data = subset(by_country, gdp_mean &amp;gt; 25000),
                   mapping = aes(label = country))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-23-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-23-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = by_country,
             mapping = aes(x = gdp_mean, y = health_mean))
 
@@ -1644,7 +1647,7 @@ p + geom_point() +
     ),
     mapping = aes(label = country)
   )&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-23-2.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-23-2.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;organdata$ind &amp;lt;- organdata$ccode %in% c(&amp;quot;Ita&amp;quot;, &amp;quot;Spa&amp;quot;) &amp;amp;
   organdata$year &amp;gt; 1998
 
@@ -1656,7 +1659,7 @@ p + geom_point() +
                   mapping = aes(label = ccode)) +
   guides(label = FALSE, color = FALSE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;write-and-draw-in-the-plot-area&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Write and Draw in the Plot Area&lt;/h3&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata, mapping = aes(x = roads, y = donors))
@@ -1668,7 +1671,7 @@ p + geom_point() + annotate(
   hjust = 0
 )&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata,
             mapping = aes(x = roads, y = donors))
 p + geom_point() +
@@ -1689,7 +1692,7 @@ p + geom_point() +
     hjust = 0
   )&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;scales-guides-and-themes&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Scales, Guides, and Themes&lt;/h3&gt;
@@ -1699,7 +1702,7 @@ p + geom_point() +
                           color = world))
 p + geom_point()&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-27-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-27-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata,
             mapping = aes(x = roads,
                           y = donors,
@@ -1708,7 +1711,7 @@ p + geom_point() + scale_x_log10() + scale_y_continuous(breaks = c(5,
                                                                    15, 25),
                                                         labels = c(&amp;quot;Five&amp;quot;, &amp;quot;Fifteen&amp;quot;, &amp;quot;Twenty Five&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-28-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-28-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata,
             mapping = aes(x = roads, y = donors,
                           color = world))
@@ -1717,14 +1720,14 @@ p + geom_point() + scale_color_discrete(labels = c(&amp;quot;Corporatist&amp;quo
   labs(x = &amp;quot;Road Deaths&amp;quot;,
        y = &amp;quot;Donor Procurement&amp;quot;, color = &amp;quot;Welfare State&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-29-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-29-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;p &amp;lt;- ggplot(data = organdata,
             mapping = aes(x = roads, y = donors,
                           color = world))
 p + geom_point() + labs(x = &amp;quot;Road Deaths&amp;quot;, y = &amp;quot;Donor Procurement&amp;quot;) +
   guides(color = FALSE)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Warning: Removed 34 rows containing missing values (geom_point).&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-30-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2019-09-26-data-visualization-chapter-5_files/figure-html/unnamed-chunk-30-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>
