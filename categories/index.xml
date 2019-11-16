@@ -5,12 +5,20 @@
     <link>/categories/</link>
       <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Sun, 17 Nov 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Categories</title>
       <link>/categories/</link>
     </image>
+    
+    <item>
+      <title>Books</title>
+      <link>/categories/books/</link>
+      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/books/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Linux</title>
@@ -25,14 +33,6 @@
       <link>/categories/r/</link>
       <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
       <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Books</title>
-      <link>/categories/books/</link>
-      <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>/categories/books/</guid>
       <description></description>
     </item>
     

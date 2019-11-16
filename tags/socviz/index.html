@@ -31,7 +31,7 @@
   <meta name="description" content="">
 
   
-  <link rel="alternate" hreflang="en-us" href="/tags/socviz/">
+  <link rel="alternate" hreflang="en-us" href="../../tags/socviz/">
 
   
 
@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
 
   
 
@@ -96,14 +96,14 @@
 
 
   
-  <link rel="alternate" href="/tags/socviz/index.xml" type="application/rss+xml" title="Little World">
+  <link rel="alternate" href="../../tags/socviz/index.xml" type="application/rss+xml" title="Little World">
   
 
-  <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/img/icon-32.png">
-  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="manifest" href="../../index.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="/tags/socviz/">
+  <link rel="canonical" href="../../tags/socviz/">
 
   
   
@@ -181,7 +181,7 @@
   <div class="container">
 
     
-      <a class="navbar-brand" href="/">Little World</a>
+      <a class="navbar-brand" href="../../">Little World</a>
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
               data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -220,7 +220,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          <a class="nav-link " href="../../#posts"><span>Posts</span></a>
         </li>
 
         
@@ -249,7 +249,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          <a class="nav-link " href="../../#contact"><span>Contact</span></a>
         </li>
 
         
@@ -319,7 +319,7 @@
   
   
   <div>
-    <h2><a href="/post/data-vis-chapter-8/">Data Vis Chapter 8</a></h2>
+    <h2><a href="../../post/data-vis-chapter-8/">Data Vis Chapter 8</a></h2>
     <div class="article-style">
       
       Use Color Palette Layer Color and Text Together Themes Use Theme Elements Two y-axes   head(asasec) ## Section Sname Beginning Revenues ## 1 Aging and the Life Course (018) Aging 12752 12104 ## 2 Alcohol, Drugs and Tobacco (030) Alcohol/Drugs 11933 1144 ## 3 Altruism and Social Solidarity (047) Altruism 1139 1862 ## 4 Animals and Society (042) Animals 473 820 ## 5 Asia/Asian America (024) Asia 9056 2116 ## 6 Body and Embodiment (048) Body 3408 1618 ## Expenses Ending Journal Year Members ## 1 12007 12849 No 2005 598 ## 2 400 12677 No 2005 301 ## 3 1875 1126 No 2005 NA ## 4 1116 177 No 2005 209 ## 5 1710 9462 No 2005 365 ## 6 1920 3106 No 2005 NA p &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p + geom_point() + geom_smooth() p &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p + geom_point(mapping = aes(color = Journal)) + geom_smooth(method = &quot;lm&quot;) p0 &lt;- ggplot( data = subset(asasec, Year == 2014), mapping = aes(x = Members, y = Revenues, label = Sname) ) p1 &lt;- p0 + geom_smooth(method = &quot;lm&quot;, se = FALSE, color = &quot;gray80&quot;) + geom_point(mapping = aes(color = Journal)) library(ggrepel) p2 &lt;- p1 + geom_text_repel(data = subset(asasec, Year == 2014 &amp; Revenues &gt; 7000), size = 2) p3 &lt;- p2 + labs( x = &quot;Membership&quot;, y = &quot;Revenues&quot;, color = &quot;Section has own Journal&quot;, title = &quot;ASA Sections&quot;, subtitle = &quot;2014 Calendar year.
@@ -328,7 +328,7 @@
   </div>
   
   <div>
-    <h2><a href="/post/data-vis-chapter-6/">Data Vis Chapter 6</a></h2>
+    <h2><a href="../../post/data-vis-chapter-6/">Data Vis Chapter 6</a></h2>
     <div class="article-style">
       
       Show Several Fits at Once, with a Legend Model-based Graphics Tidy Model Objects with Broom get component-level statistics with tidy() Get observation-level statistics with augment()  Grouped Analysis Plots for Surveys   p &lt;- ggplot(data = gapminder, mapping = aes(x = log(gdpPercap), y = lifeExp)) p + geom_point(alpha = 0.1) + geom_smooth(color = &quot;tomato&quot;, fill = &quot;tomato&quot;, method = MASS::rlm) + #robust regression line geom_smooth(color = &quot;steelblue&quot;, fill = &quot;steelblue&quot;, method = &quot;lm&quot;) p + geom_point(alpha = 0.
@@ -337,7 +337,7 @@
   </div>
   
   <div>
-    <h2><a href="/post/test/">Data Visualization Chapter 2-4</a></h2>
+    <h2><a href="../../post/test/">Data Visualization Chapter 2-4</a></h2>
     <div class="article-style">
       
       Chapter 2 Chapter 3 Wrong way to set color Aesthetics Can Be Mapped per Geom Save plots  Chapter 4 Group data and the “Group” Aesthetic Facet to make small multiples Geoms can transform data Histgrams and Density Plots Avoid Transformations When Necessary    Chapter 2 geom_point
@@ -347,7 +347,7 @@ p &lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) p + 
   </div>
   
   <div>
-    <h2><a href="/post/data-visualization-chapter-5/">Data Visualization Chapter 5</a></h2>
+    <h2><a href="../../post/data-visualization-chapter-5/">Data Visualization Chapter 5</a></h2>
     <div class="article-style">
       
       Chapter 5 Use Pipes to Summerize Data  Continuous Variables by Group or Category Write and Draw in the Plot Area Scales, Guides, and Themes    Chapter 5 Use Pipes to Summerize Data rel_by_region &lt;- gss_sm %&gt;% group_by(bigregion, religion) %&gt;% summarize(N = n()) %&gt;% mutate(freq = N / sum(N), pct = round((freq*100), 0)) ## Warning: Factor `religion` contains implicit NA, consider using ## `forcats::fct_explicit_na` rel_by_region ## # A tibble: 24 x 5 ## # Groups: bigregion [4] ## bigregion religion N freq pct ## &lt;fct&gt; &lt;fct&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; ## 1 Northeast Protestant 158 0.
@@ -365,7 +365,7 @@ p &lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) p + 
     
     
     
-    <script src="/js/mathjax-config.js"></script>
+    <script src="../../js/mathjax-config.js"></script>
     
 
     
@@ -466,7 +466,7 @@ p &lt;- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) p + 
     
     
     
-    <script src="/js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
+    <script src="../../js/academic.min.0bf1e3db85cbb232372ed31d6f10dc70.js"></script>
 
     
 
