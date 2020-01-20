@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) /// (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss &lt; 3 One drawback to using the rowmean() function is that it">
+  <meta name="description" content="Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &#34;Does not describe very well&#34;) /// (2=4) (3=3) (4=2) (5=1 &#34;Describes very well&#34;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss One drawback to using the rowmean() function is that it simply adds">
 
   
   <link rel="alternate" hreflang="en-us" href="../../post/measurement-reliability-and-validity/">
@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.b6be4449bf86f3314d844317b19b0e01.css">
 
   
 
@@ -116,7 +116,7 @@
   <meta property="og:site_name" content="Little World">
   <meta property="og:url" content="/post/measurement-reliability-and-validity/">
   <meta property="og:title" content="Measurement, reliability, and validity | Little World">
-  <meta property="og:description" content="Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) /// (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss &lt; 3 One drawback to using the rowmean() function is that it"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:description" content="Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &#34;Does not describe very well&#34;) /// (2=4) (3=3) (4=2) (5=1 &#34;Describes very well&#34;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss One drawback to using the rowmean() function is that it simply adds"><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
@@ -168,7 +168,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 \u0026quot;Does not describe very well\u0026quot;) /// (2=4) (3=3) (4=2) (5=1 \u0026quot;Describes very well\u0026quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss \u0026lt; 3 One drawback to using the rowmean() function is that it"
+  "description": "Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 \"Does not describe very well\") /// (2=4) (3=3) (4=2) (5=1 \"Describes very well\"), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss One drawback to using the rowmean() function is that it simply adds"
 }
 </script>
 
@@ -513,17 +513,14 @@
 
     <div class="article-style">
       <h2 id="constructing-a-scale">Constructing a Scale</h2>
-
-<pre><code>recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) ///
-  (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy)
+<pre><code>recode empathy2 empathy4 empathy5 (1=5 "Does not describe very well") ///
+  (2=4) (3=3) (4=2) (5=1 "Describes very well"), pre(rev) label(empathy)
 egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
   revempathy5 empathy6 empathy7)
 egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 ///
    revempathy5 empathy6 empathy7) 
 egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
-   revempathy5 empathy6 empathy7) if miss &lt; 3
-</code></pre>
-
+   revempathy5 empathy6 empathy7) if miss < 3</code></pre>
 <p>One drawback to using the rowmean() function is that it simply adds the score on the items a person answers and divides by the number of items answered.</p>
 
 <h2 id="reliability">Reliability</h2>
@@ -585,12 +582,9 @@ The equivalent of alpha for items that are dichotomous is the Kuder–Richardson
 </ul>
 
 <p>Use PCF when you have a set of items that you believe all measure one concept. In this situation, you would be interested in the first principal factor. You would want to see if it explained a substantial part of the total variance for the entire set of items, and you would want most of the items to have a <strong>loading of 0.4 or above</strong> on this factor. Because PCF analysis is trying to explain all the variance in the items, the <strong>uniqueness</strong> for each item should approach zero. Generally, we should consider any factor that has an eigenvalue of more than 1.A visual way to examine the eigenvalues is with a scree plot.</p>
-
 <pre><code>factor rnatspac rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
 	rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
-screeplot
-</code></pre>
-
+screeplot</code></pre>
 <p>If, on the other hand, you want to identify two or more latent variables that represent interpretable dimensions of some concept, then PF analysis is probably best.</p>
 
 <h3 id="rotation">Rotation</h3>
@@ -605,14 +599,11 @@ screeplot
 <h2 id="get-one-factor-score">Get one factor score</h2>
 
 <p>However, this distinction rarely makes a lot of practical difference. The factor score may make a difference if there are some items with very large loadings, say, 0.9, and others with very small loadings, say, 0.2. But we would probably drop the weakest items. When the loadings do not vary a great deal, computing a factor score or a mean/total score will produce comparable results.</p>
-
 <pre><code>factor rnatenvir rnatheal rnatcity rnatcrime rnatdrug rnateduc rnatrace ///
 	rnatfare rnatsoc rnatchld, pcf
 predict libfscore, norotate
 egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
-	rnateduc rnatrace rnatfare rnatsoc rnatchld)
-</code></pre>
-
+	rnateduc rnatrace rnatfare rnatsoc rnatchld)</code></pre>
 <p>correlation higher than 0.9...</p>
 
     </div>
@@ -854,7 +845,7 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
     <footer class="site-footer">
    
   <p class="powered-by">
-    &copy;Yihong WANG 2019 &middot; 
+    ©Yihong WANG 2020 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

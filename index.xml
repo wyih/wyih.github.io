@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Little World</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2020</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Little World</title>
@@ -17,32 +17,18 @@
       <link>/courses/example/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/courses/example/example1/</guid>
-      <description>
-
-&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
-
+      <description>&lt;p&gt;In this tutorial, I&#39;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
-
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-
 &lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
-
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
 </description>
     </item>
@@ -52,32 +38,18 @@
       <link>/courses/example/example2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/courses/example/example2/</guid>
-      <description>
-
-&lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
-
+      <description>&lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-3&#34;&gt;Tip 3&lt;/h2&gt;
-
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-
 &lt;h2 id=&#34;tip-4&#34;&gt;Tip 4&lt;/h2&gt;
-
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
 </description>
     </item>
@@ -87,21 +59,91 @@
       <link>/talk/example/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
       <guid>/talk/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
-  &lt;/div&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&#39;s &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>用R取代Stata与SAS</title>
+      <link>/post/2020-01-20-r-stata-workflow/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020-01-20-r-stata-workflow/</guid>
+      <description>
+&lt;script src=&#34;./rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;./rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#安装stata&#34;&gt;安装Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#在r中调用stata&#34;&gt;在R中调用Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#三种环境下数据互通&#34;&gt;三种环境下数据互通&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;div id=&#34;安装stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;安装Stata&lt;/h2&gt;
+&lt;p&gt;首先安装&lt;code&gt;ncurses5-compat-libs&lt;/code&gt;和&lt;code&gt;libpng12&lt;/code&gt;这两个包，其次&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;% sudo -s
 
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+cd /tmp/
 
-&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+mkdir statafiles
+
+cd statafiles
+
+tar -zxf /home/you/Downloads/Stata14Linux64.tar.gz
+
+cd /usr/local
+
+mkdir stata14
+
+cd stata14
+
+/tmp/statafiles/install&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安完之后把安装目录加到环境变量中去。我选择编辑&lt;code&gt;/etc/profile&lt;/code&gt;加入：&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;export PATH=&amp;quot;$PATH:/usr/local/stata14&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;若想不重启就生效可以&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Lic文件可以直接COPY到安装目录，或者在目录中放&lt;code&gt;stata.lic.tar.gz&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;在r中调用stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;在R中调用Stata&lt;/h2&gt;
+&lt;p&gt;通过&lt;a href=&#34;https://github.com/lbraglia/RStata&#34;&gt;&lt;code&gt;RStata&lt;/code&gt;&lt;/a&gt;实现&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#run Stata in R----
+library(&amp;quot;RStata&amp;quot;)
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;D:\\Stata15\\StataSE-64&amp;quot;) #office
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;/usr/local/stata14/stata&amp;quot;) #linux #cannot use stata-se?
+options(&amp;quot;RStata.StataVersion&amp;quot; = 14)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;三种环境下数据互通&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;三种环境下数据互通&lt;/h2&gt;
+&lt;p&gt;R下通过两个包&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(haven) #nead read_dta to read dta
+library(rio) # rio::import to read sas data
+#haven::read_sas can also import sas7bdat
+f1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.sas7bdat&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+o1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.dta&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+after2007_raw &amp;lt;-  import(f1)
+after2007 %&amp;gt;% 
+  mutate_if(is.numeric, as.integer) %&amp;gt;% 
+  write_dta(.,o1, version = 12)
+# Because sas only supports Stata 12 files (or earlier) while haven supports stata versions 8-15.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如以上方法都无法顺利读入sas7bdat，用SAS中转&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#import stata data file, only supports 12 or earlier
+PROC IMPORT OUT= WORK.S1 
+            DATAFILE= &amp;quot;E:\after2007.dta&amp;quot; 
+            DBMS=STATA REPLACE;
+RUN;
+
+proc export data=raw1 outfile= &amp;quot;D:\sample.dta&amp;quot; replace;
+run;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -1750,54 +1792,33 @@ p + geom_point() + labs(x = &amp;quot;Road Deaths&amp;quot;, y = &amp;quot;Donor
       <link>/post/meta-analysis-note-1/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/post/meta-analysis-note-1/</guid>
-      <description>
-
-&lt;p&gt;本书第一章主要对一些术语进行了界定，把元分析同其它种文献综述的方式进行了区分。元分析同其它定性的总结以及定量的（Informal vote counting-一般采用多数原则来总结结论与formal vote counting-在前者基础之上采用了一些统计分析以期得到统计上显著的结论）一些分析的不同之处在于：元分析的关注点除了关注效果是否存在之外，主要关注效果的大小(effect size)。&lt;/p&gt;
-
+      <description>&lt;p&gt;本书第一章主要对一些术语进行了界定，把元分析同其它种文献综述的方式进行了区分。元分析同其它定性的总结以及定量的（Informal vote counting-一般采用多数原则来总结结论与formal vote counting-在前者基础之上采用了一些统计分析以期得到统计上显著的结论）一些分析的不同之处在于：元分析的关注点除了关注效果是否存在之外，主要关注效果的大小(effect size)。&lt;/p&gt;
 &lt;p&gt;元分析的工作步骤分为五个阶段：&lt;/p&gt;
-
-&lt;h2 id=&#34;确定问题-formulate-a-problem&#34;&gt;确定问题(formulate a problem)&lt;/h2&gt;
-
+&lt;h2 id=&#34;确定问题formulate-a-problem&#34;&gt;确定问题(formulate a problem)&lt;/h2&gt;
 &lt;p&gt;在确定问题开始综述工作时，要把关注的重点厘清。比如希望是一个更概括的结论或样本，还是一个适用范围有限定的结论和样本，这将决定第二三阶段对文献的取舍。&lt;/p&gt;
-
 &lt;h2 id=&#34;取得相关文献&#34;&gt;取得相关文献&lt;/h2&gt;
-
 &lt;p&gt;要从尽可能多的样本里采样，确保文献是有代表性的(representive)和无偏的(unbiased)。后者因为学术刊物对于结果显著的论文的发表偏好而很难实现，因此别忘了未发表的工作论文或毕业论文等。&lt;/p&gt;
-
 &lt;h2 id=&#34;对文献进行评估精选&#34;&gt;对文献进行评估精选&lt;/h2&gt;
-
 &lt;p&gt;本阶段对上一阶段取得的文献进行相关性评估。在此阶段会对第一阶段确定下来的研究问题进行进一步的提炼。&lt;/p&gt;
-
 &lt;h2 id=&#34;对文献进行分析和解释&#34;&gt;对文献进行分析和解释&lt;/h2&gt;
-
 &lt;p&gt;最花时间和最难的阶段，在此阶段中需要将文献的数据整理和输入。&lt;/p&gt;
-
 &lt;h2 id=&#34;文献综述的写作&#34;&gt;文献综述的写作&lt;/h2&gt;
-
 &lt;p&gt;有几点需要注意的：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;对于整个文献综述的工作过程要完整描述，记录在此过程中所做的各项取舍&lt;/li&gt;
 &lt;li&gt;关键在与要回答感兴趣的问题，假如不能回答，也要解释为什么以及未来需要做什么来回答这个问题&lt;/li&gt;
 &lt;li&gt;要避免文献列表的堆砌&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;作者的几点建议&#34;&gt;作者的几点建议&lt;/h2&gt;
-
 &lt;p&gt;因为文献的收集、评估、整理直到分析很花时间和精力，所以一定要做到有规划。一些具体的建议如下：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;在文献收集过程中做记录&lt;/li&gt;
 &lt;li&gt;系统的存放文献，假如同别人合作，确保你们用同一套系统来存放，处理文献&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;我对于工具的建议&#34;&gt;我对于工具的建议&lt;/h2&gt;
-
-&lt;p&gt;&lt;del&gt;文献收集可以用&lt;a href=&#34;https://www.mendeley.com/&#34; target=&#34;_blank&#34;&gt;Mendeley&lt;/a&gt;的private group功能，这样加入同一组的成员可以直接在客户端上打开PDF和加标注。虽然mendeley对免费用户private group数有限制，但可以通过在group底下再加子目录的方式来绕过限制。&lt;/del&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;del&gt;文献收集可以用&lt;a href=&#34;https://www.mendeley.com/&#34;&gt;Mendeley&lt;/a&gt;的private group功能，这样加入同一组的成员可以直接在客户端上打开PDF和加标注。虽然mendeley对免费用户private group数有限制，但可以通过在group底下再加子目录的方式来绕过限制。&lt;/del&gt;&lt;/p&gt;
 &lt;h2 id=&#34;最新的建议&#34;&gt;最新的建议&lt;/h2&gt;
-
-&lt;p&gt;转向&lt;a href=&#34;https://www.zotero.org/&#34; target=&#34;_blank&#34;&gt;Zotero&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;转向&lt;a href=&#34;https://www.zotero.org/&#34;&gt;Zotero&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1806,57 +1827,38 @@ p + geom_point() + labs(x = &amp;quot;Road Deaths&amp;quot;, y = &amp;quot;Donor
       <link>/post/sem-and-gsem/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       <guid>/post/sem-and-gsem/</guid>
-      <description>
-
-&lt;h2 id=&#34;sem&#34;&gt;SEM&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;sem&#34;&gt;SEM&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;sem bmi &amp;lt;- age children incomeln educ quickfood
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This would give us the unstandardized solution. This command uses &lt;strong&gt;maximum likelihood estimation&lt;/strong&gt; ather than the ordinary least-squares (OLS) estimation used by the &lt;code&gt;regress&lt;/code&gt; command. Add &lt;code&gt;,standardized&lt;/code&gt; just like add &lt;code&gt;,beta&lt;/code&gt; to &lt;code&gt;regress&lt;/code&gt;&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This would give us the unstandardized solution. This command uses &lt;strong&gt;maximum likelihood estimation&lt;/strong&gt; ather than the ordinary least-squares (OLS) estimation used by the &lt;code&gt;regress&lt;/code&gt; command. Add &lt;code&gt;,standardized&lt;/code&gt; just like add &lt;code&gt;,beta&lt;/code&gt; to &lt;code&gt;regress&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;option &lt;code&gt;method(mlmv)&lt;/code&gt; (maximum likelihood with missing values):
-Estimation is less robust to the assumption of multivariate normality when using the method(mlmv) option than when using maximum likelihood estimation with listwise deletion of observations with missing values. Because some of the five variables in our model are not normally distributed, the method(mlmv) option needs to be used with caution. The estimation performed when we use the method(mlmv) option also assumes that the missing values are MAR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:f1&#34;&gt;&lt;a href=&#34;#fn:f1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; . By contrast, when listwise deletion is used we are assuming that missing values are MCAR&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:f1&#34;&gt;&lt;a href=&#34;#fn:f1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and this is a much more restrictive assumption.&lt;/p&gt;
-
+Estimation is less robust to the assumption of multivariate normality when using the method(mlmv) option than when using maximum likelihood estimation with listwise deletion of observations with missing values. Because some of the five variables in our model are not normally distributed, the method(mlmv) option needs to be used with caution. The estimation performed when we use the method(mlmv) option also assumes that the missing values are MAR&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; . By contrast, when listwise deletion is used we are assuming that missing values are MCAR&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, and this is a much more restrictive assumption.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sem bmi &amp;lt;- age children incomeln educ quickfood, method(mlmv) standardized
 
 estat eqgof
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The OLS regression solution and the SEM solution without MLMV, which uses listwise deletion, are producing the same standardized parameter estimates and $R^2$s. As noted, the z values are slightly larger than the t-values, and the p-values are slightly smaller. The z tests for the SEM solution are directly testing the standardized solution. The regress solution’s  t tests are testing the significance of the unstandardized B coefficients and do not directly test the significance of the Betas. The regress command does not provide such a direct test for the significance of Betas.&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The OLS regression solution and the SEM solution without MLMV, which uses listwise deletion, are producing the same standardized parameter estimates and $R^2$s. As noted, the z values are slightly larger than the t-values, and the p-values are slightly smaller. The z tests for the SEM solution are directly testing the standardized solution. The regress solution’s  t tests are testing the significance of the unstandardized B coefficients and do not directly test the significance of the Betas. The regress command does not provide such a direct test for the significance of Betas.&lt;/p&gt;
 &lt;p&gt;Notice that the $R^2$ using sem with method(mlmv) is actually slightly smaller. Using all the available information in the SEM solution with MLMV is not cheating if the assumptions are met. The &lt;strong&gt;MAR&lt;/strong&gt; assumption for the SEM solution is more realistic than the &lt;strong&gt;MCAR&lt;/strong&gt; assumption required for listwise deletion to be unbiased.&lt;/p&gt;
-
 &lt;p&gt;There are three rules to follow when using the maximum likelihood with missing values estimation.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Generate an indicator variable for each variable in your model to reflect whether an observation has a missing value.&lt;/li&gt;
 &lt;li&gt;Correlate potential auxiliary variables to see whether they predict missing value indicator variables.&lt;/li&gt;
 &lt;li&gt;Include additional auxiliary variables that are substantially correlated with a person’s score on a variable that has missing values.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Getting auxiliary variables into your SEM command？？？没懂&lt;/p&gt;
-
 &lt;h2 id=&#34;gsem&#34;&gt;GSEM&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;logit obese age children incomeln educ quickfood
 listcoef
 glm obese age children incomeln educ quickfood, family(binomial) link(logit)
 glm, eform
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The logit command is a special application of the generalized linear model. We can obtain the same results by using the glm command. The glm command requires us to specify the family of our model, family(binomial), and the link function, link(logit). To obtain the odds ratio, we can replay these results by using glm, eform.&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The logit command is a special application of the generalized linear model. We can obtain the same results by using the glm command. The glm command requires us to specify the family of our model, family(binomial), and the link function, link(logit). To obtain the odds ratio, we can replay these results by using glm, eform.&lt;/p&gt;
 &lt;p&gt;后面没看懂，以后再说吧。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:f1&#34;&gt;Missing Completely at Random is pretty straightforward.  What it means is what is says:  the propensity for a data point to be missing is completely random.
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:f1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Missing at Random (MAR)This is where the unfortunate names come in.Missing at Random means  the propensity for a data point to be missing is not related to the missing data, but it is related to some of the observed data. &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
+&lt;/section&gt;
 </description>
     </item>
     
@@ -1865,48 +1867,32 @@ glm, eform
       <link>/post/panel-data-in-r-vs-in-stata/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/post/panel-data-in-r-vs-in-stata/</guid>
-      <description>
-
-&lt;h2 id=&#34;panel-data-with-one-way-fixed-effect&#34;&gt;Panel data with one way fixed effect&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;mm1 &amp;lt;- invforward ~ TOBINQ + inv + top3 + size + lev + cash + loss + lnage + cfo + sd + ic + factor(year)
-zzz &amp;lt;- plm(mm1,data=sample,model=&amp;quot;within&amp;quot;,index=c(&amp;quot;stkcd&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;same as xtreg i.year fe , without robust vcetype
+      <description>&lt;h2 id=&#34;panel-data-with-one-way-fixed-effect&#34;&gt;Panel data with one way fixed effect&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;mm1 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; invforward &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; TOBINQ &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; inv &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; top3 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; size &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lev &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cash &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; loss &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lnage &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cfo &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; sd &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; ic &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factor&lt;/span&gt;(year)
+zzz &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;plm&lt;/span&gt;(mm1,data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;sample,model&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;within&amp;#34;&lt;/span&gt;,index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;stkcd&amp;#34;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;same as xtreg i.year fe , without robust vcetype
 用这种方法算出来$R^2$和Stata报告$R^2$ within的一致&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;m1 &amp;lt;- invforward ~ TOBINQ + inv + top3 + size + lev + cash + loss + lnage + cfo + sd + ic
-zz &amp;lt;- plm(m1,data=sample,model=&amp;quot;within&amp;quot;,index=c(&amp;quot;stkcd&amp;quot;, &amp;quot;year&amp;quot;),effect = &amp;quot;twoways&amp;quot;)
-summary(zz)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;same sa xtreg i.year, fe , without robust vcetype，但$R^2$较Stata报告$R^2$ within小&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;m1 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; invforward &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; TOBINQ &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; inv &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; top3 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; size &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lev &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cash &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; loss &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lnage &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cfo &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; sd &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; ic
+zz &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;plm&lt;/span&gt;(m1,data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;sample,model&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;within&amp;#34;&lt;/span&gt;,index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;stkcd&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;year&amp;#34;&lt;/span&gt;),effect &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;twoways&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;(zz)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;same sa xtreg i.year, fe , without robust vcetype，但$R^2$较Stata报告$R^2$ within小&lt;/p&gt;
 &lt;h2 id=&#34;vcetype-robust&#34;&gt;vcetype robust&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;zz_r &amp;lt;- coeftest(zz, vcov.=function(x) vcovHC(x, type=&amp;quot;sss&amp;quot;)) # same as stata xtreg i.year, fe r
-# OR
-zzz_r &amp;lt;- coeftest(zzz, vcov.=function(x) vcovHC(x, type=&amp;quot;sss&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;组间系数比较&#34;&gt;组间系数比较&lt;/h2&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;zz_r &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;coeftest&lt;/span&gt;(zz, vcov.&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;function&lt;/span&gt;(x) &lt;span style=&#34;color:#a6e22e&#34;&gt;vcovHC&lt;/span&gt;(x, type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;sss&amp;#34;&lt;/span&gt;)) &lt;span style=&#34;color:#75715e&#34;&gt;# same as stata xtreg i.year, fe r&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# OR&lt;/span&gt;
+zzz_r &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;coeftest&lt;/span&gt;(zzz, vcov.&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;function&lt;/span&gt;(x) &lt;span style=&#34;color:#a6e22e&#34;&gt;vcovHC&lt;/span&gt;(x, type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;sss&amp;#34;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;组间系数比较&#34;&gt;组间系数比较&lt;/h2&gt;
 &lt;p&gt;OLS可用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;sur_diff &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt;  MVBV &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; (Dm &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; Dh &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; EBV &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; DmEBV &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;DhEBV)&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;g_layer
+h2t &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; h2 &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(g_layer &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;mutate&lt;/span&gt;(g_layer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ifelse&lt;/span&gt;(g_layer &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+mm &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lm&lt;/span&gt;(sur_diff,data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;h2t)
+ttt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;coeftest&lt;/span&gt;(mm, vcov.&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;function&lt;/span&gt;(x) &lt;span style=&#34;color:#a6e22e&#34;&gt;vcovHC&lt;/span&gt;(x, cluster&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;group&amp;#34;&lt;/span&gt;, type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;HC1&amp;#34;&lt;/span&gt;))
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;sur_diff &amp;lt;-  MVBV ~ (Dm + Dh + EBV + DmEBV +DhEBV)*g_layer
-h2t &amp;lt;- h2 %&amp;gt;%
-  filter(g_layer != 2)%&amp;gt;%
-  mutate(g_layer = ifelse(g_layer == 1, 0, 1))
-mm &amp;lt;- lm(sur_diff,data=h2t)
-ttt &amp;lt;-  coeftest(mm, vcov.=function(x) vcovHC(x, cluster=&amp;quot;group&amp;quot;, type=&amp;quot;HC1&amp;quot;))
-
-stargazer(fpm,models_growth_layer,type = &amp;quot;text&amp;quot;, column.labels = table4_label)
-stargazer(fpm_r,robusts_growth_layer,type = &amp;quot;text&amp;quot;, column.labels = table4_label,
-          add.lines=c(&amp;quot;DhEBV(4)-(2)&amp;quot;, str_c(round(ttt[12,1],3),&amp;quot;**(p=&amp;quot;,round(ttt[12,4],3),&amp;quot;)&amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Panel Data不行！One way, two way fixed effect都不行！
+&lt;span style=&#34;color:#a6e22e&#34;&gt;stargazer&lt;/span&gt;(fpm,models_growth_layer,type &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;text&amp;#34;&lt;/span&gt;, column.labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; table4_label)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;stargazer&lt;/span&gt;(fpm_r,robusts_growth_layer,type &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;text&amp;#34;&lt;/span&gt;, column.labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; table4_label,
+          add.lines&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;DhEBV(4)-(2)&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;str_c&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;round&lt;/span&gt;(ttt[12,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;],&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;),&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;**(p=&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;round&lt;/span&gt;(ttt[12,&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;],&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;),&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)&amp;#34;&lt;/span&gt;)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Panel Data不行！One way, two way fixed effect都不行！
 建议直接加interaction&lt;/p&gt;
 </description>
     </item>
@@ -2331,11 +2317,8 @@ b_0 = \bar{y} - b_1 \bar{x}
 &lt;p&gt;$$
 \begin{align}
 b_1 &amp;amp;= \frac{cov(x,y)}{var(x)}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{cov(x,y)}{s_x s_x} \\
-&amp;amp;= r\frac{s_y}{s_x} \end{align}
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{cov(x,y)}{s_x s_x} \\
+&amp;= r\frac{s_y}{s_x} \end{align}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;$$&lt;/p&gt;
 
 &lt;p&gt;In other words, the slope coefficient is equal to the correlation coefficient $r$ times the ratio of standard deviations of $y$ and $x$.&lt;/p&gt;
@@ -2394,11 +2377,8 @@ b_1 &amp;= \arg\min_{\text{slope}} \sum_{i=1}^N \left[y_i - \text{slope } x_i \r
 &lt;p&gt;$$
 \begin{align}
 b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i \tilde{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i^2}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
-&amp;amp;= \frac{cov(x,y)}{var(x)}
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
+&amp;= \frac{cov(x,y)}{var(x)}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;\end{align}
 $$&lt;/p&gt;
 
@@ -2415,12 +2395,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i \breve{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i^2}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
-&amp;amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
-&amp;amp;= Corr(x,y)  
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
+&amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
+&amp;= Corr(x,y)  &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;\end{align}
 $$&lt;/p&gt;
 
@@ -2658,62 +2635,42 @@ H\equiv\left(\hat{\beta}_{IV}-\hat{\beta}_{OLS}\right)^{&#39;}\left[V(\hat{\beta
       <link>/post/ghost-blog-workflow/</link>
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/post/ghost-blog-workflow/</guid>
-      <description>
-
-&lt;p&gt;Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。&lt;/p&gt;
-
+      <description>&lt;p&gt;Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;总算把Ghost配得七七八八，以后要好好记下笔记了。像以前看过的东西时间久了就全忘了，太郁闷了。&lt;/del&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;目前的workflow如下&#34;&gt;目前的Workflow如下&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;在Synology Drive下Draft目录存放草稿&lt;/li&gt;
 &lt;li&gt;Typora里写markdown并保存&lt;/li&gt;
-&lt;li&gt;存Leanote和evernote各一份，这个应该可以通过&lt;a href=&#34;https://ifttt.com/&#34; target=&#34;_blank&#34;&gt;IFTTT&lt;/a&gt;来实现，日后研究&lt;/li&gt;
-&lt;li&gt;另外一个解决方案是直接Git init Draft目录，再往&lt;a href=&#34;github.com&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;上push备份。&lt;/li&gt;
+&lt;li&gt;存Leanote和evernote各一份，这个应该可以通过&lt;a href=&#34;https://ifttt.com/&#34;&gt;IFTTT&lt;/a&gt;来实现，日后研究&lt;/li&gt;
+&lt;li&gt;另外一个解决方案是直接Git init Draft目录，再往&lt;a href=&#34;github.com&#34;&gt;Github&lt;/a&gt;上push备份。&lt;/li&gt;
 &lt;li&gt;存Ghost发布&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;需要的代码注入&#34;&gt;需要的代码注入&lt;/h2&gt;
-
 &lt;h3 id=&#34;公式&#34;&gt;公式&lt;/h3&gt;
-
 &lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  
-&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;  
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\\\(&#39;,&#39;\\\\)&#39;]],
-            processEscapes: true
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;  
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;MathJax&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Hub&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Config&lt;/span&gt;({
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;tex2jax&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;inlineMath&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;], [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\\\\(&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\\\\)&amp;#39;&lt;/span&gt;]],
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;processEscapes&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
         }
     });
-&amp;lt;/script&amp;gt;  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;语法高亮&#34;&gt;语法高亮&lt;/h3&gt;
-
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;语法高亮&#34;&gt;语法高亮&lt;/h3&gt;
 &lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&amp;quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在&lt;code&gt;Post Footer&lt;/code&gt;粘贴以下脚本&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://prismjs.com/&#34; target=&#34;_blank&#34;&gt;prism.js&lt;/a&gt;不支持Stata就凑合着用用吧。需要载入的&lt;a href=&#34;https://cdnjs.com/libraries/prism&#34; target=&#34;_blank&#34;&gt;components&lt;/a&gt;取决于博文需要。&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在&lt;code&gt;Post Footer&lt;/code&gt;粘贴以下脚本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://prismjs.com/&#34;&gt;prism.js&lt;/a&gt;不支持Stata就凑合着用用吧。需要载入的&lt;a href=&#34;https://cdnjs.com/libraries/prism&#34;&gt;components&lt;/a&gt;取决于博文需要。&lt;/p&gt;
 &lt;h2 id=&#34;需要注意的地方&#34;&gt;需要注意的地方&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Ghost对于H1不能生成Toc，从H2开始&lt;/li&gt;
-&lt;li&gt;对于Markdown中的公式有些需要&lt;a href=&#34;https://blog.yhong.wang/gong-shi/&#34; target=&#34;_blank&#34;&gt;转义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;对于Markdown中的公式有些需要&lt;a href=&#34;https://blog.yhong.wang/gong-shi/&#34;&gt;转义&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -2818,39 +2775,30 @@ $ RR={\frac {EE(CE+CN)}{CE(EE+EN)}}\approx {\frac {EE\cdot CN}{EN\cdot CE}}=OR. 
 &lt;p&gt;The z test in the Stata output is actually the square root of the Wald chi-squared test.&lt;/p&gt;
 
 &lt;p&gt;The likelihood-ratio chi-squared test for each parameter estimate is based on comparing two logistic models, one with the individual variable we want to test included and one without it. The likelihood-ratio test is the difference in the likelihood-ratio chi-squared values for these two models (this appears as LR chi2(1) near the upper right corner of the output). The difference between the two likelihood-ratio chi-squared values is 1 degree of freedom.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;use nlsy97_chapter11, clear
 logistic drank30 male dinner97 pdrink97
 estimates store a
 logistic drank30 age97 male dinner97 pdrink97
 #subtracts the chi-squared values and estimates the probability of the chi-squared difference;
-lrtest a
-&lt;/code&gt;&lt;/pre&gt;
-
+lrtest a&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;or just use &lt;code&gt;lrdrop1&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;testing-sets-of-coefficients&#34;&gt;Testing sets of coefficients&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code&gt;test pdrink97 dinner97
 #it is the same as:
-logistic drank30 age97 male if !mi(dinner97) &amp;amp;!mi(pdrink97)
+logistic drank30 age97 male if !mi(dinner97) &amp;!mi(pdrink97)
 estimates store a
 logistic drank30 age97 male pdrink97 dinner97 
 lrtest a
-lrdrop1
-&lt;/code&gt;&lt;/pre&gt;
-
+lrdrop1&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;this overall test only tells us that at least one of them is significant.&lt;/p&gt;
 
 &lt;h2 id=&#34;margins&#34;&gt;Margins&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;logit drank30 age97 i.black pdrink97 dinner97
 margins, dydx(black) atmeans
 margins black, atmeans
 margins, at(pdrink97=(1 2 3 4 5)) atmeans
-marginsplot
-&lt;/code&gt;&lt;/pre&gt;
-
+marginsplot&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We can run the logistic regression using the i. label for this categorical variable, i.black. This produces the same results for the logistic regression as if we had simply used black, but the results will work properly if we follow this command with other postestimation commands.&lt;/p&gt;
 
 &lt;h2 id=&#34;nested-logistic-regressions&#34;&gt;Nested logistic regressions&lt;/h2&gt;
@@ -2858,11 +2806,8 @@ marginsplot
 &lt;p&gt;The &lt;code&gt;nestreg&lt;/code&gt; command is extremely general, applicable across a variety of regression models, including logistic, negative binomial, Poisson, probit, ordered logistic, tobit, and others. It also works with the complex sample designs for many regression models.&lt;/p&gt;
 
 &lt;h2 id=&#34;power-analysis&#34;&gt;Power analysis&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;powerlog, p1(.70) p2(.75) alpha(.05)
-powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -2871,17 +2816,14 @@ powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/post/measurement-reliability-and-validity/</guid>
       <description>&lt;h2 id=&#34;constructing-a-scale&#34;&gt;Constructing a Scale&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;recode empathy2 empathy4 empathy5 (1=5 &amp;quot;Does not describe very well&amp;quot;) ///
-  (2=4) (3=3) (4=2) (5=1 &amp;quot;Describes very well&amp;quot;), pre(rev) label(empathy)
+&lt;pre&gt;&lt;code&gt;recode empathy2 empathy4 empathy5 (1=5 &#34;Does not describe very well&#34;) ///
+  (2=4) (3=3) (4=2) (5=1 &#34;Describes very well&#34;), pre(rev) label(empathy)
 egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
   revempathy5 empathy6 empathy7)
 egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 ///
    revempathy5 empathy6 empathy7) 
 egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 ///
-   revempathy5 empathy6 empathy7) if miss &amp;lt; 3
-&lt;/code&gt;&lt;/pre&gt;
-
+   revempathy5 empathy6 empathy7) if miss &lt; 3&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;One drawback to using the rowmean() function is that it simply adds the score on the items a person answers and divides by the number of items answered.&lt;/p&gt;
 
 &lt;h2 id=&#34;reliability&#34;&gt;Reliability&lt;/h2&gt;
@@ -2943,12 +2885,9 @@ The equivalent of alpha for items that are dichotomous is the Kuder–Richardson
 &lt;/ul&gt;
 
 &lt;p&gt;Use PCF when you have a set of items that you believe all measure one concept. In this situation, you would be interested in the first principal factor. You would want to see if it explained a substantial part of the total variance for the entire set of items, and you would want most of the items to have a &lt;strong&gt;loading of 0.4 or above&lt;/strong&gt; on this factor. Because PCF analysis is trying to explain all the variance in the items, the &lt;strong&gt;uniqueness&lt;/strong&gt; for each item should approach zero. Generally, we should consider any factor that has an eigenvalue of more than 1.A visual way to examine the eigenvalues is with a scree plot.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;factor rnatspac rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
 	rnateduc rnatrace rnatarms rnatfare rnatroad rnatsoc rnatchld rnatsci, pcf
-screeplot
-&lt;/code&gt;&lt;/pre&gt;
-
+screeplot&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If, on the other hand, you want to identify two or more latent variables that represent interpretable dimensions of some concept, then PF analysis is probably best.&lt;/p&gt;
 
 &lt;h3 id=&#34;rotation&#34;&gt;Rotation&lt;/h3&gt;
@@ -2963,14 +2902,11 @@ screeplot
 &lt;h2 id=&#34;get-one-factor-score&#34;&gt;Get one factor score&lt;/h2&gt;
 
 &lt;p&gt;However, this distinction rarely makes a lot of practical difference. The factor score may make a difference if there are some items with very large loadings, say, 0.9, and others with very small loadings, say, 0.2. But we would probably drop the weakest items. When the loadings do not vary a great deal, computing a factor score or a mean/total score will produce comparable results.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;factor rnatenvir rnatheal rnatcity rnatcrime rnatdrug rnateduc rnatrace ///
 	rnatfare rnatsoc rnatchld, pcf
 predict libfscore, norotate
 egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
-	rnateduc rnatrace rnatfare rnatsoc rnatchld)
-&lt;/code&gt;&lt;/pre&gt;
-
+	rnateduc rnatrace rnatfare rnatsoc rnatchld)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;correlation higher than 0.9...&lt;/p&gt;
 </description>
     </item>
@@ -2980,92 +2916,58 @@ egen libmean = rowmean(rnatenvir rnatheal rnatcity rnatcrime rnatdrug ///
       <link>/post/missing-values/</link>
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/post/missing-values/</guid>
-      <description>
-
-&lt;p&gt;Many advanced Stata estimation models can use multiple imputation for handling missing values.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.iriseekhout.com/missing-data/auxiliary-variables/&#34; target=&#34;_blank&#34;&gt;Auxiliary variables&lt;/a&gt; are variables that can help to make estimates on incomplete data, while they are not part of the main analysis (Collins et al., 2001).&lt;/p&gt;
-
+      <description>&lt;p&gt;Many advanced Stata estimation models can use multiple imputation for handling missing values.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.iriseekhout.com/missing-data/auxiliary-variables/&#34;&gt;Auxiliary variables&lt;/a&gt; are variables that can help to make estimates on incomplete data, while they are not part of the main analysis (Collins et al., 2001).&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Include all variables in the analysis model, including the dependent variable,&lt;/li&gt;
 &lt;li&gt;Include auxiliary variables that predict patterns of missingness,&lt;/li&gt;
 &lt;li&gt;and Include additional variables that predict a person’s score on a variable that has missing values.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;The imputation model is then used to generate a complete dataset.&lt;/p&gt;
-
 &lt;p&gt;Once you have included a reasonably large number of variables, adding additional variables may not be helpful because of multicollinearity.&lt;/p&gt;
-
-&lt;p&gt;Drop any participant who does not have complete information on every item used in the analysis. This approach goes by several names, including &lt;strong&gt;full case analysis&lt;/strong&gt;, &lt;strong&gt;casewise deletion&lt;/strong&gt;, or &lt;strong&gt;&lt;em&gt;listwise deletion.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
+&lt;p&gt;Drop any participant who does not have complete information on every item used in the analysis. This approach goes by several names, including &lt;strong&gt;full case analysis&lt;/strong&gt;, &lt;strong&gt;casewise deletion&lt;/strong&gt;, or &lt;em&gt;&lt;strong&gt;listwise deletion.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;There will be a substantial loss of power because of the reduced sample size.&lt;/li&gt;
 &lt;li&gt;Listwise deletion can introduce substantial bias. (survival bias)&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;One alternative to listwise deletion involves substituting the mean on a variable for anybody who does not have a response. This has two serious limitations. People who are average on a variable are often more likely to give an answer than are people who have an extreme value.The second problem with mean substitution is that when you give several people the same score on a variable, these people have zero variance on the variable. This artificially reduced variance will seriously bias our parameter estimates.&lt;/p&gt;
-
 &lt;p&gt;The key to understanding multiple imputation is that the imputed missing values will not contain any unique information once the variables in the model and the auxiliary variables are allowed to explain the patterns of missing values and predict the score of the missing values. The imputed values for variables with missing values are simply consistent with the observed data. This allows us to use all available information in our analysis.&lt;/p&gt;
-
 &lt;h2 id=&#34;multiple-imputation&#34;&gt;Multiple imputation&lt;/h2&gt;
-
 &lt;p&gt;A powerful way of working with missing values involves multiple imputation. The command &lt;em&gt;mi&lt;/em&gt; involves three straightforward steps:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Create &lt;em&gt;m&lt;/em&gt; complete datasets by imputing the missing values. Each dataset will have no missing values, but the values imputed for missing values will vary across the  datasets.&lt;/li&gt;
 &lt;li&gt;Do your analysis in each of the &lt;em&gt;m&lt;/em&gt;  complete datasets.&lt;/li&gt;
 &lt;li&gt;Pool your &lt;em&gt;m&lt;/em&gt;  solutions to get one solution.
-
 &lt;ul&gt;
 &lt;li&gt;The parameter estimates—for example, regression coefficients—will be the mean of their corresponding values in the  datasets.&lt;/li&gt;
 &lt;li&gt;The standard errors used for testing significance will combine the standard errors from the solutions plus the variance of the parameter estimates across the  solutions. If each solution is yielding a very different estimate, this uncertainty is added to the standard errors. Also the degrees of freedom is adjusted based on the number of imputations and proportion of data that have missing values.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;The most widely used approach is using multivariate normal regression (MVN). &lt;code&gt;mi impute mvn&lt;/code&gt; is designed for continuous variables. &lt;code&gt;mi impute chained&lt;/code&gt; is another useful alternative.&lt;/p&gt;
-
 &lt;p&gt;A missing value will have a code of ., .a, .b, etc. Remember that a missing value is recorded in a Stata dataset as an extremely high value. Within mi, a missing-value code, . (dot), has a special meaning. It denotes the missing values eligible for imputation. If you have a set of missing values that should not be imputed, you should record them as extended missing values, that is, as .a, .b, etc.&lt;code&gt;recode agem (.a = .)&lt;/code&gt;&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
 misstable patterns ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
 quietly misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, gen(miss_)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;then&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;then&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;logit miss_ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm if ln_wagem &amp;lt;= .
 logit miss_gradem ln_wagem agem ttl_expm tenurem not_smsa south blackm if gradem &amp;lt;= .
 logit miss_agem ln_wagem gradem ttl_expm tenurem not_smsa south blackm if agem &amp;lt;= .
 logit miss_ttl_expm ln_wagem gradem agem tenurem not_smsa south blackm if ttl_expm &amp;lt;= .
 logit miss_tenurem ln_wagem gradem agem ttl_expm not_smsa south blackm if tenurem &amp;lt;= .
 logit miss_blackm ln_wagem gradem agem ttl_expm tenurem not_smsa south if blackm &amp;lt;= .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or use &lt;code&gt;pwcorr , obs sig&lt;/code&gt; to find potential auxiliary variables.&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Or use &lt;code&gt;pwcorr , obs sig&lt;/code&gt; to find potential auxiliary variables.&lt;/p&gt;
 &lt;p&gt;Any variable that is statistically significant in these logistic regressions should be included in the imputation step.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;mi set flong
 mi register imputed ln_wagem gradem agem ttl_expm tenurem blackm
 mi register regular not_smsa south 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;mi set flong&lt;/code&gt; command tells Stata how to arrange our multiple datasets(flong (full and long), or mlong (marginal and long)). The &lt;code&gt;mi register imputed&lt;/code&gt; command registers all the variables that have missing values and need to be imputed. The &lt;code&gt;mi register regular&lt;/code&gt; command registers all the variables that have no missing values or for which we do not want to impute values.&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The &lt;code&gt;mi set flong&lt;/code&gt; command tells Stata how to arrange our multiple datasets(flong (full and long), or mlong (marginal and long)). The &lt;code&gt;mi register imputed&lt;/code&gt; command registers all the variables that have missing values and need to be imputed. The &lt;code&gt;mi register regular&lt;/code&gt; command registers all the variables that have no missing values or for which we do not want to impute values.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;生成m=20个数据集，&lt;code&gt;_mi_m&lt;/code&gt; variable identifies datasets and ranges from 0 to 20.&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;生成m=20个数据集，&lt;code&gt;_mi_m&lt;/code&gt; variable identifies datasets and ranges from 0 to 20.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To get pooled $R^2$ and standardized $\beta$s use &lt;code&gt;mibeta&lt;/code&gt;&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To get pooled $R^2$ and standardized $\beta$s use &lt;code&gt;mibeta&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;mibeta ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, fisherz miopts(vartable)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When &lt;strong&gt;impossible&lt;/strong&gt; values are imputed(建议不调整): Binary variables, squares, and interactions（在原数据集先相乘，再impute）&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When &lt;strong&gt;impossible&lt;/strong&gt; values are imputed(建议不调整): Binary variables, squares, and interactions（在原数据集先相乘，再impute）&lt;/p&gt;
 </description>
     </item>
     
@@ -3101,51 +3003,35 @@ if &lt;span  class=&#34;math&#34;&gt;\(\mu_i\)&lt;/span&gt; independent of &lt;s
 &lt;p&gt;score = fixed part + random effects + error&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Going back and forth between wide and long formats&lt;/strong&gt; : &lt;code&gt;reshape wide&lt;/code&gt; and &lt;code&gt;reshape long&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;reshape long drink, i(id) j(wave)
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;reshape long drink, i(id) j(wave)&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;randomintercept-model&#34;&gt;Random-intercept model&lt;/h2&gt;
 
 &lt;h3 id=&#34;linear-model&#34;&gt;linear model&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code&gt;mixed drink c.wave || id:
 estimates store linear
 margins, at(wave=(0(2)10))
-marginsplot
-&lt;/code&gt;&lt;/pre&gt;
-
+marginsplot&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;quadratic-term&#34;&gt;quadratic term&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code&gt;mixed drink c.wave##c.wave || id:
 estimates store quadratic
 margins, at(wave=(0(2)10))
 marginsplot
-lrtest linear quadratic
-&lt;/code&gt;&lt;/pre&gt;
-
+lrtest linear quadratic&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A proportional reduction in error (PRE) measuring how much the residual (error) variance is reduced by adding the quadratic term may be useful. We will call the random-intercept linear model “Model 1” and the random-intercept quadratic model “Model 2”.&lt;/p&gt;
 
 &lt;p&gt;PRE = (var(Residual)Model1-var(Residual)Model2)/var(Residual)Model1&lt;/p&gt;
 
 &lt;h3 id=&#34;treating-time-as-a-categorical-variable&#34;&gt;Treating time as a categorical variable&lt;/h3&gt;
-
 &lt;pre&gt;&lt;code&gt;mixed drink i.wave || id:
 estimates store means
 margins, at(wave=(0(2)10))
 marginsplot
 lrtest linear means
-lrtest quadratic means
-&lt;/code&gt;&lt;/pre&gt;
-
+lrtest quadratic means&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;randomcoefficients-model&#34;&gt;Random-coefficients model&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;mixed drink c.wave || id: wave, cov(unstructured)
-predict yhat_drink, fitted
-&lt;/code&gt;&lt;/pre&gt;
-
+predict yhat_drink, fitted&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;including-a-timeinvariant-covariate&#34;&gt;Including a time-invariant covariate&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;* Random coefficients model with time invariant covariate
 * gender coded as male = 1, female = 0
 mixed drink c.wave i.male || id: wave
@@ -3160,10 +3046,7 @@ marginsplot
 
 mixed drink c.wave##c.wave##i.male || id: wave
 margins male, at(wave=(0(2)8))
-marginsplot
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+marginsplot&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -3171,15 +3054,9 @@ marginsplot
       <link>/post/multiple-regressions/</link>
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/post/multiple-regressions/</guid>
-      <description>
-
-&lt;p&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
-
+      <description>&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Note: toc is not compatible with &lt;code&gt;markup: mmark&lt;/code&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;basic&#34;&gt;Basic&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;F: There is a highly significant relationship between outcomes and the set of predictors.&lt;/li&gt;
 &lt;li&gt;R2: How much of the outcome variance is explained by the regression model&lt;/li&gt;
@@ -3187,16 +3064,15 @@ HAHAHUGOSHORTCODE-TOC0-HBHB&lt;/p&gt;
 &lt;li&gt;Coef.: &lt;em&gt;unstandardized regression coefficients&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;t: coef/standard error&lt;/li&gt;
 &lt;li&gt;Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable.&lt;/li&gt;
-&lt;li&gt;,beta gives &lt;strong&gt;beta weights&lt;/strong&gt;: based on standardizing all variables to have a mean of 0 and a standard deviation of 1. These beta weights are interpreted similarly to how you interpret correlations in that beta&lt;0.2 is considered a weak effect,  between 0.2 and 0.5 is considered a moderate effect, and  is considered a strong effect.(range of -1 to +1, if out of range, -&gt;multicollinearity problem):a 1-standard-deviation change in the independent variable produces a - beta standard-deviation change in the dependent variable.&lt;/li&gt;
+&lt;li&gt;,beta gives &lt;strong&gt;beta weights&lt;/strong&gt;: based on standardizing all variables to have a mean of 0 and a standard deviation of 1. These beta weights are interpreted similarly to how you interpret correlations in that beta&amp;lt;0.2 is considered a weak effect,  between 0.2 and 0.5 is considered a moderate effect, and  is considered a strong effect.(range of -1 to +1, if out of range, -&amp;gt;multicollinearity problem):a 1-standard-deviation change in the independent variable produces a - beta standard-deviation change in the dependent variable.&lt;/li&gt;
 &lt;li&gt;increment in R2:&lt;em&gt;part-correlation square&lt;/em&gt; because it measures the part that is uniquely explained by the variable. or &lt;em&gt;semipartial R2&lt;/em&gt; (Semipartial Corr.^2 in &lt;code&gt;pcorr&lt;/code&gt; )estimates only the &lt;strong&gt;unique&lt;/strong&gt; effect of each predictor. Another way to compare is partial correlation;&lt;/li&gt;
-&lt;li&gt;distribution of the dependent variable: &lt;code&gt;histogram env_con, frequency normal kdensity&lt;/code&gt; (for &lt;a href=&#34;https://lotabout.me/2018/kernel-density-estimation/&#34; target=&#34;_blank&#34;&gt;kernel density estimation&lt;/a&gt;)&lt;strong&gt;Skewness&lt;/strong&gt;(0:Normal; &lt;0: negative or left skew, &gt;0: positive or skew to the right)&lt;strong&gt;kurtosis&lt;/strong&gt;(3: normal; &lt;3: tails are too thick, flat or negative kurtosis; &gt;3: tails are too thin, peaky or positive kurtosis)&lt;code&gt;sktest&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;distribution of the residuals: for large sample, normality is not a critical issue. &lt;code&gt;rvfplot, yline(0)&lt;/code&gt;residual-versus-fitted plot:
+&lt;li&gt;distribution of the dependent variable: &lt;code&gt;histogram env_con, frequency normal kdensity&lt;/code&gt; (for &lt;a href=&#34;https://lotabout.me/2018/kernel-density-estimation/&#34;&gt;kernel density estimation&lt;/a&gt;)&lt;strong&gt;Skewness&lt;/strong&gt;(0:Normal; &amp;lt;0: negative or left skew, &amp;gt;0: positive or skew to the right)&lt;strong&gt;kurtosis&lt;/strong&gt;(3: normal; &amp;lt;3: tails are too thick, flat or negative kurtosis; &amp;gt;3: tails are too thin, peaky or positive kurtosis)&lt;code&gt;sktest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;distribution of the residuals: for large sample, normality is not a critical issue. &lt;code&gt;rvfplot, yline(0)&lt;/code&gt;residual-versus-fitted plot:
 To solve the non-normal distribution of residual, we can use &lt;code&gt;reg y xs, vce(robust)&lt;/code&gt; or use bootstrap&lt;code&gt;reg y xs, vce(bootstrap, rep(1000))&lt;/code&gt; , it will change std err and hence t-value.  However,
 Andrew J. Leone, Miguel Minutti-Meza, and Charles E. Wasley (2019) Influential Observations and Inference in Accounting Research. The Accounting Review In-Press.
-they talk about robust regression using &lt;strong&gt;robreg, what&amp;rsquo;s the difference?&lt;/strong&gt;
-ALso, check &lt;a href=&#34;https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/se_programming.htm&#34; target=&#34;_blank&#34;&gt;Correcting for Cross-Sectional and Time-Series Dependence in Accounting Research&lt;/a&gt;&lt;/p&gt;
-
+they talk about robust regression using &lt;strong&gt;robreg, what&#39;s the difference?&lt;/strong&gt;
+ALso, check &lt;a href=&#34;https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/se_programming.htm&#34;&gt;Correcting for Cross-Sectional and Time-Series Dependence in Accounting Research&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3, beta
 predict envhat
 preserve
@@ -3204,17 +3080,11 @@ set seed 515
 sample 100, count
 twoway (scatter env_con envhat) (lfit env_con envhat)
 restore
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;diagnostic-statistics&#34;&gt;Diagnostic statistics&lt;/h2&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;diagnostic-statistics&#34;&gt;Diagnostic statistics&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.r-tutor.com/elementary-statistics/simple-linear-regression/standardized-residual&#34; target=&#34;_blank&#34;&gt;Rstandard:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.r-tutor.com/elementary-statistics/simple-linear-regression/standardized-residual&#34;&gt;Rstandard:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;The standardized residual is the residual divided by its standard deviation.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3, beta
 predict yhat
 predict residual, residual
@@ -3224,85 +3094,56 @@ dfbeta
 list respnum rstandard _dfbeta_1 if abs(_dfbeta_1) &amp;gt; 2/sqrt(3769) &amp;amp; _dfbeta_1 &amp;lt; .
 estat vif
 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Influential observations: DFbeta: You could think of this as redoing the regression model, omitting just one observation at a time and seeing how much difference omitting each observation makes. ****A value of **DFbeta  &amp;gt;2/sqrt(N) ** indicates that an observation has a large influence**** More specific than rstandard&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Influential observations: DFbeta: You could think of this as redoing the regression model, omitting just one observation at a time and seeing how much difference omitting each observation makes. **&lt;strong&gt;A value of &lt;strong&gt;DFbeta  &amp;gt;2/sqrt(N) ** indicates that an observation has a large influence&lt;/strong&gt;&lt;/strong&gt; More specific than rstandard&lt;/li&gt;
+&lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;. dfbeta
 (739 missing values generated)
-                   _dfbeta_1: dfbeta(educat)
+                       _dfbeta_1: dfbeta(educat)
 (739 missing values generated)
-                   _dfbeta_2: dfbeta(inc)
+                       _dfbeta_2: dfbeta(inc)
 (739 missing values generated)
-                   _dfbeta_3: dfbeta(com3)
+                       _dfbeta_3: dfbeta(com3)
 (739 missing values generated)
-                   _dfbeta_4: dfbeta(hlthprob)
+                       _dfbeta_4: dfbeta(hlthprob)
 (739 missing values generated)
-                   _dfbeta_5: dfbeta(epht3)
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;multicollinearity: The more correlated the predictors, the more they overlap and, hence, the more difficult it is to identify their independent effects. In such situations, you can have multicollinearity in which one or more of the predictors are virtually redundant.
+                       _dfbeta_5: dfbeta(epht3)
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;multicollinearity: The more correlated the predictors, the more they overlap and, hence, the more difficult it is to identify their independent effects. In such situations, you can have multicollinearity in which one or more of the predictors are virtually redundant.
 variance inflation factor &lt;code&gt;estat vif&lt;/code&gt; after regression, if &amp;gt;10, for any variable, a multicollinearity problem may exist. If the average VIF is substantially greater than 1.00, there still could be a problem.(Dropping a variable, create a scale that combines them into one variable.)
-1/VIF = 1-R2(of regress X1 on other Xs) It tells how much of the variance in the independent variable is available to predict the outcome variable independently.&lt;/p&gt;
-
+1/VIF = 1-R2(of regress X1 on other Xs) It tells how much of the variance in the independent variable is available to predict the outcome variable independently.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;weighted-data&#34;&gt;Weighted data&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;regress env_con educat inc com3 hlthprob epht3 [pweight=finalwt], beta
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When you do a weighted regression this way, Stata automatically uses the robust regression—whether you ask for it or not—because weighted data require robust standard errors.&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;When you do a weighted regression this way, Stata automatically uses the robust regression—whether you ask for it or not—because weighted data require robust standard errors.&lt;/p&gt;
 &lt;h2 id=&#34;categorical-predictors-and-hierarchical-regression&#34;&gt;Categorical predictors and hierarchical regression&lt;/h2&gt;
-
 &lt;pre&gt;&lt;code&gt;regress smday97 age97 male psmoke97 aa hispanic other if !missing(smday97, ///
 	age97, male, psmoke97, aa, hispanic, other), beta
 test aa hispanic other
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;nested regressions&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;nested regressions&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;nestreg: regress smday97 (age97 male) (psmoke97) (aa hispanic other), beta
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you put i. as a stub in front of a categorical variable, Stata will make the first category the reference category and then generate a dummy variable for each of the remaining categories.&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you put i. as a stub in front of a categorical variable, Stata will make the first category the reference category and then generate a dummy variable for each of the remaining categories.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;regress smday97 age97 male psmoke97 i.race
 #change reference category or what Stata refers to as the baselevel
 regress smday97 age97 male psmoke97 ib3.race
 regress smday97 age97 male psmoke97 ib(last).race
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;interaction&#34;&gt;interaction&lt;/h2&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;interaction&#34;&gt;interaction&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;g ed_male = educ*male
 reg inc educ male ed_male,beta
 nestreg: regress inc (educ male) (ed_male), beta
 regress inc i.male##c.educ, beta
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;some researchers choose to center quantitative independent variables, such as education, before computing the interaction terms.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;some researchers choose to center quantitative independent variables, such as education, before computing the interaction terms.
 Centering is important for independent variables where a value of zero may not be meaningful.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;summarize educ
 generate educ_c = educ - r(mean)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;margins help us to interpret the interaction term&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;margins help us to interpret the interaction term&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;margins male, at(educ=(8 10 12 14 16 18))
 marginsplot
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;nonlinear&#34;&gt;nonlinear&lt;/h2&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;nonlinear&#34;&gt;nonlinear&lt;/h2&gt;
 &lt;pre&gt;&lt;code&gt;regress ln_wage c.ttl_exp##c.ttl_exp, beta
 margins, at(ttl_exp = (0(2)28))
 marginsplot
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://stats.idre.ucla.edu/stata/dae/multiple-regression-power-analysis/&#34; target=&#34;_blank&#34;&gt;Power analysis&lt;/a&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://stats.idre.ucla.edu/stata/dae/multiple-regression-power-analysis/&#34;&gt;Power analysis&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -3311,19 +3152,13 @@ marginsplot
       <link>/post/we-have-no-idea/</link>
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/post/we-have-no-idea/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/ecab79a7a6e23208d6db55bbd70e478f.png&#34; alt=&#34;&amp;quot;Fundanmental&amp;quot; Matter Particles&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/95596bf7e88ea381ae21a1c87614320c.png&#34; alt=&#34;Mass Values&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/707793eb1776621eb336bb1088f8329c.png&#34; alt=&#34;Force Carrier Particles&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/1bc4eb76cf49df9c63897ed6879d5775.png&#34; alt=&#34;Forces&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Bosons make up one of the two classes of &lt;a href=&#34;https://en.wikipedia.org/wiki/Elementary_particle&#34; target=&#34;_blank&#34;&gt;particles&lt;/a&gt;, the other being &lt;a href=&#34;https://en.wikipedia.org/wiki/Fermion&#34; target=&#34;_blank&#34;&gt;fermions&lt;/a&gt;.&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/ecab79a7a6e23208d6db55bbd70e478f.png&#34; alt=&#34;&amp;ldquo;Fundanmental&amp;rdquo; Matter Particles&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/95596bf7e88ea381ae21a1c87614320c.png&#34; alt=&#34;Mass Values&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/707793eb1776621eb336bb1088f8329c.png&#34; alt=&#34;Force Carrier Particles&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/1bc4eb76cf49df9c63897ed6879d5775.png&#34; alt=&#34;Forces&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Bosons make up one of the two classes of &lt;a href=&#34;https://en.wikipedia.org/wiki/Elementary_particle&#34;&gt;particles&lt;/a&gt;, the other being &lt;a href=&#34;https://en.wikipedia.org/wiki/Fermion&#34;&gt;fermions&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;So far, we have some hints and some ideas about what the smallest distance in the universe might be (the Planck length). We have a pretty good catalog of twelve matter particles that so far we haven’t been able to break further apart (the Standard Model). And we have a list of three possible ways that these particles can interact (the electroweak and strong forces and gravity).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/1d7d5449e431246f76c2f99437720885.png&#34; alt=&#34;Mass of the Proton&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://yhong.wang/images/2019/06/26/1d7d5449e431246f76c2f99437720885.png&#34; alt=&#34;Mass of the Proton&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -3332,13 +3167,8 @@ marginsplot
       <link>/publication/preprint/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
       <guid>/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3347,27 +3177,18 @@ marginsplot
       <link>/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       <guid>/slides/example/</guid>
-      <description>
-
-&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34; target=&#34;_blank&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
+      <description>&lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/&#34;&gt;Academic&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
 &lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
 &lt;li&gt;Supports speaker notes&lt;/li&gt;
 &lt;li&gt;Mobile friendly slides&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
@@ -3377,91 +3198,60 @@ marginsplot
 &lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
-
 &lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
-
 &lt;p&gt;Code block:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
-if porridge == &amp;quot;blueberry&amp;quot;:
-    print(&amp;quot;Eating...&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;porridge &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;blueberry&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; porridge &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;blueberry&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;:
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;Eating...&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
-
 &lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
-
 &lt;p&gt;Block math:&lt;/p&gt;
-
 &lt;p&gt;$$
-f\left( x \right) = \;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
 $$&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
-
 &lt;p&gt;Make content appear incrementally&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
 {{% fragment %}} **Two** {{% /fragment %}}
 {{% fragment %}} Three {{% /fragment %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
-
-&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
-   One
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-   &lt;strong&gt;Two&lt;/strong&gt;
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-   Three
-&lt;/span&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;
+One
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+Three
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
-
 &lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;{{% speaker_note %}}
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Only the speaker can read these notes
+&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Press &lt;span style=&#34;color:#e6db74&#34;&gt;`S`&lt;/span&gt; key to view
 {{% /speaker_note %}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
 &lt;aside class=&#34;notes&#34;&gt;
   &lt;ul&gt;
 &lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
 &lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/aside&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
 &lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
@@ -3469,18 +3259,14 @@ $$&lt;/p&gt;
 &lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
 &lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 &lt;ul&gt;
 &lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
 &lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
 &lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
 &lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
+&lt;hr&gt;
 
 &lt;section data-noprocess data-shortcode-slide
   
@@ -3488,38 +3274,24 @@ $$&lt;/p&gt;
       data-background-image=&#34;/img/boards.jpg&#34;
   &gt;
 
-
 &lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
-
 &lt;p&gt;Customize the slide style and background&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/img/boards.jpg&amp;quot; &amp;gt;}}
-{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
-{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;#34;/img/boards.jpg&amp;#34; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;#34;#0000FF&amp;#34; &amp;gt;}}
+{{&amp;lt; slide class=&amp;#34;my-style&amp;#34; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
-
+&lt;p&gt;Let&#39;s make headers navy colored.&lt;/p&gt;
 &lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;reveal&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;section&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+.&lt;span style=&#34;color:#a6e22e&#34;&gt;reveal&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;section&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;h2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;,&lt;/span&gt;
+.&lt;span style=&#34;color:#a6e22e&#34;&gt;reveal&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;section&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;h3&lt;/span&gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;color&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;navy&lt;/span&gt;;
 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://discourse.gohugo.io&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -3555,13 +3327,9 @@ $$&lt;/p&gt;
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>/project/internal-project/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-
 &lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
 </description>
     </item>
@@ -3571,19 +3339,9 @@ $$&lt;/p&gt;
       <link>/publication/journal-article/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       <guid>/publication/journal-article/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3592,19 +3350,9 @@ $$&lt;/p&gt;
       <link>/publication/conference-paper/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       <guid>/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

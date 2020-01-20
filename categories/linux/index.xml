@@ -5,12 +5,89 @@
     <link>/categories/linux/</link>
       <atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <description>Linux</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2020</copyright><lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Linux</title>
       <link>/categories/linux/</link>
     </image>
+    
+    <item>
+      <title>用R取代Stata与SAS</title>
+      <link>/post/2020-01-20-r-stata-workflow/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020-01-20-r-stata-workflow/</guid>
+      <description>
+&lt;script src=&#34;../../rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#安装stata&#34;&gt;安装Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#在r中调用stata&#34;&gt;在R中调用Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#三种环境下数据互通&#34;&gt;三种环境下数据互通&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;安装stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;安装Stata&lt;/h2&gt;
+&lt;p&gt;首先安装&lt;code&gt;ncurses5-compat-libs&lt;/code&gt;和&lt;code&gt;libpng12&lt;/code&gt;这两个包，其次&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;% sudo -s
+
+cd /tmp/
+
+mkdir statafiles
+
+cd statafiles
+
+tar -zxf /home/you/Downloads/Stata14Linux64.tar.gz
+
+cd /usr/local
+
+mkdir stata14
+
+cd stata14
+
+/tmp/statafiles/install&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安完之后把安装目录加到环境变量中去。我选择编辑&lt;code&gt;/etc/profile&lt;/code&gt;加入：&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;export PATH=&amp;quot;$PATH:/usr/local/stata14&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;若想不重启就生效可以&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Lic文件可以直接COPY到安装目录，或者在目录中放&lt;code&gt;stata.lic.tar.gz&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;在r中调用stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;在R中调用Stata&lt;/h2&gt;
+&lt;p&gt;通过&lt;a href=&#34;https://github.com/lbraglia/RStata&#34;&gt;&lt;code&gt;RStata&lt;/code&gt;&lt;/a&gt;实现&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#run Stata in R----
+library(&amp;quot;RStata&amp;quot;)
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;D:\\Stata15\\StataSE-64&amp;quot;) #office
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;/usr/local/stata14/stata&amp;quot;) #linux #cannot use stata-se?
+options(&amp;quot;RStata.StataVersion&amp;quot; = 14)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;三种环境下数据互通&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;三种环境下数据互通&lt;/h2&gt;
+&lt;p&gt;R下通过两个包&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(haven) #nead read_dta to read dta
+library(rio) # rio::import to read sas data
+#haven::read_sas can also import sas7bdat
+f1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.sas7bdat&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+o1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.dta&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+after2007_raw &amp;lt;-  import(f1)
+after2007 %&amp;gt;% 
+  mutate_if(is.numeric, as.integer) %&amp;gt;% 
+  write_dta(.,o1, version = 12)
+# Because sas only supports Stata 12 files (or earlier) while haven supports stata versions 8-15.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如以上方法都无法顺利读入sas7bdat，用SAS中转&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#import stata data file, only supports 12 or earlier
+PROC IMPORT OUT= WORK.S1 
+            DATAFILE= &amp;quot;E:\after2007.dta&amp;quot; 
+            DBMS=STATA REPLACE;
+RUN;
+
+proc export data=raw1 outfile= &amp;quot;D:\sample.dta&amp;quot; replace;
+run;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Manjaro折腾记</title>

@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.b6be4449bf86f3314d844317b19b0e01.css">
 
   
 
@@ -512,57 +512,38 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<h2 id="sem">SEM</h2>
-
+      <h2 id="sem">SEM</h2>
 <pre><code>sem bmi &lt;- age children incomeln educ quickfood
-</code></pre>
-
-<p>This would give us the unstandardized solution. This command uses <strong>maximum likelihood estimation</strong> ather than the ordinary least-squares (OLS) estimation used by the <code>regress</code> command. Add <code>,standardized</code> just like add <code>,beta</code> to <code>regress</code></p>
-
+</code></pre><p>This would give us the unstandardized solution. This command uses <strong>maximum likelihood estimation</strong> ather than the ordinary least-squares (OLS) estimation used by the <code>regress</code> command. Add <code>,standardized</code> just like add <code>,beta</code> to <code>regress</code></p>
 <p>option <code>method(mlmv)</code> (maximum likelihood with missing values):
-Estimation is less robust to the assumption of multivariate normality when using the method(mlmv) option than when using maximum likelihood estimation with listwise deletion of observations with missing values. Because some of the five variables in our model are not normally distributed, the method(mlmv) option needs to be used with caution. The estimation performed when we use the method(mlmv) option also assumes that the missing values are MAR<sup class="footnote-ref" id="fnref:f1"><a href="#fn:f1">1</a></sup> . By contrast, when listwise deletion is used we are assuming that missing values are MCAR<sup class="footnote-ref" id="fnref:f1"><a href="#fn:f1">1</a></sup>, and this is a much more restrictive assumption.</p>
-
+Estimation is less robust to the assumption of multivariate normality when using the method(mlmv) option than when using maximum likelihood estimation with listwise deletion of observations with missing values. Because some of the five variables in our model are not normally distributed, the method(mlmv) option needs to be used with caution. The estimation performed when we use the method(mlmv) option also assumes that the missing values are MAR<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> . By contrast, when listwise deletion is used we are assuming that missing values are MCAR<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, and this is a much more restrictive assumption.</p>
 <pre><code>sem bmi &lt;- age children incomeln educ quickfood, method(mlmv) standardized
 
 estat eqgof
-</code></pre>
-
-<p>The OLS regression solution and the SEM solution without MLMV, which uses listwise deletion, are producing the same standardized parameter estimates and $R^2$s. As noted, the z values are slightly larger than the t-values, and the p-values are slightly smaller. The z tests for the SEM solution are directly testing the standardized solution. The regress solution’s  t tests are testing the significance of the unstandardized B coefficients and do not directly test the significance of the Betas. The regress command does not provide such a direct test for the significance of Betas.</p>
-
+</code></pre><p>The OLS regression solution and the SEM solution without MLMV, which uses listwise deletion, are producing the same standardized parameter estimates and $R^2$s. As noted, the z values are slightly larger than the t-values, and the p-values are slightly smaller. The z tests for the SEM solution are directly testing the standardized solution. The regress solution’s  t tests are testing the significance of the unstandardized B coefficients and do not directly test the significance of the Betas. The regress command does not provide such a direct test for the significance of Betas.</p>
 <p>Notice that the $R^2$ using sem with method(mlmv) is actually slightly smaller. Using all the available information in the SEM solution with MLMV is not cheating if the assumptions are met. The <strong>MAR</strong> assumption for the SEM solution is more realistic than the <strong>MCAR</strong> assumption required for listwise deletion to be unbiased.</p>
-
 <p>There are three rules to follow when using the maximum likelihood with missing values estimation.</p>
-
 <ul>
 <li>Generate an indicator variable for each variable in your model to reflect whether an observation has a missing value.</li>
 <li>Correlate potential auxiliary variables to see whether they predict missing value indicator variables.</li>
 <li>Include additional auxiliary variables that are substantially correlated with a person’s score on a variable that has missing values.</li>
 </ul>
-
 <p>Getting auxiliary variables into your SEM command？？？没懂</p>
-
 <h2 id="gsem">GSEM</h2>
-
 <pre><code>logit obese age children incomeln educ quickfood
 listcoef
 glm obese age children incomeln educ quickfood, family(binomial) link(logit)
 glm, eform
-</code></pre>
-
-<p>The logit command is a special application of the generalized linear model. We can obtain the same results by using the glm command. The glm command requires us to specify the family of our model, family(binomial), and the link function, link(logit). To obtain the odds ratio, we can replay these results by using glm, eform.</p>
-
+</code></pre><p>The logit command is a special application of the generalized linear model. We can obtain the same results by using the glm command. The glm command requires us to specify the family of our model, family(binomial), and the link function, link(logit). To obtain the odds ratio, we can replay these results by using glm, eform.</p>
 <p>后面没看懂，以后再说吧。</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:f1">Missing Completely at Random is pretty straightforward.  What it means is what is says:  the propensity for a data point to be missing is completely random.
- <a class="footnote-return" href="#fnref:f1"><sup>^</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>Missing at Random (MAR)This is where the unfortunate names come in.Missing at Random means  the propensity for a data point to be missing is not related to the missing data, but it is related to some of the observed data. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
     </div>
 
@@ -805,7 +786,7 @@ glm, eform
     <footer class="site-footer">
    
   <p class="powered-by">
-    &copy;Yihong WANG 2019 &middot; 
+    ©Yihong WANG 2020 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

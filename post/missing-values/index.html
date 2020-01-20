@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.b6be4449bf86f3314d844317b19b0e01.css">
 
   
 
@@ -512,92 +512,58 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p>Many advanced Stata estimation models can use multiple imputation for handling missing values.</p>
-
-<p><a href="https://www.iriseekhout.com/missing-data/auxiliary-variables/" target="_blank">Auxiliary variables</a> are variables that can help to make estimates on incomplete data, while they are not part of the main analysis (Collins et al., 2001).</p>
-
+      <p>Many advanced Stata estimation models can use multiple imputation for handling missing values.</p>
+<p><a href="https://www.iriseekhout.com/missing-data/auxiliary-variables/">Auxiliary variables</a> are variables that can help to make estimates on incomplete data, while they are not part of the main analysis (Collins et al., 2001).</p>
 <ol>
 <li>Include all variables in the analysis model, including the dependent variable,</li>
 <li>Include auxiliary variables that predict patterns of missingness,</li>
 <li>and Include additional variables that predict a person’s score on a variable that has missing values.</li>
 </ol>
-
 <p>The imputation model is then used to generate a complete dataset.</p>
-
 <p>Once you have included a reasonably large number of variables, adding additional variables may not be helpful because of multicollinearity.</p>
-
-<p>Drop any participant who does not have complete information on every item used in the analysis. This approach goes by several names, including <strong>full case analysis</strong>, <strong>casewise deletion</strong>, or <strong><em>listwise deletion.</em></strong></p>
-
+<p>Drop any participant who does not have complete information on every item used in the analysis. This approach goes by several names, including <strong>full case analysis</strong>, <strong>casewise deletion</strong>, or <em><strong>listwise deletion.</strong></em></p>
 <ul>
 <li>There will be a substantial loss of power because of the reduced sample size.</li>
 <li>Listwise deletion can introduce substantial bias. (survival bias)</li>
 </ul>
-
 <p>One alternative to listwise deletion involves substituting the mean on a variable for anybody who does not have a response. This has two serious limitations. People who are average on a variable are often more likely to give an answer than are people who have an extreme value.The second problem with mean substitution is that when you give several people the same score on a variable, these people have zero variance on the variable. This artificially reduced variance will seriously bias our parameter estimates.</p>
-
 <p>The key to understanding multiple imputation is that the imputed missing values will not contain any unique information once the variables in the model and the auxiliary variables are allowed to explain the patterns of missing values and predict the score of the missing values. The imputed values for variables with missing values are simply consistent with the observed data. This allows us to use all available information in our analysis.</p>
-
 <h2 id="multiple-imputation">Multiple imputation</h2>
-
 <p>A powerful way of working with missing values involves multiple imputation. The command <em>mi</em> involves three straightforward steps:</p>
-
 <ul>
 <li>Create <em>m</em> complete datasets by imputing the missing values. Each dataset will have no missing values, but the values imputed for missing values will vary across the  datasets.</li>
 <li>Do your analysis in each of the <em>m</em>  complete datasets.</li>
 <li>Pool your <em>m</em>  solutions to get one solution.
-
 <ul>
 <li>The parameter estimates—for example, regression coefficients—will be the mean of their corresponding values in the  datasets.</li>
 <li>The standard errors used for testing significance will combine the standard errors from the solutions plus the variance of the parameter estimates across the  solutions. If each solution is yielding a very different estimate, this uncertainty is added to the standard errors. Also the degrees of freedom is adjusted based on the number of imputations and proportion of data that have missing values.</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>The most widely used approach is using multivariate normal regression (MVN). <code>mi impute mvn</code> is designed for continuous variables. <code>mi impute chained</code> is another useful alternative.</p>
-
 <p>A missing value will have a code of ., .a, .b, etc. Remember that a missing value is recorded in a Stata dataset as an extremely high value. Within mi, a missing-value code, . (dot), has a special meaning. It denotes the missing values eligible for imputation. If you have a set of missing values that should not be imputed, you should record them as extended missing values, that is, as .a, .b, etc.<code>recode agem (.a = .)</code></p>
-
 <pre><code>misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
 misstable patterns ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm
 quietly misstable summarize ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, gen(miss_)
-</code></pre>
-
-<p>then</p>
-
+</code></pre><p>then</p>
 <pre><code>logit miss_ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm if ln_wagem &lt;= .
 logit miss_gradem ln_wagem agem ttl_expm tenurem not_smsa south blackm if gradem &lt;= .
 logit miss_agem ln_wagem gradem ttl_expm tenurem not_smsa south blackm if agem &lt;= .
 logit miss_ttl_expm ln_wagem gradem agem tenurem not_smsa south blackm if ttl_expm &lt;= .
 logit miss_tenurem ln_wagem gradem agem ttl_expm not_smsa south blackm if tenurem &lt;= .
 logit miss_blackm ln_wagem gradem agem ttl_expm tenurem not_smsa south if blackm &lt;= .
-</code></pre>
-
-<p>Or use <code>pwcorr , obs sig</code> to find potential auxiliary variables.</p>
-
+</code></pre><p>Or use <code>pwcorr , obs sig</code> to find potential auxiliary variables.</p>
 <p>Any variable that is statistically significant in these logistic regressions should be included in the imputation step.</p>
-
 <pre><code>mi set flong
 mi register imputed ln_wagem gradem agem ttl_expm tenurem blackm
 mi register regular not_smsa south 
-</code></pre>
-
-<p>The <code>mi set flong</code> command tells Stata how to arrange our multiple datasets(flong (full and long), or mlong (marginal and long)). The <code>mi register imputed</code> command registers all the variables that have missing values and need to be imputed. The <code>mi register regular</code> command registers all the variables that have no missing values or for which we do not want to impute values.</p>
-
+</code></pre><p>The <code>mi set flong</code> command tells Stata how to arrange our multiple datasets(flong (full and long), or mlong (marginal and long)). The <code>mi register imputed</code> command registers all the variables that have missing values and need to be imputed. The <code>mi register regular</code> command registers all the variables that have no missing values or for which we do not want to impute values.</p>
 <pre><code>mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
-</code></pre>
-
-<p>生成m=20个数据集，<code>_mi_m</code> variable identifies datasets and ranges from 0 to 20.</p>
-
+</code></pre><p>生成m=20个数据集，<code>_mi_m</code> variable identifies datasets and ranges from 0 to 20.</p>
 <pre><code>mi impute mvn ln_wagem gradem agem ttl_expm tenurem blackm, add(20) rseed(2121)
-</code></pre>
-
-<p>To get pooled $R^2$ and standardized $\beta$s use <code>mibeta</code></p>
-
+</code></pre><p>To get pooled $R^2$ and standardized $\beta$s use <code>mibeta</code></p>
 <pre><code>mibeta ln_wagem gradem agem ttl_expm tenurem not_smsa south blackm, fisherz miopts(vartable)
-</code></pre>
-
-<p>When <strong>impossible</strong> values are imputed(建议不调整): Binary variables, squares, and interactions（在原数据集先相乘，再impute）</p>
+</code></pre><p>When <strong>impossible</strong> values are imputed(建议不调整): Binary variables, squares, and interactions（在原数据集先相乘，再impute）</p>
 
     </div>
 
@@ -838,7 +804,7 @@ mi register regular not_smsa south
     <footer class="site-footer">
    
   <p class="powered-by">
-    &copy;Yihong WANG 2019 &middot; 
+    ©Yihong WANG 2020 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

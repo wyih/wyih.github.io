@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.b6be4449bf86f3314d844317b19b0e01.css">
 
   
 
@@ -121,7 +121,7 @@
   <meta property="og:description" content=""><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2019-09-25T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-01-20T00:00:00&#43;00:00">
   
 
   
@@ -319,6 +319,15 @@
   
   
   <div>
+    <h2><a href="../../post/2020-01-20-r-stata-workflow/">用R取代Stata与SAS</a></h2>
+    <div class="article-style">
+      
+      安装Stata 在R中调用Stata 三种环境下数据互通 安装Stata 首先安装ncurses5-compat-libs和libpng12这两个包
+      
+    </div>
+  </div>
+  
+  <div>
     <h2><a href="../../post/sem-and-gsem/">SEM and GSEM</a></h2>
     <div class="article-style">
       
@@ -331,7 +340,7 @@
     <h2><a href="../../post/panel-data-in-r-vs-in-stata/">Panel data in R vs in Stata</a></h2>
     <div class="article-style">
       
-      Panel data with one way fixed effect mm1 &lt;- invforward ~ TOBINQ + inv + top3 + size + lev + cash + loss + lnage + cfo + sd + ic + factor(year) zzz &lt;- plm(mm1,data=sample,model=&quot;within&quot;,index=c(&quot;stkcd&quot;)) same as xtreg i.year fe , without robust vcetype 用这种方法算出来$R^2$和Stata报告$R^
+      Panel data with one way fixed effect mm1 &lt;- invforward ~ TOBINQ + inv + top3 + size + lev + cash + loss + lnage + cfo + sd + ic + factor(year) zzz &lt;- plm(mm1,data=sample,model=&#34;within&#34;,index=c(&#34;stkcd&#34;)) same as xtreg i.year fe , without robust vcetype 用这种方法算出来$R^2$和Stata报告$R^
       
     </div>
   </div>
@@ -349,7 +358,7 @@
     <h2><a href="../../post/measurement-reliability-and-validity/">Measurement, reliability, and validity</a></h2>
     <div class="article-style">
       
-      Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 &quot;Does not describe very well&quot;) /// (2=4) (3=3) (4=2) (5=1 &quot;Describes very well&quot;), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss &lt; 3 One drawback to using the rowmean() function is that it
+      Constructing a Scale recode empathy2 empathy4 empathy5 (1=5 "Does not describe very well") /// (2=4) (3=3) (4=2) (5=1 "Describes very well"), pre(rev) label(empathy) egen empathy = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen miss = rowmiss(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) egen empathya = rowmean(empathy1 revempathy2 empathy3 revempathy4 /// revempathy5 empathy6 empathy7) if miss One drawback to using the rowmean() function is that it simply adds
       
     </div>
   </div>
@@ -380,9 +389,8 @@ Random-effects regression models \[y_it = \beta_0 +\beta x_{it}+\gamma z_i +\mu_
     <h2><a href="../../post/multiple-regressions/">Multiple Regressions</a></h2>
     <div class="article-style">
       
-      Table of Contents    Basic Diagnostic statistics Weighted data Categorical predictors and hierarchical regression interaction nonlinear   
-Note: toc is not compatible with markup: mmark
-Basic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std.
+      Note: toc is not compatible with markup: mmark
+Basic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable.
       
     </div>
   </div>
@@ -512,7 +520,7 @@ Basic  F: There is a highly significant relationship between outcomes and the se
     <footer class="site-footer">
    
   <p class="powered-by">
-    &copy;Yihong WANG 2019 &middot; 
+    ©Yihong WANG 2020 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

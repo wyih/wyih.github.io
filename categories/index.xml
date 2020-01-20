@@ -5,7 +5,7 @@
     <link>/categories/</link>
       <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Sun, 17 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2020</copyright><lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Categories</title>
@@ -13,17 +13,9 @@
     </image>
     
     <item>
-      <title>Books</title>
-      <link>/categories/books/</link>
-      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>/categories/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>/categories/linux/</link>
-      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/categories/linux/</guid>
       <description></description>
     </item>
@@ -31,7 +23,7 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/categories/r/</guid>
       <description></description>
     </item>
@@ -39,7 +31,7 @@
     <item>
       <title>Stata</title>
       <link>/categories/stata/</link>
-      <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/categories/stata/</guid>
       <description></description>
     </item>
@@ -47,8 +39,16 @@
     <item>
       <title>Workflow</title>
       <link>/categories/workflow/</link>
-      <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/categories/workflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>/categories/books/</link>
+      <pubDate>Sun, 17 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>/categories/books/</guid>
       <description></description>
     </item>
     

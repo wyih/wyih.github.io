@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.b6be4449bf86f3314d844317b19b0e01.css">
 
   
 
@@ -512,62 +512,42 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p>Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。</p>
-
+      <p>Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。</p>
 <p><del>总算把Ghost配得七七八八，以后要好好记下笔记了。像以前看过的东西时间久了就全忘了，太郁闷了。</del></p>
-
 <h2 id="目前的workflow如下">目前的Workflow如下</h2>
-
 <ul>
 <li>在Synology Drive下Draft目录存放草稿</li>
 <li>Typora里写markdown并保存</li>
-<li>存Leanote和evernote各一份，这个应该可以通过<a href="https://ifttt.com/" target="_blank">IFTTT</a>来实现，日后研究</li>
-<li>另外一个解决方案是直接Git init Draft目录，再往<a href="github.com" target="_blank">Github</a>上push备份。</li>
+<li>存Leanote和evernote各一份，这个应该可以通过<a href="https://ifttt.com/">IFTTT</a>来实现，日后研究</li>
+<li>另外一个解决方案是直接Git init Draft目录，再往<a href="github.com">Github</a>上push备份。</li>
 <li>存Ghost发布</li>
 </ul>
-
 <h2 id="需要的代码注入">需要的代码注入</h2>
-
 <h3 id="公式">公式</h3>
-
 <p>在<code>Post Header</code> 粘贴以下脚本</p>
-
-<pre><code class="language-js">&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;  
-&lt;script type=&quot;text/x-mathjax-config&quot;&gt;  
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [['$$','$$'], ['\\\\(','\\\\)']],
-            processEscapes: true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010"> </span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/x-mathjax-config&#34;</span><span style="color:#f92672">&gt;</span>  
+    <span style="color:#a6e22e">MathJax</span>.<span style="color:#a6e22e">Hub</span>.<span style="color:#a6e22e">Config</span>({
+        <span style="color:#a6e22e">tex2jax</span><span style="color:#f92672">:</span> {
+            <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$$&#39;</span>,<span style="color:#e6db74">&#39;$$&#39;</span>], [<span style="color:#e6db74">&#39;\\\\(&#39;</span>,<span style="color:#e6db74">&#39;\\\\)&#39;</span>]],
+            <span style="color:#a6e22e">processEscapes</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
         }
     });
-&lt;/script&gt;  
-</code></pre>
-
-<h3 id="语法高亮">语法高亮</h3>
-
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#960050;background-color:#1e0010"> </span>
+</code></pre></div><h3 id="语法高亮">语法高亮</h3>
 <p>在<code>Post Header</code> 粘贴以下脚本</p>
-
-<pre><code class="language-js">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&quot;&gt;
-</code></pre>
-
-<p>在<code>Post Footer</code>粘贴以下脚本</p>
-
-<pre><code class="language-js">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p><a href="https://prismjs.com/" target="_blank">prism.js</a>不支持Stata就凑合着用用吧。需要载入的<a href="https://cdnjs.com/libraries/prism" target="_blank">components</a>取决于博文需要。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&#34;</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><p>在<code>Post Footer</code>粘贴以下脚本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+</code></pre></div><p><a href="https://prismjs.com/">prism.js</a>不支持Stata就凑合着用用吧。需要载入的<a href="https://cdnjs.com/libraries/prism">components</a>取决于博文需要。</p>
 <h2 id="需要注意的地方">需要注意的地方</h2>
-
 <ul>
 <li>Ghost对于H1不能生成Toc，从H2开始</li>
-<li>对于Markdown中的公式有些需要<a href="https://blog.yhong.wang/gong-shi/" target="_blank">转义</a></li>
+<li>对于Markdown中的公式有些需要<a href="https://blog.yhong.wang/gong-shi/">转义</a></li>
 </ul>
 
     </div>
@@ -793,7 +773,7 @@
     <footer class="site-footer">
    
   <p class="powered-by">
-    &copy;Yihong WANG 2019 &middot; 
+    ©Yihong WANG 2020 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

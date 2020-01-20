@@ -83,7 +83,7 @@
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.b6be4449bf86f3314d844317b19b0e01.css">
 
   
 
@@ -607,39 +607,30 @@ $ RR={\frac {EE(CE+CN)}{CE(EE+EN)}}\approx {\frac {EE\cdot CN}{EN\cdot CE}}=OR. 
 <p>The z test in the Stata output is actually the square root of the Wald chi-squared test.</p>
 
 <p>The likelihood-ratio chi-squared test for each parameter estimate is based on comparing two logistic models, one with the individual variable we want to test included and one without it. The likelihood-ratio test is the difference in the likelihood-ratio chi-squared values for these two models (this appears as LR chi2(1) near the upper right corner of the output). The difference between the two likelihood-ratio chi-squared values is 1 degree of freedom.</p>
-
 <pre><code>use nlsy97_chapter11, clear
 logistic drank30 male dinner97 pdrink97
 estimates store a
 logistic drank30 age97 male dinner97 pdrink97
 #subtracts the chi-squared values and estimates the probability of the chi-squared difference;
-lrtest a
-</code></pre>
-
+lrtest a</code></pre>
 <p>or just use <code>lrdrop1</code></p>
 
 <h3 id="testing-sets-of-coefficients">Testing sets of coefficients</h3>
-
 <pre><code>test pdrink97 dinner97
 #it is the same as:
-logistic drank30 age97 male if !mi(dinner97) &amp;!mi(pdrink97)
+logistic drank30 age97 male if !mi(dinner97) &!mi(pdrink97)
 estimates store a
 logistic drank30 age97 male pdrink97 dinner97 
 lrtest a
-lrdrop1
-</code></pre>
-
+lrdrop1</code></pre>
 <p>this overall test only tells us that at least one of them is significant.</p>
 
 <h2 id="margins">Margins</h2>
-
 <pre><code>logit drank30 age97 i.black pdrink97 dinner97
 margins, dydx(black) atmeans
 margins black, atmeans
 margins, at(pdrink97=(1 2 3 4 5)) atmeans
-marginsplot
-</code></pre>
-
+marginsplot</code></pre>
 <p>We can run the logistic regression using the i. label for this categorical variable, i.black. This produces the same results for the logistic regression as if we had simply used black, but the results will work properly if we follow this command with other postestimation commands.</p>
 
 <h2 id="nested-logistic-regressions">Nested logistic regressions</h2>
@@ -647,11 +638,8 @@ marginsplot
 <p>The <code>nestreg</code> command is extremely general, applicable across a variety of regression models, including logistic, negative binomial, Poisson, probit, ordered logistic, tobit, and others. It also works with the complex sample designs for many regression models.</p>
 
 <h2 id="power-analysis">Power analysis</h2>
-
 <pre><code>powerlog, p1(.70) p2(.75) alpha(.05)
-powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help
-</code></pre>
-
+powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help</code></pre>
     </div>
 
     
@@ -891,7 +879,7 @@ powerlog, p1(.70) p2(.75) alpha(.05) rsq(.30) help
     <footer class="site-footer">
    
   <p class="powered-by">
-    &copy;Yihong WANG 2019 &middot; 
+    ©Yihong WANG 2020 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

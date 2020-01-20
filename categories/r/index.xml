@@ -5,12 +5,89 @@
     <link>/categories/r/</link>
       <atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <description>R</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 09 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2020</copyright><lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>R</title>
       <link>/categories/r/</link>
     </image>
+    
+    <item>
+      <title>用R取代Stata与SAS</title>
+      <link>/post/2020-01-20-r-stata-workflow/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020-01-20-r-stata-workflow/</guid>
+      <description>
+&lt;script src=&#34;../../rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#安装stata&#34;&gt;安装Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#在r中调用stata&#34;&gt;在R中调用Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#三种环境下数据互通&#34;&gt;三种环境下数据互通&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;安装stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;安装Stata&lt;/h2&gt;
+&lt;p&gt;首先安装&lt;code&gt;ncurses5-compat-libs&lt;/code&gt;和&lt;code&gt;libpng12&lt;/code&gt;这两个包，其次&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;% sudo -s
+
+cd /tmp/
+
+mkdir statafiles
+
+cd statafiles
+
+tar -zxf /home/you/Downloads/Stata14Linux64.tar.gz
+
+cd /usr/local
+
+mkdir stata14
+
+cd stata14
+
+/tmp/statafiles/install&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安完之后把安装目录加到环境变量中去。我选择编辑&lt;code&gt;/etc/profile&lt;/code&gt;加入：&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;export PATH=&amp;quot;$PATH:/usr/local/stata14&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;若想不重启就生效可以&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Lic文件可以直接COPY到安装目录，或者在目录中放&lt;code&gt;stata.lic.tar.gz&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;在r中调用stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;在R中调用Stata&lt;/h2&gt;
+&lt;p&gt;通过&lt;a href=&#34;https://github.com/lbraglia/RStata&#34;&gt;&lt;code&gt;RStata&lt;/code&gt;&lt;/a&gt;实现&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#run Stata in R----
+library(&amp;quot;RStata&amp;quot;)
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;D:\\Stata15\\StataSE-64&amp;quot;) #office
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;/usr/local/stata14/stata&amp;quot;) #linux #cannot use stata-se?
+options(&amp;quot;RStata.StataVersion&amp;quot; = 14)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;三种环境下数据互通&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;三种环境下数据互通&lt;/h2&gt;
+&lt;p&gt;R下通过两个包&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(haven) #nead read_dta to read dta
+library(rio) # rio::import to read sas data
+#haven::read_sas can also import sas7bdat
+f1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.sas7bdat&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+o1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.dta&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+after2007_raw &amp;lt;-  import(f1)
+after2007 %&amp;gt;% 
+  mutate_if(is.numeric, as.integer) %&amp;gt;% 
+  write_dta(.,o1, version = 12)
+# Because sas only supports Stata 12 files (or earlier) while haven supports stata versions 8-15.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如以上方法都无法顺利读入sas7bdat，用SAS中转&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#import stata data file, only supports 12 or earlier
+PROC IMPORT OUT= WORK.S1 
+            DATAFILE= &amp;quot;E:\after2007.dta&amp;quot; 
+            DBMS=STATA REPLACE;
+RUN;
+
+proc export data=raw1 outfile= &amp;quot;D:\sample.dta&amp;quot; replace;
+run;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Data Vis Chapter 8</title>
@@ -1482,48 +1559,32 @@ p + geom_point() + labs(x = &amp;quot;Road Deaths&amp;quot;, y = &amp;quot;Donor
       <link>/post/panel-data-in-r-vs-in-stata/</link>
       <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
       <guid>/post/panel-data-in-r-vs-in-stata/</guid>
-      <description>
-
-&lt;h2 id=&#34;panel-data-with-one-way-fixed-effect&#34;&gt;Panel data with one way fixed effect&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;mm1 &amp;lt;- invforward ~ TOBINQ + inv + top3 + size + lev + cash + loss + lnage + cfo + sd + ic + factor(year)
-zzz &amp;lt;- plm(mm1,data=sample,model=&amp;quot;within&amp;quot;,index=c(&amp;quot;stkcd&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;same as xtreg i.year fe , without robust vcetype
+      <description>&lt;h2 id=&#34;panel-data-with-one-way-fixed-effect&#34;&gt;Panel data with one way fixed effect&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;mm1 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; invforward &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; TOBINQ &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; inv &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; top3 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; size &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lev &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cash &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; loss &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lnage &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cfo &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; sd &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; ic &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;factor&lt;/span&gt;(year)
+zzz &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;plm&lt;/span&gt;(mm1,data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;sample,model&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;within&amp;#34;&lt;/span&gt;,index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;stkcd&amp;#34;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;same as xtreg i.year fe , without robust vcetype
 用这种方法算出来$R^2$和Stata报告$R^2$ within的一致&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;m1 &amp;lt;- invforward ~ TOBINQ + inv + top3 + size + lev + cash + loss + lnage + cfo + sd + ic
-zz &amp;lt;- plm(m1,data=sample,model=&amp;quot;within&amp;quot;,index=c(&amp;quot;stkcd&amp;quot;, &amp;quot;year&amp;quot;),effect = &amp;quot;twoways&amp;quot;)
-summary(zz)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;same sa xtreg i.year, fe , without robust vcetype，但$R^2$较Stata报告$R^2$ within小&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;m1 &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; invforward &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; TOBINQ &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; inv &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; top3 &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; size &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lev &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cash &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; loss &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; lnage &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; cfo &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; sd &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; ic
+zz &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;plm&lt;/span&gt;(m1,data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;sample,model&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;within&amp;#34;&lt;/span&gt;,index&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;stkcd&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;year&amp;#34;&lt;/span&gt;),effect &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;twoways&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;summary&lt;/span&gt;(zz)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;same sa xtreg i.year, fe , without robust vcetype，但$R^2$较Stata报告$R^2$ within小&lt;/p&gt;
 &lt;h2 id=&#34;vcetype-robust&#34;&gt;vcetype robust&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;zz_r &amp;lt;- coeftest(zz, vcov.=function(x) vcovHC(x, type=&amp;quot;sss&amp;quot;)) # same as stata xtreg i.year, fe r
-# OR
-zzz_r &amp;lt;- coeftest(zzz, vcov.=function(x) vcovHC(x, type=&amp;quot;sss&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;组间系数比较&#34;&gt;组间系数比较&lt;/h2&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;zz_r &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;coeftest&lt;/span&gt;(zz, vcov.&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;function&lt;/span&gt;(x) &lt;span style=&#34;color:#a6e22e&#34;&gt;vcovHC&lt;/span&gt;(x, type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;sss&amp;#34;&lt;/span&gt;)) &lt;span style=&#34;color:#75715e&#34;&gt;# same as stata xtreg i.year, fe r&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# OR&lt;/span&gt;
+zzz_r &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;coeftest&lt;/span&gt;(zzz, vcov.&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;function&lt;/span&gt;(x) &lt;span style=&#34;color:#a6e22e&#34;&gt;vcovHC&lt;/span&gt;(x, type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;sss&amp;#34;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;组间系数比较&#34;&gt;组间系数比较&lt;/h2&gt;
 &lt;p&gt;OLS可用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;sur_diff &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt;  MVBV &lt;span style=&#34;color:#f92672&#34;&gt;~&lt;/span&gt; (Dm &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; Dh &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; EBV &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; DmEBV &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;DhEBV)&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;g_layer
+h2t &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; h2 &lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(g_layer &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;%&amp;gt;%&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;mutate&lt;/span&gt;(g_layer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ifelse&lt;/span&gt;(g_layer &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+mm &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lm&lt;/span&gt;(sur_diff,data&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;h2t)
+ttt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;-&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;coeftest&lt;/span&gt;(mm, vcov.&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;function&lt;/span&gt;(x) &lt;span style=&#34;color:#a6e22e&#34;&gt;vcovHC&lt;/span&gt;(x, cluster&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;group&amp;#34;&lt;/span&gt;, type&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;HC1&amp;#34;&lt;/span&gt;))
 
-&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;sur_diff &amp;lt;-  MVBV ~ (Dm + Dh + EBV + DmEBV +DhEBV)*g_layer
-h2t &amp;lt;- h2 %&amp;gt;%
-  filter(g_layer != 2)%&amp;gt;%
-  mutate(g_layer = ifelse(g_layer == 1, 0, 1))
-mm &amp;lt;- lm(sur_diff,data=h2t)
-ttt &amp;lt;-  coeftest(mm, vcov.=function(x) vcovHC(x, cluster=&amp;quot;group&amp;quot;, type=&amp;quot;HC1&amp;quot;))
-
-stargazer(fpm,models_growth_layer,type = &amp;quot;text&amp;quot;, column.labels = table4_label)
-stargazer(fpm_r,robusts_growth_layer,type = &amp;quot;text&amp;quot;, column.labels = table4_label,
-          add.lines=c(&amp;quot;DhEBV(4)-(2)&amp;quot;, str_c(round(ttt[12,1],3),&amp;quot;**(p=&amp;quot;,round(ttt[12,4],3),&amp;quot;)&amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Panel Data不行！One way, two way fixed effect都不行！
+&lt;span style=&#34;color:#a6e22e&#34;&gt;stargazer&lt;/span&gt;(fpm,models_growth_layer,type &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;text&amp;#34;&lt;/span&gt;, column.labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; table4_label)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;stargazer&lt;/span&gt;(fpm_r,robusts_growth_layer,type &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;text&amp;#34;&lt;/span&gt;, column.labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; table4_label,
+          add.lines&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;DhEBV(4)-(2)&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;str_c&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;round&lt;/span&gt;(ttt[12,&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;],&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;),&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;**(p=&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;round&lt;/span&gt;(ttt[12,&lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;],&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;),&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;)&amp;#34;&lt;/span&gt;)))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Panel Data不行！One way, two way fixed effect都不行！
 建议直接加interaction&lt;/p&gt;
 </description>
     </item>
@@ -1948,11 +2009,8 @@ b_0 = \bar{y} - b_1 \bar{x}
 &lt;p&gt;$$
 \begin{align}
 b_1 &amp;amp;= \frac{cov(x,y)}{var(x)}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{cov(x,y)}{s_x s_x} \\
-&amp;amp;= r\frac{s_y}{s_x} \end{align}
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{cov(x,y)}{s_x s_x} \\
+&amp;= r\frac{s_y}{s_x} \end{align}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;$$&lt;/p&gt;
 
 &lt;p&gt;In other words, the slope coefficient is equal to the correlation coefficient $r$ times the ratio of standard deviations of $y$ and $x$.&lt;/p&gt;
@@ -2011,11 +2069,8 @@ b_1 &amp;= \arg\min_{\text{slope}} \sum_{i=1}^N \left[y_i - \text{slope } x_i \r
 &lt;p&gt;$$
 \begin{align}
 b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i \tilde{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i^2}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
-&amp;amp;= \frac{cov(x,y)}{var(x)}
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
+&amp;= \frac{cov(x,y)}{var(x)}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;\end{align}
 $$&lt;/p&gt;
 
@@ -2032,12 +2087,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i \breve{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i^2}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
-&amp;amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
-&amp;amp;= Corr(x,y)  
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
+&amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
+&amp;= Corr(x,y)  &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;\end{align}
 $$&lt;/p&gt;
 

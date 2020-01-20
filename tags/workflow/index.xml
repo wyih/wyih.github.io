@@ -5,7 +5,7 @@
     <link>/tags/workflow/</link>
       <atom:link href="/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
     <description>Workflow</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 26 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2020</copyright><lastBuildDate>Mon, 20 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Workflow</title>
@@ -13,66 +13,123 @@
     </image>
     
     <item>
+      <title>用R取代Stata与SAS</title>
+      <link>/post/2020-01-20-r-stata-workflow/</link>
+      <pubDate>Mon, 20 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020-01-20-r-stata-workflow/</guid>
+      <description>
+&lt;script src=&#34;../../rmarkdown-libs/jquery/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;../../rmarkdown-libs/elevate-section-attrs/elevate-section-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#安装stata&#34;&gt;安装Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#在r中调用stata&#34;&gt;在R中调用Stata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#三种环境下数据互通&#34;&gt;三种环境下数据互通&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;安装stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;安装Stata&lt;/h2&gt;
+&lt;p&gt;首先安装&lt;code&gt;ncurses5-compat-libs&lt;/code&gt;和&lt;code&gt;libpng12&lt;/code&gt;这两个包，其次&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;% sudo -s
+
+cd /tmp/
+
+mkdir statafiles
+
+cd statafiles
+
+tar -zxf /home/you/Downloads/Stata14Linux64.tar.gz
+
+cd /usr/local
+
+mkdir stata14
+
+cd stata14
+
+/tmp/statafiles/install&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安完之后把安装目录加到环境变量中去。我选择编辑&lt;code&gt;/etc/profile&lt;/code&gt;加入：&lt;/p&gt;
+&lt;pre class=&#34;bash&#34;&gt;&lt;code&gt;export PATH=&amp;quot;$PATH:/usr/local/stata14&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;若想不重启就生效可以&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Lic文件可以直接COPY到安装目录，或者在目录中放&lt;code&gt;stata.lic.tar.gz&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;在r中调用stata&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;在R中调用Stata&lt;/h2&gt;
+&lt;p&gt;通过&lt;a href=&#34;https://github.com/lbraglia/RStata&#34;&gt;&lt;code&gt;RStata&lt;/code&gt;&lt;/a&gt;实现&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#run Stata in R----
+library(&amp;quot;RStata&amp;quot;)
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;D:\\Stata15\\StataSE-64&amp;quot;) #office
+options(&amp;quot;RStata.StataPath&amp;quot; = &amp;quot;/usr/local/stata14/stata&amp;quot;) #linux #cannot use stata-se?
+options(&amp;quot;RStata.StataVersion&amp;quot; = 14)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;三种环境下数据互通&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;三种环境下数据互通&lt;/h2&gt;
+&lt;p&gt;R下通过两个包&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(haven) #nead read_dta to read dta
+library(rio) # rio::import to read sas data
+#haven::read_sas can also import sas7bdat
+f1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.sas7bdat&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+o1 &amp;lt;- str_c(data_loc,&amp;quot;after2007.dta&amp;quot;,sep = &amp;quot;/&amp;quot;) 
+after2007_raw &amp;lt;-  import(f1)
+after2007 %&amp;gt;% 
+  mutate_if(is.numeric, as.integer) %&amp;gt;% 
+  write_dta(.,o1, version = 12)
+# Because sas only supports Stata 12 files (or earlier) while haven supports stata versions 8-15.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如以上方法都无法顺利读入sas7bdat，用SAS中转&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#import stata data file, only supports 12 or earlier
+PROC IMPORT OUT= WORK.S1 
+            DATAFILE= &amp;quot;E:\after2007.dta&amp;quot; 
+            DBMS=STATA REPLACE;
+RUN;
+
+proc export data=raw1 outfile= &amp;quot;D:\sample.dta&amp;quot; replace;
+run;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Ghost Blog Workflow</title>
       <link>/post/ghost-blog-workflow/</link>
       <pubDate>Wed, 26 Jun 2019 00:00:00 +0000</pubDate>
       <guid>/post/ghost-blog-workflow/</guid>
-      <description>
-
-&lt;p&gt;Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。&lt;/p&gt;
-
+      <description>&lt;p&gt;Sep 25, 2019 的update: 这个WorkFlow不太完美，现在转用Blogdown和Git来管理，正在摸索中。&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;总算把Ghost配得七七八八，以后要好好记下笔记了。像以前看过的东西时间久了就全忘了，太郁闷了。&lt;/del&gt;&lt;/p&gt;
-
 &lt;h2 id=&#34;目前的workflow如下&#34;&gt;目前的Workflow如下&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;在Synology Drive下Draft目录存放草稿&lt;/li&gt;
 &lt;li&gt;Typora里写markdown并保存&lt;/li&gt;
-&lt;li&gt;存Leanote和evernote各一份，这个应该可以通过&lt;a href=&#34;https://ifttt.com/&#34; target=&#34;_blank&#34;&gt;IFTTT&lt;/a&gt;来实现，日后研究&lt;/li&gt;
-&lt;li&gt;另外一个解决方案是直接Git init Draft目录，再往&lt;a href=&#34;github.com&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;上push备份。&lt;/li&gt;
+&lt;li&gt;存Leanote和evernote各一份，这个应该可以通过&lt;a href=&#34;https://ifttt.com/&#34;&gt;IFTTT&lt;/a&gt;来实现，日后研究&lt;/li&gt;
+&lt;li&gt;另外一个解决方案是直接Git init Draft目录，再往&lt;a href=&#34;github.com&#34;&gt;Github&lt;/a&gt;上push备份。&lt;/li&gt;
 &lt;li&gt;存Ghost发布&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h2 id=&#34;需要的代码注入&#34;&gt;需要的代码注入&lt;/h2&gt;
-
 &lt;h3 id=&#34;公式&#34;&gt;公式&lt;/h3&gt;
-
 &lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  
-&amp;lt;script type=&amp;quot;text/x-mathjax-config&amp;quot;&amp;gt;  
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\\\\(&#39;,&#39;\\\\)&#39;]],
-            processEscapes: true
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdn.bootcss.com/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;text/x-mathjax-config&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;  
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;MathJax&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Hub&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Config&lt;/span&gt;({
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;tex2jax&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;inlineMath&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$$&amp;#39;&lt;/span&gt;], [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\\\\(&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\\\\)&amp;#39;&lt;/span&gt;]],
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;processEscapes&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
         }
     });
-&amp;lt;/script&amp;gt;  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;语法高亮&#34;&gt;语法高亮&lt;/h3&gt;
-
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;语法高亮&#34;&gt;语法高亮&lt;/h3&gt;
 &lt;p&gt;在&lt;code&gt;Post Header&lt;/code&gt; 粘贴以下脚本&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&amp;quot;&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;在&lt;code&gt;Post Footer&lt;/code&gt;粘贴以下脚本&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://prismjs.com/&#34; target=&#34;_blank&#34;&gt;prism.js&lt;/a&gt;不支持Stata就凑合着用用吧。需要载入的&lt;a href=&#34;https://cdnjs.com/libraries/prism&#34; target=&#34;_blank&#34;&gt;components&lt;/a&gt;取决于博文需要。&lt;/p&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;link&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.css&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在&lt;code&gt;Post Footer&lt;/code&gt;粘贴以下脚本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-python.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-r.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-sas.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/components/prism-bash.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;p&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;t&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://prismjs.com/&#34;&gt;prism.js&lt;/a&gt;不支持Stata就凑合着用用吧。需要载入的&lt;a href=&#34;https://cdnjs.com/libraries/prism&#34;&gt;components&lt;/a&gt;取决于博文需要。&lt;/p&gt;
 &lt;h2 id=&#34;需要注意的地方&#34;&gt;需要注意的地方&lt;/h2&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Ghost对于H1不能生成Toc，从H2开始&lt;/li&gt;
-&lt;li&gt;对于Markdown中的公式有些需要&lt;a href=&#34;https://blog.yhong.wang/gong-shi/&#34; target=&#34;_blank&#34;&gt;转义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;对于Markdown中的公式有些需要&lt;a href=&#34;https://blog.yhong.wang/gong-shi/&#34;&gt;转义&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

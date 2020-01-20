@@ -28,9 +28,8 @@
   
     
   
-  <meta name="description" content="Table of Contents    Basic Diagnostic statistics Weighted data Categorical predictors and hierarchical regression interaction nonlinear   
-Note: toc is not compatible with markup: mmark
-Basic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std.">
+  <meta name="description" content="Note: toc is not compatible with markup: mmark
+Basic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable.">
 
   
   <link rel="alternate" hreflang="en-us" href="../../post/multiple-regressions/">
@@ -85,7 +84,7 @@ Basic  F: There is a highly significant relationship between outcomes and the se
   
   
   
-  <link rel="stylesheet" href="../../css/academic.min.4a2804b4d4c4cd4583bb17ba271d35ae.css">
+  <link rel="stylesheet" href="../../css/academic.min.b6be4449bf86f3314d844317b19b0e01.css">
 
   
 
@@ -118,9 +117,8 @@ Basic  F: There is a highly significant relationship between outcomes and the se
   <meta property="og:site_name" content="Little World">
   <meta property="og:url" content="/post/multiple-regressions/">
   <meta property="og:title" content="Multiple Regressions | Little World">
-  <meta property="og:description" content="Table of Contents    Basic Diagnostic statistics Weighted data Categorical predictors and hierarchical regression interaction nonlinear   
-Note: toc is not compatible with markup: mmark
-Basic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:description" content="Note: toc is not compatible with markup: mmark
+Basic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable."><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
@@ -172,7 +170,7 @@ Basic  F: There is a highly significant relationship between outcomes and the se
       "url": "/img/icon-512.png"
     }
   },
-  "description": "Table of Contents    Basic Diagnostic statistics Weighted data Categorical predictors and hierarchical regression interaction nonlinear   \nNote: toc is not compatible with markup: mmark\nBasic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std."
+  "description": "Note: toc is not compatible with markup: mmark\nBasic  F: There is a highly significant relationship between outcomes and the set of predictors. R2: How much of the outcome variance is explained by the regression model Adj-R2: remove the chance effects Coef.: unstandardized regression coefficients t: coef/standard error Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable."
 }
 </script>
 
@@ -516,27 +514,9 @@ Basic  F: There is a highly significant relationship between outcomes and the se
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p><h2>Table of Contents</h2>
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#basic">Basic</a></li>
-<li><a href="#diagnostic-statistics">Diagnostic statistics</a></li>
-<li><a href="#weighted-data">Weighted data</a></li>
-<li><a href="#categorical-predictors-and-hierarchical-regression">Categorical predictors and hierarchical regression</a></li>
-<li><a href="#interaction">interaction</a></li>
-<li><a href="#nonlinear">nonlinear</a></li>
-</ul></li>
-</ul>
-</nav></p>
-
+      <!-- raw HTML omitted -->
 <p>Note: toc is not compatible with <code>markup: mmark</code></p>
-
 <h2 id="basic">Basic</h2>
-
 <ul>
 <li>F: There is a highly significant relationship between outcomes and the set of predictors.</li>
 <li>R2: How much of the outcome variance is explained by the regression model</li>
@@ -544,16 +524,15 @@ Basic  F: There is a highly significant relationship between outcomes and the se
 <li>Coef.: <em>unstandardized regression coefficients</em></li>
 <li>t: coef/standard error</li>
 <li>Std. Err.: represents the average distance that the observed values fall from the regression line. Conveniently, it tells you how wrong the regression model is on average using the units of the response variable.</li>
-<li>,beta gives <strong>beta weights</strong>: based on standardizing all variables to have a mean of 0 and a standard deviation of 1. These beta weights are interpreted similarly to how you interpret correlations in that beta<0.2 is considered a weak effect,  between 0.2 and 0.5 is considered a moderate effect, and  is considered a strong effect.(range of -1 to +1, if out of range, ->multicollinearity problem):a 1-standard-deviation change in the independent variable produces a - beta standard-deviation change in the dependent variable.</li>
+<li>,beta gives <strong>beta weights</strong>: based on standardizing all variables to have a mean of 0 and a standard deviation of 1. These beta weights are interpreted similarly to how you interpret correlations in that beta&lt;0.2 is considered a weak effect,  between 0.2 and 0.5 is considered a moderate effect, and  is considered a strong effect.(range of -1 to +1, if out of range, -&gt;multicollinearity problem):a 1-standard-deviation change in the independent variable produces a - beta standard-deviation change in the dependent variable.</li>
 <li>increment in R2:<em>part-correlation square</em> because it measures the part that is uniquely explained by the variable. or <em>semipartial R2</em> (Semipartial Corr.^2 in <code>pcorr</code> )estimates only the <strong>unique</strong> effect of each predictor. Another way to compare is partial correlation;</li>
-<li>distribution of the dependent variable: <code>histogram env_con, frequency normal kdensity</code> (for <a href="https://lotabout.me/2018/kernel-density-estimation/" target="_blank">kernel density estimation</a>)<strong>Skewness</strong>(0:Normal; <0: negative or left skew, >0: positive or skew to the right)<strong>kurtosis</strong>(3: normal; <3: tails are too thick, flat or negative kurtosis; >3: tails are too thin, peaky or positive kurtosis)<code>sktest</code></li>
-
-<li><p>distribution of the residuals: for large sample, normality is not a critical issue. <code>rvfplot, yline(0)</code>residual-versus-fitted plot:
+<li>distribution of the dependent variable: <code>histogram env_con, frequency normal kdensity</code> (for <a href="https://lotabout.me/2018/kernel-density-estimation/">kernel density estimation</a>)<strong>Skewness</strong>(0:Normal; &lt;0: negative or left skew, &gt;0: positive or skew to the right)<strong>kurtosis</strong>(3: normal; &lt;3: tails are too thick, flat or negative kurtosis; &gt;3: tails are too thin, peaky or positive kurtosis)<code>sktest</code></li>
+<li>distribution of the residuals: for large sample, normality is not a critical issue. <code>rvfplot, yline(0)</code>residual-versus-fitted plot:
 To solve the non-normal distribution of residual, we can use <code>reg y xs, vce(robust)</code> or use bootstrap<code>reg y xs, vce(bootstrap, rep(1000))</code> , it will change std err and hence t-value.  However,
 Andrew J. Leone, Miguel Minutti-Meza, and Charles E. Wasley (2019) Influential Observations and Inference in Accounting Research. The Accounting Review In-Press.
-they talk about robust regression using <strong>robreg, what&rsquo;s the difference?</strong>
-ALso, check <a href="https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/se_programming.htm" target="_blank">Correcting for Cross-Sectional and Time-Series Dependence in Accounting Research</a></p>
-
+they talk about robust regression using <strong>robreg, what's the difference?</strong>
+ALso, check <a href="https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/se_programming.htm">Correcting for Cross-Sectional and Time-Series Dependence in Accounting Research</a></li>
+</ul>
 <pre><code>regress env_con educat inc com3 hlthprob epht3, beta
 predict envhat
 preserve
@@ -561,17 +540,11 @@ set seed 515
 sample 100, count
 twoway (scatter env_con envhat) (lfit env_con envhat)
 restore
-</code></pre></li>
-</ul>
-
-<h2 id="diagnostic-statistics">Diagnostic statistics</h2>
-
+</code></pre><h2 id="diagnostic-statistics">Diagnostic statistics</h2>
 <ul>
-<li><a href="http://www.r-tutor.com/elementary-statistics/simple-linear-regression/standardized-residual" target="_blank">Rstandard:</a></li>
+<li><a href="http://www.r-tutor.com/elementary-statistics/simple-linear-regression/standardized-residual">Rstandard:</a></li>
 </ul>
-
 <p>The standardized residual is the residual divided by its standard deviation.</p>
-
 <pre><code>regress env_con educat inc com3 hlthprob epht3, beta
 predict yhat
 predict residual, residual
@@ -581,85 +554,56 @@ dfbeta
 list respnum rstandard _dfbeta_1 if abs(_dfbeta_1) &gt; 2/sqrt(3769) &amp; _dfbeta_1 &lt; .
 estat vif
 
-</code></pre>
-
-<ul>
-<li><p>Influential observations: DFbeta: You could think of this as redoing the regression model, omitting just one observation at a time and seeing how much difference omitting each observation makes. ****A value of **DFbeta  &gt;2/sqrt(N) ** indicates that an observation has a large influence**** More specific than rstandard</p>
-
+</code></pre><ul>
+<li>Influential observations: DFbeta: You could think of this as redoing the regression model, omitting just one observation at a time and seeing how much difference omitting each observation makes. **<strong>A value of <strong>DFbeta  &gt;2/sqrt(N) ** indicates that an observation has a large influence</strong></strong> More specific than rstandard</li>
+</ul>
 <pre><code>. dfbeta
 (739 missing values generated)
-                   _dfbeta_1: dfbeta(educat)
+                       _dfbeta_1: dfbeta(educat)
 (739 missing values generated)
-                   _dfbeta_2: dfbeta(inc)
+                       _dfbeta_2: dfbeta(inc)
 (739 missing values generated)
-                   _dfbeta_3: dfbeta(com3)
+                       _dfbeta_3: dfbeta(com3)
 (739 missing values generated)
-                   _dfbeta_4: dfbeta(hlthprob)
+                       _dfbeta_4: dfbeta(hlthprob)
 (739 missing values generated)
-                   _dfbeta_5: dfbeta(epht3)
-</code></pre></li>
-
-<li><p>multicollinearity: The more correlated the predictors, the more they overlap and, hence, the more difficult it is to identify their independent effects. In such situations, you can have multicollinearity in which one or more of the predictors are virtually redundant.
+                       _dfbeta_5: dfbeta(epht3)
+</code></pre><ul>
+<li>multicollinearity: The more correlated the predictors, the more they overlap and, hence, the more difficult it is to identify their independent effects. In such situations, you can have multicollinearity in which one or more of the predictors are virtually redundant.
 variance inflation factor <code>estat vif</code> after regression, if &gt;10, for any variable, a multicollinearity problem may exist. If the average VIF is substantially greater than 1.00, there still could be a problem.(Dropping a variable, create a scale that combines them into one variable.)
-1/VIF = 1-R2(of regress X1 on other Xs) It tells how much of the variance in the independent variable is available to predict the outcome variable independently.</p>
-
+1/VIF = 1-R2(of regress X1 on other Xs) It tells how much of the variance in the independent variable is available to predict the outcome variable independently.</li>
+</ul>
 <h2 id="weighted-data">Weighted data</h2>
-
 <pre><code>regress env_con educat inc com3 hlthprob epht3 [pweight=finalwt], beta
-</code></pre>
-
-<p>When you do a weighted regression this way, Stata automatically uses the robust regression—whether you ask for it or not—because weighted data require robust standard errors.</p>
-
+</code></pre><p>When you do a weighted regression this way, Stata automatically uses the robust regression—whether you ask for it or not—because weighted data require robust standard errors.</p>
 <h2 id="categorical-predictors-and-hierarchical-regression">Categorical predictors and hierarchical regression</h2>
-
 <pre><code>regress smday97 age97 male psmoke97 aa hispanic other if !missing(smday97, ///
 	age97, male, psmoke97, aa, hispanic, other), beta
 test aa hispanic other
-</code></pre>
-
-<p>nested regressions</p>
-
+</code></pre><p>nested regressions</p>
 <pre><code>nestreg: regress smday97 (age97 male) (psmoke97) (aa hispanic other), beta
-</code></pre>
-
-<p>If you put i. as a stub in front of a categorical variable, Stata will make the first category the reference category and then generate a dummy variable for each of the remaining categories.</p>
-
+</code></pre><p>If you put i. as a stub in front of a categorical variable, Stata will make the first category the reference category and then generate a dummy variable for each of the remaining categories.</p>
 <pre><code>regress smday97 age97 male psmoke97 i.race
 #change reference category or what Stata refers to as the baselevel
 regress smday97 age97 male psmoke97 ib3.race
 regress smday97 age97 male psmoke97 ib(last).race
-</code></pre>
-
-<h2 id="interaction">interaction</h2>
-
+</code></pre><h2 id="interaction">interaction</h2>
 <pre><code>g ed_male = educ*male
 reg inc educ male ed_male,beta
 nestreg: regress inc (educ male) (ed_male), beta
 regress inc i.male##c.educ, beta
-</code></pre>
-
-<p>some researchers choose to center quantitative independent variables, such as education, before computing the interaction terms.
+</code></pre><p>some researchers choose to center quantitative independent variables, such as education, before computing the interaction terms.
 Centering is important for independent variables where a value of zero may not be meaningful.</p>
-
 <pre><code>summarize educ
 generate educ_c = educ - r(mean)
-</code></pre>
-
-<p>margins help us to interpret the interaction term</p>
-
+</code></pre><p>margins help us to interpret the interaction term</p>
 <pre><code>margins male, at(educ=(8 10 12 14 16 18))
 marginsplot
-</code></pre></li>
-</ul>
-
-<h2 id="nonlinear">nonlinear</h2>
-
+</code></pre><h2 id="nonlinear">nonlinear</h2>
 <pre><code>regress ln_wage c.ttl_exp##c.ttl_exp, beta
 margins, at(ttl_exp = (0(2)28))
 marginsplot
-</code></pre>
-
-<p><a href="https://stats.idre.ucla.edu/stata/dae/multiple-regression-power-analysis/" target="_blank">Power analysis</a></p>
+</code></pre><p><a href="https://stats.idre.ucla.edu/stata/dae/multiple-regression-power-analysis/">Power analysis</a></p>
 
     </div>
 
@@ -900,7 +844,7 @@ marginsplot
     <footer class="site-footer">
    
   <p class="powered-by">
-    &copy;Yihong WANG 2019 &middot; 
+    ©Yihong WANG 2020 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -5,7 +5,7 @@
     <link>/tags/econometrics-with-r/</link>
       <atom:link href="/tags/econometrics-with-r/index.xml" rel="self" type="application/rss+xml" />
     <description>econometrics-with-r</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2019</copyright><lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©Yihong WANG 2020</copyright><lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>econometrics-with-r</title>
@@ -432,11 +432,8 @@ b_0 = \bar{y} - b_1 \bar{x}
 &lt;p&gt;$$
 \begin{align}
 b_1 &amp;amp;= \frac{cov(x,y)}{var(x)}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{cov(x,y)}{s_x s_x} \\
-&amp;amp;= r\frac{s_y}{s_x} \end{align}
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{cov(x,y)}{s_x s_x} \\
+&amp;= r\frac{s_y}{s_x} \end{align}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;$$&lt;/p&gt;
 
 &lt;p&gt;In other words, the slope coefficient is equal to the correlation coefficient $r$ times the ratio of standard deviations of $y$ and $x$.&lt;/p&gt;
@@ -495,11 +492,8 @@ b_1 &amp;= \arg\min_{\text{slope}} \sum_{i=1}^N \left[y_i - \text{slope } x_i \r
 &lt;p&gt;$$
 \begin{align}
 b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i \tilde{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \tilde{x}_i^2}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
-&amp;amp;= \frac{cov(x,y)}{var(x)}
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x}) (y_i - \bar{y})}{\frac{1}{N}\sum_{i=1}^N (x_i - \bar{x})^2} \\
+&amp;= \frac{cov(x,y)}{var(x)}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;\end{align}
 $$&lt;/p&gt;
 
@@ -516,12 +510,9 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 \begin{align}
 b&lt;em&gt;1 &amp;amp;= \frac{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i \breve{y}&lt;em&gt;i}{\frac{1}{N}\sum&lt;/em&gt;^N \breve{x}_i^2}\&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
-&amp;amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
-&amp;amp;= Corr(x,y)  
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;pre&gt;&lt;code&gt;&amp;= \frac{\frac{1}{N}\sum_{i=1}^N \frac{x_i - \bar{x}}{\sigma_x} \frac{y_i - \bar{y}}{\sigma_y}}{\frac{1}{N}\sum_{i=1}^N \left(\frac{x_i - \bar{x}}{\sigma_x}\right)^2} \\
+&amp;= \frac{Cov(x,y)}{\sigma_x \sigma_y} \\
+&amp;= Corr(x,y)  &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;\end{align}
 $$&lt;/p&gt;
 
